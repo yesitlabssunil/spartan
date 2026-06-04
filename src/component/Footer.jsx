@@ -29,9 +29,9 @@ const Footer = () => {
               </p>
 
               <div className="social-icons">
-                <a href="#">
+                  <Link to="">
                   <FaInstagram />
-                </a>
+                  </Link>
 
                 <a href="#">
                   <FaFacebookF />
