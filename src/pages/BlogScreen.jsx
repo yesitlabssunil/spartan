@@ -4,12 +4,12 @@ import Footer from "../component/Footer";
 import "../assets/css/blog.css";
 
 // Hero image – replace with your exported path
-import heroImage from "../assets/images/blogScreen/blogThumbnail.jpg";
+import heroImage from "../assets/images/blogScreen/BlogThumbnail.jpg";
 
 // Images for "You also might like" cards – replace with your exported paths
-import relatedImg1 from "../assets/images/blogScreen/blogThumbnail1.jpg";
-import relatedImg2 from "../assets/images/blogScreen/blogThumbnail.jpg";
-import relatedImg3 from "../assets/images/blogScreen/blogThumbnail2.jpg";
+import relatedImg1 from "../assets/images/blogScreen/BlogThumbnail1.jpg";
+import relatedImg2 from "../assets/images/blogScreen/BlogThumbnail.jpg";
+import relatedImg3 from "../assets/images/blogScreen/BlogThumbnail2.jpg";
 
 const BlogScreen = () => {
     const relatedArticles = [
