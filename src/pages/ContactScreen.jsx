@@ -3,7 +3,7 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import "../assets/css/contact.css";
-import icon from "../assets/images/contactUs/icon.png";
+import icon from "../assets/images/contactUs/ICON.png";
 import icon1 from "../assets/images/contactUs/icon1.png";
 import icon2 from "../assets/images/contactUs/icon2.png";
 import icon3 from "../assets/images/contactUs/icon3.png";
