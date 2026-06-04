@@ -194,7 +194,7 @@ span.dot-black {
 .section-desc-center {
     font-size: 18px;
     color: #000000B2;
-    max-width: 400;
+    /* max-width: 400; */
     margin: 0 auto 20px auto;
     line-height: 1.7;
 }
