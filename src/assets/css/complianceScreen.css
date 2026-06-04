@@ -1,0 +1,352 @@
+/* ==========================================================================
+   COMPLIANCE SCREEN BRAND LAYOUT DEFINITIONS
+   ========================================================================== */
+
+   .compliance-main {
+    background-color: #ffffff;
+  }
+  
+  .standards-section, .services-grid-section {
+    padding: 100px 0;
+  }
+  
+  .services-grid-section {
+    /* background-color: #fcfdfe; */
+    background-color: #F7F7F7;
+    border-top: 1px solid #f0f3f6;
+  }
+  
+  /* Section Tag Utility */
+  .section-tag-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-mini-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #e01b1b;
+    border: 1px solid rgba(224, 27, 27, 0.15);
+    background-color: rgba(224, 27, 27, 0.03);
+    padding: 8px 14px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+  }
+  
+  .section-mini-tag.dark-theme-tag {
+    color: #ff3b3b;
+    border-color: rgba(255, 59, 59, 0.3);
+    background-color: rgba(255, 59, 59, 0.08);
+  }
+  
+  .fallback-red-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #e01b1b;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  
+  .section-mini-tag.dark-theme-tag .fallback-red-dot {
+    background-color: #ff3b3b;
+  }
+  
+  .section-main-heading {
+    font-size: 2.35rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  
+  .section-sub-heading {
+    font-size: 1.05rem;
+    color: #555555;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+  }
+  
+  /* --- SECTION 2: STANDARDS CARDS --- */
+  .framework-card {
+    background: #ffffff;
+    border: 1px solid #eaedf2;
+    border-radius: 8px;
+    padding: 35px 28px;
+    height: 100%;
+    transition: border-color 0.2s ease;
+  }
+  
+  .framework-card:hover {
+    border-color: #e01b1b;
+  }
+  
+  .framework-mini-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e01b1b;
+    display: block;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  
+  .framework-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 12px;
+  }
+  
+  .framework-card-desc {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #555555;
+    margin: 0;
+  }
+  
+  /* --- SECTION 3: SERVICES FUNCTION CARDS --- */
+  .service-feature-card {
+    background: #ffffff;
+    border: 1px solid #eaedf2;
+    border-radius: 12px;
+    padding: 40px 30px;
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+  }
+  
+  .service-feature-icon-box {
+    width: 42px;
+    height: 42px;
+    background-color: #fff1f1;
+    color: #e01b1b;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+  
+  .service-feature-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 14px;
+  }
+  
+  .service-feature-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0;
+  }
+  
+  /* --- SECTION 4: MIDWAY HORIZONTAL SPACING BAR --- */
+  .midway-split-section {
+    padding: 45px 0;
+    background-color: #ffffff;
+    border-top: 1px solid #eaedf2;
+    border-bottom: 1px solid #eaedf2;
+  }
+  
+  .midway-split-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  
+  .midway-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 6px;
+  }
+  
+  .midway-desc {
+    font-size: 0.95rem;
+    color: #666666;
+    margin: 0;
+  }
+  
+  .midway-btn-red {
+    background-color: #e01b1b;
+    color: #ffffff;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .midway-btn-red:hover {
+    background-color: #bd1313;
+  }
+  
+  /* --- SECTION 5: OUTCOMES GRID (DARK) --- */
+  .outcomes-dark-section {
+    background-color: #141414;
+    padding: 100px 0;
+  }
+  
+  .dark-section-heading {
+    font-size: 2.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  
+  .outcome-dark-card {
+    background-color: #1c1c1c;
+    border: 1px solid #282828;
+    border-radius: 8px;
+    padding: 35px 25px;
+    height: 100%;
+  }
+  
+  .outcome-icon-bullet {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(224, 27, 27, 0.1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .outcome-inner-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #e01b1b;
+    border-radius: 50%;
+  }
+  
+  .outcome-dark-card .outcome-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+  
+  .outcome-dark-card .outcome-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #aaaaaa;
+    margin: 0;
+  }
+  
+  /* --- SECTION 6: AMBIENT GLOW BANNER --- */
+  .compliance-cta-section {
+    padding: 90px 0 110px 0;
+    background-color: #ffffff;
+  }
+  
+  .compliance-cta-banner {
+    width: 100%;
+    border-radius: 20px;
+    padding: 75px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0) 55%), 
+                radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.32) 0%, rgba(0, 0, 0, 0) 50%),
+                linear-gradient(135deg, #0e0202 0%, #000000 100__);
+    background-color: #000000; */
+        /* Reuses our dark high-fidelity ambient glow look from Approach-PAGE.jpg */
+        background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%), 
+        radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
+        linear-gradient(135deg, #0e0202 0%, #000000 100%);
+background-color: #000000;
+  }
+  
+  .compliance-cta-banner .cta-banner-title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    max-width: 1100px;
+    letter-spacing: -0.01em;
+  }
+  
+  .compliance-cta-banner .cta-banner-desc {
+    font-size: 1.05rem;
+    color: #cccccc;
+    max-width: 700px;
+    margin-bottom: 35px;
+    line-height: 1.5;
+  }
+  
+  .compliance-cta-banner .cta-buttons-group {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .compliance-cta-banner .cta-btn-white {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+  
+  .compliance-cta-banner .cta-btn-white:hover {
+    opacity: 0.9;
+  }
+  
+  /* ==========================================================================
+     BREAKPOINT RESPONSIVENESS RULES
+     ========================================================================== */
+  
+  @media (max-width: 991px) {
+    .standards-section, .services-grid-section, .outcomes-dark-section {
+      padding: 70px 0;
+    }
+    .section-main-heading, .dark-section-heading {
+      font-size: 2rem;
+    }
+    .compliance-cta-banner .cta-banner-title {
+      font-size: 1.9rem;
+    }
+    .compliance-cta-banner {
+      padding: 55px 25px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .standards-section, .services-grid-section, .outcomes-dark-section {
+      padding: 50px 0;
+    }
+    .section-main-heading, .dark-section-heading {
+      font-size: 1.75rem;
+    }
+    .midway-split-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+    .midway-btn-red {
+      width: 100%;
+    }
+    .compliance-cta-banner .cta-banner-title {
+      font-size: 1.55rem;
+    }
+    .compliance-cta-banner .cta-buttons-group, 
+    .compliance-cta-banner .cta-btn-white {
+      width: 100%;
+    }
+  }

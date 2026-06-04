@@ -1,0 +1,1503 @@
+/* ==========================================================================
+   RESOURCE SCREEN FRAMEWORK
+   ========================================================================== */
+
+   .section-inner-content {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  
+  /* --------------------------------------------------------------------------
+     SECTION 1: HERO HEADER
+     -------------------------------------------------------------------------- */
+  .resource-hero-section {
+    position: relative;
+    overflow: hidden;
+    background-color: #000000;
+    padding-top: 80px;
+    padding-bottom: 96px;
+    width: 100%;
+  }
+  
+  .resource-hero-section .hero-ambient-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle at 8% 50%, rgba(150, 10, 10, 0.45) 0%, rgba(0, 0, 0, 0) 50%), 
+                linear-gradient(to right, #0a0101 0%, #000000 100%);
+    background-color: #000000;
+    z-index: 1;
+  }
+  
+  .resource-hero-section .section-inner-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .resource-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(227, 6, 19, 0.05);
+    border: 1px solid rgba(227, 6, 19, 0.35);
+    padding: 6px 16px;
+    border-radius: 9999px;
+    margin-bottom: 32px;
+  }
+  
+  .tag-red-primary {
+    color: #E30613;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .tag-separator {
+    color: #3F3F46;
+    font-size: 11px;
+  }
+  
+  .tag-home-link {
+    color: #A1A1AA;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .tag-home-link:hover {
+    color: #F4F4F5;
+  }
+  
+  .hero-display-title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 24px;
+    max-width: 900px;
+  }
+  
+  .hero-display-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: #A1A1AA;
+    margin: 0;
+    max-width: 780px;
+  }
+  
+  /* --------------------------------------------------------------------------
+     SECTION 2: FEATURED GUIDE CONTAINER (Matches Section2_3.jpg Perfectly)
+     -------------------------------------------------------------------------- */
+  .resource-featured-section {
+    width: 100%;
+    background-color: #F8F9FA; 
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  
+  /* Main Outer Box */
+  .featured-card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; /* Forces left image block and right text block to be identical height */
+    background-color: #FFFFFF;
+    border: 1px solid #F1F1F4; /* Ultra soft light gray outline to match figma container edge */
+    border-radius: 8px;
+    overflow: hidden; /* Clips image corners to box container constraints */
+    box-sizing: border-box;
+  }
+  
+  /* Left Side Image Block: Zero padding, covers precisely 50% width space */
+  .card-image-block {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+  }
+  
+  .card-image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Spans top to bottom, filling the block edge-to-edge completely */
+    display: block;
+  }
+  
+  /* Right Side Text Block: Holds the padding internally to give the text whitespace breathing room */
+  .card-text-block {
+    flex: 0 0 50%;
+    padding: 56px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    background-color: #F7F7F7; /* Subtle structural tint change matching screen graphics layout */
+  }
+  
+  /* Featured Tag Pill */
+  .featured-mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #FFF1F2; 
+    border: 1px solid #FFE4E6;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 28px;
+  }
+  
+  .badge-dot-indicator {
+    width: 6px;
+    height: 6px;
+    background-color: #E30613;
+    border-radius: 50%;
+  }
+  
+  .badge-label-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #E30613;
+    text-transform: uppercase;
+  }
+  
+  /* Headline Styles */
+  .card-display-headline {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #000000;
+    letter-spacing: -0.015em;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  /* Paragraph Summary Typography */
+  .card-abstract-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #52525B;
+    margin: 0;
+    max-width: 480px;
+  }
+  
+  /* --------------------------------------------------------------------------
+     RESPONSIVE DEVICE VIEWPOT OVERRIDES
+     -------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .hero-display-title {
+      font-size: 44px;
+    }
+    .card-display-headline {
+      font-size: 28px;
+    }
+    .card-text-block {
+      padding: 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hide-on-mobile {
+      display: none;
+    }
+    
+    /* Snaps back gracefully to vertical column sequence layout for mobile responsiveness */
+    .featured-card-container {
+      flex-direction: column;
+    }
+    
+    .card-image-block {
+      width: 100%;
+      height: 260px;
+    }
+    
+    .card-text-block {
+      width: 100%;
+      padding: 32px 24px;
+    }
+  
+    .resource-hero-section {
+      padding-top: 56px;
+      padding-bottom: 64px;
+    }
+  
+    .hero-display-title {
+      font-size: 34px;
+      line-height: 1.2;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+   SECTION 3: ARTICLES & INSIGHTS GRID (Matches Section3.jpg Perfectly)
+   -------------------------------------------------------------------------- */
+.resource-insights-section {
+    width: 100%;
+    background-color: #F7F7F7; /* Matches same light container field background */
+    padding-top: 64px;
+    padding-bottom: 120px;
+  }
+  
+  /* Centered Top Header Wrapper */
+  .insights-header-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 56px;
+  }
+  
+  .insights-mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #FFF1F2;
+    border: 1px solid #FFE4E6;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 20px;
+  }
+  
+  .insights-main-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111111;
+    letter-spacing: -0.02em;
+    margin: 0;
+    max-width: 800px;
+  }
+  
+  /* Grid Layout Engine */
+  .insights-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px; /* Gutter space between columns */
+    width: 100%;
+  }
+  
+  /* Individual Content Card */
+  .insight-grid-card {
+    display: flex;
+    flex-direction: column;
+    background: transparent; /* No wrapping card bounding boxes */
+  }
+  
+  /* Image Container Frame with clean independent border radius */
+  .insight-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10; /* Clean cinematic image box proportion ratio */
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background-color: #E4E4E7;
+  }
+  
+  .insight-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Title Header Directly Under Image */
+  .insight-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #111111;
+    margin-top: 0;
+    margin-bottom: 32px; /* Pushes the footer info rows down cleanly */
+    letter-spacing: -0.01em;
+  }
+  
+  /* Bottom Row Meta Frame */
+  .insight-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E4E4E7; /* Light horizontal break rule beneath text row */
+    margin-top: auto; /* Forces execution pinning row alignment to match horizontally across rows */
+  }
+  
+  .meta-date {
+    font-size: 11px;
+    font-weight: 600;
+    color: #71717A;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .meta-divider {
+    font-size: 11px;
+    color: #D4D4D8;
+  }
+  
+  .meta-link {
+    font-size: 11px;
+    font-weight: 700;
+    color: #27272A;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .meta-link:hover {
+    color: #E30613;
+  }
+  
+  /* --------------------------------------------------------------------------
+     RESPONSIVE DESIGN VIEWPORT ADJUSTMENTS FOR SECTION 3
+     -------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .insights-main-title {
+      font-size: 34px;
+    }
+    .insights-cards-grid {
+      gap: 20px;
+    }
+    .insight-card-title {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .resource-insights-section {
+      padding-top: 48px;
+      padding-bottom: 72px;
+    }
+    
+    .insights-header-container {
+      margin-bottom: 40px;
+      text-align: left;
+      align-items: flex-start;
+    }
+    
+    .insights-main-title {
+      font-size: 28px;
+      line-height: 1.25;
+    }
+  
+    /* Drops down structure seamlessly into standard single-stacked column presentation for tablets & mobile */
+    .insights-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  
+    .insight-image-wrapper {
+      margin-bottom: 16px;
+    }
+  
+    .insight-card-title {
+      margin-bottom: 20px;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+   SECTION 4: PLAYBOOKS & GUIDES CARDS GRID (Matches Section4.jpg Perfectly)
+   -------------------------------------------------------------------------- */
+.resource-playbooks-section {
+    width: 100%;
+    background-color: #FFFFFF; /* Pure clean base canvas separation from section 3 */
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+  
+  /* Centered Top Header Wrapper Component */
+  .playbooks-header-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 56px;
+  }
+  
+  .playbooks-mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #FFF1F2;
+    border: 1px solid #FFE4E6;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 20px;
+  }
+  
+  .playbooks-main-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111111;
+    letter-spacing: -0.02em;
+    margin: 0;
+    max-width: 850px;
+  }
+  
+  /* 3-Column Box Grid Container */
+  .playbooks-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px; /* Grid spacing between the cards */
+    width: 100%;
+  }
+  
+  /* Individual Content Box Card styled exactly like Section4.jpg mockup */
+  .playbook-item-card {
+    background-color: #F8F9FA; /* Off-white container shade background */
+    border: 1px solid #F1F1F4;  /* Very faint structural frame border line */
+    border-radius: 6px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  
+  /* Soft red graphic icon box wrapper badge */
+  .playbook-icon-box {
+    width: 40px;
+    height: 40px;
+    background-color: #FF00000D; /* Soft light-pink circle background fill tint */
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 48px; /* High spatial split before text properties execute */
+  }
+  
+  /* Card Headline Setup */
+  .playbook-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Card Summary Text Body Description Component */
+  .playbook-card-body {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #52525B; /* Clean gray readable description text copy */
+    margin: 0;
+  }
+  
+  /* --------------------------------------------------------------------------
+     RESPONSIVE DEVICE VIEWPORT ADJUSTMENTS FOR SECTION 4
+     -------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .playbooks-main-title {
+      font-size: 34px;
+    }
+    .playbook-item-card {
+      padding: 32px;
+    }
+    .playbook-icon-box {
+      margin-bottom: 32px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .resource-playbooks-section {
+      padding-top: 56px;
+      padding-bottom: 72px;
+    }
+    
+    .playbooks-header-container {
+      margin-bottom: 40px;
+      text-align: left;
+      align-items: flex-start;
+    }
+    
+    .playbooks-main-title {
+      font-size: 28px;
+      line-height: 1.25;
+    }
+  
+    /* Break down columns seamlessly to stack sequentially on mobile layouts */
+    .playbooks-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .playbook-item-card {
+      padding: 32px;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+   SECTION 5: DARK TEMPLATES DECK (Matches Section5.jpg Perfectly)
+   -------------------------------------------------------------------------- */
+.resource-templates-section {
+    width: 100%;
+    background-color: #121212; /* Rich dark-charcoal base background */
+    padding-top: 96px;
+    padding-bottom: 112px;
+  }
+  
+  /* Header Text Container Customizations */
+  .templates-header-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 56px;
+  }
+  
+  .templates-mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(227, 6, 19, 0.08);
+    border: 1px solid rgba(227, 6, 19, 0.4);
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 24px;
+  }
+  
+  .templates-main-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #FFFFFF; /* High-contrast white headline title text */
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+  
+  /* Three Column Grid Array Wrapper */
+  .templates-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+  
+  /* Solid Matte Card Blocks */
+  .template-item-card {
+    background-color: #1E1E1E; /* Distinct lighter gray container boxes */
+    border: 1px solid #282828;  /* Seamless box definition outline */
+    border-radius: 4px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  
+  /* Industrial Outline Download Graphic Badge Box */
+  .template-download-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #262626;
+    border: 1px solid #3A3A3A;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Inner Copy Typography Hierarchy rules */
+  .template-card-title {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  
+  .template-card-body {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #A1A1AA; /* Distant slate grey description text */
+    margin-top: 0;
+    margin-bottom: 10px; /* Gives structural spacing overhead of button component */
+  }
+  
+  /* The Flat White Call to Action Button */
+  .template-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FFFFFF;
+    border: none;
+    outline: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    color: #111111;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: auto; /* Locks button sequence straight line matching cross columns */
+    transition: background-color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+  }
+  
+  .template-action-btn:hover {
+    background-color: #F4F4F5;
+    opacity: 0.95;
+  }
+  
+  /* --------------------------------------------------------------------------
+     RESPONSIVE DESIGN ADAPTATION BREAKPOINTS FOR SECTION 5
+     -------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .templates-main-title {
+      font-size: 34px;
+    }
+    .template-item-card {
+      padding: 32px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .resource-templates-section {
+      padding-top: 64px;
+      padding-bottom: 72px;
+    }
+    
+    .templates-header-container {
+      margin-bottom: 40px;
+      text-align: left;
+      align-items: flex-start;
+    }
+    
+    .templates-main-title {
+      font-size: 28px;
+      line-height: 1.25;
+    }
+  
+    /* Force grid properties to map perfectly into vertical flow lists */
+    .templates-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  
+    .template-item-card {
+      padding: 32px 24px;
+    }
+  
+    .template-download-icon {
+      margin-bottom: 28px;
+    }
+  
+    .template-card-body {
+      margin-bottom: 28px;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+   SECTION 6: CASE STUDIES DECK (Matches Section6.png Perfectly)
+   -------------------------------------------------------------------------- */
+.resource-cases-section {
+    width: 100%;
+    background-color: #FFFFFF; /* White crisp background separating section from section 5 dark theme */
+    padding-top: 96px;
+    padding-bottom: 120px;
+  }
+  
+  /* Centered Header Text Group */
+  .cases-header-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 56px;
+  }
+  
+  .cases-mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #FFF1F2;
+    border: 1px solid #FFE4E6;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 20px;
+  }
+  
+  .cases-main-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111111;
+    letter-spacing: -0.02em;
+    margin: 0;
+    max-width: 850px;
+  }
+  
+  /* Three Column Row Alignment Layout Engine */
+  .cases-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+  
+  /* Off-white bounding boxes mimicking Section6.png blueprint */
+  .case-item-card {
+    background-color: #F8F9FA;
+    border: 1px solid #F1F1F4;
+    border-radius: 6px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  
+  /* Soft red vector icon box wrapper badge */
+  .case-icon-box {
+    width: 40px;
+    height: 40px;
+    background-color: #FF00000D;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 48px; /* Distinct high spacing separation before textual data content */
+  }
+  
+  /* Card Headline Element */
+  .case-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 12px;
+    letter-spacing: -0.015em;
+  }
+  
+  /* Narrative Body Paragraph Component */
+  .case-card-body {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #52525B;
+    margin: 0;
+  }
+  
+  /* --------------------------------------------------------------------------
+     RESPONSIVE DESIGN INTERFACE SYSTEM BREAKPOINTS
+     -------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .cases-main-title {
+      font-size: 34px;
+    }
+    .case-item-card {
+      padding: 32px;
+    }
+    .case-icon-box {
+      margin-bottom: 32px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .resource-cases-section {
+      padding-top: 64px;
+      padding-bottom: 72px;
+    }
+    
+    .cases-header-container {
+      margin-bottom: 40px;
+      text-align: left;
+      align-items: flex-start;
+    }
+    
+    .cases-main-title {
+      font-size: 28px;
+      line-height: 1.25;
+    }
+  
+    /* Transition smoothly down into vertical card flow on smaller browser viewports */
+    .cases-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .case-item-card {
+      padding: 32px 24px;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+   SECTION 7: RECOGNITION SHOWCASE GRID (Matches Section7.jpg Perfectly)
+   -------------------------------------------------------------------------- */
+.resource-recognition-section {
+    width: 100%;
+    background-color: #F8F9FA; /* Matches the clean off-white field background style */
+    padding-top: 96px;
+    padding-bottom: 120px;
+  }
+  
+  /* Centered Layout Header Text Block */
+  .recognition-header-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 56px;
+  }
+  
+  .recognition-mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #FFF1F2;
+    border: 1px solid #FFE4E6;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 20px;
+  }
+  
+  .recognition-main-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111111;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+    margin-bottom: 16px;
+    max-width: 900px;
+  }
+  
+  .recognition-main-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #71717A; /* Muted gray text for secondary section description details */
+    margin: 0;
+    max-width: 760px;
+  }
+  
+  /* Three Column White Bounding Box Layout Grid Engine */
+  .recognition-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+  
+  /* Elegant Clean Card Presentation Blocks */
+  .recognition-item-card {
+    background-color: #FFFFFF; /* High contrast crisp white canvas block container background */
+    border: 1px solid #E4E4E7;  /* Clear outline bounding frame rule */
+    border-radius: 4px;
+    padding: 16px; /* Uniform wrapper clearance boundary spacing for inner items */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  
+  /* Media Graphic Display Frame Wrapper Container */
+  .recognition-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Crisp square proportional frame scale matching Figma mockup card aspect ratios */
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #F4F4F5;
+    border-radius: 2px;
+  }
+  
+  .recognition-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fully stretches and locks inside framing container box */
+    display: block;
+  }
+  
+  /* Descriptive Card Headline Captions */
+  .recognition-card-title {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #3F3F46; /* Smooth graphite text formatting */
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-align: left;
+    letter-spacing: -0.01em;
+  }
+  
+  /* --------------------------------------------------------------------------
+     RESPONSIVE LAYOUT ENGINE BREAKPOINTS FOR SECTION 7
+     -------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .recognition-main-title {
+      font-size: 34px;
+    }
+    .recognition-main-subtitle {
+      font-size: 15px;
+    }
+    .recognition-cards-grid {
+      gap: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .resource-recognition-section {
+      padding-top: 64px;
+      padding-bottom: 72px;
+    }
+    
+    .recognition-header-container {
+      margin-bottom: 40px;
+      text-align: left;
+      align-items: flex-start;
+    }
+    
+    .recognition-main-title {
+      font-size: 28px;
+      line-height: 1.25;
+    }
+  
+    /* Snaps grid presentation layers dynamically into a single clean vertical grid list on mobile sizes */
+    .recognition-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .recognition-item-card {
+      padding: 16px;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+   SECTION 8: MEDIA APPEARANCES DECK (Matches Section8.jpg Perfectly)
+   -------------------------------------------------------------------------- */
+.resource-media-section {
+    width: 100%;
+    background-color: #121212; /* Premium rich charcoal canvas background setup */
+    padding-top: 96px;
+    padding-bottom: 120px;
+  }
+  
+  /* Centered Top Text Container Layout */
+  .media-header-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 64px;
+  }
+  
+  .media-mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(227, 6, 19, 0.05);
+    border: 1px solid rgba(227, 6, 19, 0.35);
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 24px;
+  }
+  
+  .media-main-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #FFFFFF;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+  
+  /* Two Column Row Layout Grid Engine */
+  .media-outlets-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Precise gap between layout cells */
+    width: 100%;
+  }
+  
+  /* Row-flex directional item cards modeled after Section8.jpg */
+  .media-outlet-card {
+    background-color: #1E1E1E; /* Internal content block shade split */
+    border: 1px solid #282828;  /* Subtle divider framework border border */
+    border-radius: 4px;
+    padding: 32px;
+    display: flex;
+    flex-direction: row; /* Horizontal elements split structure layout */
+    align-items: flex-start;
+    gap: 24px; /* Gutter split separating icon container from text details */
+    box-sizing: border-box;
+  }
+  
+  /* Slate Graphic Display Badge Frame */
+  .media-card-icon-box {
+    width: 44px;
+    height: 44px;
+    background-color: #262626;
+    border: 1px solid #3A3A3A;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Safeguards icon dimensions from squeezing on fluid scaling */
+  }
+  
+  /* Right Text Container Stack */
+  .media-card-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  /* Card Typography Directives */
+  .media-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #FFFFFF;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  
+  .media-card-body {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #A1A1AA; /* Smooth slate description copy */
+    margin: 0;
+  }
+  
+  /* --------------------------------------------------------------------------
+     RESPONSIVE DESIGN INTERFACE SPECIFICATIONS FOR SECTION 8
+     -------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .media-main-title {
+      font-size: 34px;
+    }
+    .media-outlet-card {
+      padding: 24px;
+      gap: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .resource-media-section {
+      padding-top: 64px;
+      padding-bottom: 72px;
+    }
+    
+    .media-header-container {
+      margin-bottom: 40px;
+      text-align: left;
+      align-items: flex-start;
+    }
+    
+    .media-main-title {
+      font-size: 28px;
+      line-height: 1.25;
+    }
+  
+    /* Drop columns seamlessly into stacked individual rows on tablet or device windows */
+    .media-outlets-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  
+    .media-outlet-card {
+      padding: 24px;
+      flex-direction: row; /* Preserves horizontal layout crispness down to medium views */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* For tiny phones, split elements into full vertical stack blocks */
+    .media-outlet-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .media-card-icon-box {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  /* --------------------------------------------------------------------------
+   SECTION 9: ASYMMETRIC FAQ DECK (Matches Section9.jpg Perfectly)
+   -------------------------------------------------------------------------- */
+.resource-faq-section {
+    width: 100%;
+    background-color: #F8F9FA; /* Matches the clean, bright off-white field layout */
+    padding-top: 112px;
+    padding-bottom: 128px;
+  }
+  
+  /* 2-Column Split Master Grid Layout Wrapper */
+  .faq-layout-grid {
+    display: grid;
+    grid-template-columns: 4.5fr 7.5fr; /* Matches the custom wide asymmetrical grid column distribution */
+    gap: 64px;
+    align-items: flex-start;
+  }
+  
+  /* Left Sidebar Presentation Panel Component */
+  .faq-left-header-panel {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 40px; /* Kept fixed during side scroll actions on desktop screens */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .faq-mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #FFF1F2;
+    border: 1px solid #FFE4E6;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 24px;
+  }
+  
+  .faq-panel-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #111111;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  
+  /* Right Accordion Component Stack System */
+  .faq-right-accordion-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Base structural bar component row item */
+  .faq-accordion-row {
+    width: 100%;
+    border-bottom: 1px solid #E4E4E7; /* Light full bleed grid break dividers */
+    padding-top: 28px;
+    padding-bottom: 28px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* First element styling option to align perfectly cleanly with top grid rules */
+  .faq-accordion-row:first-of-type {
+    padding-top: 0;
+  }
+  
+  /* Main Clickable Header Layout Matrix Row */
+  .faq-row-trigger-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+  }
+  
+  /* Question Typography settings */
+  .faq-question-text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #000000;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Interactive Status Circle Toggles styled exactly after Section9.jpg */
+  .faq-toggle-circle-indicator {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+  }
+  
+  /* Inactive State: Light grey circle with charcoal plus */
+  .faq-toggle-circle-indicator.inactive-plus {
+    background-color: #F4F4F5;
+    border: 1px solid #E4E4E7;
+  }
+  
+  /* Active State: Deep bold infinite black canvas bubble with white vector line */
+  .faq-toggle-circle-indicator.active-minus {
+    background-color: #000000;
+    border: 1px solid #000000;
+  }
+  
+  /* Hidden Collapsible Panel Box Container */
+  .faq-row-collapsible-content {
+    display: grid;
+    grid-template-rows: 0fr; /* Initialized collapsed flat structure via css transitions */
+    transition: grid-template-rows 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Open expansion wrapper rule when active class initializes */
+  .faq-accordion-row.is-expanded .faq-row-collapsible-content {
+    grid-template-rows: 1fr;
+  }
+  
+  /* Dynamic interior boundary shield wrapper block */
+  .faq-answer-inner-wrapper {
+    overflow: hidden;
+  }
+  
+  /* Answer Paragraph Text Copy Frame Rules */
+  .faq-answer-paragraph {
+    font-size: 16px;
+    line-height: 1.55;
+    color: #52525B; /* Smooth charcoal grey color value matching image */
+    margin-top: 12px;
+    margin-bottom: 0;
+    max-width: 680px;
+  }
+  
+  /* --------------------------------------------------------------------------
+     RESPONSIVE DESIGN ADAPTIVE LAYOUT VIEWPORTS
+     -------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .faq-layout-grid {
+      gap: 40px;
+    }
+    .faq-panel-title {
+      font-size: 34px;
+    }
+    .faq-question-text {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .resource-faq-section {
+      padding-top: 64px;
+      padding-bottom: 80px;
+    }
+  
+    /* Drops down into clean vertical single columns sequentially on tablets & small devices */
+    .faq-layout-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  
+    .faq-left-header-panel {
+      position: relative;
+      top: 0;
+    }
+  
+    .faq-panel-title {
+      font-size: 28px;
+      line-height: 1.25;
+    }
+  
+    .faq-accordion-row {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+    
+    .faq-accordion-row:first-of-type {
+      padding-top: 12px;
+      border-top: 1px solid #E4E4E7; /* Faint entry roof boundary separator line line */
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+   SECTION 10: CALL-TO-ACTION BANNER BOX (Matches Section10.jpg Perfectly)
+   -------------------------------------------------------------------------- */
+.resource-cta-billboard-section {
+    width: 100%;
+    background-color: #F8F9FA; /* Bright clean base canvas continuous with Section 9 */
+    padding-top: 48px;
+    padding-bottom: 96px;
+  }
+  
+  /* Framed Billboard Card Component Box */
+  .cta-billboard-card-container {
+    width: 100%;
+    position: relative;
+    /* Reuses our dark high-fidelity ambient glow look from Approach-PAGE.jpg */
+    background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%), 
+                radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
+                linear-gradient(135deg, #0e0202 0%, #000000 100%);
+    background-color: #000000;
+    
+    border-radius: 8px;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  /* Capsule Indicator Top Fill Element */
+  .cta-mini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(227, 6, 19, 0.05);
+    border: 1px solid rgba(227, 6, 19, 0.5); /* Crisp crimson frame definition */
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 32px;
+  }
+  
+  .cta-mini-badge .badge-label-text {
+    color: #E30613;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  
+  .cta-mini-badge .badge-dot-indicator {
+    background-color: #E30613;
+  }
+  
+  /* Main Display Title Header Style */
+  .cta-main-headline {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+    margin-bottom: 24px;
+    max-width: 820px;
+  }
+  
+  /* Subtext Description Segment */
+  .cta-secondary-subtext {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #E4E4E7; /* Light grey readable secondary text color */
+    margin-top: 0;
+    margin-bottom: 40px;
+    max-width: 600px;
+  }
+  
+  /* Horizontal Actions Interaction Row Matrix */
+  .cta-buttons-flex-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+  }
+  
+  /* Primary Flat Pure White Button element */
+  .cta-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    outline: none;
+    padding: 14px 28px;
+    border-radius: 4px;
+    color: #111111;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+  }
+  
+  .cta-btn-primary:hover {
+    background-color: #F4F4F5;
+  }
+  
+  /* Secondary Ghost Dark Outline Element Box */
+  .cta-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid #3F3F46; /* Smooth mid-tone bounding divider frame */
+    outline: none;
+    padding: 14px 28px;
+    border-radius: 4px;
+    color: #E4E4E7;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+  
+  .cta-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: #52525B;
+  }
+  
+  /* --------------------------------------------------------------------------
+     RESPONSIVE LAYOUT MATRIX ADAPTATION FOR SECTION 10
+     -------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .cta-main-headline {
+      font-size: 38px;
+      max-width: 680px;
+    }
+    .cta-billboard-card-container {
+      padding: 64px 32px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .resource-cta-billboard-section {
+      padding-top: 24px;
+      padding-bottom: 56px;
+    }
+  
+    .cta-billboard-card-container {
+      padding: 56px 24px;
+      text-align: left;
+      align-items: flex-start;
+      border-radius: 6px;
+      /* Move radial gradient slightly down for optimal mobile appearance */
+      background-image: radial-gradient(circle at 50% 90%, rgba(227, 6, 19, 0.15) 0%, transparent 70%);
+    }
+  
+    .cta-main-headline {
+      font-size: 28px;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+  
+    .cta-secondary-subtext {
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+  
+    /* Stack button elements vertically for tight mobile display widths */
+    .cta-buttons-flex-group {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+  
+    .cta-btn-primary, 
+    .cta-btn-secondary {
+      justify-content: center;
+      padding: 14px 20px;
+      width: 100%;
+    }
+  }

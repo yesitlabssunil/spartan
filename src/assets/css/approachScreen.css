@@ -1,0 +1,359 @@
+/* ==========================================================================
+   APPROACH PAGE BRAND STYLING DEFINITIONS
+   ========================================================================== */
+
+   .approach-main {
+    background-color: #ffffff;
+  }
+  
+  /* Global Content Section Sizing Blocks */
+  .disciplines-section, .timeline-section {
+    padding: 100px 0;
+  }
+  
+  .timeline-section {
+    /* background-color: #fcfdfe; */
+    background-color: #F7F7F7;
+    border-top: 1px solid #f0f3f6;
+  }
+  
+  /* Centralized Mini Section Labels */
+  .section-tag-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-mini-tag {
+    display: inline-flex;
+    align-items: center;      /* Vertically aligns the dot perfectly with the text */
+    gap: 8px;                 
+    font-size: 10px;
+    font-weight: 700;
+    color: #e01b1b;
+    border: 1px solid rgba(224, 27, 27, 0.15);
+    background-color: rgba(224, 27, 27, 0.03);
+    padding: 8px 14px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+  }
+  
+  .section-mini-tag.dark-theme-tag {
+    color: #ff3b3b;
+    border-color: rgba(255, 59, 59, 0.3);
+    background-color: rgba(255, 59, 59, 0.08);
+  }
+  
+  .section-main-heading {
+    font-size: 2.35rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  
+  .section-sub-heading {
+    font-size: 1.05rem;
+    color: #555555;
+    max-width: 610px;
+    margin: 0 auto 40px auto;
+  }
+  
+  /* --- SECTION 2: DISCIPLINE CARDS --- */
+  .discipline-card {
+    /* background: #ffffff; */
+    background: #F7F7F7;
+    border: 1px solid #eaedf2;
+    border-radius: 12px;
+    padding: 40px 30px;
+    height: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.01);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  .discipline-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+  }
+  
+  .discipline-icon-container {
+    width: 40px;
+    height: 40px;
+    /* background-color: #fff1f1; */
+    background-color: #FF00000D;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  
+  .discipline-card-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+  
+  .fallback-red-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #e01b1b;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0; 
+  }
+  
+  .discipline-card-title {
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 14px;
+  }
+  
+  .discipline-card-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 20px;
+    min-height: 45px;
+  }
+  
+  .discipline-divider {
+    border-top: 1px solid #0000009a;
+    margin: 20px 0;
+    opacity: 1;
+  }
+  
+  .discipline-points-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .discipline-points-list li {
+    font-size: 0.9rem;
+    color: #444444;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+  
+  .discipline-points-list li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .discipline-points-list .red-plus {
+    color: #e01b1b;
+    font-weight: 700;
+    margin-right: 10px;
+  }
+  
+  /* --- SECTION 3: TIMELINE WEEK CARDS --- */
+  .timeline-week-card {
+    background: #ffffff;
+    border: 1px solid #eaedf2;
+    border-radius: 12px;
+    padding: 35px 25px;
+    height: 100%;
+  }
+  
+  .week-header-flex {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 25px;
+  }
+  
+  .week-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e01b1b;
+    line-height: 1;
+    margin-right: 6px;
+  }
+  
+  .week-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #777777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .week-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 12px;
+  }
+  
+  .week-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555555;
+    margin: 0;
+  }
+  
+  /* --- SECTION 4: DEEP DARK PRINCIPLES ROW --- */
+  .principles-dark-section {
+    background-color: #141414;
+    padding: 100px 0;
+  }
+  
+  .dark-section-heading {
+    font-size: 2.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .principle-dark-card {
+    background-color: #1c1c1c;
+    border: 1px solid #282828;
+    border-radius: 8px;
+    padding: 35px 25px;
+    height: 100%;
+  }
+  
+  .red-horizontal-bar {
+    width: 38px;
+    height: 5px;
+    background-color: #e01b1b;
+    margin-bottom: 20px;
+    border-radius: 50px;
+  }
+  
+  .principle-dark-card .principle-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+  
+  .principle-dark-card .principle-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #aaaaaa;
+    margin: 0;
+  }
+  
+  /* --- SECTION 5: PREMIUM AMBIENT CALL TO ACTION BANNER --- */
+  .approach-cta-section {
+    padding: 90px 0 110px 0;
+    background-color: #ffffff;
+  }
+  
+  .approach-cta-banner {
+    width: 100%;
+    border-radius: 20px;
+    padding: 70px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* Reuses our dark high-fidelity ambient glow look from Approach-PAGE.jpg */
+    background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%), 
+                radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
+                linear-gradient(135deg, #0e0202 0%, #000000 100%);
+    background-color: #000000;
+  }
+  
+  .cta-banner-title {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+  
+  .cta-banner-desc {
+    font-size: 1.05rem;
+    color: #cccccc;
+    max-width: 580px;
+    margin-bottom: 35px;
+    line-height: 1.5;
+  }
+  
+  .cta-buttons-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .cta-btn-white {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+  
+  .cta-btn-white:hover {
+    opacity: 0.9;
+  }
+  
+  .cta-btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .cta-btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* ==========================================================================
+     BREAKPOINT RESPONSIVENESS RULES
+     ========================================================================== */
+  
+  @media (max-width: 991px) {
+    .disciplines-section, .timeline-section, .principles-dark-section {
+      padding: 70px 0;
+    }
+    .section-main-heading, .dark-section-heading {
+      font-size: 2rem;
+    }
+    .cta-banner-title {
+      font-size: 2.1rem;
+    }
+    .approach-cta-banner {
+      padding: 55px 25px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .disciplines-section, .timeline-section, .principles-dark-section {
+      padding: 50px 0;
+    }
+    .section-main-heading, .dark-section-heading {
+      font-size: 1.75rem;
+    }
+    .cta-banner-title {
+      font-size: 1.65rem;
+    }
+    .cta-buttons-group {
+      flex-direction: column;
+      width: 100%;
+      max-width: 320px;
+    }
+    .cta-btn-white, .cta-btn-outline {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+  }

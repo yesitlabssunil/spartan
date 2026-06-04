@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "question": "How long does a typical engagement take?",
+      "answer": "Most clients reach audit-ready posture in 8-12 weeks depending on scope and starting maturity."
+    },
+    {
+      "id": 2,
+      "question": "Do you support C3PAO assessments directly?",
+      "answer": "Yes, we provide full handoff support, documentation assembly, and direct representation during formal C3PAO third-party assessments."
+    },
+    {
+      "id": 3,
+      "question": "Is Spartan a good fit for subcontractors?",
+      "answer": "Absolutely. We specialize in helping small-to-medium Department of Defense subcontractors quickly achieve compliance without enterprise overhead."
+    },
+    {
+      "id": 4,
+      "question": "What does Spartan deliver after engagement?",
+      "answer": "You receive a complete System Security Plan (SSP), a fully populated Plan of Action and Milestones (POA&M), and auditable control evidence packets."
+    },
+    {
+      "id": 5,
+      "question": "Do you provide continuous monitoring?",
+      "answer": "Yes, our ongoing compliance packages offer real-time logging, continuous scanning, and threat monitoring to maintain your status post-certification."
+    }
+  ]

@@ -1,0 +1,752 @@
+/* ==========================================================================
+   CMMC PAGE SPECIFIC ARCHITECTURE - SECTION 1 & 2
+   ========================================================================== */
+
+/* Layout Utilities */
+.text-start {
+  text-align: left !important;
+}
+
+.max-w-780 {
+  max-width: 780px !important;
+}
+
+.padding-y-90 {
+  padding-top: 90px !important;
+  padding-bottom: 90px !important;
+}
+
+.font-size-16 {
+  font-size: 16px !important;
+}
+
+.font-size-20 {
+  font-size: 20px !important;
+}
+
+.font-size-38 {
+  font-size: 38px !important;
+}
+
+.line-height-1-8 {
+  line-height: 1.85 !important;
+}
+
+.font-weight-700 {
+  font-weight: 700 !important;
+}
+
+/* Section 1: Hero Adjustments */
+.standard-hero-gradient {
+  /* background: #050505 !important;
+    background-image: radial-gradient(circle at 8% 35%, rgba(185, 28, 28, 0.18) 0%, transparent 50%) !important; */
+
+  /* Creates the exact dark look with the deep red glow ambient effect on the far left */
+  background: radial-gradient(circle at 8% 50%, rgba(150, 10, 10, 0.45) 0%, rgba(0, 0, 0, 0) 50%),
+    linear-gradient(to right, #0a0101 0%, #000000 100%);
+  background-color: #000000;
+}
+
+.custom-hero-lh {
+  line-height: 1.22 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.red-bullet-indicator {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #e62222;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Section 2: Light Pillars & Tags */
+.light-red-pill {
+  background-color: rgba(230, 34, 34, 0.05) !important;
+  color: #e62222 !important;
+  border: 1px solid rgba(230, 34, 34, 0.1) !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+}
+
+/* Left Border Accent Callout block */
+.cmmc-callout-quote-box {
+  /* Creates a clean solid red border on the left */
+  border-left: 3px solid #E62222 !important;
+
+  /* Pushes the text away from the line to match Figma spacing */
+  padding-left: 20px !important;
+
+  /* Ensures total vertical alignment with the text height */
+  margin-top: 32px !important;
+  margin-bottom: 16px !important;
+}
+
+.cmmc-quote-text {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.01em !important;
+  color: #111111 !important;
+  margin: 0 !important;
+  padding: 2px 0 !important;
+  /* Tiny top/bottom alignment tweak */
+}
+
+.cmmc-callout-quote-box p {
+  letter-spacing: -0.01em;
+  color: #111111 !important;
+}
+
+/* ==========================================================================
+     RESPONSIVE METRIC REBALANCING
+     ========================================================================== */
+@media (max-width: 991px) {
+  .font-size-38 {
+    font-size: 28px !important;
+  }
+
+  .padding-y-90 {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+
+/* ==========================================================================
+   CMMC PAGE SPECIFIC ARCHITECTURE - SECTION 3 FRAMEWORK UI
+   ========================================================================== */
+
+.cmmc-levels-section {
+  background-color: #F7F7F7 !important;
+  /* Soft backdrop tone matching layout */
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+}
+
+.max-w-900 {
+  max-width: 900px !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.section-subtitle-text {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  font-weight: 400;
+  color: #555555 !important;
+}
+
+/* Three Card Metric Blocks */
+.cmmc-level-card {
+  background: #FFFFFF !important;
+  border: 1px solid #EAEAEA !important;
+  border-radius: 6px !important;
+  padding: 40px 32px !important;
+  height: 100%;
+  /* This ensures the border changes color smoothly on state flip */
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease !important;
+}
+
+/* Highlighted Focus Level 2 Component Rule */
+.active-focus-card {
+  border: 1px solid #E62222 !important;
+  box-shadow: 0px 10px 30px rgba(230, 34, 34, 0.04) !important;
+}
+
+.card-icon-wrapper {
+  background-color: rgba(230, 34, 34, 0.05) !important;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.card-graphic-asset {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain;
+}
+
+.card-level-label {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  display: block;
+  margin-bottom: 8px !important;
+}
+
+.label-red {
+  color: #E62222 !important;
+}
+
+.card-level-title {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  margin-bottom: 12px !important;
+}
+
+.card-level-desc {
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  color: #555555 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Compliance 14 Domain Pills Style */
+.cmmc-domain-pill {
+  background: #FFFFFF !important;
+  border: 1px solid #EFEFEF !important;
+  border-radius: 6px !important;
+  padding: 18px 24px !important;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  transition: background-color 0.15s ease;
+}
+
+.cmmc-domain-pill:hover {
+  background: #FAFAFA !important;
+}
+
+.domain-sparkle {
+  width: 14px !important;
+  height: 14px !important;
+  margin-right: 14px !important;
+  margin-top: 5px !important;
+  /* Aligns indicator perfectly with text first lines */
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.cmmc-domain-pill span {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  color: #222222 !important;
+}
+
+/* ==========================================================================
+     RESPONSIVE METRIC REBALANCING - SECTION 3
+     ========================================================================== */
+@media (max-width: 991px) {
+  .cmmc-levels-section {
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+  }
+
+  .cmmc-level-card {
+    padding: 30px 24px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .cmmc-domain-pill {
+    padding: 14px 18px !important;
+  }
+
+  .cmmc-domain-pill span {
+    font-size: 13.5px !important;
+  }
+}
+
+/* ==========================================================================
+   CMMC PAGE SPECIFIC ARCHITECTURE - SECTION 4 DEEP DARK MODE
+   ========================================================================== */
+
+.cmmc-enforcement-section {
+  background-color: #0E0D0D !important;
+  /* Rich deep charcoal canvas matching section4.jpg */
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+  color: #FFFFFF !important;
+}
+
+.font-size-42 {
+  font-size: 42px !important;
+  letter-spacing: -0.02em !important;
+}
+
+.text-muted-gray {
+  color: #A3A3A3 !important;
+}
+
+.line-height-1-7 {
+  line-height: 1.7 !important;
+}
+
+.opacity-85 {
+  opacity: 0.85;
+}
+
+/* Dark Mode Mini Tag Pill Styling */
+.dark-red-pill-framework {
+  background-color: rgba(230, 34, 34, 0.08) !important;
+  color: #FF4D4D !important;
+  border: 1px solid rgba(230, 34, 34, 0.25) !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+}
+
+/* Three Dark Canvas Dashboard Panels */
+.cmmc-dark-panel-card {
+  background: #141313 !important;
+  border: 1px solid #1E1D1D !important;
+  border-radius: 4px !important;
+  padding: 44px 36px !important;
+  height: 100%;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.cmmc-dark-panel-card:hover {
+  border-color: #2D2B2B !important;
+  background-color: #171616 !important;
+}
+
+.dark-card-icon-wrapper {
+  background-color: #1E1515 !important;
+  /* Low contrast structural icon background */
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.dark-card-graphic-asset {
+  width: 16px !important;
+  height: 16px !important;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(23%) deg(0) saturate(6600%) invert(20%) sepia(95%) saturate(3432%) hue-rotate(346deg) brightness(97%) contrast(97%);
+  /* Shifts asset profile to pure red */
+}
+
+.dark-card-title {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 12px !important;
+}
+
+.dark-card-desc {
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #9C9C9C !important;
+  margin-bottom: 0 !important;
+}
+
+/* Exact Left Red-line Warn Footer Integration from section4.jpg */
+.cmmc-dark-warning-callout {
+  border-left: 3px solid #E62222 !important;
+  padding-left: 24px !important;
+  margin-top: 16px !important;
+  background: transparent !important;
+}
+
+.dark-warning-text {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.005em !important;
+  color: #FFFFFF !important;
+  margin: 0 !important;
+  padding: 4px 0 !important;
+}
+
+/* ==========================================================================
+     RESPONSIVE METRIC REBALANCING - SECTION 4
+     ========================================================================== */
+@media (max-width: 991px) {
+  .font-size-42 {
+    font-size: 32px !important;
+  }
+
+  .cmmc-dark-panel-card {
+    padding: 32px 24px !important;
+  }
+
+  .cmmc-enforcement-section {
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .dark-warning-text {
+    font-size: 14.5px !important;
+  }
+}
+
+
+/* ==========================================================================
+   CMMC PAGE SPECIFIC ARCHITECTURE - SECTION 5 (PROCESS TIMELINE)
+   ========================================================================== */
+
+.cmmc-process-section {
+  background-color: #FFFFFF !important;
+}
+
+.cmmc-process-card {
+  background: #F9FAFB !important;
+  /* Muted flat background matching Figma card */
+  border: 1px solid #EFEFEF !important;
+  border-radius: 6px !important;
+  padding: 40px 32px !important;
+  height: 100%;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease !important;
+}
+
+/* Hover Focus state for the timeline cards */
+main.security-main .active-process-focus {
+  border-color: #E62222 !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.03) !important;
+}
+
+.process-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.process-number {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  color: #E62222 !important;
+}
+
+.process-label {
+  font-size: 14px !important;
+  color: #666666 !important;
+  font-weight: 500;
+}
+
+.process-card-title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  margin-bottom: 12px !important;
+}
+
+.process-card-desc {
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #555555 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ==========================================================================
+     CMMC PAGE SPECIFIC ARCHITECTURE - SECTION 6 (EVIDENCE CARD PLATFORMS)
+     ========================================================================== */
+
+.cmmc-evidence-section {
+  background-color: #F7F7F7 !important;
+  /* Soft backdrop change mirroring layout */
+}
+
+.cmmc-evidence-card {
+  background: #FFFFFF !important;
+  border: 1px solid #EAEAEA !important;
+  border-radius: 6px !important;
+  padding: 44px 36px !important;
+  height: 100%;
+}
+
+.evidence-icon-box {
+  background-color: rgba(230, 34, 34, 0.05) !important;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.evidence-card-graphic {
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain;
+}
+
+.evidence-card-title {
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  margin-bottom: 14px !important;
+}
+
+.evidence-card-desc {
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #555555 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ==========================================================================
+     RESPONSIVE METRIC REBALANCING - SECTIONS 5 & 6
+     ========================================================================== */
+@media (max-width: 1199px) {
+  .cmmc-process-card {
+    padding: 32px 24px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .cmmc-evidence-card {
+    padding: 32px 24px !important;
+  }
+}
+
+/* ==========================================================================
+   CMMC PAGE SPECIFIC ARCHITECTURE - SECTION 7 (RISK ANALYSIS MATRIX)
+   ========================================================================== */
+
+.cmmc-risk-section {
+  background-color: #0E0D0D !important;
+  /* Matches pure dark container backgrounds */
+  padding-top: 100px !important;
+  padding-bottom: 110px !important;
+}
+
+.cmmc-risk-matrix-box {
+  background: #141313 !important;
+  border: 1px solid #1E1D1D !important;
+  border-radius: 4px !important;
+  padding: 12px 16px !important;
+}
+
+.risk-cell {
+  padding: 44px 40px !important;
+  border-color: #1E1D1D !important;
+  /* Controls inner lines cleanly */
+}
+
+.risk-pulse-icon {
+  width: 15px !important;
+  height: 15px !important;
+  margin-right: 18px !important;
+  margin-top: 5px !important;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.risk-cell-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 10px !important;
+  letter-spacing: -0.01em;
+}
+
+.risk-cell-desc {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  color: #9C9C9C !important;
+  margin: 0 !important;
+}
+
+/* Custom Responsive Responsive Border Rebalancing for Grid Layout */
+@media (min-width: 768px) {
+  .border-end-md {
+    border-right: 1px solid #1E1D1D !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .risk-cell {
+    padding: 32px 20px !important;
+  }
+
+  .risk-cell.border-end-md {
+    border-bottom: 1px solid #1E1D1D !important;
+  }
+
+  .row-2-cell {
+    border-bottom: 1px solid #1E1D1D !important;
+  }
+
+  .row-2-cell:last-child {
+    border-bottom: none !important;
+  }
+}
+
+/* ==========================================================================
+     CMMC PAGE SPECIFIC ARCHITECTURE - SECTION 8 (GAP CAPABILITIES)
+     ========================================================================== */
+
+.cmmc-gap-section {
+  background-color: #F7F7F7 !important;
+}
+
+.cmmc-gap-pill {
+  background: #FFFFFF !important;
+  border: 1px solid #EFEFEF !important;
+  border-radius: 4px !important;
+  padding: 24px !important;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cmmc-gap-pill:hover {
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.02) !important;
+  border-color: #E2E2E2 !important;
+}
+
+.gap-sparkle {
+  width: 13px !important;
+  height: 13px !important;
+  margin-right: 14px !important;
+  margin-top: 5px !important;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.cmmc-gap-pill span {
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  color: #222222 !important;
+  font-weight: 500 !important;
+}
+
+@media (max-width: 991px) {
+  .cmmc-gap-pill {
+    padding: 20px !important;
+  }
+}
+
+/* ==========================================================================
+   CMMC PAGE SPECIFIC ARCHITECTURE - SECTION 9 (EXECUTIVE PERSPECTIVE)
+   ========================================================================= */
+
+.cmmc-left-accent-callout {
+  border-left: 3px solid #E62222 !important;
+  padding-left: 24px !important;
+  margin-top: 28px !important;
+  margin-bottom: 28px !important;
+}
+
+.accent-callout-text {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.01em !important;
+  color: #111111 !important;
+  margin: 0 !important;
+}
+
+/* .spartan-signature-row {
+    border-top: 1px solid #EFEFEF !important;
+    padding-top: 12px !important;
+  }
+   */
+.signature-logo {
+  height: 78px !important;
+  width: auto !important;
+  object-fit: contain;
+}
+
+.signature-brand-text {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #111111 !important;
+}
+
+/* ==========================================================================
+     CMMC PAGE SPECIFIC ARCHITECTURE - SECTION 10 (FINAL CTA BILLBOARD)
+     ========================================================================= */
+
+.cmmc-radiant-cta-card {
+    /* Reuses our dark high-fidelity ambient glow look from Approach-PAGE.jpg */
+    background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%), 
+                radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
+                linear-gradient(135deg, #0e0202 0%, #000000 100%);
+    background-color: #000000;
+  border: 1px solid #1A1919 !important;
+  border-radius: 6px !important;
+  padding: 80px 40px !important;
+}
+
+.cta-display-title {
+  font-size: 44px !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.cta-display-subtitle {
+  font-size: 16px !important;
+  color: #A3A3A3 !important;
+  line-height: 1.6 !important;
+}
+
+/* Standard Button Variations for Dark Billboard Environments */
+.btn-white-action {
+  background-color: #FFFFFF !important;
+  color: #111111 !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  padding: 14px 28px !important;
+  border-radius: 4px !important;
+  border: 1px solid #FFFFFF !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+.btn-white-action:hover {
+  background-color: #ECECEC !important;
+  color: #000000 !important;
+}
+
+.button-arrow-svg {
+  transition: transform 0.2s ease;
+}
+
+.btn-white-action:hover .button-arrow-svg {
+  transform: translateX(3px);
+}
+
+.btn-dark-outline-action {
+  background: transparent !important;
+  color: #E2E2E2 !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  padding: 14px 28px !important;
+  border-radius: 4px !important;
+  border: 1px solid #2D2B2B !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+}
+
+.btn-dark-outline-action:hover {
+  border-color: #444141 !important;
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* ==========================================================================
+     RESPONSIVE METRIC REBALANCING - SECTIONS 9 & 10
+     ========================================================================= */
+@media (max-width: 767px) {
+  .accent-callout-text {
+    font-size: 16px !important;
+  }
+
+  .cmmc-radiant-cta-card {
+    padding: 60px 24px !important;
+  }
+
+  .cta-display-title {
+    font-size: 30px !important;
+  }
+
+  .cta-btn-group .btn {
+    width: 100% !important;
+  }
+}

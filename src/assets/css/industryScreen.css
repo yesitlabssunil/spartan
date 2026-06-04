@@ -1,0 +1,326 @@
+/* ==========================================================================
+   INDUSTRIES SCREEN BRAND LAYOUT DEFINITIONS
+   ========================================================================== */
+
+   .industries-main {
+    background-color: #ffffff;
+  }
+  
+  .environments-section {
+    padding: 100px 0;
+    background-color: #F7F7F7;
+  }
+  
+  .sectors-detail-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+  }
+  
+  /* Section Tag Utilities */
+  .section-tag-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-mini-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #e01b1b;
+    border: 1px solid rgba(224, 27, 27, 0.15);
+    background-color: rgba(224, 27, 27, 0.03);
+    padding: 8px 14px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+  }
+  
+  .section-mini-tag.dark-theme-tag {
+    color: #ff3b3b;
+    border-color: rgba(255, 59, 59, 0.3);
+    background-color: rgba(255, 59, 59, 0.08);
+  }
+  
+  .fallback-red-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #e01b1b;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  
+  .section-mini-tag.dark-theme-tag .fallback-red-dot {
+    background-color: #ff3b3b;
+  }
+  
+  .section-main-heading {
+    font-size: 2.35rem;
+    font-weight: 700;
+    color: #111111;
+    letter-spacing: -0.01em;
+  }
+  
+  /* --- SECTION 2: ENVIRONMENT CARDS --- */
+  .env-card {
+    background: #ffffff;
+    border: 1px solid #eaedf2;
+    border-radius: 6px;
+    padding: 35px 25px;
+    height: 100%;
+  }
+  
+  .env-icon-box {
+    width: 36px;
+    height: 36px;
+    background-color: #fff1f1;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .env-figma-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+  
+  .env-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 10px;
+  }
+  
+  .env-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555555;
+    margin: 0;
+  }
+  
+  /* --- SECTION 3: ALTERNATING SECTOR CARDS BLOCK --- */
+  .sectors-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .sector-row {
+    background-color: #fafbfc;
+    border: 1px solid #ebedf2;
+    border-radius: 12px;
+    overflow: hidden; /* Clips image and background inside the card radius */
+  }
+  
+  .sector-text-block {
+    padding: 40px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .sector-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 12px;
+  }
+  
+  .sector-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #444444;
+    margin-bottom: 20px;
+  }
+  
+  .sector-points-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sector-points-list li {
+    font-size: 0.9rem;
+    color: #555555;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+  
+  .sector-points-list li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .sector-points-list .red-arrow {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+  
+  .sector-points-list .red-arrow img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+  }
+  /* Continuous Container Scaling for Images */
+  .sector-image-block {
+    width: 100%;
+    height: 100%;
+    min-height: 310px;
+    position: relative;
+  }
+  
+  .sector-display-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* --- SECTION 4: CALL TO ACTION BANNER --- */
+  .industries-cta-section {
+    padding: 90px 0 110px 0;
+    background-color: #ffffff;
+  }
+  
+  .industries-cta-banner {
+    width: 100%;
+    border-radius: 20px;
+    padding: 75px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        /* Reuses our dark high-fidelity ambient glow look from Approach-PAGE.jpg */
+        background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%), 
+        radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
+        linear-gradient(135deg, #0e0202 0%, #000000 100%);
+background-color: #000000;
+  }
+  
+  .industries-cta-banner .cta-banner-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+  
+  .industries-cta-banner .cta-banner-desc {
+    font-size: 1.05rem;
+    color: #cccccc;
+    max-width: 580px;
+    margin-bottom: 35px;
+    line-height: 1.5;
+  }
+  
+  .industries-cta-banner .cta-buttons-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .industries-cta-banner .cta-btn-white {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+  
+  .industries-cta-banner .cta-btn-white:hover {
+    opacity: 0.9;
+  }
+  
+  .industries-cta-banner .cta-btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .industries-cta-banner .cta-btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* ==========================================================================
+     BREAKPOINT RESPONSIVENESS RULES
+     ========================================================================== */
+  
+  @media (max-width: 991px) {
+    .environments-section, .sectors-detail-section {
+      padding: 70px 0;
+    }
+    .section-main-heading {
+      font-size: 2rem;
+    }
+    .sector-text-block {
+      padding: 40px 30px;
+    }
+    .sector-image-block {
+      min-height: 300px;
+    }
+    .industries-cta-banner .cta-banner-title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .environments-section, .sectors-detail-section {
+      padding: 50px 0;
+    }
+    .section-main-heading {
+      font-size: 1.65rem;
+    }
+    .sectors-stack {
+      gap: 24px;
+    }
+    /* Forces alternating columns to stack cleanly: Text content first, then image */
+    .sector-row {
+      flex-direction: column !important; 
+    }
+    .sector-text-block {
+      padding: 35px 20px;
+    }
+    .sector-image-block {
+      min-height: 250px;
+    }
+    .industries-cta-banner {
+      padding: 55px 25px;
+    }
+    .industries-cta-banner .cta-banner-title {
+      font-size: 1.55rem;
+    }
+    .industries-cta-banner .cta-buttons-group {
+      flex-direction: column;
+      width: 100%;
+    }
+    .industries-cta-banner .cta-btn-white,
+    .industries-cta-banner .cta-btn-outline {
+      width: 100%;
+    }
+  }

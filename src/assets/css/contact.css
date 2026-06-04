@@ -1,0 +1,197 @@
+/* ==========================================================================
+   CONTACT PAGE SPECIFIC CONFIGURATIONS
+   ========================================================================== */
+
+   .contact-main {
+    background-color: #ffffff;
+    padding-bottom: 100px;
+  }
+  
+  /* Lower Section Column Content Padding */
+  .contact-body-section {
+    padding-top: 80px;
+  }
+  
+  /* Left Card: "What to Expect" Content Container */
+  .expect-card {
+    background-color: #f9fafb;
+    border: 1px solid #f0f2f5;
+    border-radius: 12px;
+    padding: 30px 24px;
+  }
+  
+  .expect-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 25px;
+  }
+  
+  .expect-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .expect-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .expect-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .expect-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    /* background-color: #ffebeb;
+    border-radius: 8px;
+    color: #e01b1b; */
+    margin-right: 14px;
+    flex-shrink: 0;
+  }
+
+  .expect-custom-img {
+    width: 32px;  /* Matches your original template sizing */
+    height: 32px;
+    object-fit: contain;
+  }
+  
+  .expect-text {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #444444;
+    margin: 0;
+    padding-top: 3px;
+  }
+  
+  /* Direct Information Footer Callouts */
+  .direct-contact-info {
+    padding-left: 10px;
+  }
+  
+  .info-block {
+    margin-bottom: 25px;
+  }
+  
+  .info-block h6 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .info-icon {
+    color: #e01b1b;
+    font-size: 1rem;
+  }
+  
+  .info-block p {
+    font-size: 0.95rem;
+    color: #555555;
+    margin: 0;
+  }
+  
+  .info-block p a {
+    text-decoration: none;
+    color: #555555;
+    transition: color 0.2s ease;
+  }
+  
+  .info-block p a:hover {
+    color: #e01b1b;
+  }
+  
+  /* Right Section: Strategic Consultation Form */
+  .contact-consultation-form {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px;
+    background-color: #ffffff;
+  }
+  
+  .form-label-custom {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #555555;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .form-control-custom {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    color: #222222;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .form-control-custom:focus {
+    outline: none;
+    border-color: #e01b1b;
+    box-shadow: 0 0 0 3px rgba(224, 27, 27, 0.1);
+  }
+  
+  .textarea-custom {
+    resize: none;
+  }
+  
+  .textarea-custom::placeholder {
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+  
+  /* Premium Bright Red Action Submit Button */
+  .btn-consultation-submit {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-consultation-submit:hover {
+    background-color: #d60000;
+  }
+  
+  /* ==========================================================================
+     RESPONSIVE DESIGN CORRECTIONS
+     ========================================================================== */
+  
+  @media (max-width: 991px) {
+    .contact-body-section {
+      padding-top: 50px;
+    }
+    .contact-consultation-form {
+      padding: 30px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .contact-body-section {
+      padding-top: 40px;
+    }
+    .contact-consultation-form {
+      padding: 24px 20px;
+    }
+    .btn-consultation-submit {
+      width: 100%;
+      justify-content: center;
+    }
+  }
