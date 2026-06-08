@@ -482,3 +482,7 @@
       width: 100%;
     }
   }
+
+  .linknav{
+    text-decoration: none;
+  }

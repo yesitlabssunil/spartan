@@ -24,8 +24,8 @@ import file from "../assets/images/cmmcScreen/file.png";
 import hammer from "../assets/images/cmmcScreen/hammer.png";
 
 const CmmcScreen = () => {
-    const [activeCard, setActiveCard] = useState(1);
-    const [activeStep, setActiveStep] = useState(0);
+    // const [activeCard, setActiveCard] = useState();
+    // const [activeStep, setActiveStep] = useState();
     return (
         <>
             <Header />
@@ -106,8 +106,8 @@ const CmmcScreen = () => {
                             {/* Level 1 Card */}
                             <div className="col-lg-4 col-md-6">
                                 <div
-                                    className={`cmmc-level-card text-start ${activeCard === 0 ? 'active-focus-card' : ''}`}
-                                    onMouseEnter={() => setActiveCard(0)}
+                                    className="cmmc-level-card text-start"
+                                    // onMouseEnter={() => setActiveCard(0)}
                                 >
                                     <div className="card-icon-wrapper mb-4">
                                         <img src={security} alt="Level 1 Shield" className="card-graphic-asset" />
@@ -123,8 +123,8 @@ const CmmcScreen = () => {
                             {/* Level 2 Card */}
                             <div className="col-lg-4 col-md-6">
                                 <div
-                                    className={`cmmc-level-card text-start ${activeCard === 1 ? 'active-focus-card' : ''}`}
-                                    onMouseEnter={() => setActiveCard(1)}
+                                    className="cmmc-level-card text-start"
+                                    // onMouseEnter={() => setActiveCard(1)}
                                 >
                                     <div className="card-icon-wrapper mb-4">
                                         <img src={file} alt="Level 2 Document" className="card-graphic-asset" />
@@ -140,8 +140,8 @@ const CmmcScreen = () => {
                             {/* Level 3 Card */}
                             <div className="col-lg-4 col-md-6">
                                 <div
-                                    className={`cmmc-level-card text-start ${activeCard === 2 ? 'active-focus-card' : ''}`}
-                                    onMouseEnter={() => setActiveCard(2)}
+                                    className="cmmc-level-card text-start"
+                                    // onMouseEnter={() => setActiveCard(2)}
                                 >
                                     <div className="card-icon-wrapper mb-4">
                                         <img src={cap} alt="Level 3 Layers" className="card-graphic-asset" />
@@ -347,7 +347,7 @@ const CmmcScreen = () => {
                             {/* Stage 01 */}
                             <div className="col-xl-3 col-md-6">
                                 <div
-                                    className={`cmmc-process-card ${activeStep === 0 ? 'active-process-focus' : ''}`}
+                                    className="cmmc-process-card"
                                     onMouseEnter={() => setActiveStep(0)}
                                 >
                                     <div className="process-meta mb-4">
@@ -364,8 +364,8 @@ const CmmcScreen = () => {
                             {/* Stage 02 */}
                             <div className="col-xl-3 col-md-6">
                                 <div
-                                    className={`cmmc-process-card ${activeStep === 1 ? 'active-process-focus' : ''}`}
-                                    onMouseEnter={() => setActiveStep(1)}
+                                    className="cmmc-process-card"
+                                    // onMouseEnter={() => setActiveStep(1)}
                                 >
                                     <div className="process-meta mb-4">
                                         <span className="process-number">02</span>
@@ -381,8 +381,8 @@ const CmmcScreen = () => {
                             {/* Stage 03 */}
                             <div className="col-xl-3 col-md-6">
                                 <div
-                                    className={`cmmc-process-card ${activeStep === 2 ? 'active-process-focus' : ''}`}
-                                    onMouseEnter={() => setActiveStep(2)}
+                                    className="cmmc-process-card"
+                                    // onMouseEnter={() => setActiveStep(2)}
                                 >
                                     <div className="process-meta mb-4">
                                         <span className="process-number">03</span>
@@ -398,8 +398,8 @@ const CmmcScreen = () => {
                             {/* Stage 04 */}
                             <div className="col-xl-3 col-md-6">
                                 <div
-                                    className={`cmmc-process-card ${activeStep === 3 ? 'active-process-focus' : ''}`}
-                                    onMouseEnter={() => setActiveStep(3)}
+                                    className="cmmc-process-card"
+                                    // onMouseEnter={() => setActiveStep(3)}
                                 >
                                     <div className="process-meta mb-4">
                                         <span className="process-number">04</span>

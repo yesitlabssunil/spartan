@@ -12,8 +12,8 @@
     /* margin-top: 80px; */
     min-height: 80vh;
     position: relative;
-    background: linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)),
-                url('../images/hero-banner-bg.svg') no-repeat center center/cover;
+    /* background: linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)),
+                url('../images/hero-banner-bg.svg') no-repeat center center/cover; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1245,6 +1245,10 @@ background-color: #2F2F2F4D;
     margin: auto;
 }
 
+.section-tag-red.no-mar{
+    margin: 0;
+}
+
 span.dot-red {
     width: 7px;
     height: 7px;
@@ -1492,7 +1496,7 @@ span.dot-red {
 /* --- 15. Industries Layout --- */
 .industries-section {
     padding: 100px 8%;
-    background-color: #ffffff;
+    background-color: #f7f7f7;
     border-top: 1px solid #f3f3f3;
 }
 
@@ -1693,7 +1697,7 @@ span.dot-red {
 /* --- 14. Fixed Sequential Process Flow Section --- */
 .process-flow-section {
     padding: 100px 8%;
-    background-color: #ffffff;
+    background-color: #f7f7f7;
     border-top: 1px solid #f3f3f3;
 }
 
@@ -1748,11 +1752,20 @@ span.dot-red {
 .step-top-header.active-step h3 {
     color: #111111;
 }
-.step-top-header:hover {
-    border-bottom: 2px solid #111111;
-}
-.step-top-header:hover  h3 {
-    color: #111111;
+.process-linear-column:hover {
+
+    .step-top-header {
+        border-bottom: 2px solid #111111;
+    }
+    .step-top-header  h3 {
+        color: #111111;
+    }
+    .step-bottom-card {
+        /* padding: 40px 25px 20px 25px; */
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
 }
 /* Bottom Description Box Content Cards */
 .step-bottom-card {
@@ -1890,6 +1903,10 @@ span.dot-red {
     margin: auto;
     margin-bottom: 20px;
     letter-spacing: 0.5px;
+}
+
+.badge-red-pill.no-mar{
+    margin: 0
 }
 
 .resources-section h2 {
@@ -2079,6 +2096,7 @@ span.dot-red {
 /* ACTIVE ACCORDION STATE CHANGES (WHEN OPENED BY JS) */
 .accordion-item.active .accordion-header h4 {
     color: var(--primary-red);
+    color: black;
 }
 
 .accordion-item.active .accordion-icon {

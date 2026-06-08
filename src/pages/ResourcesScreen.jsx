@@ -22,6 +22,7 @@ import warning from "../assets/images/securityScreen/warning.png";
 import envIcon1 from "../assets/images/industryScreen/env-icon1.png";
 import icon6 from "../assets/images/complianceScreen/icon6.png"
 import faqData from "../assets/faqData.json";
+import { Link } from 'react-router-dom';
 
 export default function ResourceScreen() {
 
@@ -128,7 +129,7 @@ export default function ResourceScreen() {
               <div className="insight-card-meta">
                 <span className="meta-date">Jul 5, 2025</span>
                 <span className="meta-divider">—</span>
-                <span className="meta-link">Read More</span>
+                <Link to="/blog" className="meta-link">Read More</Link>
               </div>
             </div>
 
@@ -142,7 +143,7 @@ export default function ResourceScreen() {
               <div className="insight-card-meta">
                 <span className="meta-date">Mar 12, 2025</span>
                 <span className="meta-divider">—</span>
-                <span className="meta-link">Read More</span>
+                <Link to="/blog" className="meta-link">Read More</Link>
               </div>
             </div>
 
@@ -156,7 +157,7 @@ export default function ResourceScreen() {
               <div className="insight-card-meta">
                 <span className="meta-date">Mar 05, 2025</span>
                 <span className="meta-divider">—</span>
-                <span className="meta-link">Read More</span>
+                <Link to="/blog" className="meta-link">Read More</Link>
               </div>
             </div>
 

@@ -14,6 +14,7 @@ import purse from "../assets/images/securityScreen/purse.png";
 import people from "../assets/images/securityScreen/people.png";
 import security from "../assets/images/complianceScreen/icon1.png";
 import icon6 from "../assets/images/complianceScreen/icon6.png"
+import { Link } from "react-router-dom";
 
 const AboutScreen = () => {
 
@@ -68,7 +69,7 @@ const AboutScreen = () => {
               </div>
               <h1 className="blog-hero-title">About Spartan Cyber Security</h1>
               <p className="blog-hero-subtitle">
-                An expert compliance and engineering collective delivering advanced framework stabilization, 
+                An expert compliance and engineering collective delivering advanced framework stabilization,
                 risk reduction, and ironclad defense architectures for federal contractors.
               </p>
             </div>
@@ -89,10 +90,10 @@ const AboutScreen = () => {
                   A Senior Advisory Firm Built for Regulated, High-Risk Environments.
                 </h2>
                 <p className="about-intro-text">
-                Spartan Cyber Security LLC is an executive advisory firm led by senior leaders with backgrounds spanning military command, federal prosecution, cyber operations and enterprise compliance execution.<br/>
-                 {/* Our work centers on ensuring that cybersecurity programs are structured to withstand contractual, regulatory and third-party assessment scrutiny - from CMMC 2.0 certification to NIST SP 800-171 alignment, ISO/IEC 27001 readiness and board-level governance reporting.<br/>
+                  Spartan Cyber Security LLC is an executive advisory firm led by senior leaders with backgrounds spanning military command, federal prosecution, cyber operations and enterprise compliance execution.<br />
+                  {/* Our work centers on ensuring that cybersecurity programs are structured to withstand contractual, regulatory and third-party assessment scrutiny - from CMMC 2.0 certification to NIST SP 800-171 alignment, ISO/IEC 27001 readiness and board-level governance reporting.<br/>
                 Spartan is headquartered to serve federal contractors, defense industrial base organizations and regulated enterprises navigating Department of Defense enforcement, executive risk exposure and evolving compliance obligations.                 */}
-                </p> 
+                </p>
                 <p className="about-intro-text">
                   Our methodologies translate complex legal data handling directives (NIST SP 800-171, CMMC 2.0, DFARS) into clean operational pathways that engineering teams can execute flawlessly.
                 </p>
@@ -102,21 +103,21 @@ const AboutScreen = () => {
         </section>
 
         {/* 3. PRINCIPALS & LEADERSHIP (DARK SECTION) */}
-{/* 3. PRINCIPALS & LEADERSHIP (DARK SECTION) - Matches Section - Values.jpg */}
-<section className="about-leadership-section">
+        {/* 3. PRINCIPALS & LEADERSHIP (DARK SECTION) - Matches Section - Values.jpg */}
+        <section className="about-leadership-section">
           <div className="custom-container">
-            
+
             {/* Centered Top Header Badge Block */}
             <div className="section-tag-wrapper">
               <span className="section-mini-tag dark-theme-tag">
                 <span className="fallback-red-dot"></span>LEADERSHIP & EXPERIENCE
               </span>
             </div>
-            
+
             <h2 className="dark-section-heading text-center">
               Principals from Military Command, Federal <br /> Prosecution & Cyber Operations.
             </h2>
-            
+
             <p className="dark-section-subheading text-center">
               Our leadership team brings real-world defensive insights from high-stakes operational arenas.
             </p>
@@ -138,7 +139,7 @@ const AboutScreen = () => {
             <div className="leader-profiles-canvas-grid">
               {team.map((member, idx) => (
                 <div className="leader-profile-card" key={idx}>
-                  
+
                   {/* Photo Frame Container with Absolute Bottom Gradient Blend Overlay */}
                   <div className="leader-image-container">
                     <img src={member.image} alt={member.name} className="leader-photo" />
@@ -148,7 +149,7 @@ const AboutScreen = () => {
 
                   {/* Grounded Typography Content Metadata Panel */}
                   <div className="leader-info-block">
-                    <span className="leader-rank-tag"><span className="fallback-red-dot" style={{marginRight: "4px"}}></span>{member.rank}</span>
+                    <span className="leader-rank-tag"><span className="fallback-red-dot" style={{ marginRight: "4px" }}></span>{member.rank}</span>
                     <h4 className="leader-name">{member.name}</h4>
                     <p className="leader-bio">{member.desc}</p>
                   </div>
@@ -178,7 +179,7 @@ const AboutScreen = () => {
                 <div className="col-lg-4 col-md-6" key={idx}>
                   <div className="advantage-grid-card">
                     <div className="advantage-icon-wrapper">
-                      <img src={adv.icon} alt="" className="advantage-figma-icon" onError={(e)=>{e.target.style.display='none'}} />
+                      <img src={adv.icon} alt="" className="advantage-figma-icon" onError={(e) => { e.target.style.display = 'none' }} />
                       {/* <span className="fallback-red-dot"></span> */}
                     </div>
                     <h4 className="advantage-card-title">{adv.title}</h4>
@@ -195,7 +196,7 @@ const AboutScreen = () => {
           <div className="custom-container">
             <div className="about-cta-banner">
               <span className="section-mini-tag dark-theme-tag mb-3">
-                <span className="fallback-red-dot"></span>CONSULTATION
+                <span className="fallback-red-dot"></span>Work With Us
               </span>
               <h2 className="cta-banner-title">
                 Engage Spartan's principal-led <br /> advisory team.
@@ -203,9 +204,14 @@ const AboutScreen = () => {
               <p className="cta-banner-desc">
                 Review your active contract parameters and configure a defensible lifecycle compliance architecture.
               </p>
-              <div className="cta-buttons-group">
+              {/* <div className="cta-buttons-group">
                 <button className="cta-btn-white">Schedule Consultation <span>→</span></button>
-                <button className="cta-btn-outline">Partner Experience</button>
+                <button className="cta-btn-outline">Explore Compliance</button>
+              </div> */}
+
+              <div className="cta-buttons-group">
+                <Link to="/contact-us" className="cta-btn-white linknav">Schedule Consultation <span>→</span></Link>
+                <Link to="/compliance" className="cta-btn-outline linknav">Explore Compliance</Link>
               </div>
             </div>
           </div>

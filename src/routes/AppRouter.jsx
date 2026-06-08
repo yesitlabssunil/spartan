@@ -9,6 +9,7 @@ import SecurityScreen from "../pages/SecurityScreen";
 import CmmcScreen from "../pages/CmmcScreen";
 import ResourcesScreen from "../pages/ResourcesScreen";
 import AboutScreen from "../pages/AboutScreen";
+import NotFoundRedirect from "./NotFoundRedirect";
 
 const AppRouter = () => (
     <Router>
@@ -51,6 +52,10 @@ const AppRouter = () => (
 
             <Route path="/about" element={
                 <AboutScreen/ >
+            } />
+
+            <Route path="*" element={
+                <NotFoundRedirect />
             } />
 
         </Routes>

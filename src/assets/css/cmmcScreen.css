@@ -152,6 +152,10 @@
   /* This ensures the border changes color smoothly on state flip */
   transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease !important;
 }
+.cmmc-level-card:hover{
+  border: 1px solid #E62222 !important;
+  box-shadow: 0px 10px 30px rgba(230, 34, 34, 0.04) !important;
+}
 
 /* Highlighted Focus Level 2 Component Rule */
 .active-focus-card {

@@ -10,6 +10,7 @@ import icon3 from "../assets/images/complianceScreen/icon3.png"
 import icon4 from "../assets/images/complianceScreen/icon4.png"
 import icon5 from "../assets/images/complianceScreen/icon5.png"
 import icon6 from "../assets/images/complianceScreen/icon6.png"
+import { Link } from "react-router-dom";
 
 const ComplianceScreen = () => {
 
@@ -122,9 +123,9 @@ const ComplianceScreen = () => {
                 <p className="midway-desc">A 30-minute scoping call will pinpoint your gaps and the fastest path forward.</p>
               </div>
               <div className="midway-right">
-                <button className="midway-btn-red">
+                <Link to="/contact-us" className="midway-btn-red" style={{textDecoration:"none"}}>
                 Talk to a Senior Advisor <span className="ms-1">→</span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -18,6 +18,7 @@ import icon11 from "../assets/images/home/icon11.png";
 import icon12 from "../assets/images/home/icon12.png";
 import icon13 from "../assets/images/home/icon13.png";
 import icon14 from "../assets/images/home/icon14.png";
+import { Link } from 'react-router-dom';
 
 const HomeScreen = () => {
 
@@ -64,7 +65,14 @@ const HomeScreen = () => {
     <>
       <Header />
 
-      <section className="hero">
+      <section className="hero" 
+      style={{ 
+        backgroundImage: `linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)), url('../images/hero-banner-bg.svg')`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover'
+      }}
+      >
         <div className="hero-overlay"></div>
         <div className="hero-content fade-in">
           <div className="badge-tag"><span className="dot-black"></span> CMMC 2.0 • DFARS • NIST 800-171</div>
@@ -72,8 +80,8 @@ const HomeScreen = () => {
           <p className="hero-subtext">Helping Federal Contractors & Subcontractors secure systems, implement compliance controls and prepare for audit readiness.</p>
 
           <div className="hero-btns">
-            <a href="#" className="btn-white">Schedule Consultation <i className="fas fa-arrow-right"></i></a>
-            <a href="#" className="btn-transparent">Get Compliance Ready</a>
+            <Link to="/contact-us" className="btn-white">Schedule Consultation <i className="fas fa-arrow-right"></i></Link>
+            <Link to="/compliance" className="btn-transparent">Get Compliance Ready</Link>
           </div>
         </div>
       </section>
@@ -180,7 +188,7 @@ const HomeScreen = () => {
           <span className="badge-red-tag"> <span className="dot-red"></span> TIME-SENSITIVE</span>
           <h2>Delayed Compliance can Cost You Contracts</h2>
           <p>Federal cybersecurity regulations continue to tighten. Contractors who fail to secure systems, implement controls and prepare for audits risk losing contract eligibility, revenue and market trust.</p>
-          <a href="#" className="btn-red-action">Get Compliance Ready Now <i className="fas fa-arrow-right"></i></a>
+          <Link to='/compliance' className="btn-red-action">Get Compliance Ready Now <i className="fas fa-arrow-right"></i></Link>
         </div>
 
         <div className="risk-right-grid">
@@ -267,7 +275,7 @@ const HomeScreen = () => {
         </div>
 
         <div className="solution-footer-action text-center">
-          <a href="#" className="btn-white-secondary">Start with a Assessment <i className="fas fa-arrow-right"></i></a>
+          <a href="https://lms.spartan-cs.com/" className="btn-white-secondary" target="_blank" >Start with an Assessment <i className="fas fa-arrow-right"></i></a>
         </div>
       </section>
 
@@ -392,7 +400,7 @@ const HomeScreen = () => {
 
       <section className="who-we-are-section">
         <div className="who-left-col">
-          <span className="section-tag-red"><span className="dot-red"></span> WHO WE ARE</span>
+          <span className="section-tag-red no-mar"><span className="dot-red"></span> WHO WE ARE</span>
           <h2>Compliance is not a Checklist. It's a Strategic Security System.</h2>
 
           <div className="strategic-checklist-box">
@@ -573,7 +581,7 @@ const HomeScreen = () => {
             <div className="res-meta">
               <span className="res-date">JUL 5, 2025</span>
               <span className="res-divider">—</span>
-              <a href="#" className="res-link">READ MORE</a>
+              <Link to="/blog" className="res-link">READ MORE</Link>
             </div>
           </div>
           <div className="resource-card fade-in">
@@ -584,7 +592,7 @@ const HomeScreen = () => {
             <div className="res-meta">
               <span className="res-date">MAR 12, 2025</span>
               <span className="res-divider">—</span>
-              <a href="#" className="res-link">READ MORE</a>
+              <Link to="/blog" className="res-link">READ MORE</Link>
             </div>
           </div>
           <div className="resource-card fade-in">
@@ -595,7 +603,7 @@ const HomeScreen = () => {
             <div className="res-meta">
               <span className="res-date">MAR 05, 2025</span>
               <span className="res-divider">—</span>
-              <a href="#" className="res-link">READ MORE</a>
+              <Link to="/blog" className="res-link">READ MORE</Link>
             </div>
           </div>
         </div>
@@ -674,10 +682,10 @@ const HomeScreen = () => {
 
 <section className="faq-section">
         <div className="faq-left-block">
-          <span className="badge-red-pill"><span className="dot-red"></span>FAQ</span>
+          <span className="badge-red-pill no-mar"><span className="dot-red"></span>FAQ</span>
           <h2>You Have Questions.<br />We Have Answers.</h2>
           <p>Not sure where to start? Book a free 30-minute discovery call and let's figure it out together.</p>
-          <a href="#" className="btn-red-action">Schedule a Call <i className="fas fa-arrow-right"></i></a>
+          <Link to="/contact-us" className="btn-red-action">Schedule a Call <i className="fas fa-arrow-right"></i></Link>
         </div>
 
         <div className="faq-accordion-container">
