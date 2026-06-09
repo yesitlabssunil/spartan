@@ -15,6 +15,7 @@ import industryImg2 from "../assets/images/industryScreen/defense.jpg";
 import industryImg3 from "../assets/images/industryScreen/aviation.jpg";
 import industryImg4 from "../assets/images/industryScreen/engineering.jpg";
 import industryImg5 from "../assets/images/industryScreen/manufacturing.jpg";
+import { Link } from "react-router-dom";
 
 const IndustriesScreen = () => {
   
@@ -188,8 +189,8 @@ const IndustriesScreen = () => {
                 A 45-minute working session tailored to your contract portfolio.
               </p>
               <div className="cta-buttons-group">
-                <button className="cta-btn-white">Schedule Consultation <span>→</span></button>
-                <button className="cta-btn-outline">Explore Compliance</button>
+                <Link to="/contact-us" className="cta-btn-white" style={{textDecoration:"none"}}>Schedule Consultation <span>→</span></Link>
+                <Link to="/compliance" className="cta-btn-outline" style={{textDecoration:"none"}}>Explore Compliance</Link>
               </div>
             </div>
           </div>

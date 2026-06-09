@@ -6,6 +6,7 @@ import "../assets/css/approachScreen.css";
 // Assuming you have a small red page icon exported for the 3 methodology cards
 import docIcon from "../assets/images/approachScreen/doc-icon.png"; 
 import startBullet from "../assets/images/approachScreen/startBullet.png"; 
+import { Link } from "react-router-dom";
 
 const ApproachScreen = () => {
   
@@ -178,8 +179,8 @@ const ApproachScreen = () => {
                 A 45-minute working session that maps our method to your starting position.
               </p>
               <div className="cta-buttons-group">
-                <button className="cta-btn-white">Schedule Consultation <span>→</span></button>
-                <button className="cta-btn-outline">Explore Compliance</button>
+                <Link to="/contact-us" className="cta-btn-white" style={{textDecoration:"none"}}>Schedule Consultation <span>→</span></Link>
+                <Link to="/compliance" className="cta-btn-outline" style={{textDecoration:"none"}}>Explore Compliance</Link>
               </div>
             </div>
           </div>

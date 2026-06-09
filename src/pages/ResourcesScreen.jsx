@@ -625,16 +625,16 @@ export default function ResourceScreen() {
             {/* Centered Dual-Action Button Rows */}
             <div className="cta-buttons-flex-group">
               
-              <button className="cta-btn-primary" type="button">
+              <Link to="/contact-us" className="cta-btn-primary" type="button" style={{textDecoration: "none"}}>
                 <span>Schedule Consultation</span>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </button>
+              </Link>
 
-              <button className="cta-btn-secondary" type="button">
+              <Link to="/compliance" className="cta-btn-secondary" type="button" style={{textDecoration: "none"}}>
                 Explore Compliance
-              </button>
+              </Link>
 
             </div>
 

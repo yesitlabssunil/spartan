@@ -22,6 +22,7 @@ import people from "../assets/images/securityScreen/people.png";
 import warning from "../assets/images/securityScreen/warning.png";
 import security from "../assets/images/complianceScreen/icon1.png";
 import envIcon3 from "../assets/images/industryScreen/env-icon3.png";
+import { Link } from "react-router-dom";
 
 
 const SecurityScreen = () => {
@@ -550,7 +551,7 @@ const SecurityScreen = () => {
                             <p className="cta-banner-desc">
                             A focused tenant review with a senior architect - gap report and remediation plan delivered.                            </p>
                             <div className="cta-buttons-group">
-                                <button className="cta-btn-white">Schedule M365 Security Audit <span>→</span></button>
+                                <Link to="/contact-us" className="cta-btn-white" style={{textDecoration: "none"}}>Schedule M365 Security Audit <span>→</span></Link>
                                 <button className="cta-btn-outline">System Standards</button>
                             </div>
                         </div>

@@ -174,7 +174,7 @@ const ComplianceScreen = () => {
               A Senior Advisor will scope your starting position and the fastest route to audit readiness.
               </p>
               <div className="cta-buttons-group">
-                <button className="cta-btn-white">Schedule Consultation <span>→</span></button>
+                <Link to="/contact-us" className="cta-btn-white" style={{textDecoration:"none"}}>Schedule Consultation <span>→</span></Link>
               </div>
             </div>
           </div>

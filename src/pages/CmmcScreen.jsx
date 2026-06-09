@@ -22,6 +22,7 @@ import box from "../assets/images/cmmcScreen/box.png";
 import cap from "../assets/images/cmmcScreen/cap.png";
 import file from "../assets/images/cmmcScreen/file.png";
 import hammer from "../assets/images/cmmcScreen/hammer.png";
+import { Link } from "react-router-dom";
 
 const CmmcScreen = () => {
     // const [activeCard, setActiveCard] = useState();
@@ -711,15 +712,15 @@ const CmmcScreen = () => {
 
                             {/* Action Control Button Pair */}
                             <div className="cta-btn-group d-flex flex-sm-row flex-column align-items-center justify-content-center gap-3">
-                                <button className="btn btn-white-action d-flex align-items-center justify-content-center">
+                                <Link to="/contact-us" className="btn btn-white-action d-flex align-items-center justify-content-center">
                                     <span>Schedule Compliance Review</span>
                                     <svg className="ms-2 button-arrow-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.3335 8H12.6668M12.6668 8L8.00016 3.33334M12.6668 8L8.00016 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
-                                </button>
-                                <button className="btn btn-dark-outline-action">
+                                </Link>
+                                <Link to="/compliance" className="btn btn-dark-outline-action">
                                     Explore Compliance
-                                </button>
+                                </Link>
                             </div>
 
                         </div>
