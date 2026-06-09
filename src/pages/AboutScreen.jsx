@@ -69,8 +69,7 @@ const AboutScreen = () => {
               </div>
               <h1 className="blog-hero-title">About Spartan Cyber Security</h1>
               <p className="blog-hero-subtitle">
-                An expert compliance and engineering collective delivering advanced framework stabilization,
-                risk reduction, and ironclad defense architectures for federal contractors.
+              An executive advisory firm specializing in cybersecurity governance, regulatory alignment and defensible operational execution for organizations operating in regulated and high-risk environments.
               </p>
             </div>
           </div>

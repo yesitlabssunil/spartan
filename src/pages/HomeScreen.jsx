@@ -310,7 +310,7 @@ const HomeScreen = () => {
       <section className="pillars-section">
         <div className="pillars-header-split">
           <div className="pillars-left-title">
-            <span className="pillars-pill"> <span className="dot-red"></span> THE FRAMEWORK</span>
+            <span className="pillars-pill"> <span className="dot-red"></span> Methodology</span>
             <h2>Three Pillars of Operational Compliance</h2>
           </div>
           <div className="pillars-right-desc">
@@ -452,38 +452,38 @@ const HomeScreen = () => {
 
       <section className="focus-section">
         <div className="text-center section-header-margin">
-          <span className="section-tag-red"><span className="dot-red"></span>OUR FOCUS</span>
+          <span className="section-tag-red"><span className="dot-red"></span>OUTCOMES</span>
           <h2>Protect Revenue. Preserve Contracts. Strengthen Security.</h2>
         </div>
 
         <div className="focus-grid">
           <div className="focus-card fade-in">
-            <div className="focus-icon"><i className="fas fa-stamp"></i></div>
+            <div className="focus-icon trust-box-icon"><i className="fas fa-stamp"></i></div>
             <h4>Audit Readiness</h4>
             <p>Walk into any assessment with evidence in hand.</p>
           </div>
           <div className="focus-card fade-in">
-            <div className="focus-icon"><i className="fas fa-file-signature"></i></div>
+            <div className="focus-icon trust-box-icon"><i className="fas fa-file-signature"></i></div>
             <h4>Contract Protection</h4>
             <p>Protect the federal revenue you've already won.</p>
           </div>
           <div className="focus-card fade-in">
-            <div className="focus-icon"><img src={icon9} alt="" /></div>
+            <div className="focus-icon trust-box-icon"><img src={icon9} alt="" /></div>
             <h4>Reduced Risk</h4>
             <p>Quantifiable reduction in compliance and breach exposure.</p>
           </div>
           <div className="focus-card fade-in">
-            <div className="focus-icon"><img src={icon10} alt="" /></div>
+            <div className="focus-icon trust-box-icon"><img src={icon10} alt="" /></div>
             <h4>Security Resilience</h4>
             <p>Systems that perform under real-world adversarial pressure.</p>
           </div>
           <div className="focus-card fade-in">
-            <div className="focus-icon"><i className="fas fa-user-tie"></i></div>
+            <div className="focus-icon trust-box-icon"><i className="fas fa-user-tie"></i></div>
             <h4>Leadership Confidence</h4>
             <p>Executive oversight backed by clear governance.</p>
           </div>
           <div className="focus-card fade-in">
-            <div className="focus-icon"><img src={icon11} alt="" /></div>
+            <div className="focus-icon trust-box-icon"><img src={icon11} alt="" /></div>
             <h4>Competitive Positioning</h4>
             <p>An operational advantage in federal procurement.</p>
           </div>
@@ -504,7 +504,7 @@ const HomeScreen = () => {
             </div>
             <div className="step-bottom-card">
               <div className="step-card-icon red-tint"><img src={icon12} alt="" /></div>
-              <p>We evaluate your current cybersecurity posture, identify compliance gaps, and deliver a blueprint of your organization status against CMMC 2.0 and NIST 800-171 requirements.</p>
+              <p>We evaluate your current cybersecurity environment, identify compliance gaps and determine where your organization stands against CMMC 2.0 and NIST 800-171 requirements.</p>
             </div>
           </div>
 
@@ -514,7 +514,7 @@ const HomeScreen = () => {
             </div>
             <div className="step-bottom-card">
               <div className="step-card-icon"><img src={icon13} alt="" /></div>
-              <p>We develop a clear, prioritized compliance strategy aligned with your business, outlining required controls, timelines, and implementation steps.</p>
+              <p>We develop a clear, prioritized compliance strategy aligned with your business, outlining required controls, timelines and implementation steps.</p>
             </div>
           </div>
           <div className="process-linear-column">
@@ -523,7 +523,7 @@ const HomeScreen = () => {
             </div>
             <div className="step-bottom-card">
               <div className="step-card-icon"><img src={icon1} alt="" /></div>
-              <p>We design security controls, harden your Microsoft 365 environment, and establish governance systems to secure workflows & operational infrastructure.</p>
+              <p>We deploy security controls, harden your Microsoft 365 environment and establish governance systems to ensure compliance is operational, not theoretical.</p>
             </div>
           </div>
 
@@ -533,7 +533,7 @@ const HomeScreen = () => {
             </div>
             <div className="step-bottom-card">
               <div className="step-card-icon"><img src={icon14} alt="" /></div>
-              <p>We document evidence, validate control effectiveness, and prepare your organization for audit readiness with confidence and complete accountability.</p>
+              <p>We document evidence, validate control effectiveness and prepare your organization for audit readiness with confidence and accountability.</p>
             </div>
           </div>
         </div>

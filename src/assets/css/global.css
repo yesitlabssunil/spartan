@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Inter', sans-serif;
+body {
+  /* font-family: sans-serif, 'Inter'; */
+  font-family: 'Overused Grotesk', sans-serif;
 }
 
 .custom-container {

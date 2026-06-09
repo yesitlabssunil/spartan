@@ -161,7 +161,7 @@ span.dot-black {
 
 /* --- "What is it" Content Style --- */
 .info-section {
-    padding: 90px 8%;
+    padding: 80px 8%;
     text-align: center;
     background: #F7F7F7;
 }
@@ -177,12 +177,13 @@ span.dot-black {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
     margin: auto;
+    margin-bottom: 10px;
     letter-spacing: 0.5px;
 }
 
 .section-heading-center {
+    font-family: 'Overused Grotesk', sans-serif;
         font-size: 43px;
     font-weight: 500;
     max-width: 885px;
@@ -215,7 +216,7 @@ span.dot-black {
 .level-card {
     background-color: #ffffff;
     border: 1px solid #0000000D;
-    padding: 40px 30px;
+    padding: 15px 15px 0 15px;
     border-radius: 6px;
     text-align: left;
     transition: var(--transition-speed);
@@ -250,7 +251,7 @@ span.dot-black {
 
 /* --- "The Problem" Section --- */
 .problem-section {
-        padding: 90px 8%;
+        padding: 80px 8%;
     background-color: #ffffff;
     border-top: 1px solid #f3f3f3;
 }
@@ -259,8 +260,8 @@ span.dot-black {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 50px;
-    margin-bottom: 50px;
+    gap: 5px;
+    margin-bottom: 38px;
 }
 
 .left-head { flex: 2.2; }
@@ -281,7 +282,8 @@ span.dot-black {
 }
 
 .left-head h2 {
-    font-size: 40px;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 37px;
     font-weight: 500;
     line-height: 1.3;
     color: #000000E5;
@@ -296,7 +298,7 @@ span.dot-black {
     color: #000000B2;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.2;
         display: flex;
     justify-content: right;
 }
@@ -309,7 +311,7 @@ span.dot-black {
 }
 
 .problem-item {
-    background-color: #f8f9fa;
+    background-color: #F7F7F7;
     padding: 22px 25px;
     border-radius: 6px;
     display: flex;
@@ -338,7 +340,7 @@ span.dot-black {
 .prob-text {
     font-size: 14px;
     font-weight: 600;
-    color: #222222;
+    color: #000000;
 }
 
 /* --- Animation CSS --- */
@@ -451,11 +453,16 @@ span.dot-black {
 }
 .clients-ribbon::before {
     left: 0;
-    background: linear-gradient(to right, #f4f5f7 20%, rgba(244, 245, 247, 0) 100%);
+    background: linear-gradient(to right, #f4f5f7 20%, rgba(244, 245, 247, 0) 150%);
 }
 .clients-ribbon::after {
     right: 0;
-    background: linear-gradient(to left, #f4f5f7 20%, rgba(244, 245, 247, 0) 100%);
+    background: linear-gradient(to left, #f4f5f7 20%, rgba(244, 245, 247, 0) 150%);
+}
+.clients-ribbon::before,
+.clients-ribbon::after {
+    width: 300px;
+    /* border: 1px solid red */
 }
 
 /* Main Track Container */
@@ -497,17 +504,17 @@ span.dot-black {
 
 /* --- 6. Delayed Compliance Risk Layout --- */
 .risk-section {
-    padding: 100px 8%;
+    padding: 80px 8%;
     background-color: #F7F7F7;
     display: flex;
     justify-content: space-between;
-    gap: 60px;
+    gap: 50px;
     align-items: center;
 }
 
 .risk-left-panel {
     flex: 1;
-    max-width: 450px;
+    max-width: 476px;
 }
 
 .badge-red-tag {
@@ -526,19 +533,20 @@ span.dot-black {
 }
 
 .risk-left-panel h2 {
-    font-size: 43px;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 40px;
     font-weight: 500;
     line-height: 1.25;
     color: #000000E5;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .risk-left-panel p {
-    color: #000000CC;
+    color: #000000;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.7;
-    margin-bottom: 35px;
+    line-height: 1.3;
+    margin-bottom: 24px;
 }
 
 .btn-red-action {
@@ -572,7 +580,7 @@ span.dot-black {
 .risk-card {
     background-color: #ffffff;
     border: 1px solid #0000000D;
-    padding: 30px 25px;
+    padding: 10px 17px 2px 17px;
     border-radius: 6px;
     transition: var(--transition-speed);
 }
@@ -591,9 +599,9 @@ span.dot-black {
 }
 
 .risk-card h4 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
-    color: #000000E5;
+    color: #000000;
     line-height: 1.4;
 }
 
@@ -660,9 +668,10 @@ span.dot-black {
 }
 
 .stats-banner h3 {
+    font-family: 'Geist', sans-serif;
     font-size: 32px;
     font-weight: 500;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #fff;
     margin-bottom: 70px;
     max-width: 1050px;
@@ -678,7 +687,8 @@ span.dot-black {
 }
 
 .stat-box h2 {
-    font-size: 55px;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 50px;
     font-weight: 500;
     color: #ffffff;
     margin-bottom: 8px;
@@ -686,7 +696,8 @@ span.dot-black {
 }
 
 .stat-box p {
-    font-size: 18px;
+    font-family: 'Geist', sans-serif;
+    font-size: 16px;
     font-weight: 400;
     color: #FFFFFFE5;
     text-transform: uppercase;
@@ -723,6 +734,7 @@ span.dot-white{
     border-radius: 50%;
 }
 .solution-header h2 {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 41px;
     font-weight: 500;
     margin-bottom: 60px;
@@ -740,7 +752,7 @@ span.dot-white{
 .sol-card {
     background-color: #12131c; /* Contrast dark tile */
     border: 1px solid #1f212d;
-    padding: 45px 40px;
+    padding: 25px 30px 0 30px;
     border-radius: 6px;
     transition: var(--transition-speed);
     box-shadow: 0px 4px 0px -3.5px #00000014;
@@ -765,7 +777,7 @@ background-color: #2F2F2F4D;
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    margin-bottom: 25px;
+    margin-bottom: 80px;
 }
 
 .sol-card h3 {
@@ -832,7 +844,7 @@ background-color: #2F2F2F4D;
 
 /* --- 9. Strategic Services --- */
 .services-section {
-    padding: 100px 8%;
+    padding: 60px 8%;
     background-color: #F7F7F7;
 }
 
@@ -853,10 +865,12 @@ background-color: #2F2F2F4D;
 }
 
 .services-section h2 {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 43px;
     font-weight: 500;
     color: #000000;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .services-subtext {
@@ -953,13 +967,13 @@ background-color: #2F2F2F4D;
     /* !important lagane se HTML ka inline background automatic hat jayega */
     background: rgba(22, 21, 18, 0.25) !important; 
     
-    padding: 40px;
+    padding: 40px 25px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 4px; /* Image ke jaisa sharp/minimalist look */
     
     /* Image_e67ddd.png jaisa exact blur aur shadow effect */
-    backdrop-filter: blur(28px);
     -webkit-backdrop-filter: blur(28px); /* Safari support */
+    backdrop-filter: blur(28px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
     
     display: flex;
@@ -996,7 +1010,7 @@ background-color: #2F2F2F4D;
 }
 /* --- 10. Three Pillars of Compliance --- */
 .pillars-section {
-    padding: 100px 8%;
+    padding: 80px 8%;
     background-color: #F7F7F7;
     border-top: 1px solid #f3f3f3;
 }
@@ -1027,6 +1041,7 @@ background-color: #2F2F2F4D;
 }
 
 .pillars-left-title h2 {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 40px;
     font-weight: 500;
     line-height: 1.25;
@@ -1060,9 +1075,9 @@ background-color: #2F2F2F4D;
 
 .pillar-column-card {
     background-color: #ffffff;
-    border: 1px solid #eaeaea;
+    /* border: 1px solid #eaeaea; */
     border-radius: 6px;
-    padding: 35px 30px;
+    padding: 15px 25px 5px 25px;
     transition: var(--transition-speed);
 }
 
@@ -1075,7 +1090,7 @@ background-color: #2F2F2F4D;
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 18px;
 }
 
 .pillar-icon-red {
@@ -1091,6 +1106,7 @@ background-color: #2F2F2F4D;
 }
 
 .pillar-card-head h4 {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 17px;
     font-weight: 700;
     color: #111111;
@@ -1099,11 +1115,16 @@ background-color: #2F2F2F4D;
 .pillar-list {
     list-style: none;
 }
+.pillar-list {
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+}
 
 .pillar-list li {
     font-size: 14.5px;
     color: #444444;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1116,7 +1137,7 @@ background-color: #2F2F2F4D;
 
 /* --- 11. Why Spartan Trust --- */
 .trust-section {
-    padding: 100px 8%;
+    padding: 70px 8%;
     background-color: #f7f7f7;
     border-top: 1px solid #f3f3f3;
 }
@@ -1133,8 +1154,9 @@ background-color: #2F2F2F4D;
 }
 
 .trust-section h2 {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 34px;
-    font-weight: 700;
+    font-weight: 500;
     color: #111111;
     margin-bottom: 20px;
 }
@@ -1157,9 +1179,9 @@ background-color: #2F2F2F4D;
 
 .trust-box-card {
     background-color: #ffffff;
-    border: 1px solid #eaeaea;
+    /* border: 1px solid #eaeaea; */
     border-radius: 6px;
-    padding: 40px 25px;
+    padding: 20px 25px 10px 25px;
     transition: var(--transition-speed);
 }
 
@@ -1179,19 +1201,19 @@ background-color: #2F2F2F4D;
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    margin-bottom: 25px;
+    margin-bottom: 60px;
 }
 
 .trust-box-card h4 {
     font-size: 16.5px;
-    font-weight: 700;
+    font-weight: 600;
     color: #111111;
     margin-bottom: 12px;
 }
 
 .trust-box-card p {
     font-size: 13.5px;
-    color: #666666;
+    color: #000000B2;
     line-height: 1.6;
 }
 
@@ -1219,7 +1241,7 @@ background-color: #2F2F2F4D;
 
 /* --- 12. Who We Are Layout --- */
 .who-we-are-section {
-    padding: 100px 8%;
+    padding: 70px 8%;
     background-color: #f7f7f7;
     display: flex;
     justify-content: space-between;
@@ -1243,6 +1265,7 @@ background-color: #2F2F2F4D;
     margin-bottom: 20px;
     letter-spacing: 0.5px;
     margin: auto;
+    margin-bottom: 18px;
 }
 
 .section-tag-red.no-mar{
@@ -1342,15 +1365,17 @@ span.dot-red {
 
 /* --- 13. Our Focus Section --- */
 .focus-section {
-    padding: 100px 8%;
+    padding: 30px 8%;
     background-color: #f7f7f7;
-    border-top: 1px solid #eaeaea;
+    /* border-top: 1px solid #eaeaea; */
 }
 
 .focus-section h2 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #111111;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 37px;
+    font-weight: 500;
+    color: #000000;
+    padding: 0 90px;
 }
 
 .focus-grid {
@@ -1362,10 +1387,11 @@ span.dot-red {
 }
 
 .focus-card {
+    
     background-color: #ffffff;
     border: 1px solid #eaeaea;
     border-radius: 6px;
-    padding: 35px 30px;
+    padding: 25px 20px 0 20px;
     transition: var(--transition-speed);
 }
 
@@ -1378,13 +1404,14 @@ span.dot-red {
 .focus-icon {
     color: var(--primary-red);
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .focus-card h4 {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 17px;
-    font-weight: 700;
-    color: #111111;
+    font-weight: 500;
+    color: #000000;
     margin-bottom: 10px;
 }
 
@@ -1495,19 +1522,22 @@ span.dot-red {
 
 /* --- 15. Industries Layout --- */
 .industries-section {
-    padding: 100px 8%;
+    padding: 70px 8%;
     background-color: #f7f7f7;
     border-top: 1px solid #f3f3f3;
 }
 
 .industries-section h2 {
-    font-size: 34px;
-    font-weight: 700;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 38px;
+    font-weight: 500;
     margin-bottom: 20px;
+    color: #000000;
+    padding: 0 300px;
 }
 
 .industries-top-desc {
-    font-size: 15.5px;
+    font-size: 16px;
     color: var(--text-muted);
     max-width: 825px;
     margin: 0 auto;
@@ -1596,7 +1626,8 @@ span.dot-red {
 }
 
 .who-left-col h2 {
-    font-size: 43px;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 34px;
     font-weight: 500;
     line-height: 1.25;
     color: #000000E5;
@@ -1607,19 +1638,20 @@ span.dot-red {
 .strategic-checklist-box {
     display: flex;
     flex-direction: column;
+    margin-top: 140px;
 }
 
 .checklist-row {
     display: flex;
     align-items: center;
     padding: 18px 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #e7dddd;
     gap: 20px;
 }
 
-.checklist-row:last-child {
+/* .checklist-row:last-child {
     border-bottom: none;
-}
+} */
 
 .chk-icon {
     color: #b0b5c5;
@@ -1629,17 +1661,19 @@ span.dot-red {
 }
 
 .chk-text {
-    font-size: 15px;
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
     font-weight: 500;
-    color: #333333;
+    color: #000000;
 }
 
 /* Right Column Elements */
 .who-top-intro-text {
-    font-size: 18px;
+    font-family: 'Geist', sans-serif;
+    font-size: 17px;
     font-weight: 400;
     color: #000000B2;
-    line-height: 1.7;
+    line-height: 1.4;
     margin-bottom: 45px;
     max-width: 400px;
     display: flex;
@@ -1696,15 +1730,16 @@ span.dot-red {
 
 /* --- 14. Fixed Sequential Process Flow Section --- */
 .process-flow-section {
-    padding: 100px 8%;
+    padding: 80px 8%;
     background-color: #f7f7f7;
     border-top: 1px solid #f3f3f3;
 }
 
 .process-header-block h2 {
-    font-size: 34px;
-    font-weight: 700;
-    color: #111111;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: #000000;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -1885,7 +1920,7 @@ span.dot-red {
 
 /* --- 16. Resources Grid Styles --- */
 .resources-section {
-    padding: 100px 8% 70px 8%;
+    padding: 70px 8% 70px 8%;
     background-color: #ffffff;
 }
 
@@ -1910,14 +1945,16 @@ span.dot-red {
 }
 
 .resources-section h2 {
-    font-size: 34px;
-    font-weight: 700;
-    color: #111111;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 38px;
+    font-weight: 500;
+    color: #000000;
     margin-bottom: 15px;
+    padding: 0 300px;
 }
 
 .resources-subtext {
-    font-size: 15px;
+    font-size: 17px;
     color: var(--text-muted);
 }
 
@@ -2002,19 +2039,20 @@ span.dot-red {
 }
 
 .faq-left-block h2 {
-    font-size: 36px;
-    font-weight: 700;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
     line-height: 1.25;
-    color: #111111;
+    color: #000000E5;
     margin-top: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 55px;
 }
 
 .faq-left-block p {
-    color: var(--text-muted);
-    font-size: 15px;
-    line-height: 1.6;
-    max-width: 340px;
+    color: #000000E5;
+    font-size: 17px;
+    line-height: 1.5;
+    max-width: 300px;
     margin-bottom: 35px;
 }
 
@@ -2039,10 +2077,11 @@ span.dot-red {
 }
 
 .accordion-header h4 {
-    font-size: 15px;
-    font-weight: 600;
-    color: #111111;
-    transition: color 0.25s ease;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    /* transition: color 0.25s ease; */
 }
 
 /* Custom CSS Circular +/- Icons */
@@ -2086,9 +2125,10 @@ span.dot-red {
 }
 
 .accordion-body-content {
+    font-family: 'Geist', sans-serif;
     padding-bottom: 25px;
-    font-size: 14px;
-    color: #555555;
+    font-size: 16px;
+    color: #000000B2;
     line-height: 1.65;
     max-width: 580px;
 }

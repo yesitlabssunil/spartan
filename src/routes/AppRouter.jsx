@@ -10,9 +10,14 @@ import CmmcScreen from "../pages/CmmcScreen";
 import ResourcesScreen from "../pages/ResourcesScreen";
 import AboutScreen from "../pages/AboutScreen";
 import NotFoundRedirect from "./NotFoundRedirect";
+import ScrollToTop from "./ScrollToTop";
 
 const AppRouter = () => (
     <Router>
+
+        <ScrollToTop />
+
+
         <Routes>
             <Route path="/" element={
                 <HomeScreen />
