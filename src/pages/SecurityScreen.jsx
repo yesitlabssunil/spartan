@@ -551,7 +551,11 @@ const SecurityScreen = () => {
                             <p className="cta-banner-desc">
                             A focused tenant review with a senior architect - gap report and remediation plan delivered.                            </p>
                             <div className="cta-buttons-group">
-                                <Link to="/contact-us" className="cta-btn-white" style={{textDecoration: "none"}}>Schedule M365 Security Audit <span>→</span></Link>
+                                <Link to="/contact-us" className="cta-btn-white" style={{textDecoration: "none"}}>Schedule M365 Security Audit <span>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                                    </span></Link>
                                 <button className="cta-btn-outline">System Standards</button>
                             </div>
                         </div>

@@ -210,7 +210,11 @@ const AboutScreen = () => {
               </div> */}
 
               <div className="cta-buttons-group">
-                <Link to="/contact-us" className="cta-btn-white linknav">Schedule Consultation <span>→</span></Link>
+                <Link to="/contact-us" className="cta-btn-white linknav">Schedule Consultation <span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                  </span></Link>
                 <Link to="/compliance" className="cta-btn-outline linknav">Explore Compliance</Link>
               </div>
             </div>
