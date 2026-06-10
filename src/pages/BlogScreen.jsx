@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "../assets/css/blog.css";
+import { Link } from "react-router-dom";
 
 // Hero image – replace with your exported path
 import heroImage from "../assets/images/blogScreen/BlogThumbnail.jpg";
@@ -37,9 +38,9 @@ const BlogScreen = () => {
         <>
             <Header />
             <main className="blog-main">
-                
-                    {/* Hero Section */}
-                    {/* <div className="blog-hero">
+
+                {/* Hero Section */}
+                {/* <div className="blog-hero">
                     <div className="hero-gradient-bg">
              
                         <div className="blog-breadcrumb">
@@ -60,28 +61,28 @@ const BlogScreen = () => {
 
                     </div> */}
 
-                                {/* NEW FULL-WIDTH HERO WRAPPER */}
-            <div className="blog-hero-fullwidth">
-                <div className="custom-container">
-                    <div className="blog-hero-content">
-                        {/* Breadcrumb */}
-                        <div className="blog-breadcrumb">
-                            <span>Resources</span> <span className="separator">|</span>{" "}
-                            <span>Blogs</span> <span className="separator">|</span>{" "}
-                            <span>Home</span>
-                        </div>
+                {/* NEW FULL-WIDTH HERO WRAPPER */}
+                <div className="blog-hero-fullwidth">
+                    <div className="custom-container">
+                        <div className="blog-hero-content">
+                            {/* Breadcrumb */}
+                            <div className="blog-breadcrumb">
+                                <span>Resources</span> <span className="separator">|</span>{" "}
+                                <span>Blogs</span> <span className="separator">|</span>{" "}
+                                <span>Home</span>
+                            </div>
 
-                        <h1 className="blog-hero-title">Microsoft 365 Security Checklist</h1>
-                        <p className="blog-hero-subtitle">
-                            A practical security roadmap to assess your Microsoft 365 environment,
-                            identify hidden vulnerabilities, reduce attack risks, and build a stronger
-                            security posture in under 45 minutes.
-                        </p>
+                            <h1 className="blog-hero-title">Microsoft 365 Security Checklist</h1>
+                            <p className="blog-hero-subtitle">
+                                A practical security roadmap to assess your Microsoft 365 environment,
+                                identify hidden vulnerabilities, reduce attack risks, and build a stronger
+                                security posture in under 45 minutes.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-                    <div className="custom-container">
+                <div className="custom-container">
 
                     {/* Article Content */}
                     <article className="blog-article">
@@ -144,17 +145,20 @@ const BlogScreen = () => {
                         <h2 className="related-title">You also might like</h2>
                         <div className="related-grid">
                             {relatedArticles.map((item, index) => (
-                                <a href={item.link} key={index} className="related-card">
+                                <div key={index} className="related-card">
                                     <div className="related-card-image">
                                         <img src={item.image} alt={item.title} />
                                     </div>
                                     <div className="related-card-content">
                                         <h3 className="related-card-title">{item.title}</h3>
                                         <span className="related-card-meta">
-                                            {item.date} — READ MORE
+                                            {item.date} — {" "}
+                                            <Link to="/blog" className="read-more-link">
+                                                READ MORE
+                                            </Link>
                                         </span>
                                     </div>
-                                </a>
+                                </div>
                             ))}
                         </div>
                     </section>

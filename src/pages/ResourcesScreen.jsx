@@ -54,7 +54,7 @@ export default function ResourceScreen() {
           </h1>
 
           <p className="hero-display-subtitle">
-            Compliance intelligence drawn from real CMMC and NIST engagements – plus press, recognition and speaking from Spartan leadership.
+          Compliance intelligence drawn from real CMMC and NIST engagements - plus press, recognition and speaking from Spartan leadership.
           </p>
         </div>
       </section>
@@ -337,7 +337,7 @@ export default function ResourceScreen() {
                 <img src={icon6} alt="" />
               </div>
               <h3 className="case-card-title">Prime Contractor – From SPRS 42 to Audit–Ready in 11 Weeks</h3>
-              <p className="case-card-body">
+              <p className="case-card-body res-padd">
                 How a $180M aerospace prime closed 68 control gaps and passed mock C3PAO on first attempt.
               </p>
             </div>
@@ -349,7 +349,7 @@ export default function ResourceScreen() {
                 <img src={envIcon1} alt="" />
               </div>
               <h3 className="case-card-title">Mid–Sized MSP – Multi–Tenant CUI Boundary Redesign</h3>
-              <p className="case-card-body">
+              <p className="case-card-body res-padd">
                 Network segmentation and identity architecture that protected 14 DIB clients under one program.
               </p>
             </div>
@@ -361,7 +361,7 @@ export default function ResourceScreen() {
                 <img src={starShield} alt="" />
               </div>
               <h3 className="case-card-title">MILCON General Contractor – Field–First Hardening</h3>
-              <p className="case-card-body">
+              <p className="case-card-body res-padd">
                 Mobile workforce, BIM/CAD protection and subcontractor flowdown across 9 active project sites.
               </p>
             </div>

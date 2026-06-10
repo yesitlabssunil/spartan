@@ -1,555 +1,614 @@
    .security-main {
-    background-color: #ffffff;
-  }
-  
-  .sec-light-section {
-    padding: 95px 0;
-    background-color: #ffffff;
-  }
-  .sec-light-section1 {
-    padding: 95px 0;
-    background-color: #F7F7F7;
-  }
-  
-  .bg-light-gray-panel {
-    background-color: #F7F7F7;
-  }
-  
-  .border-top-gray {
+     background-color: #ffffff;
+   }
+
+   .sec-light-section {
+     padding: 70px 0;
+     background-color: #ffffff;
+   }
+
+   .sec-light-section1 {
+     padding: 80px 0;
+     background-color: #F7F7F7;
+   }
+
+   .bg-light-gray-panel {
+     background-color: #F7F7F7;
+   }
+
+   /* .border-top-gray {
     border-top: 1px solid #eaedf2;
   }
-  
-  .section-tag-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  
-  .justify-content-start {
-    justify-content: flex-start !important;
-  }
-  
-  .section-mini-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 10px;
-    font-weight: 700;
-    color: #e01b1b;
-    border: 1px solid rgba(224, 27, 27, 0.14);
-    background-color: rgba(224, 27, 27, 0.03);
-    padding: 8px 14px;
-    border-radius: 50px;
-    letter-spacing: 0.75px;
-  }
-  
-  .section-mini-tag.dark-theme-tag {
-    color: #ff3b3b;
-    border-color: rgba(255, 59, 59, 0.28);
-    background-color: rgba(255, 59, 59, 0.08);
-  }
-  
-  .fallback-red-dot {
-    width: 6px;
-    height: 6px;
-    background-color: #e01b1b;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-  }
-  
-  .section-mini-tag.dark-theme-tag .fallback-red-dot {
-    background-color: #ff3b3b;
-  }
-  
-  .section-main-heading {
-    font-size: 2.3rem;
-    font-weight: 700;
-    color: #111111;
-    letter-spacing: -0.015em;
-    line-height: 1.25;
-  }
-  
-  .section-sub-heading {
-    font-size: 1.05rem;
-    color: #555555;
-    max-width: 680px;
-    margin: 0 auto;
-    line-height: 1.55;
-  }
-  
-  .sec-body-text {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444444;
-  }
-  
-  .security-panel-card {
-    /* background: #fdfefe; */
-    background: #F7F7F7;
-    border: 1px solid #eef1f5;
-    border-radius: 8px;
-    padding: 35px 28px;
-    height: 100%;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .security-panel-card1 {
-    background: #ffff;
-    /* background: #F7F7F7; */
-    border: 1px solid #eef1f5;
-    border-radius: 8px;
-    padding: 35px 28px;
-    height: 100%;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .security-panel-card.white-bg-card {
-    background: #ffffff;
-    border-color: #e2e7ed;
-  }
-  
-  .security-panel-card.micro-feature {
-    background-color: #FFFFFF;
-    border: 1px solid #EAEAEA; /* Optional: adds a crisp border to separate from #F7F7F7 */
-    padding: 24px;             /* Optional: ensures good inner breathing room */
-    border-radius: 8px;   
-  }
-  
-  .security-panel-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
-  }
-  
-  .panel-icon-box {
-    width: 34px;
-    height: 34px;
-    background-color: #eaedf296;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 22px;
-  }
-  
-  .panel-icon {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-  }
-  
-  .security-panel-card h5 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #111111;
-    margin-bottom: 12px;
-  }
-  
-  .security-panel-card h6 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #111111;
-    margin-bottom: 8px;
-  }
-  
-  .security-panel-card p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #555555;
-    margin: 0;
-  }
-  
-  .sec-dark-section {
-    background-color: #121212;
-    padding: 100px 0;
-  }
-  
-  .sec-dark-section.black-bg-accent {
-    background-color: #0b0b0b;
-  }
-  
-  .border-top-dark {
-    border-top: 1px solid #1e1e1e;
-  }
-  
-  .dark-section-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 14px;
-    letter-spacing: -0.01em;
-  }
-  
-  .dark-section-subtitle {
-    font-size: 1.05rem;
-    color: #888888;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-  
-  .dark-panel-card {
-    background: #1a1a1a;
-    border: 1px solid #252525;
-    border-radius: 10px;
-    padding: 38px 30px;
-    height: 100%;
-  }
-  
-  .dark-panel-card h5 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 12px;
-  }
-  
-  .dark-panel-card p {
-    font-size: 0.92rem;
-    color: #999999;
-    line-height: 1.5;
-    margin-bottom: 22px;
-  }
-  
-  .dark-card-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .dark-card-list li {
-    font-size: 0.88rem;
-    color: #cccccc;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .dark-card-list li:last-child {
-    margin-bottom: 0;
-  }
-  
-  .dark-card-list li img {
-    width: 15px;
-    height: 15px;
-    object-fit: contain;
-  }
-  
-  .max-width-800 {
-    max-width: 840px;
-  }
-  
-  .dark-list-item {
-    border-left: 2px solid #e01b1b;
-    padding-left: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .dark-list-item h6 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 6px;
-  }
-  
-  .dark-list-item p {
-    font-size: 0.88rem;
-    color: #888888;
-    line-height: 1.5;
-    margin: 0;
-  }
-  
-  .security-cta-section {
-    padding: 90px 0 110px 0;
-    background-color: #ffffff;
-  }
-  .security-cta-section2 {
-    padding-bottom: 110px;
-    background-color: #F7F7F7;
-  }
-  
-  .security-cta-banner {
-    width: 100%;
-    border-radius: 20px;
-    padding: 75px 40px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-        background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%), 
-        radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
-        linear-gradient(135deg, #0e0202 0%, #000000 100%);
-background-color: #000000;
-  }
-  
-  .security-cta-banner .cta-banner-title {
-    font-size: 3.6rem;
-    font-weight: 600;
-    color: #ffffff;
-    line-height: 1.25;
-    margin-bottom: 18px;
-    letter-spacing: -0.01em;
-  }
-  
-  .security-cta-banner .cta-banner-desc {
-    font-size: 1.05rem;
-    color: #cccccc;
-    max-width: 700px;
-    margin-bottom: 35px;
-    line-height: 1.5;
-  }
-  
-  .security-cta-banner .cta-buttons-group {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .security-cta-banner .cta-btn-white {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding: 14px 32px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-  }
-  
-  .security-cta-banner .cta-btn-white:hover {
-    opacity: 0.9;
-  }
-  
-  .security-cta-banner .cta-btn-outline {
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding: 14px 32px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-  }
-  
-  .security-cta-banner .cta-btn-outline:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.5);
-  }
-  
+   */
+   .section-tag-wrapper {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 16px;
+   }
 
-  
-  @media (max-width: 991px) {
-    .sec-light-section, .sec-dark-section {
-      padding: 70px 0;
-    }
-    .section-main-heading, .dark-section-title {
-      font-size: 1.95rem;
-    }
-    .security-cta-banner .cta-banner-title {
-      font-size: 2rem;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .sec-light-section, .sec-dark-section {
-      padding: 50px 0;
-    }
-    .section-main-heading, .dark-section-title {
-      font-size: 1.6rem;
-    }
-    .security-panel-card {
-      padding: 28px 20px;
-    }
-    .dark-panel-card {
-      padding: 30px 22px;
-    }
-    .security-cta-banner {
-      padding: 55px 25px;
-    }
-    .security-cta-banner .cta-banner-title {
-      font-size: 1.55rem;
-    }
-    .security-cta-banner .cta-buttons-group {
-      flex-direction: column;
-      width: 100%;
-    }
-    .security-cta-banner .cta-btn-white,
-    .security-cta-banner .cta-btn-outline {
-      width: 100%;
-    }
-  }
+   .justify-content-start {
+     justify-content: flex-start !important;
+   }
 
-/* 3. Make the image icons larger inside the micro-boxes */
-.micro-box {
-    width: 30px;               /* Increased wrapper size */
-    height: 30px;              /* Increased wrapper size */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;       /* Spacing between icon and the <h6> heading */
-  }
-  
-  .micro-box .panel-icon {
-    width: 100%;               /* Forces image to scale up to the wrapper */
-    height: 100%;
-    object-fit: contain;       /* Prevents distortion */
-  }
+   .section-mini-tag {
+     display: inline-flex;
+     align-items: center;
+     gap: 8px;
+     font-size: 10px;
+     font-weight: 700;
+     color: #e01b1b;
+     border: 1px solid rgba(224, 27, 27, 0.14);
+     background-color: rgba(224, 27, 27, 0.03);
+     padding: 8px 14px;
+     border-radius: 50px;
+     letter-spacing: 0.75px;
+   }
 
-  /* Ensure micro feature boxes and dark boxes handle imported images accurately */
-.panel-icon-box.micro-box {
-    margin-bottom: 16px;
-    width: 32px;
-    height: 32px;
-  }
-  
-  .panel-icon-box.dark-box {
-    background-color: #7d7b5c1a; /* Dark mode themed background container for icons */
-    /* border: 1px solid rgba(224, 27, 27, 0.2); */
-  }
-  
-  /* Section 7 Continuous Monitoring: Left Side Icon Alignment styles */
-  .dark-list-item-with-icon {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    background: #141414;
-    border: 1px solid #1f1f1f;
-    padding: 24px;
-    border-radius: 8px;
-    height: 100%;
-  }
-  
-  .dark-list-icon-wrapper {
-    width: 40px;
-    height: 40px;
-    background-color: #1e1e1e;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  
-  .dark-list-icon-wrapper img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-  }
-  
-  .dark-list-item-with-icon h6 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 6px;
-  }
-  
-  .dark-list-item-with-icon p {
-    font-size: 0.88rem;
-    color: #888888;
-    line-height: 1.5;
-    margin: 0;
-  }
+   .section-mini-tag.dark-theme-tag {
+     color: #ff3b3b;
+     border-color: rgba(255, 59, 59, 0.28);
+     background-color: rgba(255, 59, 59, 0.08);
+   }
+
+   .fallback-red-dot {
+     width: 6px;
+     height: 6px;
+     background-color: #e01b1b;
+     border-radius: 50%;
+     display: inline-block;
+     flex-shrink: 0;
+   }
+
+   .section-mini-tag.dark-theme-tag .fallback-red-dot {
+     background-color: #ff3b3b;
+   }
+   /* .block-size{
+    max-width: 650px;
+   } */
+   .section-main-heading {
+     font-family: 'Overused Grotesk', sans-serif;
+     /* font-size: 2.3rem; */
+     font-size: 2.3rem;
+     font-weight: 500;
+     color: #111111;
+     letter-spacing: -0.015em;
+     line-height: 1.25;
+   }
+
+
+   .section-sub-heading {
+     font-size: 1.05rem;
+     color: #555555;
+     max-width: 680px;
+     margin: 0 auto;
+     line-height: 1.55;
+   }
+   .section-sub-heading.section-sub-heading1{
+    max-width: 1110px !important;
+   }
+
+   .sec-body-text {
+     font-family: 'Geist', sans-serif;
+     font-size: 1rem;
+     line-height: 1.6;
+     color: #000000B2;
+   }
+
+   .security-panel-card {
+     /* background: #fdfefe; */
+     background: #F7F7F7;
+     border: 1px solid #eef1f5;
+     border-radius: 8px;
+     padding: 25px 28px;
+     height: 100%;
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+   }
+
+   .security-panel-card1 {
+     background: #ffff;
+     /* background: #F7F7F7; */
+     border: 1px solid #eef1f5;
+     border-radius: 8px;
+     padding: 35px 28px;
+     height: 100%;
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+   }
+
+   .security-panel-card.white-bg-card {
+     background: #ffffff;
+     border-color: #e2e7ed;
+   }
+
+   .security-panel-card.micro-feature {
+     background-color: #FFFFFF;
+     /* border: 1px solid #EAEAEA; Optional: adds a crisp border to separate from #F7F7F7 */
+     padding: 24px;
+     /* Optional: ensures good inner breathing room */
+     border-radius: 8px;
+   }
+
+   .security-panel-card:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+   }
+
+   .panel-icon-box {
+     width: 34px;
+     height: 34px;
+     background-color: #eaedf296;
+     border-radius: 5px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 45px;
+   }
+
+   .panel-icon {
+     width: 20px;
+     height: 20px;
+     object-fit: contain;
+   }
+
+   .security-panel-card h5 {
+    font-family: 'Overused Grotesk', sans-serif;
+     font-size: 1.15rem;
+     font-weight: 500;
+     color: #111111;
+     margin-bottom: 12px;
+   }
+
+   .security-panel-card h6 {
+     font-size: 1rem;
+     font-weight: 700;
+     color: #111111;
+     margin-bottom: 8px;
+   }
+
+   .security-panel-card p {
+    font-family: 'Geist', sans-serif;
+     font-size: 0.9rem;
+     line-height: 1.4;
+     color: #000000B2;
+     margin: 0;
+   }
+
+   .sec-dark-section {
+     background-color: #121212;
+     padding: 80px 0;
+   }
+
+   .sec-dark-section.black-bg-accent {
+     background-color: #0b0b0b;
+   }
+
+   .border-top-dark {
+     border-top: 1px solid #1e1e1e;
+   }
+
+   .dark-section-title {
+     font-family: 'Overused Grotesk', sans-serif;
+     font-size: 2.25rem;
+     font-weight: 500;
+     color: #ffffff;
+     margin-bottom: 14px;
+     letter-spacing: -0.01em;
+   }
+
+   .dark-section-subtitle {
+    font-family: 'Geist', sans-serif;
+     font-size: 1.05rem;
+     color: #FFFFFFB2;
+     max-width: 640px;
+     margin: 0 auto;
+   }
+
+   .dark-panel-card {
+     background: #1a1a1a;
+     border: 1px solid #252525;
+     border-radius: 4px;
+     padding: 25px 28px;
+     height: 100%;
+   }
+
+   .dark-panel-card h5 {
+    font-family: 'Overused Grotesk', sans-serif;
+     font-size: 1.2rem;
+     font-weight: 500;
+     color: #ffffff;
+     margin-bottom: 12px;
+   }
+
+   .dark-panel-card p {
+    font-family: 'Geist', sans-serif;
+     font-size: 0.92rem;
+     color: #FFFFFFB2;
+     line-height: 1.5;
+     margin-bottom: 22px;
+   }
+
+   .dark-card-list {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+   }
+
+   .dark-card-list li {
+    font-family: 'Geist', sans-serif;
+     font-size: 0.88rem;
+     color: #FFFFFFB2;
+     margin-bottom: 10px;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+   }
+
+   .dark-card-list li:last-child {
+     margin-bottom: 0;
+   }
+
+   .dark-card-list li img {
+     width: 17px;
+     height: 17px;
+     object-fit: contain;
+   }
+
+   .max-width-800 {
+     max-width: 840px;
+   }
+
+   .dark-list-item {
+     border-left: 2px solid #e01b1b;
+     padding-left: 20px;
+     margin-bottom: 10px;
+   }
+
+   .dark-list-item h6 {
+     font-size: 1.05rem;
+     font-weight: 600;
+     color: #ffffff;
+     margin-bottom: 6px;
+   }
+
+   .dark-list-item p {
+     font-size: 0.88rem;
+     color: #888888;
+     line-height: 1.5;
+     margin: 0;
+   }
+
+   .security-cta-section {
+     padding: 90px 0 110px 0;
+     background-color: #ffffff;
+   }
+
+   .security-cta-section2 {
+     padding-bottom: 110px;
+     background-color: #F7F7F7;
+   }
+
+   .security-cta-banner {
+     width: 100%;
+     border-radius: 10px;
+     padding: 75px 40px;
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%),
+       radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
+       linear-gradient(135deg, #0e0202 0%, #000000 100%);
+     background-color: #000000;
+   }
+
+   .security-cta-banner .cta-banner-title {
+     font-size: 3.6rem;
+     font-weight: 600;
+     color: #ffffff;
+     line-height: 1.25;
+     margin-bottom: 18px;
+     letter-spacing: -0.01em;
+   }
+
+   .security-cta-banner .cta-banner-desc {
+     font-size: 1.05rem;
+     color: #cccccc;
+     max-width: 700px;
+     margin-bottom: 35px;
+     line-height: 1.5;
+   }
+
+   .security-cta-banner .cta-buttons-group {
+     display: flex;
+     gap: 15px;
+     flex-wrap: wrap;
+     justify-content: center;
+   }
+
+   .security-cta-banner .cta-btn-white {
+     background-color: #ffffff;
+     color: #000000;
+     border: none;
+     font-size: 0.95rem;
+     font-weight: 600;
+     padding: 14px 32px;
+     border-radius: 6px;
+     cursor: pointer;
+     transition: opacity 0.2s ease;
+   }
+
+   .security-cta-banner .cta-btn-white:hover {
+     opacity: 0.9;
+   }
+
+   .security-cta-banner .cta-btn-outline {
+     background-color: transparent;
+     color: #ffffff;
+     border: 1px solid rgba(255, 255, 255, 0.25);
+     font-size: 0.95rem;
+     font-weight: 600;
+     padding: 14px 32px;
+     border-radius: 6px;
+     cursor: pointer;
+     transition: background-color 0.2s ease, border-color 0.2s ease;
+   }
+
+   .security-cta-banner .cta-btn-outline:hover {
+     background-color: rgba(255, 255, 255, 0.05);
+     border-color: rgba(255, 255, 255, 0.5);
+   }
 
 
 
-  /* --- UI GLOW OVERRIDE FOR THE FULL DATA PROTECTION BLOCK --- */
-.sec-dark-section.separation-top-glow {
-    background: radial-gradient(circle at 50% 0%, rgba(139, 0, 0, 0.25) 0%, rgba(18, 18, 18, 0) 70%), #121212;
-    border-top: 1px solid rgba(255, 59, 59, 0.1);
-    padding-bottom: 120px;
-  }
-  
-  /* --- THE INTERNAL DIVIDER LINE BEFORE SECTION 7 --- */
-  .border-top-dark-divider {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin-top: 40px;
-  }
-  
-  /* --- BOX STYLE ALIGNMENTS TO MATCH DESIGN --- */
-  .panel-icon-box.dark-box {
-    background-color: rgba(255, 255, 255, 0.04);
-    border-radius: 6px;
-    width: 42px;
-    height: 42px;
-  }
-  
-  .dark-panel-card {
-    background: rgba(255, 255, 255, 0.02) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    backdrop-filter: blur(10px);
-  }
-  
-  /* --- THE RED COMPLIANCE BULLET POINTS (+ SYMBOL) --- */
-  .dark-card-list {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 16px;
-    padding-top: 16px !important;
-  }
-  
-  .dark-card-list li {
-    color: #a0a0a0 !important;
-    font-size: 0.9rem !important;
-  }
-  
-  .red-plus-icon {
-    color: #ff3b3b;
-    font-weight: 700;
-    font-size: 1.1rem;
-    line-height: 1;
-  }
-  
-  /* --- SECTION 7: EXACT GRID UI LAYOUT WITHOUT BOXES --- */
-  .figma-monitoring-grid {
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  
-  .figma-monitoring-grid .grid-item {
-    border-color: rgba(255, 255, 255, 0.06) !important;
-  }
-  
-  .figma-monitoring-grid .dark-list-item-with-icon {
-    background: transparent !important;
-    border: none !important;
-    padding: 32px;
-    border-radius: 0;
-  }
-  
-  .figma-monitoring-grid .dark-list-icon-wrapper {
-    background: transparent !important;
-    width: auto;
-    height: auto;
-  }
-  
-  .figma-monitoring-grid .dark-list-icon-wrapper img {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .figma-monitoring-grid h6 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 8px;
-  }
-  
-  .figma-monitoring-grid p {
-    color: #8c8c8c;
-    font-size: 0.92rem;
-    line-height: 1.6;
-  }
-  
-  /* Responsive fixes for the grid system lines */
-  @media (max-width: 767px) {
-    .figma-monitoring-grid .grid-item {
-      border-right: none !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
-    }
-    .figma-monitoring-grid .grid-item:last-child {
-      border-bottom: none !important;
-    }
-  }
+   @media (max-width: 991px) {
+
+     .sec-light-section,
+     .sec-dark-section {
+       padding: 70px 0;
+     }
+
+     .section-main-heading,
+     .dark-section-title {
+       font-size: 1.95rem;
+     }
+
+     .security-cta-banner .cta-banner-title {
+       font-size: 2rem;
+     }
+   }
+
+   @media (max-width: 767px) {
+
+     .sec-light-section,
+     .sec-dark-section {
+       padding: 50px 0;
+     }
+
+     .section-main-heading,
+     .dark-section-title {
+       font-size: 1.6rem;
+     }
+
+     .security-panel-card {
+       padding: 28px 20px;
+     }
+
+     .dark-panel-card {
+       padding: 30px 22px;
+     }
+
+     .security-cta-banner {
+       padding: 55px 25px;
+     }
+
+     .security-cta-banner .cta-banner-title {
+       font-size: 1.55rem;
+     }
+
+     .security-cta-banner .cta-buttons-group {
+       flex-direction: column;
+       width: 100%;
+     }
+
+     .security-cta-banner .cta-btn-white,
+     .security-cta-banner .cta-btn-outline {
+       width: 100%;
+     }
+   }
+
+   /* 3. Make the image icons larger inside the micro-boxes */
+   .micro-box {
+     width: 30px;
+     /* Increased wrapper size */
+     height: 30px;
+     /* Increased wrapper size */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 16px;
+     /* Spacing between icon and the <h6> heading */
+   }
+
+   .micro-box .panel-icon {
+     width: 100%;
+     /* Forces image to scale up to the wrapper */
+     height: 100%;
+     object-fit: contain;
+     /* Prevents distortion */
+   }
+
+   /* Ensure micro feature boxes and dark boxes handle imported images accurately */
+   .panel-icon-box.micro-box {
+     margin-bottom: 16px;
+     width: 32px;
+     height: 32px;
+   }
+
+   .panel-icon-box.dark-box {
+     background-color: #7d7b5c1a;
+     /* Dark mode themed background container for icons */
+     /* border: 1px solid rgba(224, 27, 27, 0.2); */
+   }
+
+   /* Section 7 Continuous Monitoring: Left Side Icon Alignment styles */
+   .dark-list-item-with-icon {
+     display: flex;
+     align-items: flex-start;
+     gap: 18px;
+     background: #141414;
+     border: 1px solid #1f1f1f;
+     padding: 24px;
+     border-radius: 8px;
+     height: 100%;
+   }
+
+   .dark-list-icon-wrapper {
+     width: 40px;
+     height: 40px;
+     background-color: #1e1e1e;
+     border-radius: 6px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-shrink: 0;
+   }
+
+   .dark-list-icon-wrapper img {
+     width: 20px;
+     height: 20px;
+     object-fit: contain;
+   }
+
+   .dark-list-item-with-icon h6 {
+     font-size: 1.05rem;
+     font-weight: 600;
+     color: #ffffff;
+     margin-bottom: 6px;
+   }
+
+   .dark-list-item-with-icon p {
+     font-size: 0.88rem;
+     color: #888888;
+     line-height: 1.5;
+     margin: 0;
+   }
+
+
+
+   /* --- UI GLOW OVERRIDE FOR THE FULL DATA PROTECTION BLOCK --- */
+   .sec-dark-section.separation-top-glow {
+     background: radial-gradient(circle at 50% 0%, rgba(139, 0, 0, 0.25) 0%, rgba(18, 18, 18, 0) 70%), #121212;
+     border-top: 1px solid rgba(255, 59, 59, 0.1);
+     padding-bottom: 80px;
+   }
+
+   /* --- THE INTERNAL DIVIDER LINE BEFORE SECTION 7 --- */
+   .border-top-dark-divider {
+     border-top: 1px solid rgba(255, 255, 255, 0.08);
+     margin-top: 40px;
+   }
+
+   /* --- BOX STYLE ALIGNMENTS TO MATCH DESIGN --- */
+   .panel-icon-box.dark-box {
+     background-color: rgba(255, 255, 255, 0.04);
+     border-radius: 6px;
+     width: 42px;
+     height: 42px;
+   }
+
+   .dark-panel-card {
+     background: rgba(255, 255, 255, 0.02) !important;
+     border: 1px solid rgba(255, 255, 255, 0.05) !important;
+     backdrop-filter: blur(10px);
+   }
+
+   /* --- THE RED COMPLIANCE BULLET POINTS (+ SYMBOL) --- */
+   .dark-card-list {
+     /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+     border-top: 1px solid #FFFFFFB2;
+     margin-top: 16px;
+     padding-top: 16px !important;
+   }
+
+   .dark-card-list li {
+    font-family: 'Geist', sans-serif;
+     color: #FFFFFFB2 !important;
+     font-size: 0.9rem !important;
+   }
+
+   .red-plus-icon {
+     color: #ff3b3b;
+     font-weight: 700;
+     font-size: 1.1rem;
+     line-height: 1;
+   }
+
+   /* --- SECTION 7: EXACT GRID UI LAYOUT WITHOUT BOXES --- */
+   .figma-monitoring-grid {
+     border: 1px solid rgba(255, 255, 255, 0.06);
+     background: rgba(255, 255, 255, 0.01);
+     border-radius: 6px;
+     overflow: hidden;
+   }
+
+   .figma-monitoring-grid .grid-item {
+     border-color: rgba(255, 255, 255, 0.06) !important;
+   }
+
+   .figma-monitoring-grid .dark-list-item-with-icon {
+     background: transparent !important;
+     border: none !important;
+     padding: 32px;
+     border-radius: 0;
+   }
+
+   .figma-monitoring-grid .dark-list-icon-wrapper {
+     background: transparent !important;
+     width: auto;
+     height: auto;
+   }
+
+   .figma-monitoring-grid .dark-list-icon-wrapper img {
+     width: 24px;
+     height: 24px;
+   }
+
+   .figma-monitoring-grid h6 {
+    /* font-family: 'Overused Grotesk', sans-serif; */
+     font-size: 1.1rem;
+     font-weight: 600;
+     color: #ffffff;
+     margin-bottom: 8px;
+   }
+
+   .figma-monitoring-grid p {
+    font-family: 'Geist', sans-serif;
+     color: #FFFFFFB2;
+     font-size: 0.92rem;
+     line-height: 1.6;
+   }
+
+   /* Responsive fixes for the grid system lines */
+   @media (max-width: 767px) {
+     .figma-monitoring-grid .grid-item {
+       border-right: none !important;
+       border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+     }
+
+     .figma-monitoring-grid .grid-item:last-child {
+       border-bottom: none !important;
+     }
+   }
+
+   .content-column {
+     padding-right: 155px;
+   }
+
+   @media (max-width: 991.98px) {
+     .content-column {
+       padding-right: 0;
+     }
+   }
+   /* .fosize{
+    font-size: 41px;
+  } */

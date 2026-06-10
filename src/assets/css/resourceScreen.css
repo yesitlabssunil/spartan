@@ -92,10 +92,11 @@
   }
   
   .hero-display-subtitle {
+    font-family: 'Geist', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.65;
-    color: #A1A1AA;
+    color: #FFFFFF;
     margin: 0;
     max-width: 780px;
   }
@@ -106,8 +107,8 @@
   .resource-featured-section {
     width: 100%;
     background-color: #F8F9FA; 
-    padding-top: 96px;
-    padding-bottom: 96px;
+    padding-top: 80px;
+    padding-bottom: 60px;
   }
   
   /* Main Outer Box */
@@ -178,8 +179,9 @@
   
   /* Headline Styles */
   .card-display-headline {
-    font-size: 34px;
-    font-weight: 700;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
     line-height: 1.25;
     color: #000000;
     letter-spacing: -0.015em;
@@ -189,9 +191,10 @@
   
   /* Paragraph Summary Typography */
   .card-abstract-text {
+    font-family: 'Geist', sans-serif;
     font-size: 15px;
-    line-height: 1.6;
-    color: #52525B;
+    line-height: 1.5;
+    color: #000000;
     margin: 0;
     max-width: 480px;
   }
@@ -249,7 +252,7 @@
     width: 100%;
     background-color: #F7F7F7; /* Matches same light container field background */
     padding-top: 64px;
-    padding-bottom: 120px;
+    padding-bottom: 80px;
   }
   
   /* Centered Top Header Wrapper */
@@ -273,8 +276,9 @@
   }
   
   .insights-main-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 42px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
     color: #111111;
     letter-spacing: -0.02em;
@@ -321,8 +325,9 @@
   
   /* Title Header Directly Under Image */
   .insight-card-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.4;
     color: #111111;
     margin-top: 0;
@@ -422,7 +427,7 @@
     width: 100%;
     background-color: #FFFFFF; /* Pure clean base canvas separation from section 3 */
     padding-top: 80px;
-    padding-bottom: 120px;
+    padding-bottom: 80px;
   }
   
   /* Centered Top Header Wrapper Component */
@@ -446,8 +451,9 @@
   }
   
   .playbooks-main-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 42px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
     color: #111111;
     letter-spacing: -0.02em;
@@ -465,10 +471,10 @@
   
   /* Individual Content Box Card styled exactly like Section4.jpg mockup */
   .playbook-item-card {
-    background-color: #F8F9FA; /* Off-white container shade background */
+    background-color: #F7F7F7; /* Off-white container shade background */
     border: 1px solid #F1F1F4;  /* Very faint structural frame border line */
     border-radius: 6px;
-    padding: 40px;
+    padding: 25px 27px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -489,8 +495,9 @@
   
   /* Card Headline Setup */
   .playbook-card-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.4;
     color: #000000;
     margin-top: 0;
@@ -500,9 +507,10 @@
   
   /* Card Summary Text Body Description Component */
   .playbook-card-body {
+    font-family: 'Geist', sans-serif;
     font-size: 15px;
     line-height: 1.55;
-    color: #52525B; /* Clean gray readable description text copy */
+    color: #000000B2; /* Clean gray readable description text copy */
     margin: 0;
   }
   
@@ -555,8 +563,8 @@
 .resource-templates-section {
     width: 100%;
     background-color: #121212; /* Rich dark-charcoal base background */
-    padding-top: 96px;
-    padding-bottom: 112px;
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
   
   /* Header Text Container Customizations */
@@ -717,8 +725,8 @@
 .resource-cases-section {
     width: 100%;
     background-color: #FFFFFF; /* White crisp background separating section from section 5 dark theme */
-    padding-top: 96px;
-    padding-bottom: 120px;
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
   
   /* Centered Header Text Group */
@@ -742,8 +750,9 @@
   }
   
   .cases-main-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 42px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
     color: #111111;
     letter-spacing: -0.02em;
@@ -764,7 +773,7 @@
     background-color: #F8F9FA;
     border: 1px solid #F1F1F4;
     border-radius: 6px;
-    padding: 40px;
+    padding: 25px 28px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -785,8 +794,9 @@
   
   /* Card Headline Element */
   .case-card-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.4;
     color: #000000;
     margin-top: 0;
@@ -796,9 +806,10 @@
   
   /* Narrative Body Paragraph Component */
   .case-card-body {
+    font-family: 'Geist', sans-serif;
     font-size: 15px;
-    line-height: 1.55;
-    color: #52525B;
+    line-height: 1.4;
+    color: #000000B2;
     margin: 0;
   }
   
@@ -851,8 +862,8 @@
 .resource-recognition-section {
     width: 100%;
     background-color: #F8F9FA; /* Matches the clean off-white field background style */
-    padding-top: 96px;
-    padding-bottom: 120px;
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
   
   /* Centered Layout Header Text Block */
@@ -876,8 +887,9 @@
   }
   
   .recognition-main-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 42px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
     color: #111111;
     letter-spacing: -0.02em;
@@ -900,6 +912,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     width: 100%;
+    padding: 0 50px;
   }
   
   /* Elegant Clean Card Presentation Blocks */
@@ -907,7 +920,7 @@
     background-color: #FFFFFF; /* High contrast crisp white canvas block container background */
     border: 1px solid #E4E4E7;  /* Clear outline bounding frame rule */
     border-radius: 4px;
-    padding: 16px; /* Uniform wrapper clearance boundary spacing for inner items */
+    padding: 18px; /* Uniform wrapper clearance boundary spacing for inner items */
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -932,10 +945,11 @@
   
   /* Descriptive Card Headline Captions */
   .recognition-card-title {
+    font-family: 'Geist', sans-serif;
     font-size: 15px;
     font-weight: 500;
     line-height: 1.5;
-    color: #3F3F46; /* Smooth graphite text formatting */
+    color: #000000B2; /* Smooth graphite text formatting */
     margin-top: 0;
     margin-bottom: 8px;
     text-align: left;
@@ -991,8 +1005,8 @@
 .resource-media-section {
     width: 100%;
     background-color: #121212; /* Premium rich charcoal canvas background setup */
-    padding-top: 96px;
-    padding-bottom: 120px;
+    padding-top: 75px;
+    padding-bottom: 80px;
   }
   
   /* Centered Top Text Container Layout */
@@ -1016,8 +1030,9 @@
   }
   
   .media-main-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 42px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
     color: #FFFFFF;
     letter-spacing: -0.015em;
@@ -1037,7 +1052,7 @@
     background-color: #1E1E1E; /* Internal content block shade split */
     border: 1px solid #282828;  /* Subtle divider framework border border */
     border-radius: 4px;
-    padding: 32px;
+    padding: 25px 32px;
     display: flex;
     flex-direction: row; /* Horizontal elements split structure layout */
     align-items: flex-start;
@@ -1068,8 +1083,9 @@
   
   /* Card Typography Directives */
   .media-card-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.35;
     color: #FFFFFF;
     margin-top: 2px;
@@ -1078,9 +1094,10 @@
   }
   
   .media-card-body {
+    font-family: 'Geist', sans-serif;
     font-size: 15px;
     line-height: 1.5;
-    color: #A1A1AA; /* Smooth slate description copy */
+    color: #FFFFFFB2; /* Smooth slate description copy */
     margin: 0;
   }
   
@@ -1178,8 +1195,9 @@
   }
   
   .faq-panel-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 42px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.15;
     color: #111111;
     letter-spacing: -0.02em;
@@ -1220,8 +1238,9 @@
   
   /* Question Typography settings */
   .faq-question-text {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.4;
     color: #000000;
     margin: 0;
@@ -1271,9 +1290,10 @@
   
   /* Answer Paragraph Text Copy Frame Rules */
   .faq-answer-paragraph {
+    font-family: 'Geist', sans-serif;
     font-size: 16px;
-    line-height: 1.55;
-    color: #52525B; /* Smooth charcoal grey color value matching image */
+    line-height: 1.5;
+    color: #000000B2; /* Smooth charcoal grey color value matching image */
     margin-top: 12px;
     margin-bottom: 0;
     max-width: 680px;
@@ -1400,7 +1420,7 @@
     color: #E4E4E7; /* Light grey readable secondary text color */
     margin-top: 0;
     margin-bottom: 40px;
-    max-width: 600px;
+    max-width: 637px;
   }
   
   /* Horizontal Actions Interaction Row Matrix */
@@ -1507,3 +1527,14 @@
       width: 100%;
     }
   }
+
+  .res-padd{
+    padding-right: 13px;
+  }
+
+
+@media (max-width: 767.98px) {
+    .res-padd {
+        padding-right: 0;
+    }
+}

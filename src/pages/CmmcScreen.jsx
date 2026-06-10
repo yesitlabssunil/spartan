@@ -59,7 +59,7 @@ const CmmcScreen = () => {
                             </span>
                         </div>
 
-                        <h2 className="section-main-heading mb-4 text-dark font-weight-700 font-size-38">
+                        <h2 className="section-main-heading mb-4 text-dark font-weight-500 font-size-38">
                             A Contractual Obligation Tied Directly to Eligibility.
                         </h2>
 
@@ -93,7 +93,7 @@ const CmmcScreen = () => {
                                 <span className="fallback-red-dot"></span>LEVEL 2 REQUIREMENTS
                             </span>
                         </div>
-                        <h2 className="section-main-heading text-dark font-weight-700 mb-3 max-w-900 mx-auto">
+                        <h2 className="section-main-heading text-dark font-weight-500 mb-3 max-w-900 mx-auto">
                             Three Certification Levels – Level 2 is where most DIB awards land.
                         </h2>
                         <p className="section-subtitle-text text-secondary mb-5 max-w-780 mx-auto">
@@ -252,7 +252,7 @@ const CmmcScreen = () => {
                         </div>
 
                         {/* Primary Deadline Header */}
-                        <h2 className="section-main-heading text-white font-weight-700 mb-3 font-size-42">
+                        <h2 className="section-main-heading text-white font-weight-500 mb-3 font-size-42">
                             Beginning November 10, 2025.
                         </h2>
 
@@ -267,7 +267,7 @@ const CmmcScreen = () => {
                             {/* Box 1: Structured SSP */}
                             <div className="col-lg-4 col-md-6">
                                 <div className="cmmc-dark-panel-card">
-                                    <div className="dark-card-icon-wrapper mb-4">
+                                    <div className="dark-card-icon-wrapper">
                                         <img src={hammer} alt="Gavel/Contract Icon" className="dark-card-graphic-asset" />
                                     </div>
                                     <h4 className="dark-card-title">Structured SSP</h4>
@@ -280,7 +280,7 @@ const CmmcScreen = () => {
                             {/* Box 2: Accurate SPRS Scoring */}
                             <div className="col-lg-4 col-md-6">
                                 <div className="cmmc-dark-panel-card">
-                                    <div className="dark-card-icon-wrapper mb-4">
+                                    <div className="dark-card-icon-wrapper">
                                         <img src={box} alt="Clipboard Score Icon" className="dark-card-graphic-asset" />
                                     </div>
                                     <h4 className="dark-card-title">Accurate SPRS Scoring</h4>
@@ -293,7 +293,7 @@ const CmmcScreen = () => {
                             {/* Box 3: C3PAO Assessment */}
                             <div className="col-lg-4 col-md-6">
                                 <div className="cmmc-dark-panel-card">
-                                    <div className="dark-card-icon-wrapper mb-4">
+                                    <div className="dark-card-icon-wrapper">
                                         <img src={security} alt="Shield Evaluation Icon" className="dark-card-graphic-asset" />
                                     </div>
                                     <h4 className="dark-card-title">C3PAO Assessment</h4>
@@ -334,7 +334,7 @@ const CmmcScreen = () => {
                             </span>
                         </div>
 
-                        <h2 className="section-main-heading text-dark font-weight-700 mb-3 max-w-900 mx-auto font-size-38">
+                        <h2 className="section-main-heading text-dark font-weight-500 mb-3 max-w-900 mx-auto font-size-38">
                             From Scoping through C3PAO Handoff in<br />8 to 12 weeks.
                         </h2>
 
@@ -351,7 +351,7 @@ const CmmcScreen = () => {
                                     className="cmmc-process-card"
                                     onMouseEnter={() => setActiveStep(0)}
                                 >
-                                    <div className="process-meta mb-4">
+                                    <div className="process-meta">
                                         <span className="process-number">01</span>
                                         <span className="process-label">Week</span>
                                     </div>
@@ -368,7 +368,7 @@ const CmmcScreen = () => {
                                     className="cmmc-process-card"
                                     // onMouseEnter={() => setActiveStep(1)}
                                 >
-                                    <div className="process-meta mb-4">
+                                    <div className="process-meta">
                                         <span className="process-number">02</span>
                                         <span className="process-label">Week</span>
                                     </div>
@@ -385,7 +385,7 @@ const CmmcScreen = () => {
                                     className="cmmc-process-card"
                                     // onMouseEnter={() => setActiveStep(2)}
                                 >
-                                    <div className="process-meta mb-4">
+                                    <div className="process-meta">
                                         <span className="process-number">03</span>
                                         <span className="process-label">Week</span>
                                     </div>
@@ -402,7 +402,7 @@ const CmmcScreen = () => {
                                     className="cmmc-process-card"
                                     // onMouseEnter={() => setActiveStep(3)}
                                 >
-                                    <div className="process-meta mb-4">
+                                    <div className="process-meta">
                                         <span className="process-number">04</span>
                                         <span className="process-label">Week</span>
                                     </div>
@@ -428,7 +428,7 @@ const CmmcScreen = () => {
                             </span>
                         </div>
 
-                        <h2 className="section-main-heading text-dark font-weight-700 mb-3 max-w-900 mx-auto font-size-38">
+                        <h2 className="section-main-heading text-dark font-weight-500 mb-3 max-w-900 mx-auto font-size-38">
                             Defensible Posture, Assessor-grade Evidence.
                         </h2>
 
@@ -442,7 +442,7 @@ const CmmcScreen = () => {
                             {/* Card 1 */}
                             <div className="col-lg-4 col-md-6">
                                 <div className="cmmc-evidence-card">
-                                    <div className="evidence-icon-box mb-4">
+                                    <div className="evidence-icon-box">
                                         <img src={envIcon1} alt="Evidence Library" className="evidence-card-graphic" />
                                     </div>
                                     <h4 className="evidence-card-title">Evidence Library</h4>
@@ -455,7 +455,7 @@ const CmmcScreen = () => {
                             {/* Card 2 */}
                             <div className="col-lg-4 col-md-6">
                                 <div className="cmmc-evidence-card">
-                                    <div className="evidence-icon-box mb-4">
+                                    <div className="evidence-icon-box">
                                         <img src={envIcon2} alt="Mock C3PAO" className="evidence-card-graphic" />
                                     </div>
                                     <h4 className="evidence-card-title">Mock C3PAO Assessment</h4>
@@ -468,7 +468,7 @@ const CmmcScreen = () => {
                             {/* Card 3 */}
                             <div className="col-lg-4 col-md-6">
                                 <div className="cmmc-evidence-card">
-                                    <div className="evidence-icon-box mb-4">
+                                    <div className="evidence-icon-box">
                                         <img src={envIcon3} alt="Cloud Providers" className="evidence-card-graphic" />
                                     </div>
                                     <h4 className="evidence-card-title">Cloud & MSP Providers</h4>
@@ -510,13 +510,13 @@ const CmmcScreen = () => {
                         </div>
 
                         {/* Header and Subtext Framework */}
-                        <h2 className="dark-section-title text-center">
+                        <h2 className="dark-section-title text-center" style={{marginBottom: "40px"}}>
                             What happens if You Ignore CMMC 2.0?
                         </h2>
                         {/* Kept here for vertical layout balance matching your UI example */}
-                        <p className="dark-section-subtitle text-center mb-5">
+                        {/* <p className="dark-section-subtitle text-center mb-5">
                             Neglecting framework deadlines introduces critical contractual obstacles across your defense pipeline.
-                        </p>
+                        </p> */}
 
                         {/* Figma Layout Matrix matching your existing screen */}
                         <div className="row g-0 figma-monitoring-grid text-start">
@@ -589,7 +589,7 @@ const CmmcScreen = () => {
                             </span>
                         </div>
 
-                        <h2 className="section-main-heading text-dark font-weight-700 mb-3 max-w-900 mx-auto font-size-38">
+                        <h2 className="section-main-heading text-dark font-weight-500 mb-3 max-w-900 mx-auto font-size-38">
                             Know Exactly Where you stand<br />Before Assessor day.
                         </h2>
 
@@ -657,7 +657,7 @@ const CmmcScreen = () => {
                             </span>
                         </div>
                         
-                        <h2 className="section-main-heading text-dark font-weight-700 mb-4 font-size-38">
+                        <h2 className="section-main-heading text-dark font-weight-500 mb-4 font-size-38">
                             A Board-level Risk Management Function.
                         </h2>
 
@@ -701,7 +701,7 @@ const CmmcScreen = () => {
                             </div>
 
                             {/* Main CTA Header */}
-                            <h2 className="cta-display-title text-white font-weight-700 mb-3">
+                            <h2 className="cta-display-title text-white font-weight-500 mb-3">
                                 Map your CMMC 2.0 path in a<br />Working Session.
                             </h2>
 

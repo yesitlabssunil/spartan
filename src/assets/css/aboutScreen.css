@@ -7,7 +7,7 @@
   }
   
   .about-intro-section, .advantages-light-section {
-    padding: 100px 0;
+    padding: 70px 0;
   }
   
   .about-intro-section {
@@ -64,24 +64,26 @@
   }
   
   .section-main-heading {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 2.35rem;
-    font-weight: 700;
-    color: #111111;
+    font-weight: 500;
+    color: #000000;
     letter-spacing: -0.01em;
   }
   
   .section-sub-heading {
     font-size: 1.05rem;
     color: #555555;
-    max-width: 600px;
+    max-width: 637px;
     margin: 0 auto;
   }
   
   /* --- SECTION 2: INTRO TEXT TYPOGRAPHY --- */
   .about-intro-heading {
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: #111111;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 41px;
+    font-weight: 500;
+    color: #000000;
     line-height: 1.25;
     margin-bottom: 25px;
     letter-spacing: -0.015em;
@@ -106,8 +108,9 @@
   }
   
   .dark-section-heading {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #ffffff;
     margin-bottom: 16px;
     line-height: 1.2;
@@ -116,7 +119,7 @@
   
   .dark-section-subheading {
     font-size: 1.05rem;
-    color: #a1a1aa;
+    color: #FFFFFFB2;
     max-width: 620px;
     margin: 0 auto 64px auto;
     line-height: 1.5;
@@ -134,8 +137,8 @@
   .highlight-stat-card {
     background-color: #1c1c1c;
     border: 1px solid #262626;
-    border-radius: 6px;
-    padding: 32px 24px;
+    border-radius: 4px;
+    padding: 25px 24px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -151,25 +154,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 24px;
+    margin-bottom: 65px;
   }
   
   .highlight-card-vector-icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
     filter: invert(24%) sepia(91%) saturate(5428%) cell(0deg) hue-rotate(348deg) brightness(97%) contrast(107%);
   }
   
   .highlight-stat-card .highlight-card-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #ffffff;
     margin-bottom: 10px;
     letter-spacing: -0.01em;
   }
   
   .highlight-stat-card .highlight-card-desc {
+    font-family: 'Geist', sans-serif;
     font-size: 0.9rem;
     line-height: 1.55;
     color: #999999;
@@ -316,9 +321,10 @@
   }
   
   .advantage-card-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 1.2rem;
-    font-weight: 700;
-    color: #111111;
+    font-weight: 500;
+    color: #000000;
     margin-bottom: 12px;
   }
   
@@ -331,13 +337,13 @@
   
   /* --- SECTION 5: CALL TO ACTION GLOW BANNER --- */
   .about-cta-section {
-    padding: 90px 0 110px 0;
+    padding: 20px 0 100px 0;
     background-color: #ffffff;
   }
   
   .about-cta-banner {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 75px 40px;
     text-align: center;
     display: flex;

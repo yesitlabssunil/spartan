@@ -55,7 +55,7 @@ const SecurityScreen = () => {
                             </span>
                         </div>
                         <h2 className="section-main-heading mb-3">Your Tenant is in scope. Your Assessor will look here first.</h2>
-                        <p className="section-sub-heading mb-5">
+                        <p className="section-sub-heading mb-5" >
                             Federal assessors inspect Microsoft 365 configurations directly. We harden the infrastructure profiles to secure a clear passing posture.
                         </p>
 
@@ -89,7 +89,7 @@ const SecurityScreen = () => {
                 <section className="sec-light-section1 border-top-gray">
                     <div className="custom-container">
                         <div className="row align-items-center g-5">
-                            <div className="col-lg-5">
+                            <div className="col-lg-6 content-column" >
                                 <div className="section-tag-wrapper justify-content-start">
                                     <span className="section-mini-tag">
                                         <span className="fallback-red-dot"></span>IDENTITY & ACCESS MANAGEMENT
@@ -97,10 +97,13 @@ const SecurityScreen = () => {
                                 </div>
                                 <h2 className="section-main-heading mt-3">Entra ID hardened to federal access standards.</h2>
                                 <p className="sec-body-text mt-3">
-                                    Identity controls form the frontline perimeter of modern networks. We structure access mechanisms to satisfy NIST multi-factor parameters and adaptive boundary protections seamlessly.
+                                    Privileged access, conditional access, and role-
+                                    based controls tied directly to NIST 800-171
+                                    access-control families. Every identity is
+                                    mapped, monitored, and enforced.
                                 </p>
                             </div>
-                            <div className="col-lg-7">
+                            <div className="col-lg-6">
                                 <div className="row g-4">
                                     <div className="col-sm-6">
                                         <div className="security-panel-card micro-feature">
@@ -141,12 +144,13 @@ const SecurityScreen = () => {
                     <div className="custom-container">
                         <div className="section-tag-wrapper">
                             <span className="section-mini-tag">
-                                <span className="fallback-red-dot"></span>THREAT PROTECTION
+                                <span className="fallback-red-dot"></span>Microsoft Defender
                             </span>
                         </div>
-                        <h2 className="section-main-heading mb-3">Microsoft Defender deployed and tuned for CUI environments.</h2>
+                        <h2 className="section-main-heading mb-3 block-size">Microsoft Defender deployed and tuned <br/> for CUI environments.</h2>
                         <p className="section-sub-heading mb-5">
-                            Continuous optimization of security parameters ensuring zero blindspots across dynamic endpoints.
+                        Defender for Endpoint, Defender for Cloud Apps, and Intune work together to enforce
+                        device compliance, isolate threats, and produce assessor-ready evidence.
                         </p>
 
                         <div className="row g-4 text-start">
@@ -179,7 +183,7 @@ const SecurityScreen = () => {
                 <section className="sec-light-section1 border-top-gray">
                     <div className="custom-container">
                         <div className="row align-items-center g-5">
-                            <div className="col-lg-5">
+                            <div className="col-lg-6 content-column" >
                                 <div className="section-tag-wrapper justify-content-start">
                                     <span className="section-mini-tag">
                                         <span className="fallback-red-dot"></span>SECURE TELEMETRY FLOW
@@ -190,7 +194,7 @@ const SecurityScreen = () => {
                                     Email vectors represent high risk. We deploy robust tracking matrices and strict transport parameters to shield transmission streams completely.
                                 </p>
                             </div>
-                            <div className="col-lg-7">
+                            <div className="col-lg-6">
                                 <div className="row g-4">
                                     <div className="col-sm-6">
                                         <div className="security-panel-card micro-feature">
@@ -387,7 +391,7 @@ const SecurityScreen = () => {
                                     <span className="fallback-red-dot"></span>LOGGING & MONITORING
                                 </span>
                             </div>
-                            <h2 className="dark-section-title text-center">Continuous visibility across the Microsoft 365 Security estate.</h2>
+                            <h2 className="dark-section-title text-center">Continuous visibility across the Microsoft 365 <br/> Security estate.</h2>
                             <p className="dark-section-subtitle text-center mb-5">
                                 Unified audit logs, Sentinel integration and retention aligned to federal requirements - so you can prove what happened, when and to which data.
                             </p>
@@ -438,7 +442,7 @@ const SecurityScreen = () => {
                 {/* 8. AZURE WORKLOADS HARDENED SECTION */}
                 <section className="sec-light-section">
                     <div className="custom-container">
-                        <div className="section-tag-wrapper1">
+                        <div className="section-tag-wrapper1 mb-3">
                             <span className="section-mini-tag">
                                 <span className="fallback-red-dot"></span>AZURE SECURITY
                             </span>
@@ -449,7 +453,7 @@ const SecurityScreen = () => {
                         </p> */}
 
                         <p className="sec-body-text mt-3 mb-5">
-                        Spartan extends the same federal-grade discipline into Azure - Azure Government and Azure Commercial — covering identity, network, workload and data-plane security. Every control is mapped to NIST 800-171, FedRAMP Moderate/High baselines and CMMC 2.0 evidence requirements.
+                            Spartan extends the same federal-grade discipline into Azure - Azure Government and Azure Commercial — covering identity, network, workload and data-plane security. Every control is mapped to NIST 800-171, FedRAMP Moderate/High baselines and CMMC 2.0 evidence requirements.
                         </p>
 
                         <div className="row g-4">
@@ -508,8 +512,9 @@ const SecurityScreen = () => {
                             </span>
                         </div>
                         <h2 className="section-main-heading text-center mb-3">Prepared, rehearsed & DoD-reportable.</h2>
-                        <p className="section-sub-heading text-center mb-5">
-                            Meeting strict federal incident response windows with validated containment and tracking pipelines.
+                        <p className="section-sub-heading text-center mb-5 section-sub-heading1">
+                        When an incident occurs, Spartan provides the playbooks, the technical response and the regulatory reporting required under DFARS 252.204-7012 — including 72-hour DoD Cyber Crime Center notification.
+
                         </p>
 
                         <div className="row g-4 text-start">
@@ -549,14 +554,14 @@ const SecurityScreen = () => {
                                 Audit your Microsoft 365 security <br /> tenant in 2 weeks.
                             </h2>
                             <p className="cta-banner-desc">
-                            A focused tenant review with a senior architect - gap report and remediation plan delivered.                            </p>
+                                A focused tenant review with a senior architect - gap report and remediation plan delivered.                            </p>
                             <div className="cta-buttons-group">
-                                <Link to="/contact-us" className="cta-btn-white" style={{textDecoration: "none"}}>Schedule M365 Security Audit <span>
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                                    </span></Link>
-                                <button className="cta-btn-outline">System Standards</button>
+                                <Link to="/contact-us" className="cta-btn-white" style={{ textDecoration: "none" }}>Schedule M365 Security Audit <span>
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </span></Link>
+                                <Link to="/compliance" className="cta-btn-outline" style={{textDecoration: "none"}}>Explore Compliance</Link>
                             </div>
                         </div>
                     </div>

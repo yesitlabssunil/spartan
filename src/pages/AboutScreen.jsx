@@ -67,7 +67,7 @@ const AboutScreen = () => {
               <div className="blog-breadcrumb">
                 <span>About</span> <span className="separator">|</span> <span>Home</span>
               </div>
-              <h1 className="blog-hero-title">About Spartan Cyber Security</h1>
+              <h1 className="blog-hero-title">About Spartan Cyber<br /> Security</h1>
               <p className="blog-hero-subtitle">
               An executive advisory firm specializing in cybersecurity governance, regulatory alignment and defensible operational execution for organizations operating in regulated and high-risk environments.
               </p>
@@ -88,7 +88,11 @@ const AboutScreen = () => {
                 <h2 className="about-intro-heading">
                   A Senior Advisory Firm Built for Regulated, High-Risk Environments.
                 </h2>
-                <p className="about-intro-text">
+
+              </div>
+
+              <div className="col-xl-12 col-lg-10">
+              <p className="about-intro-text">
                   Spartan Cyber Security LLC is an executive advisory firm led by senior leaders with backgrounds spanning military command, federal prosecution, cyber operations and enterprise compliance execution.<br />
                   {/* Our work centers on ensuring that cybersecurity programs are structured to withstand contractual, regulatory and third-party assessment scrutiny - from CMMC 2.0 certification to NIST SP 800-171 alignment, ISO/IEC 27001 readiness and board-level governance reporting.<br/>
                 Spartan is headquartered to serve federal contractors, defense industrial base organizations and regulated enterprises navigating Department of Defense enforcement, executive risk exposure and evolving compliance obligations.                 */}
@@ -118,8 +122,8 @@ const AboutScreen = () => {
             </h2>
 
             <p className="dark-section-subheading text-center">
-              Our leadership team brings real-world defensive insights from high-stakes operational arenas.
-            </p>
+            Spartan's bench is composed exclusively of senior practitioners with operational
+            track records in the environments we advise.          </p>
 
             {/* 4-Column Horizontal Stat Highlights Grid Array */}
             <div className="highlights-stats-matrix-grid">

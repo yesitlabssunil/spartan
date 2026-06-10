@@ -8,7 +8,7 @@
   
   /* Global Content Section Sizing Blocks */
   .disciplines-section, .timeline-section {
-    padding: 100px 0;
+    padding: 80px 0;
   }
   
   .timeline-section {
@@ -45,19 +45,25 @@
   }
   
   .section-main-heading {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 2.35rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #111111;
     margin-bottom: 16px;
     letter-spacing: -0.01em;
   }
   
   .section-sub-heading {
+    font-family: 'Geist', sans-serif;
     font-size: 1.05rem;
-    color: #555555;
+    color: #000000B2;
     max-width: 610px;
     margin: 0 auto 40px auto;
+    /* border: 1px solid red; */
   }
+  /* .section-sub-heading1{
+    max-width: 680px;
+  } */
   
   /* --- SECTION 2: DISCIPLINE CARDS --- */
   .discipline-card {
@@ -65,7 +71,7 @@
     background: #F7F7F7;
     border: 1px solid #eaedf2;
     border-radius: 12px;
-    padding: 40px 30px;
+    padding: 25px 27px;
     height: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.01);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -85,7 +91,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
   }
   
   .discipline-card-icon {
@@ -104,16 +110,18 @@
   }
   
   .discipline-card-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 1.22rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #111111;
     margin-bottom: 14px;
   }
   
   .discipline-card-desc {
+    font-family: 'Geist', sans-serif;
     font-size: 0.92rem;
-    line-height: 1.6;
-    color: #555555;
+    line-height: 1.5;
+    color: #000000B2;
     margin-bottom: 20px;
     min-height: 45px;
   }
@@ -131,8 +139,9 @@
   }
   
   .discipline-points-list li {
+    font-family: 'Geist', sans-serif;
     font-size: 0.9rem;
-    color: #444444;
+    color: #000000B2;
     margin-bottom: 12px;
     display: flex;
     align-items: flex-start;
@@ -153,19 +162,20 @@
   .timeline-week-card {
     background: #ffffff;
     border: 1px solid #eaedf2;
-    border-radius: 12px;
-    padding: 35px 25px;
+    border-radius: 6px;
+    padding: 25px 25px;
     height: 100%;
   }
   
   .week-header-flex {
     display: flex;
     align-items: baseline;
-    margin-bottom: 25px;
+    flex-direction: column;
+    margin-bottom: 45px;
   }
   
   .week-number {
-    font-size: 2.2rem;
+    font-size: 32px;
     font-weight: 700;
     color: #e01b1b;
     line-height: 1;
@@ -173,24 +183,27 @@
   }
   
   .week-label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #777777;
-    text-transform: uppercase;
+    font-family: 'Geist', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000B2;
+    /* text-transform: uppercase; */
     letter-spacing: 0.5px;
   }
   
   .week-card-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #111111;
     margin-bottom: 12px;
   }
   
   .week-card-desc {
+    font-family: 'Geist', sans-serif;
     font-size: 0.9rem;
-    line-height: 1.5;
-    color: #555555;
+    line-height: 1.4;
+    color: #000000B2;
     margin: 0;
   }
   
@@ -245,7 +258,7 @@
   
   .approach-cta-banner {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 70px 40px;
     text-align: center;
     display: flex;

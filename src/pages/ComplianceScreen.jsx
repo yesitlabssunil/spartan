@@ -33,12 +33,12 @@ const ComplianceScreen = () => {
   ];
 
   const outcomes = [
-    { title: "Protect Revenue", desc: "Maintain your eligibility for critical contracts and handle protected systems data seamlessly." },
-    { title: "Preserve Contracts", desc: "Prevent contract termination risks and compliance penalty exposures across active projects." },
-    { title: "Strengthen Security", desc: "Move beyond check-box compliance with robust operational network defenses." },
-    { title: "Audit Readiness", desc: "Maintain a persistent security architecture ready for sudden C3PAO or government inspections." },
-    { title: "Executive Confidence", desc: "Provide leadership with clear metrics and visibility into true regulatory performance." },
-    { title: "Team Capability", desc: "Equip your internal staff to confidently own and run security mechanisms over the long haul." }
+    { title: "Protect Revenue", desc: "Maintain eligibility for active and pipeline contracts." },
+    { title: "Preserve Contracts", desc: "Reduce risk of pause, recompete, or termination." },
+    { title: "Strengthen Security", desc: "Move from documented controls to measurable posture." },
+    { title: "Audit Readiness", desc: "Be ready for assessor visit any week of the year." },
+    { title: "Executive Confidence", desc: "Board-grade visibility into compliance posture." },
+    { title: "Team Capability", desc: "Knowledge transfer that lasts beyond engagement." }
   ];
 
   return (
@@ -133,7 +133,7 @@ const ComplianceScreen = () => {
 
         {/* 5. OUTCOMES (DARK SECTION) */}
         <section className="outcomes-dark-section">
-          <div className="custom-container">
+          <div className="custom-container custom-container1">
             <div className="section-tag-wrapper">
               <span className="section-mini-tag dark-theme-tag">
                 <span className="fallback-red-dot"></span>OUTCOMES

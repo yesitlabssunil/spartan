@@ -128,7 +128,7 @@ const ApproachScreen = () => {
               A four-stage program with weekly executive checkpoints.
             </p>
 
-            <div className="row g-4 mt-5">
+            <div className="row g-4 mt-4">
               {weeks.map((stage, idx) => (
                 <div className="col-xl-3 col-md-6" key={idx}>
                   <div className="timeline-week-card">

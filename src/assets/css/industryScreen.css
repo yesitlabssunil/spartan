@@ -7,13 +7,17 @@
   }
   
   .environments-section {
-    padding: 100px 0;
+    padding: 70px 0;
     background-color: #F7F7F7;
   }
   
   .sectors-detail-section {
     padding: 100px 0;
     background-color: #ffffff;
+  }
+
+  .blog-hero-content.blog-hero-content1{
+    padding-right: 140px;
   }
   
   /* Section Tag Utilities */
@@ -57,49 +61,52 @@
   }
   
   .section-main-heading {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 2.35rem;
-    font-weight: 700;
-    color: #111111;
+    font-weight: 500;
+    color: #000000;
     letter-spacing: -0.01em;
   }
   
   /* --- SECTION 2: ENVIRONMENT CARDS --- */
   .env-card {
     background: #ffffff;
-    border: 1px solid #eaedf2;
+    /* border: 1px solid #eaedf2; */
     border-radius: 6px;
-    padding: 35px 25px;
+    padding: 25px 27px;
     height: 100%;
   }
   
   .env-icon-box {
-    width: 36px;
+    width: 38px;
     height: 36px;
     background-color: #fff1f1;
-    border-radius: 6px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
   
   .env-figma-icon {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
   }
   
   .env-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #111111;
     margin-bottom: 10px;
   }
   
   .env-desc {
+    font-family: 'Geist', sans-serif;
     font-size: 0.9rem;
     line-height: 1.5;
-    color: #555555;
+    color: #000000B2;
     margin: 0;
   }
   
@@ -127,16 +134,18 @@
   }
   
   .sector-title {
+    font-family: 'Overused Grotesk', sans-serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 500;
     color: #111111;
     margin-bottom: 12px;
   }
   
   .sector-desc {
+    font-family: 'Geist', sans-serif;
     font-size: 0.95rem;
-    line-height: 1.55;
-    color: #444444;
+    line-height: 1.4;
+    color: #000000;
     margin-bottom: 20px;
   }
   
@@ -147,8 +156,9 @@
   }
   
   .sector-points-list li {
+    font-family: 'Geist', sans-serif;
     font-size: 0.9rem;
-    color: #555555;
+    color: #000000B2;
     margin-bottom: 12px;
     display: flex;
     align-items: flex-start;

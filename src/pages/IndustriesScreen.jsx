@@ -92,13 +92,13 @@ const IndustriesScreen = () => {
         {/* 1. HERO SECTION */}
         <div className="blog-hero-fullwidth">
           <div className="custom-container">
-            <div className="blog-hero-content">
+            <div className="blog-hero-content blog-hero-content1">
               <div className="blog-breadcrumb">
                 <span>Industries</span> <span className="separator">|</span> <span>Home</span>
               </div>
               <h1 className="blog-hero-title">Built for Federal Contractors across critical industries.</h1>
               <p className="blog-hero-subtitle">
-              From prime defense contractors to specialized R&D labs - our compliance program
+              From prime defense contractors to specialized R&D labs - our compliance program<br/>
               adapts to your contract portfolio.
               </p>
             </div>

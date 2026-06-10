@@ -377,7 +377,7 @@ span.dot-black {
     .menu-toggle { display: block; }
     
     /* Responsive Slider Panel for Navbar Menu */
-    .navbar {
+    /* .navbar {
         position: absolute;
         top: 80px;
         left: -100%;
@@ -401,7 +401,7 @@ span.dot-black {
         font-size: 16px;
         font-weight: 600;
         width: 100%;
-    }
+    } */
 
     /* Hero section adjustments */
     .hero { min-height: 65vh; }
