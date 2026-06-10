@@ -1535,10 +1535,6 @@ span.dot-red {
     color: #000000;
     /* padding: 0 300px; */
 }
-.industries-section.conpad h2 {
-    padding: 0 300px;
-}
-
 .industries-top-desc {
     font-size: 16px;
     color: var(--text-muted);
@@ -2177,7 +2173,7 @@ span.dot-red {
 .conpad h2 {
     padding: 0 300px;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 1000px) {
     .conpad h2 {
         padding: 0;
     }
