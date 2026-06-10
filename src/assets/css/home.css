@@ -1533,6 +1533,9 @@ span.dot-red {
     font-weight: 500;
     margin-bottom: 20px;
     color: #000000;
+    /* padding: 0 300px; */
+}
+.industries-section.conpad h2 {
     padding: 0 300px;
 }
 
@@ -1950,7 +1953,7 @@ span.dot-red {
     font-weight: 500;
     color: #000000;
     margin-bottom: 15px;
-    padding: 0 300px;
+    /* padding: 0 300px; */
 }
 
 .resources-subtext {
@@ -2168,4 +2171,14 @@ span.dot-red {
     .resources-grid { grid-template-columns: 1fr; }
     .resources-section h2, .faq-left-block h2 { font-size: 26px; }
     .accordion-header h4 { font-size: 14px; padding-right: 15px; }
+}
+
+
+.conpad h2 {
+    padding: 0 300px;
+}
+@media (max-width: 767.98px) {
+    .conpad h2 {
+        padding: 0;
+    }
 }

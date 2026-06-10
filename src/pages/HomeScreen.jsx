@@ -539,7 +539,7 @@ const HomeScreen = () => {
         </div>
       </section>
 
-      <section className="industries-section">
+      <section className="industries-section conpad">
         <div className="text-center section-header-margin">
           <span className="section-tag-red"><span className="dot-red"></span>INDUSTRIES</span>
           <h2>Built for Federal Contractors Across Critical Industries</h2>
@@ -565,7 +565,7 @@ const HomeScreen = () => {
         </div>
       </section>
 
-      <section className="resources-section">
+      <section className="resources-section conpad">
         <div className="text-center section-header-margin">
           <span className="badge-red-pill"><span className="dot-red"></span>RESOURCES</span>
           <h2>Compliance Intelligence that Keeps You Ahead</h2>
