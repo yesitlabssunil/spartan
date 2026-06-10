@@ -97,8 +97,8 @@
    .security-panel-card {
      /* background: #fdfefe; */
      background: #F7F7F7;
-     border: 1px solid #eef1f5;
-     border-radius: 8px;
+     /* border: 1px solid #eef1f5; */
+     border-radius: 4px;
      padding: 25px 28px;
      height: 100%;
      transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -108,7 +108,7 @@
      background: #ffff;
      /* background: #F7F7F7; */
      border: 1px solid #eef1f5;
-     border-radius: 8px;
+     border-radius: 4px;
      padding: 35px 28px;
      height: 100%;
      transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -124,7 +124,7 @@
      /* border: 1px solid #EAEAEA; Optional: adds a crisp border to separate from #F7F7F7 */
      padding: 24px;
      /* Optional: ensures good inner breathing room */
-     border-radius: 8px;
+     border-radius: 20px;
    }
 
    .security-panel-card:hover {

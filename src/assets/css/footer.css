@@ -80,9 +80,10 @@
   }
   
   .footer-bottom {
-    border-top: 1px solid #2b2b2b;
+    border-bottom: 1px solid #2b2b2b;
     margin-top: 60px;
     padding-top: 20px;
+    padding-bottom: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;

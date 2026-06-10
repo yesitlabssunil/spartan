@@ -65,10 +65,10 @@ const CmmcScreen = () => {
 
                         <div className="row">
                             <div className="col-lg-12">
-                                <p className="sec-body-text text-secondary mb-4 font-size-16 line-height-1-8">
+                                <p className="sec-body-text mb-4 font-size-16 line-height-1-8">
                                     CMMC 2.0 is a contractual obligation tied directly to eligibility, Supplier Performance Risk System (SPRS) scoring and formal assessment by a Certified Third-Party Assessor Organization (C3PAO). Organizations handling Controlled Unclassified Information (CUI) must demonstrate implemented controls, structured System Security Plans (SSP) and operational discipline aligned to NIST SP 800-171.
                                 </p>
-                                <p className="sec-body-text text-secondary mb-5 font-size-16 line-height-1-8">
+                                <p className="sec-body-text mb-5 font-size-16 line-height-1-8">
                                     While our current operational focus centers on CMMC 2.0 readiness within the Defense Industrial Base, Spartan's governance practice also supports ISO/IEC 27001 information security management systems and ISO/IEC 42001 artificial intelligence governance frameworks for regulated environments.
                                 </p>
 
@@ -96,7 +96,7 @@ const CmmcScreen = () => {
                         <h2 className="section-main-heading text-dark font-weight-500 mb-3 max-w-900 mx-auto">
                             Three Certification Levels – Level 2 is where most DIB awards land.
                         </h2>
-                        <p className="section-subtitle-text text-secondary mb-5 max-w-780 mx-auto">
+                        <p className="section-subtitle-text mb-5 max-w-780 mx-auto">
                             Every DoD contract maps to a CMMC level based on the type of information it touches.<br />
                             Level 2 covers the full 110 NIST SP 800-171 controls for CUI.
                         </p>
@@ -338,7 +338,7 @@ const CmmcScreen = () => {
                             From Scoping through C3PAO Handoff in<br />8 to 12 weeks.
                         </h2>
 
-                        <p className="section-subtitle-text text-secondary mb-5 max-w-780 mx-auto font-size-16">
+                        <p className="section-subtitle-text mb-5 max-w-780 mx-auto font-size-16">
                             A four-stage program with weekly executive checkpoints - documentation, control implementation and evidence preparation aligned to assessor evaluation standards.
                         </p>
 
@@ -432,7 +432,7 @@ const CmmcScreen = () => {
                             Defensible Posture, Assessor-grade Evidence.
                         </h2>
 
-                        <p className="section-subtitle-text text-secondary mb-5 max-w-780 mx-auto font-size-16">
+                        <p className="section-subtitle-text mb-5 max-w-780 mx-auto font-size-16">
                             A standing evidence package ready for C3PAO sampling - not a last-minute scramble.
                         </p>
 
@@ -483,7 +483,7 @@ const CmmcScreen = () => {
                         {/* Bottom Explanatory Paragraph and Callout */}
                         <div className="row text-start mt-5">
                             <div className="col-12">
-                                <p className="sec-body-text text-secondary mb-4 font-size-16 line-height-1-8">
+                                <p className="sec-body-text mb-4 font-size-16 line-height-1-8">
                                     We do not guarantee certification outcomes. Certification is determined by formal assessment under CMMC 2.0 rules. Our role is to ensure that systems, documentation and operational practices are synchronized and defensible under structured evaluation.
                                 </p>
 
@@ -593,7 +593,7 @@ const CmmcScreen = () => {
                             Know Exactly Where you stand<br />Before Assessor day.
                         </h2>
 
-                        <p className="section-subtitle-text text-secondary mb-5 max-w-780 mx-auto font-size-16">
+                        <p className="section-subtitle-text mb-5 max-w-780 mx-auto font-size-16">
                             A structured readiness assessment mapped to NIST SP 800-171 control families and C3PAO sampling logic.
                         </p>
 
@@ -670,10 +670,10 @@ const CmmcScreen = () => {
 
                         {/* Explanatory Body Copy */}
                         <div className="executive-body-content max-w-1100">
-                            <p className="sec-body-text text-secondary mb-4 font-size-16 line-height-1-8">
+                            <p className="sec-body-text mb-4 font-size-16 line-height-1-8">
                                 Organizations that approach compliance as documentation alone often discover weaknesses during formal evaluation. Organizations that approach it as governance discipline strengthen contract eligibility, operational resilience and executive accountability.
                             </p>
-                            <p className="sec-body-text text-secondary mb-5 font-size-16 line-height-1-8">
+                            <p className="sec-body-text mb-5 font-size-16 line-height-1-8">
                                 Cybersecurity under CMMC 2.0 is not an IT initiative. It is a board-level risk management function tied directly to revenue continuity and contractual survival.
                             </p>
                         </div>

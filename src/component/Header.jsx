@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import "../assets/css/header.css";
 import logo from "../assets/images/logo.png";
 
@@ -27,45 +28,59 @@ const Header = () => {
           >
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <NavLink className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                } to="/about">
                   About
-                </Link>
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/cmmc">
+                <NavLink className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                } to="/cmmc">
                   CMMC 2.0
-                </Link>
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/security">
+                <NavLink className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                } to="/security">
                   Microsoft 365 Security
-                </Link>
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/compliance">
+                <NavLink className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                } to="/compliance">
                   Compliance Systems
-                </Link>
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/approach">
+                <NavLink className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                } to="/approach">
                   Approach
-                </Link>
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/industries">
+                <NavLink className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                } to="/industries">
                   Industries
-                </Link>
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/resources">
+                <NavLink className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                } to="/resources">
                   Resources
-                </Link>
+                </NavLink>
               </li>
             </ul>
 
