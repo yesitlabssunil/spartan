@@ -686,10 +686,11 @@ main.security-main .active-process-focus {
 
 .cmmc-radiant-cta-card {
     /* Reuses our dark high-fidelity ambient glow look from Approach-PAGE.jpg */
-    background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%), 
+    /* background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%), 
                 radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
                 linear-gradient(135deg, #0e0202 0%, #000000 100%);
-    background-color: #000000;
+    background-color: #000000; */
+    background: radial-gradient(ellipse at 85% 30%, rgba(139, 0, 0, 0.40) 0%, rgba(80, 0, 0, 0.22) 30%, rgba(0, 0, 0, 0) 65%), #000;
   border: 1px solid #1A1919 !important;
   border-radius: 10px !important;
   padding: 60px 40px !important;
@@ -702,8 +703,9 @@ main.security-main .active-process-focus {
 }
 
 .cta-display-subtitle {
+  font-family: 'Geist', sans-serif;
   font-size: 16px !important;
-  color: #A3A3A3 !important;
+  color: #FFFFFF !important;
   line-height: 1.6 !important;
 }
 

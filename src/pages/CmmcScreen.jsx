@@ -75,7 +75,7 @@ const CmmcScreen = () => {
                                 {/* Figma Callout Quote Component */}
                                 <div className="cmmc-callout-quote-box mt-4">
                                     <p className="cmmc-quote-text">
-                                        We build defensible cybersecurity governance structures aligned to<br/> contractual and international standards.
+                                        We build defensible cybersecurity governance structures aligned to<br /> contractual and international standards.
                                     </p>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@ const CmmcScreen = () => {
                             <div className="col-lg-4 col-md-6">
                                 <div
                                     className="cmmc-level-card text-start"
-                                    // onMouseEnter={() => setActiveCard(0)}
+                                // onMouseEnter={() => setActiveCard(0)}
                                 >
                                     <div className="card-icon-wrapper mb-4">
                                         <img src={security} alt="Level 1 Shield" className="card-graphic-asset" />
@@ -125,7 +125,7 @@ const CmmcScreen = () => {
                             <div className="col-lg-4 col-md-6">
                                 <div
                                     className="cmmc-level-card text-start"
-                                    // onMouseEnter={() => setActiveCard(1)}
+                                // onMouseEnter={() => setActiveCard(1)}
                                 >
                                     <div className="card-icon-wrapper mb-4">
                                         <img src={file} alt="Level 2 Document" className="card-graphic-asset" />
@@ -142,7 +142,7 @@ const CmmcScreen = () => {
                             <div className="col-lg-4 col-md-6">
                                 <div
                                     className="cmmc-level-card text-start"
-                                    // onMouseEnter={() => setActiveCard(2)}
+                                // onMouseEnter={() => setActiveCard(2)}
                                 >
                                     <div className="card-icon-wrapper mb-4">
                                         <img src={cap} alt="Level 3 Layers" className="card-graphic-asset" />
@@ -159,13 +159,13 @@ const CmmcScreen = () => {
 
                         {/* ... The rest of your 14 Domain Framework code stays exactly the same ... */}
 
-{/* 14 Domain Requirement Grid Tier (Figma Specification) */}
-<div className="row g-3 text-start mt-4">
-                            
+                        {/* 14 Domain Requirement Grid Tier (Figma Specification) */}
+                        <div className="row g-3 text-start mt-4">
+
                             {/* Left Column Framework Requirements */}
                             <div className="col-md-6">
                                 <div className="d-flex flex-column gap-3">
-                                    
+
                                     <div className="cmmc-gap-pill">
                                         <img src={checkBulletRed} alt="bullet" className="gap-sparkle" />
                                         <span>Access Control (AC) - identity, MFA, least privilege across 22 controls</span>
@@ -366,7 +366,7 @@ const CmmcScreen = () => {
                             <div className="col-xl-3 col-md-6">
                                 <div
                                     className="cmmc-process-card"
-                                    // onMouseEnter={() => setActiveStep(1)}
+                                // onMouseEnter={() => setActiveStep(1)}
                                 >
                                     <div className="process-meta">
                                         <span className="process-number">02</span>
@@ -383,7 +383,7 @@ const CmmcScreen = () => {
                             <div className="col-xl-3 col-md-6">
                                 <div
                                     className="cmmc-process-card"
-                                    // onMouseEnter={() => setActiveStep(2)}
+                                // onMouseEnter={() => setActiveStep(2)}
                                 >
                                     <div className="process-meta">
                                         <span className="process-number">03</span>
@@ -400,7 +400,7 @@ const CmmcScreen = () => {
                             <div className="col-xl-3 col-md-6">
                                 <div
                                     className="cmmc-process-card"
-                                    // onMouseEnter={() => setActiveStep(3)}
+                                // onMouseEnter={() => setActiveStep(3)}
                                 >
                                     <div className="process-meta">
                                         <span className="process-number">04</span>
@@ -510,7 +510,7 @@ const CmmcScreen = () => {
                         </div>
 
                         {/* Header and Subtext Framework */}
-                        <h2 className="dark-section-title text-center" style={{marginBottom: "40px"}}>
+                        <h2 className="dark-section-title text-center" style={{ marginBottom: "40px" }}>
                             What happens if You Ignore CMMC 2.0?
                         </h2>
                         {/* Kept here for vertical layout balance matching your UI example */}
@@ -648,15 +648,15 @@ const CmmcScreen = () => {
                 </section>
 
                 {/* 9. EXECUTIVE PERSPECTIVE SECTION (Light Mode Risk Overview) */}
-                <section className="cmmc-executive-section text-start bg-white" style={{paddingTop: "90px"}}>
+                <section className="cmmc-executive-section text-start bg-white" style={{ paddingTop: "90px" }}>
                     <div className="custom-container">
-                        
+
                         <div className="section-tag-wrapper1">
                             <span className="section-mini-tag light-red-pill">
                                 <span className="fallback-red-dot"></span>EXECUTIVE PERSPECTIVE
                             </span>
                         </div>
-                        
+
                         <h2 className="section-main-heading text-dark font-weight-500 mb-4 font-size-38">
                             A Board-level Risk Management Function.
                         </h2>
@@ -689,10 +689,10 @@ const CmmcScreen = () => {
 
 
                 {/* 10. FINAL BILLBOARD CTA SECTION (Deep Dark Radiant Card Container) */}
-                <section className="cmmc-cta-section padding-y-90 bg-white">
+                <section className="cmmc-cta-section bg-white" style={{ paddingTop: "40px", paddingBottom: "90px" }}>
                     <div className="custom-container">
                         <div className="cmmc-radiant-cta-card text-center position-relative overflow-hidden">
-                            
+
                             {/* Accent Tag Pill */}
                             <div className="section-tag-wrapper justify-content-center mb-4">
                                 <span className="section-mini-tag dark-red-pill-framework">
@@ -713,9 +713,12 @@ const CmmcScreen = () => {
                             {/* Action Control Button Pair */}
                             <div className="cta-btn-group d-flex flex-sm-row flex-column align-items-center justify-content-center gap-3">
                                 <Link to="/contact-us" className="btn btn-white-action d-flex align-items-center justify-content-center">
-                                    <span>Schedule Compliance Review</span>
-                                    <svg className="ms-2 button-arrow-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <span style={{paddingRight: "6px"}}>Schedule Compliance Review</span>
+                                    {/* <svg className="ms-2 button-arrow-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.3335 8H12.6668M12.6668 8L8.00016 3.33334M12.6668 8L8.00016 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg> */}
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </Link>
                                 <Link to="/compliance" className="btn btn-dark-outline-action">

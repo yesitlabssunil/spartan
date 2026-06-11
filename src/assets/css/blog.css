@@ -81,15 +81,35 @@
   .article-meta {
     margin-bottom: 30px;
     padding-bottom: 15px;
+    gap: 16px; 
     /* border-bottom: 1px solid #eaeaea; */
   }
-  .article-date {
+  /* .article-date {
     font-size: 0.9rem;
-    /* color: #ff1414; */
     color: #000000B2;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+  } */
+  .article-date {
+    display: inline-flex;
+    align-items: center; /* Vertically centers the line with the text */
+    gap: 12px; /* Controls the exact gap between the line and the word "MAR" */
+    font-size: 0.9rem;
+    color: #000000B2;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Pseudo-element to render the line dynamically */
+  .article-date::before {
+    content: "";
+    display: inline-block;
+    width: 16px; /* Adjust this value to change the width of the line */
+    height: 2px; /* Thickness of the horizontal line */
+    background-color: #000000B2; /* Matches your text color automatically */
+    opacity: 0.6; /* Slight transparency matching the Figma design style */
   }
     /* .article-date::after {
     content: "";
@@ -101,10 +121,12 @@
     background: #000000B2;
   } */
   .article-content p {
+    font-family: 'Geist', sans-serif;
     font-size: 1rem;
     line-height: 1.8;
-    color: #3c3c3c;
-    margin-bottom: 1.8rem;
+    color: #000000E5;
+    margin-bottom: 1.5rem;
+    
   }
   
   /* "You also might like" Section with images */

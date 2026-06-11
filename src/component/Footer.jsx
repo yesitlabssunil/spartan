@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaFacebookF,
   FaXTwitter,
+  FaLinkedinIn,
   FaEnvelope,
   FaLocationDot,
 } from "react-icons/fa6";
@@ -25,11 +26,11 @@ const Footer = () => {
               <p>
                 Military precision. Cybersecurity execution.
                 <br />
-                Federal contractor protection.
+                Federal contract protection.
               </p>
 
               <div className="social-icons">
-                  <Link to="">
+                  {/* <Link to="">
                   <FaInstagram />
                   </Link>
 
@@ -39,6 +40,14 @@ const Footer = () => {
 
                 <a href="#">
                   <FaXTwitter />
+                </a> */}
+
+                <a href="https://www.linkedin.com/in/raphael-warren-a7280a188/" 
+                target="_blank"
+                rel="noopener noreferrer"
+
+                >
+                <FaLinkedinIn />
                 </a>
               </div>
             </div>
@@ -75,22 +84,31 @@ const Footer = () => {
             <ul className="contact-list">
               <li>
                 <FaEnvelope />
+                <a href="mailto:spartanconsults@spartan-cs.com">
                 spartanconsults@spartan-cs.com
+                </a>
+              
               </li>
 
               <li>
                 <FaEnvelope />
+                <a href="mailto:rwarren@spartan-cs.com">
                 rwarren@spartan-cs.com
+                </a>
               </li>
 
               <li>
                 <FaEnvelope />
+                <a href="mailto:tfinch@spartan-cs.com">
                 tfinch@spartan-cs.com
+                </a>
               </li>
 
               <li>
                 <FaLocationDot />
+                <a href="https://www.google.com/maps/search/?api=1&query=Albuquerque,USA" target="_blank" rel="noopener noreferrer">
                 Albuquerque, USA
+                </a>
               </li>
             </ul>
           </div>

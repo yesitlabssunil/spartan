@@ -74,9 +74,7 @@ const BlogScreen = () => {
 
                             <h1 className="blog-hero-title">Microsoft 365 Security Checklist</h1>
                             <p className="blog-hero-subtitle">
-                                A practical security roadmap to assess your Microsoft 365 environment,
-                                identify hidden vulnerabilities, reduce attack risks, and build a stronger
-                                security posture in under 45 minutes.
+                            A practical security roadmap to assess your Microsoft 365 environment, identify hidden vulnerabilities, reduce attack risks, and build a stronger security posture in under 45 minutes.
                             </p>
                         </div>
                     </div>
@@ -92,7 +90,7 @@ const BlogScreen = () => {
                             </div>
                             <span className="article-date">MAR 12, 2025</span>
                         </div>
-                        <h5>Microsoft 365 Security Checklist</h5>
+                        <h5 style={{marginTop: "1.5rem"}}>Microsoft 365 Security Checklist</h5>
                         <div className="article-content">
                             <p>
                                 Microsoft 365 has become the foundation of modern business operations,

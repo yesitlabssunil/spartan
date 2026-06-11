@@ -91,7 +91,7 @@ const ContactScreen = () => {
                 </div>
                 <div className="info-block">
                   <h6><FaEnvelope className="me-2 info-icon" /> Email</h6>
-                  <p><a href="mailto:advisors@spartan.example">advisors@spartan.example</a></p>
+                  <p><a href="mailto:advisors@spartan.example">spartanconsults@spartan-cs.com</a></p>
                 </div>
                 <div className="info-block">
                   <h6><FaPhoneAlt className="me-2 info-icon" /> Phone Number</h6>

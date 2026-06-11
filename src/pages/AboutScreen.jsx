@@ -80,7 +80,7 @@ const AboutScreen = () => {
           <div className="custom-container">
             <div className="section-tag-wrapper justify-content-start">
               <span className="section-mini-tag">
-                <span className="fallback-red-dot"></span>OUR MISSION PROFILE
+                <span className="fallback-red-dot"></span>COMPANY OVERVIEW
               </span>
             </div>
             <div className="row mt-3">
@@ -93,12 +93,16 @@ const AboutScreen = () => {
 
               <div className="col-xl-12 col-lg-10">
               <p className="about-intro-text">
-                  Spartan Cyber Security LLC is an executive advisory firm led by senior leaders with backgrounds spanning military command, federal prosecution, cyber operations and enterprise compliance execution.<br />
+              Spartan Cyber Security LLC is an executive advisory firm led by senior leaders with backgrounds spanning military command, federal prosecution, cyber operations and enterprise compliance execution.<br />
                   {/* Our work centers on ensuring that cybersecurity programs are structured to withstand contractual, regulatory and third-party assessment scrutiny - from CMMC 2.0 certification to NIST SP 800-171 alignment, ISO/IEC 27001 readiness and board-level governance reporting.<br/>
                 Spartan is headquartered to serve federal contractors, defense industrial base organizations and regulated enterprises navigating Department of Defense enforcement, executive risk exposure and evolving compliance obligations.                 */}
                 </p>
                 <p className="about-intro-text">
-                  Our methodologies translate complex legal data handling directives (NIST SP 800-171, CMMC 2.0, DFARS) into clean operational pathways that engineering teams can execute flawlessly.
+                Our work centers on ensuring that cybersecurity programs are structured to withstand contractual, regulatory and third-party assessment scrutiny - from CMMC 2.0 certification to NIST SP 800-171 alignment, ISO/IEC 27001 readiness and board-level governance reporting.
+                </p>
+
+                <p className="about-intro-text">
+                Spartan is headquartered to serve federal contractors, defense industrial base organizations and regulated enterprises navigating Department of Defense enforcement, executive risk exposure and evolving compliance obligations.
                 </p>
               </div>
             </div>
@@ -113,7 +117,7 @@ const AboutScreen = () => {
             {/* Centered Top Header Badge Block */}
             <div className="section-tag-wrapper">
               <span className="section-mini-tag dark-theme-tag">
-                <span className="fallback-red-dot"></span>LEADERSHIP & EXPERIENCE
+                <span className="fallback-red-dot"></span>LEADERSHIP & EXPERTISE
               </span>
             </div>
 
@@ -169,7 +173,7 @@ const AboutScreen = () => {
           <div className="custom-container">
             <div className="section-tag-wrapper">
               <span className="section-mini-tag">
-                <span className="fallback-red-dot"></span>SPARTAN ADVANTAGE
+                <span className="fallback-red-dot"></span>WHY SPARTAN
               </span>
             </div>
             <h2 className="section-main-heading text-center mb-2">Why organizations engage Spartan.</h2>
@@ -199,14 +203,13 @@ const AboutScreen = () => {
           <div className="custom-container">
             <div className="about-cta-banner">
               <span className="section-mini-tag dark-theme-tag mb-3">
-                <span className="fallback-red-dot"></span>Work With Us
+                <span className="fallback-red-dot"></span>WORK WITH US
               </span>
               <h2 className="cta-banner-title">
                 Engage Spartan's principal-led <br /> advisory team.
               </h2>
               <p className="cta-banner-desc">
-                Review your active contract parameters and configure a defensible lifecycle compliance architecture.
-              </p>
+              A confidential working session with senior leadership to scope your governance, compliance and assessment posture.              </p>
               {/* <div className="cta-buttons-group">
                 <button className="cta-btn-white">Schedule Consultation <span>→</span></button>
                 <button className="cta-btn-outline">Explore Compliance</button>
