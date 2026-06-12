@@ -176,8 +176,8 @@
 }
 
 .card-graphic-asset {
-  width: 20px !important;
-  height: 20px !important;
+  width: 23px !important;
+  height: 23px !important;
   object-fit: contain;
 }
 
@@ -322,8 +322,8 @@
 .dark-card-icon-wrapper {
   background-color: #FFFFFF1A !important;
   /* Low contrast structural icon background */
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 39px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -332,8 +332,8 @@
 }
 
 .dark-card-graphic-asset {
-  width: 20px !important;
-  height: 20px !important;
+  width: 21px !important;
+  height: 21px !important;
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(23%) deg(0) saturate(6600%) invert(20%) sepia(95%) saturate(3432%) hue-rotate(346deg) brightness(97%) contrast(97%);
   /* Shifts asset profile to pure red */
@@ -341,7 +341,7 @@
 
 .dark-card-title {
   font-family: 'Overused Grotesk', sans-serif;
-  font-size: 19px !important;
+  font-size: 20px !important;
   font-weight: 500 !important;
   color: #FFFFFF !important;
   margin-bottom: 12px !important;
@@ -349,7 +349,7 @@
 
 .dark-card-desc {
   font-family: 'Geist', sans-serif;
-  font-size: 14.5px !important;
+  font-size: 16px !important;
   line-height: 1.4 !important;
   color: #FFFFFFB2 !important;
   margin-bottom: 0 !important;
@@ -528,7 +528,8 @@ main.security-main .active-process-focus {
    ========================================================================== */
 
 .cmmc-risk-section {
-  background-color: #0E0D0D !important;
+  /* background-color: #0E0D0D !important; */
+      background: linear-gradient(90deg, #161512 0%, #161512 45%, #1F0000 75%, #190100 100%);
   /* Matches pure dark container backgrounds */
   padding-top: 100px !important;
   padding-bottom: 110px !important;
@@ -661,6 +662,7 @@ main.security-main .active-process-focus {
   letter-spacing: -0.01em !important;
   color: #111111 !important;
   margin: 0 !important;
+  max-width: 539px;
 }
 
 /* .spartan-signature-row {

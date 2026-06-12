@@ -38,7 +38,7 @@ const CmmcScreen = () => {
                         <div className="blog-hero-content text-start">
                             <div className="blog-breadcrumb">
                                 <span className="red-bullet-indicator"></span>
-                                <span>CMMC 2.0</span> <span className="separator">|</span> <span>HOME</span>
+                                <span>CMMC 2.0</span> <span className="separator">|</span> <span style={{color: "white"}}>HOME</span>
                             </div>
                             <h1 className="blog-hero-title custom-hero-lh">
                                 CMMC 2.0 Executive Readiness<br />Without Noise
@@ -59,23 +59,24 @@ const CmmcScreen = () => {
                             </span>
                         </div>
 
-                        <h2 className="section-main-heading mb-4 text-dark font-weight-500 font-size-38">
+                        <h2 className="section-main-heading mb-4 font-weight-500 font-size-38">
                             A Contractual Obligation Tied Directly to Eligibility.
                         </h2>
 
                         <div className="row">
                             <div className="col-lg-12">
                                 <p className="sec-body-text mb-4 font-size-16 line-height-1-8">
-                                    CMMC 2.0 is a contractual obligation tied directly to eligibility, Supplier Performance Risk System (SPRS) scoring and formal assessment by a Certified Third-Party Assessor Organization (C3PAO). Organizations handling Controlled Unclassified Information (CUI) must demonstrate implemented controls, structured System Security Plans (SSP) and operational discipline aligned to NIST SP 800-171.
+                                CMMC 2.0 is a contractual obligation tied directly to eligibility, Supplier Performance Risk System (SPRS) scoring and formal assessment by a Certified Third-Party Assessor Organization (C3PAO). Organizations handling Controlled Unclassified Information (CUI) must demonstrate implemented controls, structured System Security Plans (SSP) and operational discipline aligned to NIST SP 800-171.
                                 </p>
                                 <p className="sec-body-text mb-5 font-size-16 line-height-1-8">
-                                    While our current operational focus centers on CMMC 2.0 readiness within the Defense Industrial Base, Spartan's governance practice also supports ISO/IEC 27001 information security management systems and ISO/IEC 42001 artificial intelligence governance frameworks for regulated environments.
+                                While our current operational focus centers on CMMC 2.0 readiness within the Defense Industrial Base, Spartan's governance practice also supports ISO/IEC 27001 information security management systems and ISO/IEC 42001 artificial intelligence governance frameworks for regulated environments.
                                 </p>
 
                                 {/* Figma Callout Quote Component */}
                                 <div className="cmmc-callout-quote-box mt-4">
                                     <p className="cmmc-quote-text">
-                                        We build defensible cybersecurity governance structures aligned to<br /> contractual and international standards.
+                                    We build defensible cybersecurity governance structures aligned to
+                                    contractual and international standards.
                                     </p>
                                 </div>
                             </div>
@@ -93,7 +94,7 @@ const CmmcScreen = () => {
                                 <span className="fallback-red-dot"></span>LEVEL 2 REQUIREMENTS
                             </span>
                         </div>
-                        <h2 className="section-main-heading text-dark font-weight-500 mb-3 max-w-900 mx-auto">
+                        <h2 className="section-main-heading font-weight-500 mb-3 max-w-900 mx-auto">
                             Three Certification Levels – Level 2 is where most DIB awards land.
                         </h2>
                         <p className="section-subtitle-text mb-5 max-w-780 mx-auto">
@@ -334,7 +335,7 @@ const CmmcScreen = () => {
                             </span>
                         </div>
 
-                        <h2 className="section-main-heading text-dark font-weight-500 mb-3 max-w-900 mx-auto font-size-38">
+                        <h2 className="section-main-heading font-weight-500 mb-3 max-w-900 mx-auto font-size-38">
                             From Scoping through C3PAO Handoff in<br />8 to 12 weeks.
                         </h2>
 
@@ -428,7 +429,7 @@ const CmmcScreen = () => {
                             </span>
                         </div>
 
-                        <h2 className="section-main-heading text-dark font-weight-500 mb-3 max-w-900 mx-auto font-size-38">
+                        <h2 className="section-main-heading font-weight-500 mb-3 max-w-900 mx-auto font-size-38">
                             Defensible Posture, Assessor-grade Evidence.
                         </h2>
 
@@ -589,7 +590,7 @@ const CmmcScreen = () => {
                             </span>
                         </div>
 
-                        <h2 className="section-main-heading text-dark font-weight-500 mb-3 max-w-900 mx-auto font-size-38">
+                        <h2 className="section-main-heading font-weight-500 mb-3 max-w-900 mx-auto font-size-38">
                             Know Exactly Where you stand<br />Before Assessor day.
                         </h2>
 
@@ -651,13 +652,13 @@ const CmmcScreen = () => {
                 <section className="cmmc-executive-section text-start bg-white" style={{ paddingTop: "90px" }}>
                     <div className="custom-container">
 
-                        <div className="section-tag-wrapper1">
+                        <div className="section-tag-wrapper1 mb-3">
                             <span className="section-mini-tag light-red-pill">
                                 <span className="fallback-red-dot"></span>EXECUTIVE PERSPECTIVE
                             </span>
                         </div>
 
-                        <h2 className="section-main-heading text-dark font-weight-500 mb-4 font-size-38">
+                        <h2 className="section-main-heading font-weight-500 mb-4 font-size-38">
                             A Board-level Risk Management Function.
                         </h2>
 

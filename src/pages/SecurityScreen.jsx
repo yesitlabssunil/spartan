@@ -13,8 +13,12 @@ import checkBulletRed from "../assets/images/approachScreen/startBullet.png";
 // Section 2: Tenant In Scope Icons
 import cloudIcon from "../assets/images/securityScreen/cloud-icon.png";
 import purse from "../assets/images/securityScreen/purse.png";
+import purse1 from "../assets/images/securityScreen/purse1.png";
+import mail from "../assets/images/securityScreen/mail.png";
 import email from "../assets/images/securityScreen/email.png";
 import key from "../assets/images/securityScreen/key.png";
+import key1 from "../assets/images/securityScreen/key1.png";
+import security1 from "../assets/images/securityScreen/security1.png";
 import pulse from "../assets/images/securityScreen/pulse.png";
 import pc from "../assets/images/securityScreen/pc.png";
 import shield from "../assets/images/securityScreen/shield.png";
@@ -36,11 +40,11 @@ const SecurityScreen = () => {
                     <div className="custom-container">
                         <div className="blog-hero-content">
                             <div className="blog-breadcrumb">
-                                <span>MICROSOFT 365 SECURITY</span> <span className="separator">|</span> <span>Home</span>
+                                <span>MICROSOFT 365 SECURITY</span> <span className="separator">|</span> <span style={{color: "white"}}>Home</span>
                             </div>
                             <h1 className="blog-hero-title">Hardened Microsoft 365 Security <br />for Federal Contractors.</h1>
                             <p className="blog-hero-subtitle">
-                                NIST SP 800-171 and CMMC 2.0 aligned systems acceleration and tenant hardening architecture for defense suppliers.
+                                GCC High migration, CUI enclaves and audit-ready Microsoft 365 hardening - engineered to meet CMMC 2.0, NIST 800-171 and DFARS 7012.
                             </p>
                         </div>
                     </div>
@@ -51,34 +55,34 @@ const SecurityScreen = () => {
                     <div className="custom-container">
                         <div className="section-tag-wrapper">
                             <span className="section-mini-tag">
-                                <span className="fallback-red-dot"></span>GOV CLOUD & COMPLIANCE BOUNDARY
+                                <span className="fallback-red-dot"></span>WHY MICROSOFT 365 SECURITY MATTERS
                             </span>
                         </div>
                         <h2 className="section-main-heading mb-3">Your Tenant is in scope. Your Assessor will look here first.</h2>
                         <p className="section-sub-heading mb-5" >
-                            Federal assessors inspect Microsoft 365 configurations directly. We harden the infrastructure profiles to secure a clear passing posture.
+                            Email, SharePoint, OneDrive, Teams - all touch CUI. Without proper data residency and configuration, the entire CMMC scope expands. Spartan delivers a hardened, audit-ready Microsoft 365 Security environment engineered for the regulated workloads of federal contractors.
                         </p>
 
                         <div className="row g-4 text-start">
                             <div className="col-lg-4">
                                 <div className="security-panel-card">
                                     <div className="panel-icon-box"><img src={cloudIcon} alt="Configuration Control" className="panel-icon" /></div>
-                                    <h5>M365 Configuration Control</h5>
-                                    <p>Restricting global admin overhead and configuring unified organizational retention rules.</p>
+                                    <h5>GCC High Migration</h5>
+                                    <p>Move regulated workloads into a sovereign US tenant with proper data residency.</p>
                                 </div>
                             </div>
                             <div className="col-lg-4">
                                 <div className="security-panel-card">
-                                    <div className="panel-icon-box"><img src={purse} alt="Boundary Isolation" className="panel-icon" /></div>
-                                    <h5>CUI Boundary Isolation</h5>
-                                    <p>Establishing clear data isolation barriers across shared commercial infrastructures or GCC environments.</p>
+                                    <div className="panel-icon-box"><img src={purse1} alt="Boundary Isolation" className="panel-icon" /></div>
+                                    <h5>CUI Enclave Design</h5>
+                                    <p>Reduce assessment scope with a purpose-built enclave for controlled data.</p>
                                 </div>
                             </div>
                             <div className="col-lg-4">
                                 <div className="security-panel-card">
                                     <div className="panel-icon-box"><img src={email} alt="Shared Matrix" className="panel-icon" /></div>
-                                    <h5>Shared Matrix Assertions</h5>
-                                    <p>Mapping shared operational responsibilities accurately back into system security plans.</p>
+                                    <h5>Email & Collaboration</h5>
+                                    <p>DLP, encryption, conditional access, and retention aligned to federal rules.</p>
                                 </div>
                             </div>
                         </div>
@@ -107,30 +111,31 @@ const SecurityScreen = () => {
                                 <div className="row g-4">
                                     <div className="col-sm-6">
                                         <div className="security-panel-card micro-feature">
-                                            <div className="micro-box"><img src={key} alt="MFA" className="panel-icon" /></div>
-                                            <h6>Adaptive MFA</h6>
-                                            <p>Enforcing context-aware hardware tokens across organizational elements.</p>
+                                            <div className="micro-box"><img src={key1} alt="MFA" className="panel-icon" /></div>
+                                            <h6>Privileged Access</h6>
+                                            <p>PIM, just-in-time elevation
+                                            and admin tier separation.</p>
                                         </div>
                                     </div>
                                     <div className="col-sm-6">
                                         <div className="security-panel-card micro-feature">
-                                            <div className="micro-box"><img src={security} alt="Privileged" className="panel-icon" /></div>
-                                            <h6>Privileged Access</h6>
-                                            <p>Limiting root configurations using automated break-glass parameters.</p>
+                                            <div className="micro-box"><img src={security1} alt="Privileged" className="panel-icon" /></div>
+                                            <h6>Conditional Access</h6>
+                                            <p>Device, location and risk-based policy enforcement.</p>
                                         </div>
                                     </div>
                                     <div className="col-sm-6">
                                         <div className="security-panel-card micro-feature">
                                             <div className="micro-box"><img src={people} alt="Device Auth" className="panel-icon" /></div>
-                                            <h6>Device Authentication</h6>
-                                            <p>Ensuring only validated physical assets interact with data nodes.</p>
+                                            <h6>Role-Based Access</h6>
+                                            <p>Least-privilege RBAC mapped to CMMC AC controls.</p>
                                         </div>
                                     </div>
                                     <div className="col-sm-6">
                                         <div className="security-panel-card micro-feature">
-                                            <div className="micro-box"><img src={purse} alt="B2B Trust" className="panel-icon" /></div>
-                                            <h6>B2B Trust Filters</h6>
-                                            <p>Restricting cross-tenant access parameters to certified supply chain entities.</p>
+                                            <div className="micro-box"><img src={purse1} alt="B2B Trust" className="panel-icon" /></div>
+                                            <h6>MFA & FIDO2</h6>
+                                            <p>Phishing-resistant authentication for all users.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -144,10 +149,10 @@ const SecurityScreen = () => {
                     <div className="custom-container">
                         <div className="section-tag-wrapper">
                             <span className="section-mini-tag">
-                                <span className="fallback-red-dot"></span>Microsoft Defender
+                                <span className="fallback-red-dot"></span>MICROSOFT DEFENDER
                             </span>
                         </div>
-                        <h2 className="section-main-heading mb-3 block-size">Microsoft Defender deployed and tuned <br/> for CUI environments.</h2>
+                        <h2 className="section-main-heading mb-3 block-size">Microsoft Defender deployed and tuned <br /> for CUI environments.</h2>
                         <p className="section-sub-heading mb-5">
                         Defender for Endpoint, Defender for Cloud Apps, and Intune work together to enforce
                         device compliance, isolate threats, and produce assessor-ready evidence.
@@ -158,21 +163,26 @@ const SecurityScreen = () => {
                                 <div className="security-panel-card1">
                                     <div className="panel-icon-box"><img src={pc} alt="Device Compliance" className="panel-icon" /></div>
                                     <h5>Device Compliance</h5>
-                                    <p>Blocking asset interaction vectors until security baseline health is verified.</p>
+                                    <p>Intune baselines aligned to CIS and DoD STIG
+                                    references.</p>
                                 </div>
                             </div>
                             <div className="col-lg-4">
                                 <div className="security-panel-card1">
                                     <div className="panel-icon-box"><img src={shield} alt="EDR Monitoring" className="panel-icon" /></div>
-                                    <h5>EDR Active Monitoring</h5>
-                                    <p>Continuous behavior telemetry monitoring to catch live threat vectors early.</p>
+                                    <h5>EDR & Threat Hunting</h5>
+                                    <p>Defender for Endpoint with custom detections
+                                    and response runbooks.</p>
                                 </div>
                             </div>
                             <div className="col-lg-4">
                                 <div className="security-panel-card1">
                                     <div className="panel-icon-box"><img src={pulse} alt="Risk Governance" className="panel-icon" /></div>
-                                    <h5>Risk Governance</h5>
-                                    <p>Automated software patch assessment matching strict federal vulnerability constraints.</p>
+                                    <h5>App Governance</h5>
+                                    <p>
+                                    Defender for Cloud Apps controlling shadow IT
+                                    and OAuth risk.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -186,42 +196,46 @@ const SecurityScreen = () => {
                             <div className="col-lg-6 content-column" >
                                 <div className="section-tag-wrapper justify-content-start">
                                     <span className="section-mini-tag">
-                                        <span className="fallback-red-dot"></span>SECURE TELEMETRY FLOW
+                                        <span className="fallback-red-dot"></span>EMAIL SECURTIY
                                     </span>
                                 </div>
                                 <h2 className="section-main-heading mt-3">Exchange Online locked down for regulated communication.</h2>
                                 <p className="sec-body-text mt-3">
-                                    Email vectors represent high risk. We deploy robust tracking matrices and strict transport parameters to shield transmission streams completely.
+                                Email is the most-targeted channel in the DIB. Spartan deploys layered defenses - authentication, content inspection and impersonation protection - that hold up under assessor scrutiny.
                                 </p>
                             </div>
                             <div className="col-lg-6">
                                 <div className="row g-4">
                                     <div className="col-sm-6">
                                         <div className="security-panel-card micro-feature">
-                                            <div className="micro-box"><img src={email} alt="Anti Phishing" className="panel-icon" /></div>
-                                            <h6>Advanced Anti-Phishing</h6>
-                                            <p>Deploying predictive payload sandboxing models on incoming mail routes.</p>
+                                            <div className="micro-box"><img src={mail} alt="Anti Phishing" className="panel-icon" /></div>
+                                            <h6>Defender for Office 365</h6>
+                                            <p>
+                                            Anti-phishing, Safe Links and Safe Attachments tuned to your tenant.
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="col-sm-6">
                                         <div className="security-panel-card micro-feature">
-                                            <div className="micro-box"><img src={purse} alt="DKIM DMARC" className="panel-icon" /></div>
-                                            <h6>DKIM & DMARC</h6>
-                                            <p>Establishing proper DNS signing blocks to combat spoofing threats.</p>
+                                            <div className="micro-box"><img src={purse1} alt="DKIM DMARC" className="panel-icon" /></div>
+                                            <h6>Encryption</h6>
+                                            <p>Message encryption and S/MIME for sensitive communications.</p>
                                         </div>
                                     </div>
                                     <div className="col-sm-6">
                                         <div className="security-panel-card micro-feature">
-                                            <div className="micro-box"><img src={security} alt="Crypto Mail Paths" className="panel-icon" /></div>
-                                            <h6>Crypto Mail Paths</h6>
-                                            <p>Enforcing strong TLS parameters across critical peer-to-peer pipelines.</p>
+                                            <div className="micro-box"><img src={security1} alt="Crypto Mail Paths" className="panel-icon" /></div>
+                                            <h6>DMARC / SPF / DKIM</h6>
+                                            <p>Domain authentication enforced and monitored.</p>
                                         </div>
                                     </div>
                                     <div className="col-sm-6">
                                         <div className="security-panel-card micro-feature">
                                             <div className="micro-box"><img src={warning} alt="Data Outflow" className="panel-icon" /></div>
-                                            <h6>Data Outflow Filters</h6>
-                                            <p>Blocking the exfiltration of programmatic assets outside validated networks.</p>
+                                            <h6>Impersonation Defense</h6>
+                                            <p>
+                                            Executive and brand impersonation policies hardened.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -391,7 +405,7 @@ const SecurityScreen = () => {
                                     <span className="fallback-red-dot"></span>LOGGING & MONITORING
                                 </span>
                             </div>
-                            <h2 className="dark-section-title text-center">Continuous visibility across the Microsoft 365 <br/> Security estate.</h2>
+                            <h2 className="dark-section-title text-center">Continuous visibility across the Microsoft 365 <br /> Security estate.</h2>
                             <p className="dark-section-subtitle text-center mb-5">
                                 Unified audit logs, Sentinel integration and retention aligned to federal requirements - so you can prove what happened, when and to which data.
                             </p>
@@ -460,43 +474,56 @@ const SecurityScreen = () => {
                             <div className="col-xl-4 col-md-6">
                                 <div className="security-panel-card1">
                                     <div className="panel-icon-box"><img src={cloudIcon} alt="Sovereign Landings" className="panel-icon" /></div>
-                                    <h5>Sovereign Landings</h5>
-                                    <p>Deploying infrastructure baselines that conform strictly with federal data handling requirements.</p>
+                                    <h5>Azure Government Landing Zones
+                                    </h5>
+                                    <p>Sovereign-cloud landing zones architected to FedRAMP High and DoD IL4/IL5 reference patterns.</p>
                                 </div>
                             </div>
                             <div className="col-xl-4 col-md-6">
                                 <div className="security-panel-card1">
                                     <div className="panel-icon-box"><img src={security} alt="Zero Trust" className="panel-icon" /></div>
-                                    <h5>Zero Trust Network Layers</h5>
-                                    <p>Segmenting internal microservice pools via policy-driven network boundaries.</p>
+                                    <h5>Defender for Cloud
+                                    </h5>
+                                    <p>CSPM and CWPP across subscriptions with regulatory compliance dashboards for NIST 800-171 and CMMC.
+                                    </p>
                                 </div>
                             </div>
                             <div className="col-xl-4 col-md-6">
                                 <div className="security-panel-card1">
                                     <div className="panel-icon-box"><img src={key} alt="Key Vault Isolation" className="panel-icon" /></div>
-                                    <h5>Key Vault Isolation</h5>
-                                    <p>Securing enterprise secrets and certificates within cryptographic storage modules.</p>
+                                    <h5>Key Vault & HSM
+                                    </h5>
+                                    <p>Customer-managed keys, Managed HSM and BYOK for CUI encryption at rest and in transit.
+                                    </p>
                                 </div>
                             </div>
                             <div className="col-xl-4 col-md-6">
                                 <div className="security-panel-card1">
                                     <div className="panel-icon-box"><img src={purse} alt="Vulnerability Scans" className="panel-icon" /></div>
-                                    <h5>Vulnerability Scans</h5>
-                                    <p>Automated discovery pipelines identifying flaws inside active software code structures.</p>
+                                    <h5>Network Isolation
+                                    </h5>
+                                    <p>Hub-and-spoke topology, Private Endpoints, Azure Firewall and NSG baselines enforcing zero-trust segmentation.
+                                    </p>
                                 </div>
                             </div>
                             <div className="col-xl-4 col-md-6">
                                 <div className="security-panel-card1">
                                     <div className="panel-icon-box"><img src={envIcon3} alt="Telemetry" className="panel-icon" /></div>
-                                    <h5>Integrated Telemetry</h5>
-                                    <p>Centralizing cloud log infrastructure with system monitoring centers.</p>
+                                    <h5>Storage & Database Hardening</h5>
+                                    <p>
+                                    Encryption, private access, immutable storage and SQL/Cosmos auditing aligned to DFARS 7012.
+
+                                    </p>
                                 </div>
                             </div>
                             <div className="col-xl-4 col-md-6">
                                 <div className="security-panel-card1">
                                     <div className="panel-icon-box"><img src={pulse} alt="Backup Resiliency" className="panel-icon" /></div>
-                                    <h5>Backup Resiliency</h5>
-                                    <p>Configuring isolated, encrypted fallback images to withstand ransomware events.</p>
+                                    <h5>Sentinel & Monitor</h5>
+                                    <p>
+                                    Centralized SIEM, Azure Monitor, Log Analytics and diagnostic settings producing assessor-ready evidence.
+
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -508,12 +535,13 @@ const SecurityScreen = () => {
                     <div className="custom-container">
                         <div className="section-tag-wrapper">
                             <span className="section-mini-tag">
-                                <span className="fallback-red-dot"></span>INCIDENT MANAGEMENT
+                                <span className="fallback-red-dot"></span>INCIDENT RESPONSE
                             </span>
                         </div>
                         <h2 className="section-main-heading text-center mb-3">Prepared, rehearsed & DoD-reportable.</h2>
                         <p className="section-sub-heading text-center mb-5 section-sub-heading1">
                         When an incident occurs, Spartan provides the playbooks, the technical response and the regulatory reporting required under DFARS 252.204-7012 — including 72-hour DoD Cyber Crime Center notification.
+
 
                         </p>
 
@@ -521,22 +549,32 @@ const SecurityScreen = () => {
                             <div className="col-lg-4">
                                 <div className="security-panel-card white-bg-card">
                                     <div className="panel-icon-box"><img src={cloudIcon} alt="72-Hour Timelines" className="panel-icon" /></div>
-                                    <h5>72-Hour Timelines</h5>
-                                    <p>Pre-configured frameworks ensure security incidents are detected and documented inside strict federal notification windows.</p>
+                                    <h5>IR Playbooks</h5>
+                                    <p>
+                                    Tenant-specific runbooks for the most common attack patterns.
+
+                                    </p>
                                 </div>
                             </div>
                             <div className="col-lg-4">
                                 <div className="security-panel-card white-bg-card">
                                     <div className="panel-icon-box"><img src={purse} alt="Forensic Integrity" className="panel-icon" /></div>
-                                    <h5>Forensic Integrity</h5>
-                                    <p>Securing immutable system activity telemetry snapshots to preserve chain-of-custody requirements during audits.</p>
+                                    <h5>24/7 Response
+                                    </h5>
+                                    <p>
+                                    Senior responders engaged from triage through containment.
+
+                                    </p>
                                 </div>
                             </div>
                             <div className="col-lg-4">
                                 <div className="security-panel-card white-bg-card">
                                     <div className="panel-icon-box"><img src={email} alt="Response Readiness" className="panel-icon" /></div>
-                                    <h5>Response Readiness</h5>
-                                    <p>Regular operational simulations ensure technical response units operate efficiently under actual threat scenarios.</p>
+                                    <h5>DoD Reporting
+                                    </h5>
+                                    <p>
+                                    DIBNet submission, evidence packaging and post-incident review.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -556,12 +594,12 @@ const SecurityScreen = () => {
                             <p className="cta-banner-desc">
                                 A focused tenant review with a senior architect - gap report and remediation plan delivered.                            </p>
                             <div className="cta-buttons-group">
-                                <Link to="/contact-us" className="cta-btn-white" style={{ textDecoration: "none" }}>Schedule M365 Security Audit <span>
+                                <Link to="/contact-us" className="cta-btn-white" style={{ textDecoration: "none" }}>Schedule M365 Security Review <span>
                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </span></Link>
-                                <Link to="/compliance" className="cta-btn-outline" style={{textDecoration: "none"}}>Explore Compliance</Link>
+                                <Link to="/compliance" className="cta-btn-outline" style={{ textDecoration: "none" }}>Explore Compliance</Link>
                             </div>
                         </div>
                     </div>

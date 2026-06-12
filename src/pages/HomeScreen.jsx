@@ -19,6 +19,9 @@ import icon12 from "../assets/images/home/icon12.png";
 import icon13 from "../assets/images/home/icon13.png";
 import icon14 from "../assets/images/home/icon14.png";
 import { Link } from 'react-router-dom';
+import icon15 from "../assets/images/home/icon15.png";
+import icon16 from "../assets/images/home/icon16.png";
+import icon17 from "../assets/images/home/icon17.png";
 
 const HomeScreen = () => {
 
@@ -440,10 +443,10 @@ const HomeScreen = () => {
             </div>
 
             <div className="founder-quote-content">
-              <p className="quote-paragraph">"True compliance is operational. It produces evidence, withstands audits and protects the contracts our clients have fought to win."</p>
+              <p className="quote-paragraph">“Real compliance is operational. It produces evidence, withstands audits and protects the contracts our clients have fought to win.”</p>
               <div className="founder-meta">
                 <span className="meta-name">Raphael Warren</span>
-                <span className="meta-title">Founder & CEO | Spartan Cyber Sec</span>
+                <span className="meta-title">Founder & CEO | Brigadier General (Ret.)</span>
               </div>
             </div>
           </div>
@@ -458,12 +461,12 @@ const HomeScreen = () => {
 
         <div className="focus-grid">
           <div className="focus-card fade-in">
-            <div className="focus-icon trust-box-icon"><i className="fas fa-stamp"></i></div>
+            <div className="focus-icon trust-box-icon"><img src={icon17} alt="" /></div>
             <h4>Audit Readiness</h4>
             <p>Walk into any assessment with evidence in hand.</p>
           </div>
           <div className="focus-card fade-in">
-            <div className="focus-icon trust-box-icon"><i className="fas fa-file-signature"></i></div>
+            <div className="focus-icon trust-box-icon"><img src={icon16} alt="" /></div>
             <h4>Contract Protection</h4>
             <p>Protect the federal revenue you've already won.</p>
           </div>
@@ -478,7 +481,7 @@ const HomeScreen = () => {
             <p>Systems that perform under real-world adversarial pressure.</p>
           </div>
           <div className="focus-card fade-in">
-            <div className="focus-icon trust-box-icon"><i className="fas fa-user-tie"></i></div>
+            <div className="focus-icon trust-box-icon"><img src={icon15} alt="" /></div>
             <h4>Leadership Confidence</h4>
             <p>Executive oversight backed by clear governance.</p>
           </div>
@@ -494,7 +497,7 @@ const HomeScreen = () => {
         <div className="text-center process-header-block">
           <span className="section-tag-red"><span className="dot-red"></span>OUR PROCESS</span>
           <h2>From Assessment to Audit Readiness</h2>
-          <p className="process-main-subtext">A predictable, evidence-driven engagement that moves your organization from uncertainty to operational compliance.</p>
+          <p className="process-main-subtext">A repeatable, evidence-driven engagement that moves your organization from uncertainty to operational compliance.</p>
         </div>
 
         <div className="process-linear-container">
@@ -522,7 +525,7 @@ const HomeScreen = () => {
               <h3>Implement & Secure Systems</h3>
             </div>
             <div className="step-bottom-card">
-              <div className="step-card-icon"><img src={icon1} alt="" /></div>
+              <div className="step-card-icon"><img src={icon3} alt="" /></div>
               <p>We deploy security controls, harden your Microsoft 365 environment and establish governance systems to ensure compliance is operational, not theoretical.</p>
             </div>
           </div>

@@ -19,40 +19,40 @@ import { Link } from "react-router-dom";
 const AboutScreen = () => {
 
   const highlights = [
-    { title: "Cyber Operations", desc: "Decades of military and federal cyber defense authority.", image: security },
-    { title: "Federal Prosecution", desc: "In-depth processing of digital corporate fraud, espionage, and national security matters.", image: hammer },
-    { title: "Executive Governance", desc: "Technical policy structuring and risk operations deployment across multi-tier structures.", image: icon6 },
-    { title: "Compliance Execution", desc: "Standardized framework execution for NIST, CMMC, and federal compliance mandates.", image: purse }
+    { title: "Cyber Operations", desc: "Decades of military and federal cyber defense leadership.", image: security },
+    { title: "Federal Prosecution", desc: "Investigative and litigation experience across cybercrime and national security.", image: hammer },
+    { title: "Executive Governance", desc: "Board-level advisory across regulated and high-risk industries.", image: icon6 },
+    { title: "Compliance Execution", desc: "CMMC 2.0, NIST SP 800-171, and ISO/IEC 27001 readiness delivery.", image: purse }
   ];
 
   const team = [
     {
       image: leaderImg1,
-      rank: "BRIGADIER GENERAL (RET.)",
-      name: "Raphael Warren - MS, CIS",
-      desc: "Directs high-level defense frameworks. Former commanding authority over critical national security networks, coordinating operations across multi-theater defense platforms."
+      rank: "FOUNDER AND PRESIDENT",
+      name: "Brigadier General (Ret.) Raphael Warren - MS, CIS",
+      desc: "Brigadier General (Ret.) Raphael Warren is an executive cybersecurity governance advisor, retired senior military officer and former federal agent with more than three decades of experience in cybersecurity leadership, federal operations and executive risk management."
     },
     {
       image: leaderImg2,
-      rank: "COLONEL (RET.)",
-      name: "Joe W. Romero - JD",
-      desc: "Coordinates legal governance and security implementation strategies. Former federal advocate specializing in data systems liability and regulatory defense structures."
+      rank: "Vice President, Legal",
+      name: "Colonel (Ret.) Joe M. Romero - JD",
+      desc: "Colonel (Ret.) Joe M. Romero is a former federal prosecutor and legal strategist with extensive experience in cybersecurity law, federal investigations and executive risk exposure."
     },
     {
       image: leaderImg3,
-      rank: "LIEUTENANT COLONEL (RET.)",
-      name: "Tyrone Finch - BS",
-      desc: "Manages systems operations and tactical technical verification. Expert in systems compliance automation and structural defense mechanics."
+      rank: "Vice President, Operations",
+      name: "Lieutenant Colonel (Ret.) Tyrone Finch - BS",
+      desc: "Lieutenant Colonel (Ret.) Tyrone Finch is a cybersecurity compliance and operational execution strategist specializing in CMMC 2.0, NIST SP 800-171, ISO/IEC 27001, and C3PAO readiness preparation."
     }
   ];
 
   const advantages = [
-    { icon: rings, title: "Principal-Led Engagements", desc: "Senior advisors drive your program implementation directly, eliminating gaps left by outsourced consulting hands." },
-    { icon: security, title: "Defensible by Design", desc: "We deploy rigorous control infrastructure capable of withstanding strict validation audits and continuous inspection models." },
-    { icon: hammer, title: "Legal & Regulatory Fluency", desc: "Aligning complex technical parameters with standard defense procurement clauses and contractual obligations." },
-    { icon: people, title: "Mission-Aligned Performance", desc: "We configure security frameworks to act as operational enablers, securing contracts while maintaining workflow efficiency." },
-    { icon: purse, title: "Confidential & Discrete", desc: "Operating under secure protocols to ensure your organizational vulnerabilities and proprietary designs remain isolated." },
-    { icon: icon6, title: "Systemic Accountability", desc: "Providing structured operational dashboards that offer real-time health visibility to corporate executive boards." }
+    { icon: rings, title: "Principal-Led Engagements", desc: "Every engagement is led directly by senior principals - not delegated to junior staff. Executives work with the people who own the outcome." },
+    { icon: security, title: "Defensible by Design", desc: "Programs are built to withstand contracting officer review, third-party assessment, regulatory inquiry, and litigation discovery." },
+    { icon: hammer, title: "Legal & Regulatory Fluency", desc: "Advisory recommendations are shaped by federal enforcement experience, not theoretical compliance posture." },
+    { icon: people, title: "Mission-Aligned Execution", desc: "We translate regulatory frameworks into operational processes that match how your organization actually functions." },
+    { icon: purse, title: "Confidential & Discreet", desc: "Sensitive engagements are handled with the operational discretion expected of senior military and federal practitioners." },
+    { icon: icon6, title: "Senior-Only Bench", desc: "Retired flag officers, federal prosecutors and field-grade cyber leaders - no offshore handoffs or boilerplate deliverables." }
   ];
 
   return (
@@ -65,7 +65,7 @@ const AboutScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-                <span>About</span> <span className="separator">|</span> <span>Home</span>
+                <span>About</span> <span className="separator">|</span> <span style={{color: "white"}}>Home</span>
               </div>
               <h1 className="blog-hero-title">About Spartan Cyber<br /> Security</h1>
               <p className="blog-hero-subtitle">
@@ -178,7 +178,8 @@ const AboutScreen = () => {
             </div>
             <h2 className="section-main-heading text-center mb-2">Why organizations engage Spartan.</h2>
             <p className="section-sub-heading text-center mb-5">
-              Strategic execution designed for enterprises that cannot afford operational interruption.
+            Spartan exists for executives who cannot afford a failed assessment, a regulatory referral
+or a cybersecurity program that collapses under scrutiny.
             </p>
 
             <div className="row g-4 mt-2">

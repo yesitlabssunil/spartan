@@ -29,11 +29,11 @@ const IndustriesScreen = () => {
   const sectors = [
     {
       title: "Construction & Federal Infrastructure",
-      desc: "General contractors, design-build firms, and A&E teams delivering federal, MILCON, and classified infrastructure projects.",
+      desc: "General contractors, design-build firms and AEC teams delivering federal, MILCON and critical infrastructure projects.",
       points: [
-        "CUI protection for site plans, CAD files, and project schedules",
-        "Subcontractor and base-partner flowdown management",
-        "Field offices and mobile workforce hardening (SCCA / RPDC)"
+        "CUI protection for site plans, BIM/CAD and project schedules",
+        "Subcontractor and trade partner flowdown management",
+        "Field device and mobile workforce hardening (tablets, BYOD)"
       ],
       image: industryImg1,
       imageRight: true // Image on the right side
@@ -43,7 +43,7 @@ const IndustriesScreen = () => {
       desc: "Prime and subcontractor support across DoD weapon systems and platforms.",
       points: [
         "CUI segmentation across engineering data",
-        "ITAR aligned access controls",
+        "ITAR-aligned access controls",
         "Subcontractor flowdown management"
       ],
       image: industryImg2,
@@ -62,20 +62,20 @@ const IndustriesScreen = () => {
     },
     {
       title: "Engineering & R&D",
-      desc: "Research Organizations handling sensitive controlled technical data.",
+      desc: "Research Organization handling sensitive controlled technical data.",
       points: [
-        "Research intellectual property",
-        "Lab and SCADA device control",
-        "Project controlled data handling"
+        "Research enclave architecture",
+        "Lab and BYOD device control",
+        "Export-controlled data handling"
       ],
       image: industryImg4,
       imageRight: false
     },
     {
       title: "Advanced Manufacturing",
-      desc: "Precision manufacturers producing components for DoD and Federal supply chains.",
+      desc: "Precision manufacturers producing components for DoD and federal supply chains.",
       points: [
-        "CMMC segmentation for shop floors",
+        "OT/IT segmentation for shop floors",
         "CAD and CAM data protection",
         "Supplier portal hardening"
       ],
@@ -94,7 +94,7 @@ const IndustriesScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content blog-hero-content1">
               <div className="blog-breadcrumb">
-                <span>Industries</span> <span className="separator">|</span> <span>Home</span>
+                <span>Industries</span> <span className="separator">|</span> <span style={{color: "white"}}>Home</span>
               </div>
               <h1 className="blog-hero-title">Built for Federal Contractors across critical industries.</h1>
               <p className="blog-hero-subtitle">

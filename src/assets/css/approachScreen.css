@@ -161,7 +161,7 @@
   /* --- SECTION 3: TIMELINE WEEK CARDS --- */
   .timeline-week-card {
     background: #ffffff;
-    border: 1px solid #eaedf2;
+    /* border: 1px solid #eaedf2; */
     border-radius: 6px;
     padding: 25px 25px;
     height: 100%;
@@ -171,7 +171,7 @@
     display: flex;
     align-items: baseline;
     flex-direction: column;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
   }
   
   .week-number {
@@ -193,7 +193,7 @@
   
   .week-card-title {
     font-family: 'Overused Grotesk', sans-serif;
-    font-size: 1.15rem;
+    font-size: 20px;
     font-weight: 500;
     color: #111111;
     margin-bottom: 12px;
@@ -201,7 +201,7 @@
   
   .week-card-desc {
     font-family: 'Geist', sans-serif;
-    font-size: 0.9rem;
+    font-size: 15px;
     line-height: 1.4;
     color: #000000B2;
     margin: 0;

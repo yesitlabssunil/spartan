@@ -21,6 +21,7 @@ import security from "../assets/images/complianceScreen/icon1.png";
 import warning from "../assets/images/securityScreen/warning.png";
 import envIcon1 from "../assets/images/industryScreen/env-icon1.png";
 import icon6 from "../assets/images/complianceScreen/icon6.png"
+import downloadIcon from "../assets/images/resourceScreen/download-icon.png"
 import faqData from "../assets/faqData.json";
 import { Link } from 'react-router-dom';
 
@@ -251,9 +252,11 @@ export default function ResourceScreen() {
             {/* Template Card 1 */}
             <div className="template-item-card">
               <div className="template-download-icon">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14 11V14H2V11H0V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V11H14ZM13 7L11.59 5.59L9 8.17V0H7V8.17L4.41 5.59L3 7L8 12L13 7Z" fill="#FFFFFF"/>
-                </svg>
+                </svg> */}
+
+                <img src={downloadIcon} alt="" style={{height: "20px", width: "20px"}} />
               </div>
               <h3 className="template-card-title">CMMC 2.0 Scoping Worksheet</h3>
               <p className="template-card-body">
@@ -270,9 +273,10 @@ export default function ResourceScreen() {
             {/* Template Card 2 */}
             <div className="template-item-card">
               <div className="template-download-icon">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14 11V14H2V11H0V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V11H14ZM13 7L11.59 5.59L9 8.17V0H7V8.17L4.41 5.59L3 7L8 12L13 7Z" fill="#FFFFFF"/>
-                </svg>
+                </svg> */}
+                <img src={downloadIcon} alt="" style={{height: "20px", width: "20px"}} />
               </div>
               <h3 className="template-card-title">NIST 800–171 Evidence Checklist</h3>
               <p className="template-card-body">
@@ -289,9 +293,10 @@ export default function ResourceScreen() {
             {/* Template Card 3 */}
             <div className="template-item-card">
               <div className="template-download-icon">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14 11V14H2V11H0V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V11H14ZM13 7L11.59 5.59L9 8.17V0H7V8.17L4.41 5.59L3 7L8 12L13 7Z" fill="#FFFFFF"/>
-                </svg>
+                </svg> */}
+                <img src={downloadIcon} alt="" style={{height: "20px", width: "20px"}} />
               </div>
               <h3 className="template-card-title">POA&M Template</h3>
               <p className="template-card-body">

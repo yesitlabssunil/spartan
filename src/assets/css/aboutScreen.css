@@ -72,8 +72,9 @@
   }
   
   .section-sub-heading {
+    font-family: 'Geist', sans-serif;
     font-size: 1.05rem;
-    color: #555555;
+    color: #000000B2;
     max-width: 637px;
     margin: 0 auto;
   }
@@ -315,8 +316,8 @@
   }
   
   .advantage-figma-icon {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
   }
   
@@ -371,7 +372,7 @@
     color: #FFFFFF !important;
     font-size: 1.05rem;
     /* color: #cccccc; */
-    max-width: 580px;
+    max-width: 900px;
     margin-bottom: 35px;
     line-height: 1.5;
   }

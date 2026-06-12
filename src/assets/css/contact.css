@@ -35,8 +35,10 @@
   
   .expect-item {
     display: flex;
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    align-items: center;
     margin-bottom: 20px;
+    gap: "4px";
   }
   
   .expect-item:last-child {
@@ -57,8 +59,8 @@
   }
 
   .expect-custom-img {
-    width: 32px;  /* Matches your original template sizing */
-    height: 32px;
+    width: 40px;  /* Matches your original template sizing */
+    height: 40px;
     object-fit: contain;
   }
   

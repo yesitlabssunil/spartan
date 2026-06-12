@@ -15,7 +15,7 @@ const ApproachScreen = () => {
       title: "Execution – Driven Security",
       desc: "Controls are built into how your business operates – not bolted on for an audit.",
       points: [
-        "Network segmentation & identity-firm access",
+        "Network segmentation & identity-first access",
         "Endpoint hardening on day-one rollouts",
         "Change control wired into ticketing",
         "Operational runbooks owned by your team"
@@ -36,7 +36,7 @@ const ApproachScreen = () => {
       desc: "A standing posture that withstands C3PAO scrutiny any week of the year - not just at assessment time.",
       points: [
         "SSP structured to assessor sampling logic",
-        "SPRS score tied to operational reality",
+        "SPRS scoring tied to operational reality",
         "Mock-assessment defense rehearsals",
         "On-site assessor support & finding response"
       ]
@@ -45,7 +45,7 @@ const ApproachScreen = () => {
 
   const weeks = [
     { num: "01", label: "Week", title: "Strategic Assessment", desc: "Scope, gap analysis and contract risk profile." },
-    { num: "02", label: "Week", title: "Architecture & Plan", desc: "SSP, POAM and remediation roadmap signed off." },
+    { num: "02", label: "Week", title: "Architecture & Plan", desc: "SSP, POA&M and remediation roadmap signed off." },
     { num: "03", label: "Week", title: "Implementation", desc: "Controls deployed, evidence captured, operations stood up." },
     { num: "04", label: "Week", title: "Audit Readiness", desc: "Mock assessment, evidence package, executive sign-off." }
   ];
@@ -67,7 +67,7 @@ const ApproachScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-                <span>Approach</span> <span className="separator">|</span> <span>Home</span>
+                <span>Approach</span> <span className="separator">|</span> <span style={{color: "white"}}>Home</span>
               </div>
               <h1 className="blog-hero-title">A method, not a checklist.</h1>
               <p className="blog-hero-subtitle">
@@ -86,7 +86,7 @@ const ApproachScreen = () => {
             </div>
             <h2 className="section-main-heading text-center">Three disciplines of operational compliance.</h2>
             <p className="section-sub-heading text-center">
-              Execution, evidence and audit-readiness engineered into one performance system.
+              Execution, evidence and audit-readiness engineered into one performant system.
             </p>
 
             <div className="row g-4 mt-4">

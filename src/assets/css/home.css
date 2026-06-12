@@ -1744,7 +1744,7 @@ span.dot-red {
 }
 
 .process-main-subtext {
-    font-size: 15px;
+    font-size: 16.5px;
     color: var(--text-muted);
     max-width: 680px;
     margin: 0 auto 60px auto;
@@ -1773,10 +1773,12 @@ span.dot-red {
 }
 
 .step-top-header h3 {
-    font-size: 14px;
+    /* font-size: 14px; */
+    font-size: 16px;
     font-weight: 600;
     color: #777777;
-    text-align: left;
+    /* text-align: left; */
+    text-align: center;
 }
 
 /* Active top line highlight or active text matching image */
@@ -1814,7 +1816,8 @@ span.dot-red {
 }
 
 .step-bottom-card p {
-    font-size: 13.5px;
+    /* font-size: 13.5px; */
+    font-size: 15px;
     color: #555555;
     line-height: 1.65;
     text-align: left;
@@ -2048,11 +2051,13 @@ span.dot-red {
 }
 
 .faq-left-block p {
+    font-family: 'Geist', sans-serif;
     color: #000000E5;
     font-size: 17px;
     line-height: 1.5;
     max-width: 300px;
     margin-bottom: 35px;
+    font-weight: 500;
 }
 
 /* Accordion Right Container Elements */

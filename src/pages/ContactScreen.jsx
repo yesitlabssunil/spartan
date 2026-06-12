@@ -51,7 +51,7 @@ const ContactScreen = () => {
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
                 <span>Contact Us</span> <span className="separator">|</span>{" "}
-                <span>Home</span>
+                <span style={{color: "white"}}>Home</span>
               </div>
               <h1 className="blog-hero-title">Schedule your strategic compliance review.</h1>
               <p className="blog-hero-subtitle">

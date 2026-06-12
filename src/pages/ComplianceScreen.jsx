@@ -15,21 +15,21 @@ import { Link } from "react-router-dom";
 const ComplianceScreen = () => {
 
   const frameworks = [
-    { tag: "DOD", title: "CMMC 2.0", desc: "Foundational, Advanced, and Expert Level compliance tailored for federal prime and sub teams." },
-    { tag: "NIST", title: "NIST SP 800-171", desc: "110 security requirements across 14 families required for handling unclassified systems information." },
-    { tag: "NIST", title: "NIST 800-53", desc: "Federal information security standards mandatory for information systems configuration." },
-    { tag: "DFARS", title: "DFARS 252.204-7012/7019/7020", desc: "Mandatory clause governance requirements and SPRS scoring tracking submission parameters." },
-    { tag: "FEDRAMP", title: "FedRAMP Readiness", desc: "Cloud deployment system preparation tailored to 3PAO assessment thresholds." },
-    { tag: "FAR", title: "FAR Basic Safeguarding", desc: "Minimum safeguarding measures for general federal contract asset processing environments." }
+    { tag: "DOD", title: "CMMC 2.0", desc: "Foundational, Advanced and Expert levels for the Defense Industrial Base." },
+    { tag: "NIST", title: "NIST SP 800-171", desc: "All 110 controls implemented with traceable evidence and documented SSP." },
+    { tag: "NIST", title: "NIST 800-53", desc: "Federal civilian baseline for high/moderate/low impact systems." },
+    { tag: "DFARS", title: "DFARS 7012 / 7019 / 7020 / 7021", desc: "Contract clause compliance and SPRS scoring." },
+    { tag: "FEDRAMP", title: "FedRAMP Readiness", desc: "Cloud service provider posture and 3PAO preparation." },
+    { tag: "ITAR", title: "ITAR & Export Control", desc: "Technical data segmentation and access controls." }
   ];
 
   const services = [
-    { title: "CMMC 2.0 Readiness", desc: "Gap analysis, boundary planning, and implementation preparation calibrated to C3PAO assessment.", image: icon1 },
-    { title: "System Security Plans (SSP)", desc: "Comprehensive documentation engineered to reflect your architecture and processes.", image: icon2 },
-    { title: "POAM Remediation", desc: "Prioritized engineering roadmaps engineered to address technical non-compliance items.", image: icon3 },
-    { title: "Security Operations", desc: "Continuous monitoring, log management, and incident response operations.", image: icon4 },
-    { title: "Contractor Advocacy", desc: "Strategic compliance representation throughout prime contract reviews and DIBCAC assessments.", image: icon5 },
-    { title: "Audit Defense", desc: "Assessor documentation management, physical review rehearsals, and continuous control support.", image: icon6 }
+    { title: "CMMC 2.0 Readiness", desc: "Gap analysis, scoping, and Level 2 preparation aligned to C3PAO assessment.", image: icon1 },
+    { title: "NIST 800-171 Implementation", desc: "All 110 controls implemented with traceable evidence and SSP.", image: icon2 },
+    { title: "POA&M Remediation", desc: "Prioritized remediation roadmap with measurable closure milestones.", image: icon3 },
+    { title: "Security Operations", desc: "Continuous monitoring, IR planning, and assessor-ready reporting.", image: icon4 },
+    { title: "Contract Risk Advisory", desc: "Pre-bid compliance posture review for DFARS and FedRAMP work.", image: icon5 },
+    { title: "Audit Defense", desc: "On-site assessor support, evidence presentation, and finding response.", image: icon6 }
   ];
 
   const outcomes = [
@@ -51,7 +51,7 @@ const ComplianceScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-                <span>Compliance</span> <span className="separator">|</span> <span>Home</span>
+                <span>Compliance</span> <span className="separator">|</span> <span style={{color: "white"}}>Home</span>
               </div>
               <h1 className="blog-hero-title">One Program Every Framework<br/> that Matters to Your Contracts.</h1>
               <p className="blog-hero-subtitle">
@@ -90,7 +90,7 @@ const ComplianceScreen = () => {
           <div className="custom-container">
             <div className="section-tag-wrapper">
               <span className="section-mini-tag">
-                <span className="fallback-red-dot"></span>SERVICES & ASSIST
+                <span className="fallback-red-dot"></span>SERVICE LINES
               </span>
             </div>
             <h2 className="section-main-heading text-center">Six services. One delivery program.</h2>
