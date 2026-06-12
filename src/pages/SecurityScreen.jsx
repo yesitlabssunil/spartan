@@ -99,7 +99,7 @@ const SecurityScreen = () => {
                                         <span className="fallback-red-dot"></span>IDENTITY & ACCESS MANAGEMENT
                                     </span>
                                 </div>
-                                <h2 className="section-main-heading mt-3">Entra ID hardened to federal access standards.</h2>
+                                <h2 className="section-main-heading1 mt-3">Entra ID hardened to federal access standards.</h2>
                                 <p className="sec-body-text mt-3">
                                     Privileged access, conditional access, and role-
                                     based controls tied directly to NIST 800-171
@@ -466,7 +466,7 @@ const SecurityScreen = () => {
                             Extending security protections to application infrastructures, databases, and microservice arrays across federal spaces.
                         </p> */}
 
-                        <p className="sec-body-text mt-3 mb-5">
+                        <p className="sec-body-text2 mt-3 mb-5">
                             Spartan extends the same federal-grade discipline into Azure - Azure Government and Azure Commercial — covering identity, network, workload and data-plane security. Every control is mapped to NIST 800-171, FedRAMP Moderate/High baselines and CMMC 2.0 evidence requirements.
                         </p>
 

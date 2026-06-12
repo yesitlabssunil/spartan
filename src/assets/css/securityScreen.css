@@ -68,7 +68,16 @@
    .section-main-heading {
      font-family: 'Overused Grotesk', sans-serif;
      /* font-size: 2.3rem; */
-     font-size: 39px;
+     font-size: 40px;
+     font-weight: 500;
+     color: #111111;
+     letter-spacing: -0.015em;
+     line-height: 1.25;
+   }
+   .section-main-heading1 {
+     font-family: 'Overused Grotesk', sans-serif;
+     /* font-size: 2.3rem; */
+     font-size: 40px;
      font-weight: 500;
      color: #111111;
      letter-spacing: -0.015em;
@@ -93,6 +102,13 @@
      line-height: 1.6;
      color: #000000B2;
      max-width: 384px;
+   }
+   .sec-body-text2 {
+     font-family: 'Geist', sans-serif;
+     font-size: 17px;
+     line-height: 1.6;
+     color: #000000B2;
+     /* max-width: 384px; */
    }
 
    .security-panel-card {

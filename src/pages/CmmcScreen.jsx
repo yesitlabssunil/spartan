@@ -75,7 +75,7 @@ const CmmcScreen = () => {
                                 {/* Figma Callout Quote Component */}
                                 <div className="cmmc-callout-quote-box mt-4">
                                     <p className="cmmc-quote-text">
-                                    We build defensible cybersecurity governance structures aligned to
+                                    We build defensible cybersecurity governance structures aligned to<br/>
                                     contractual and international standards.
                                     </p>
                                 </div>
