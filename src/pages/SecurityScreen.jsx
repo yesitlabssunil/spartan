@@ -357,7 +357,7 @@ const SecurityScreen = () => {
                                 <span className="fallback-red-dot"></span>DATA PROTECTION (DLP)
                             </span>
                         </div>
-                        <h2 className="dark-section-title text-center">Purview DLP and sensitivity labels protecting CUI everywhere.</h2>
+                        <h2 className="dark-section-title text-center">Purview DLP and sensitivity labels protecting CUI<br/> everywhere.</h2>
                         <p className="dark-section-subtitle text-center mb-5">
                             Classify, label, and protect controlled data across Exchange, SharePoint, OneDrive, Teams, and endpoints. Built to satisfy DFARS 7012 marking and handling requirements.
                         </p>
