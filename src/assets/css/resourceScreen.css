@@ -647,7 +647,7 @@
     line-height: 1.55;
     color: #FFFFFFB2; /* Distant slate grey description text */
     margin-top: 0;
-    margin-bottom: 10px; /* Gives structural spacing overhead of button component */
+    margin-bottom: 15px; /* Gives structural spacing overhead of button component */
   }
   
   /* The Flat White Call to Action Button */

@@ -87,11 +87,20 @@ const ContactScreen = () => {
               <div className="direct-contact-info">
                 <div className="info-block">
                   <h6><FaMapMarkerAlt className="me-2 info-icon" /> Office</h6>
-                  <p>PO Box 90125 Albuquerque, NM 87199</p>
+                  {/* <p>PO Box 90125 Albuquerque, NM 87199</p> */}
+                  <p>
+    <a
+      href="https://maps.google.com/?q=PO+Box+90125+Albuquerque+NM+87199"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      PO Box 90125 Albuquerque, NM 87199
+    </a>
+  </p>
                 </div>
                 <div className="info-block">
                   <h6><FaEnvelope className="me-2 info-icon" /> Email</h6>
-                  <p><a href="mailto:advisors@spartan.example">spartanconsults@spartan-cs.com</a></p>
+                  <p><a href="mailto:spartanconsults@spartan-cs.com">spartanconsults@spartan-cs.com</a></p>
                 </div>
                 <div className="info-block">
                   <h6><FaPhoneAlt className="me-2 info-icon" /> Phone Number</h6>

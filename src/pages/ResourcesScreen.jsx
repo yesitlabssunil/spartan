@@ -25,12 +25,34 @@ import downloadIcon from "../assets/images/resourceScreen/download-icon.png"
 import faqData from "../assets/faqData.json";
 import { Link } from 'react-router-dom';
 
+import cmmcPdf from "../assets/pdfs/cmmc-2.0-explained.pdf";
+import resourcesPdf from "../assets/pdfs/free-templates-resources.pdf";
+// import nistExcel from "/files/NIST-800-171-Security-Requirements-2.xlsx";
+
 export default function ResourceScreen() {
 
       const [activeFaqId, setActiveFaqId] = useState(1);
 
       const toggleFaq = (id) => {
         setActiveFaqId(activeFaqId === id ? null : id);
+      };
+
+      const downloadPdf = (pdfUrl, fileName) => {
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+
+      const downloadExcel = () => {
+        const link = document.createElement("a");
+        link.href = "/files/NIST-800-171-Security-Requirements-2.xlsx";
+        link.download = "NIST-800-171-Security-Requirements-2.xlsx";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       };
 
   return (
@@ -258,11 +280,39 @@ export default function ResourceScreen() {
 
                 <img src={downloadIcon} alt="" style={{height: "20px", width: "20px"}} />
               </div>
-              <h3 className="template-card-title">CMMC 2.0 Scoping Worksheet</h3>
+              <h3 className="template-card-title">CMMC 2.0 Explained</h3>
               <p className="template-card-body">
-                Define your assessment boundary in under an hour.
+              A plain-language overview of CMMC 2.0, who it applies to, and why it matters.
               </p>
-              <button className="template-action-btn" type="button">
+              <button className="template-action-btn" type="button" 
+                onClick={() =>
+                  downloadPdf(cmmcPdf, "CMMC-2.0-Explained.pdf")
+                }
+              >
+                <span>Download</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+
+              {/* Template Card 3 */}
+              <div className="template-item-card">
+              <div className="template-download-icon">
+                {/* <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 11V14H2V11H0V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V11H14ZM13 7L11.59 5.59L9 8.17V0H7V8.17L4.41 5.59L3 7L8 12L13 7Z" fill="#FFFFFF"/>
+                </svg> */}
+                <img src={downloadIcon} alt="" style={{height: "20px", width: "20px"}} />
+              </div>
+              <h3 className="template-card-title">Free Templates and Resources</h3>
+              <p className="template-card-body">
+              Downloadable policy templates and supporting governance materials designed to help organizations understand what a mature cybersecurity program should look like.
+              </p>
+              <button className="template-action-btn" type="button" 
+                onClick={() =>
+                  downloadPdf(resourcesPdf, "Free-Templates-Resources.pdf")
+                }
+              >
                 <span>Download</span>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -278,11 +328,11 @@ export default function ResourceScreen() {
                 </svg> */}
                 <img src={downloadIcon} alt="" style={{height: "20px", width: "20px"}} />
               </div>
-              <h3 className="template-card-title">NIST 800–171 Evidence Checklist</h3>
+              <h3 className="template-card-title">NIST SP 800-171 Compliance Checklist</h3>
               <p className="template-card-body">
-                All 110 controls with required artifacts.
+              Understand what assessors and auditors are evaluating. This checklist translates the NIST SP 800-171 security requirements into an organized, easy-to-follow format that helps organizations identify gaps, assess readiness, and better prepare for CMMC 2.0 compliance.
               </p>
-              <button className="template-action-btn" type="button">
+              <button className="template-action-btn" type="button" onClick={downloadExcel} >
                 <span>Download</span>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 5.5H11M11 5.5L6.5 10M11 5.5L6.5 1" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -290,25 +340,7 @@ export default function ResourceScreen() {
               </button>
             </div>
 
-            {/* Template Card 3 */}
-            <div className="template-item-card">
-              <div className="template-download-icon">
-                {/* <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 11V14H2V11H0V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V11H14ZM13 7L11.59 5.59L9 8.17V0H7V8.17L4.41 5.59L3 7L8 12L13 7Z" fill="#FFFFFF"/>
-                </svg> */}
-                <img src={downloadIcon} alt="" style={{height: "20px", width: "20px"}} />
-              </div>
-              <h3 className="template-card-title">POA&M Template</h3>
-              <p className="template-card-body">
-                Risk-ranked closure plan in our exact format.
-              </p>
-              <button className="template-action-btn" type="button">
-                <span>Download</span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
+          
 
           </div>
 

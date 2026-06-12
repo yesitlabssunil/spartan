@@ -245,7 +245,7 @@ span.dot-black {
 .level-card p {
     font-size: 16px;
     color: #000000B2;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.6;
 }
 
@@ -1122,7 +1122,7 @@ background-color: #2F2F2F4D;
 }
 
 .pillar-list li {
-    font-size: 14.5px;
+    font-size: 15px;
     color: #444444;
     margin-bottom: 10px;
     display: flex;
@@ -1215,6 +1215,7 @@ background-color: #2F2F2F4D;
     font-size: 13.5px;
     color: #000000B2;
     line-height: 1.6;
+    font-weight: 500;
 }
 
 /* --- EXTRA RESPONSIVE VIEWPORT MEDIA BREAKPOINTS --- */
@@ -1416,9 +1417,10 @@ span.dot-red {
 }
 
 .focus-card p {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-muted);
     line-height: 1.5;
+    font-weight: 500;
 }
 
 /* --- 14. Our Process Tabs Layout --- */
@@ -1821,6 +1823,7 @@ span.dot-red {
     color: #555555;
     line-height: 1.65;
     text-align: left;
+    font-weight: 500;
 }
 
 
