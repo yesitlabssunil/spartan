@@ -59,7 +59,7 @@ const SecurityScreen = () => {
                             </span>
                         </div>
                         <h2 className="section-main-heading mb-3">Your Tenant is in scope. Your Assessor will look here first.</h2>
-                        <p className="section-sub-heading mb-5" >
+                        <p className="section-sub-heading2 mb-5" >
                             Email, SharePoint, OneDrive, Teams - all touch CUI. Without proper data residency and configuration, the entire CMMC scope expands. Spartan delivers a hardened, audit-ready Microsoft 365 Security environment engineered for the regulated workloads of federal contractors.
                         </p>
 

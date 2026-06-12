@@ -92,6 +92,13 @@
      margin: 0 auto;
      line-height: 1.55;
    }
+   .section-sub-heading2 {
+     font-size: 1.05rem;
+     color: #64748B;
+     /* max-width: 680px; */
+     margin: 0 auto;
+     line-height: 1.55;
+   }
    .section-sub-heading.section-sub-heading1{
     max-width: 1110px !important;
    }
