@@ -120,7 +120,7 @@
   
   .sector-row {
     background-color: #fafbfc;
-    border: 1px solid #ebedf2;
+    border: 1px solid #FF000040;
     border-radius: 12px;
     overflow: hidden; /* Clips image and background inside the card radius */
   }

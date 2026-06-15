@@ -69,7 +69,7 @@ const BlogScreen = () => {
                             <div className="blog-breadcrumb">
                                 <span>Resources</span> <span className="separator">|</span>{" "}
                                 <span>Blogs</span> <span className="separator">|</span>{" "}
-                                <span>Home</span>
+                                <span style={{color: "white"}}>Home</span>
                             </div>
 
                             <h1 className="blog-hero-title">Microsoft 365 Security Checklist</h1>

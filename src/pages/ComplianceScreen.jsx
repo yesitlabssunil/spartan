@@ -95,7 +95,7 @@ const ComplianceScreen = () => {
             </div>
             <h2 className="section-main-heading text-center">Six services. One delivery program.</h2>
             <p className="section-sub-heading text-center">
-              Tailored support engineered directly to match your platform requirements.
+            Tailored to your contract portfolio and starting maturity.
             </p>
 
             <div className="row g-4 mt-4">
