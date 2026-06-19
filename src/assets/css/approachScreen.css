@@ -374,3 +374,13 @@
       justify-content: center;
     }
   }
+
+
+    .custom-container3{
+    margin: 0 300px;
+  }
+  @media (max-width: 1150px) {
+    .custom-container3 {
+      margin: 0;
+    }
+}

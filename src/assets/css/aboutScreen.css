@@ -88,6 +88,7 @@
     line-height: 1.25;
     margin-bottom: 25px;
     letter-spacing: -0.015em;
+    max-width: 800px;
   }
   
   .about-intro-text {
@@ -193,7 +194,8 @@
   .leader-profile-card {
     background-color: #1c1c1c;
     border: 1px solid #262626;
-    border-radius: 8px;
+    /* border-radius: 8px; */
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -366,6 +368,7 @@
     line-height: 1.25;
     margin-bottom: 18px;
     letter-spacing: -0.01em;
+    max-width: 800px;
   }
   
   .about-cta-banner .cta-banner-desc {
@@ -416,6 +419,10 @@
   .about-cta-banner .cta-btn-outline:hover {
     background-color: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .blog-hero-title1{
+    max-width: 800px !important;
   }
   
   /* ==========================================================================
@@ -497,3 +504,19 @@
   .linknav{
     text-decoration: none;
   }
+  
+  .custom-container2{
+    margin: 0 250px;
+  }
+  .dark-section-heading {
+    margin-bottom: 16px; 
+}
+  @media (max-width: 1150px) {
+    .custom-container2 {
+      margin: 0;
+    }
+    .dark-section-heading {
+      margin-bottom: 16px; 
+}
+    
+}

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import { useDispatch, useSelector } from "react-redux";
 import "../assets/css/aboutScreen.css";
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 // --- FIGMA EXPORT IMAGE PATH PLACEHOLDERS ---
 import leaderImg1 from "../assets/images/aboutScreen/leaderImg1.png";
@@ -15,14 +17,30 @@ import people from "../assets/images/securityScreen/people.png";
 import security from "../assets/images/complianceScreen/icon1.png";
 import icon6 from "../assets/images/complianceScreen/icon6.png"
 import { Link } from "react-router-dom";
+import { aboutScreenData } from "../redux/slices/homeSlice";
 
 const AboutScreen = () => {
 
+  const dispatch = useDispatch();
+  const {aboutData, loading} = useSelector((state) => state.home); 
+  // console.log("first111", aboutData);
+
+  useEffect(() => {
+    dispatch(aboutScreenData())
+  }, [dispatch])
+
+  // const highlights = [
+  //   { title: "Cyber Operations", desc: "Decades of military and federal cyber defense leadership.", image: security },
+  //   { title: "Federal Prosecution", desc: "Investigative and litigation experience across cybercrime and national security.", image: hammer },
+  //   { title: "Executive Governance", desc: "Board-level advisory across regulated and high-risk industries.", image: icon6 },
+  //   { title: "Compliance Execution", desc: "CMMC 2.0, NIST SP 800-171, and ISO/IEC 27001 readiness delivery.", image: purse }
+  // ];
+
   const highlights = [
-    { title: "Cyber Operations", desc: "Decades of military and federal cyber defense leadership.", image: security },
-    { title: "Federal Prosecution", desc: "Investigative and litigation experience across cybercrime and national security.", image: hammer },
-    { title: "Executive Governance", desc: "Board-level advisory across regulated and high-risk industries.", image: icon6 },
-    { title: "Compliance Execution", desc: "CMMC 2.0, NIST SP 800-171, and ISO/IEC 27001 readiness delivery.", image: purse }
+    security,
+    hammer,
+    icon6,
+    purse,
   ];
 
   const team = [
@@ -46,14 +64,23 @@ const AboutScreen = () => {
     }
   ];
 
+  // const advantages = [
+  //   { icon: rings, title: "Principal-Led Engagements", desc: "Every engagement is led directly by senior principals - not delegated to junior staff. Executives work with the people who own the outcome." },
+  //   { icon: security, title: "Defensible by Design", desc: "Programs are built to withstand contracting officer review, third-party assessment, regulatory inquiry, and litigation discovery." },
+  //   { icon: hammer, title: "Legal & Regulatory Fluency", desc: "Advisory recommendations are shaped by federal enforcement experience, not theoretical compliance posture." },
+  //   { icon: people, title: "Mission-Aligned Execution", desc: "We translate regulatory frameworks into operational processes that match how your organization actually functions." },
+  //   { icon: purse, title: "Confidential & Discreet", desc: "Sensitive engagements are handled with the operational discretion expected of senior military and federal practitioners." },
+  //   { icon: icon6, title: "Senior-Only Bench", desc: "Retired flag officers, federal prosecutors and field-grade cyber leaders - no offshore handoffs or boilerplate deliverables." }
+  // ];
+
   const advantages = [
-    { icon: rings, title: "Principal-Led Engagements", desc: "Every engagement is led directly by senior principals - not delegated to junior staff. Executives work with the people who own the outcome." },
-    { icon: security, title: "Defensible by Design", desc: "Programs are built to withstand contracting officer review, third-party assessment, regulatory inquiry, and litigation discovery." },
-    { icon: hammer, title: "Legal & Regulatory Fluency", desc: "Advisory recommendations are shaped by federal enforcement experience, not theoretical compliance posture." },
-    { icon: people, title: "Mission-Aligned Execution", desc: "We translate regulatory frameworks into operational processes that match how your organization actually functions." },
-    { icon: purse, title: "Confidential & Discreet", desc: "Sensitive engagements are handled with the operational discretion expected of senior military and federal practitioners." },
-    { icon: icon6, title: "Senior-Only Bench", desc: "Retired flag officers, federal prosecutors and field-grade cyber leaders - no offshore handoffs or boilerplate deliverables." }
-  ];
+    rings,
+    security,
+    hammer,
+    people,
+    purse,
+    icon6
+  ]
 
   return (
     <>
@@ -67,9 +94,9 @@ const AboutScreen = () => {
               <div className="blog-breadcrumb">
                 <span>About</span> <span className="separator">|</span> <span style={{color: "white"}}>Home</span>
               </div>
-              <h1 className="blog-hero-title">About Spartan Cyber<br /> Security</h1>
+              <h1 className="blog-hero-title blog-hero-title1">{aboutData?.about?.heading}</h1>
               <p className="blog-hero-subtitle">
-              An executive advisory firm specializing in cybersecurity governance, regulatory alignment and defensible operational execution for organizations operating in regulated and high-risk environments.
+              {aboutData?.about?.paragraph}
               </p>
             </div>
           </div>
@@ -86,24 +113,25 @@ const AboutScreen = () => {
             <div className="row mt-3">
               <div className="col-xl-8 col-lg-10">
                 <h2 className="about-intro-heading">
-                  A Senior Advisory Firm Built for Regulated, High-Risk Environments.
+                  {aboutData?.company?.heading}
                 </h2>
 
               </div>
 
               <div className="col-xl-12 col-lg-10">
-              <p className="about-intro-text">
+                {(aboutData?.company?.paragraph)?.map((item, index) => (
+                  <p key={index}>{item}</p>
+                ))}
+              {/* <p className="about-intro-text">
               Spartan Cyber Security LLC is an executive advisory firm led by senior leaders with backgrounds spanning military command, federal prosecution, cyber operations and enterprise compliance execution.<br />
-                  {/* Our work centers on ensuring that cybersecurity programs are structured to withstand contractual, regulatory and third-party assessment scrutiny - from CMMC 2.0 certification to NIST SP 800-171 alignment, ISO/IEC 27001 readiness and board-level governance reporting.<br/>
-                Spartan is headquartered to serve federal contractors, defense industrial base organizations and regulated enterprises navigating Department of Defense enforcement, executive risk exposure and evolving compliance obligations.                 */}
-                </p>
-                <p className="about-intro-text">
+                </p> */}
+                {/* <p className="about-intro-text">
                 Our work centers on ensuring that cybersecurity programs are structured to withstand contractual, regulatory and third-party assessment scrutiny - from CMMC 2.0 certification to NIST SP 800-171 alignment, ISO/IEC 27001 readiness and board-level governance reporting.
-                </p>
+                </p> */}
 
-                <p className="about-intro-text">
+                {/* <p className="about-intro-text">
                 Spartan is headquartered to serve federal contractors, defense industrial base organizations and regulated enterprises navigating Department of Defense enforcement, executive risk exposure and evolving compliance obligations.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -121,44 +149,43 @@ const AboutScreen = () => {
               </span>
             </div>
 
-            <h2 className="dark-section-heading text-center">
-              Principals from Military Command, Federal <br /> Prosecution & Cyber Operations.
+            <h2 className="dark-section-heading text-center custom-container2">
+              {aboutData?.leadership?.heading}
             </h2>
 
             <p className="dark-section-subheading text-center">
-            Spartan's bench is composed exclusively of senior practitioners with operational
-            track records in the environments we advise.          </p>
+            {aboutData?.leadership?.paragraph}          </p>
 
             {/* 4-Column Horizontal Stat Highlights Grid Array */}
             <div className="highlights-stats-matrix-grid">
-              {highlights.map((item, idx) => (
+              {(aboutData?.leadership?.content)?.map((item, idx) => (
                 <div className="highlight-stat-card" key={idx}>
                   <div className="highlight-bullet-box">
-                    <img src={item.image} alt="" className="highlight-card-vector-icon" />
+                    <img src={highlights[idx]} alt="" className="highlight-card-vector-icon" />
                   </div>
                   <h5 className="highlight-card-title">{item.title}</h5>
-                  <p className="highlight-card-desc">{item.desc}</p>
+                  <p className="highlight-card-desc">{item.description}</p>
                 </div>
               ))}
             </div>
 
             {/* 3-Column Profile Grid with Seamless Bottom Photo Merging Effect */}
             <div className="leader-profiles-canvas-grid">
-              {team.map((member, idx) => (
+              {(aboutData?.leadership?.cards)?.map((member, idx) => (
                 <div className="leader-profile-card" key={idx}>
 
                   {/* Photo Frame Container with Absolute Bottom Gradient Blend Overlay */}
                   <div className="leader-image-container">
-                    <img src={member.image} alt={member.name} className="leader-photo" />
+                    <img src={`${IMAGE_URL}/${member?.image}`} alt={member?.title} className="leader-photo" />
                     {/* The crucial blending element layer */}
                     <div className="leader-fade-overlay" />
                   </div>
 
                   {/* Grounded Typography Content Metadata Panel */}
                   <div className="leader-info-block">
-                    <span className="leader-rank-tag"><span className="fallback-red-dot" style={{ marginRight: "4px" }}></span>{member.rank}</span>
-                    <h4 className="leader-name">{member.name}</h4>
-                    <p className="leader-bio">{member.desc}</p>
+                    <span className="leader-rank-tag"><span className="fallback-red-dot" style={{ marginRight: "4px" }}></span>{member?.rank}</span>
+                    <h4 className="leader-name">{member?.title}</h4>
+                    <p className="leader-bio">{member?.description}</p>
                   </div>
 
                 </div>
@@ -176,22 +203,21 @@ const AboutScreen = () => {
                 <span className="fallback-red-dot"></span>WHY SPARTAN
               </span>
             </div>
-            <h2 className="section-main-heading text-center mb-2">Why organizations engage Spartan.</h2>
+            <h2 className="section-main-heading text-center mb-2">{aboutData?.spartan?.heading}</h2>
             <p className="section-sub-heading text-center mb-5">
-            Spartan exists for executives who cannot afford a failed assessment, a regulatory referral
-or a cybersecurity program that collapses under scrutiny.
+            {aboutData?.spartan?.paragraph}
             </p>
 
             <div className="row g-4 mt-2">
-              {advantages.map((adv, idx) => (
+              {(aboutData?.spartan?.data)?.map((adv, idx) => (
                 <div className="col-lg-4 col-md-6" key={idx}>
                   <div className="advantage-grid-card">
                     <div className="advantage-icon-wrapper">
-                      <img src={adv.icon} alt="" className="advantage-figma-icon" onError={(e) => { e.target.style.display = 'none' }} />
+                      <img src={advantages[idx]} alt="" className="advantage-figma-icon" onError={(e) => { e.target.style.display = 'none' }} />
                       {/* <span className="fallback-red-dot"></span> */}
                     </div>
                     <h4 className="advantage-card-title">{adv.title}</h4>
-                    <p className="advantage-card-desc">{adv.desc}</p>
+                    <p className="advantage-card-desc">{adv.description}</p>
                   </div>
                 </div>
               ))}
@@ -207,10 +233,11 @@ or a cybersecurity program that collapses under scrutiny.
                 <span className="fallback-red-dot"></span>WORK WITH US
               </span>
               <h2 className="cta-banner-title">
-                Engage Spartan's principal-led <br /> advisory team.
+                {/* Engage Spartan's principal-led <br /> advisory team. */}
+                {aboutData?.work?.heading}
               </h2>
               <p className="cta-banner-desc">
-              A confidential working session with senior leadership to scope your governance, compliance and assessment posture.              </p>
+              {aboutData?.work?.paragraph}           </p>
               {/* <div className="cta-buttons-group">
                 <button className="cta-btn-white">Schedule Consultation <span>→</span></button>
                 <button className="cta-btn-outline">Explore Compliance</button>

@@ -23,7 +23,10 @@ const AppRouter = () => (
                 <HomeScreen />
             } />
 
-            <Route path="/blog" element={
+            {/* <Route path="/blog" element={
+                <BlogScreen />
+            } /> */}
+            <Route path="/blog/:id" element={
                 <BlogScreen />
             } />
 

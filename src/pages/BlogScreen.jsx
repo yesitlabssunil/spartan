@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "../assets/css/blog.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 // Hero image – replace with your exported path
 import heroImage from "../assets/images/blogScreen/BlogThumbnail.jpg";
@@ -11,8 +12,25 @@ import heroImage from "../assets/images/blogScreen/BlogThumbnail.jpg";
 import relatedImg1 from "../assets/images/blogScreen/BlogThumbnail1.jpg";
 import relatedImg2 from "../assets/images/blogScreen/BlogThumbnail.jpg";
 import relatedImg3 from "../assets/images/blogScreen/BlogThumbnail2.jpg";
+import { getBlogDetails } from "../redux/slices/secondSlice";
+
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL; 
 
 const BlogScreen = () => {
+ 
+    const {id} = useParams();
+    
+    const dispatch = useDispatch();
+    const {blogDetails, loading} = useSelector((state) => state.second);
+
+    console.log("blogDetails@@@@@", blogDetails);
+
+    useEffect(() => {
+        if (id) {
+            dispatch(getBlogDetails(id))
+        }
+    }, [dispatch, id])
+
     const relatedArticles = [
         {
             title: "CMMC 2.0 Readiness Guide",
@@ -72,9 +90,9 @@ const BlogScreen = () => {
                                 <span style={{color: "white"}}>Home</span>
                             </div>
 
-                            <h1 className="blog-hero-title">Microsoft 365 Security Checklist</h1>
+                            <h1 className="blog-hero-title blog-hero-title3">{blogDetails?.title}</h1>
                             <p className="blog-hero-subtitle">
-                            A practical security roadmap to assess your Microsoft 365 environment, identify hidden vulnerabilities, reduce attack risks, and build a stronger security posture in under 45 minutes.
+                            {blogDetails?.["sub-title"]}
                             </p>
                         </div>
                     </div>
@@ -86,13 +104,16 @@ const BlogScreen = () => {
                     <article className="blog-article">
                         <div className="article-meta">
                             <div className="blog-hero-image">
-                                <img src={heroImage} alt="Microsoft 365 Security" />
+                                <img src={`${IMAGE_URL}/${blogDetails?.currentArticle?.image}` || heroImage} alt="Microsoft 365 Security" />
                             </div>
-                            <span className="article-date">MAR 12, 2025</span>
+                            <span className="article-date">{blogDetails?.currentArticle?.date}</span>
                         </div>
-                        <h5 style={{marginTop: "1.5rem"}}>Microsoft 365 Security Checklist</h5>
+                        <h5 style={{marginTop: "1.5rem"}}>{blogDetails?.currentArticle?.title}</h5>
                         <div className="article-content">
-                            <p>
+                            {(blogDetails?.currentArticle?.paragraphs)?.map((item, index)=> (
+                                <p key={index}>{item}</p>
+                            ))}
+                            {/* <p>
                                 Microsoft 365 has become the foundation of modern business operations,
                                 powering communication, collaboration, cloud storage, and productivity
                                 across organizations of every size. While the platform offers powerful
@@ -134,7 +155,7 @@ const BlogScreen = () => {
                                 risk, and ensure business continuity. Taking a proactive approach
                                 today can prevent costly incidents tomorrow and create a stronger,
                                 more resilient cloud security posture for the future.
-                            </p>
+                            </p> */}
                         </div>
                     </article>
 
@@ -142,16 +163,16 @@ const BlogScreen = () => {
                     <section className="blog-related">
                         <h2 className="related-title">You also might like</h2>
                         <div className="related-grid">
-                            {relatedArticles.map((item, index) => (
+                            {(blogDetails?.relatedArticles)?.map((item, index) => (
                                 <div key={index} className="related-card">
                                     <div className="related-card-image">
-                                        <img src={item.image} alt={item.title} />
+                                        <img src={`${IMAGE_URL}/${item?.image}`} alt={item.title} />
                                     </div>
                                     <div className="related-card-content">
                                         <h3 className="related-card-title">{item.title}</h3>
                                         <span className="related-card-meta">
                                             {item.date} — {" "}
-                                            <Link to="/blog" className="read-more-link">
+                                            <Link to={`/blog/${item?.id}`} className="read-more-link">
                                                 READ MORE
                                             </Link>
                                         </span>

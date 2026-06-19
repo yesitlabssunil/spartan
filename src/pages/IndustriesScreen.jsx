@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "../assets/css/industryScreen.css";
+import { useDispatch, useSelector } from "react-redux";
 
 // --- PLACEHOLDER IMAGE PATHS (Replace these with your actual figma exports) ---
 import envIcon1 from "../assets/images/industryScreen/env-icon1.png";
@@ -16,15 +17,27 @@ import industryImg3 from "../assets/images/industryScreen/aviation.jpg";
 import industryImg4 from "../assets/images/industryScreen/engineering.jpg";
 import industryImg5 from "../assets/images/industryScreen/manufacturing.jpg";
 import { Link } from "react-router-dom";
+import { industryScreenData } from "../redux/slices/secondSlice";
+
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 const IndustriesScreen = () => {
+
+  const dispatch = useDispatch();
+  const {industryData, loading} = useSelector((state) => state.second);
+
+  useEffect(() => {
+    dispatch(industryScreenData())
+  }, [dispatch])
   
-  const environments = [
-    { icon: envIcon1, title: "DOD Prime Contractors", desc: "Direct contract holders managing CUI." },
-    { icon: envIcon2, title: "Subcontractors", desc: "Tier-2 and Tier-3 supply chain partners." },
-    { icon: envIcon3, title: "Cloud & MSP Providers", desc: "Service providers in the DIB." },
-    { icon: envIcon4, title: "Federal Civilian Agencies", desc: "NIST 800-53 and FISMA aligned." }
-  ];
+  // const environments = [
+  //   { icon: envIcon1, title: "DOD Prime Contractors", desc: "Direct contract holders managing CUI." },
+  //   { icon: envIcon2, title: "Subcontractors", desc: "Tier-2 and Tier-3 supply chain partners." },
+  //   { icon: envIcon3, title: "Cloud & MSP Providers", desc: "Service providers in the DIB." },
+  //   { icon: envIcon4, title: "Federal Civilian Agencies", desc: "NIST 800-53 and FISMA aligned." }
+  // ];
+
+  const environments = [envIcon1, envIcon2, envIcon3, envIcon4];
 
   const sectors = [
     {
@@ -96,10 +109,9 @@ const IndustriesScreen = () => {
               <div className="blog-breadcrumb">
                 <span>Industries</span> <span className="separator">|</span> <span style={{color: "white"}}>Home</span>
               </div>
-              <h1 className="blog-hero-title">Built for Federal Contractors across critical industries.</h1>
+              <h1 className="blog-hero-title">{industryData?.industry_sec_heading}</h1>
               <p className="blog-hero-subtitle">
-              From prime defense contractors to specialized R&D labs - our compliance program<br/>
-              adapts to your contract portfolio.
+              {industryData?.industry_sec_paragraph}
               </p>
             </div>
           </div>
@@ -113,18 +125,19 @@ const IndustriesScreen = () => {
                 <span className="fallback-red-dot"></span>WHO WE SERVE
               </span>
             </div>
-            <h2 className="section-main-heading mb-5">Federal compliance environments, end to end.</h2>
+            <h2 className="section-main-heading mb-5">{industryData?.industry_sec_serve_heading}</h2>
 
             <div className="row g-4">
-              {environments.map((env, idx) => (
+              {/* {environments.map((env, idx) => ( */}
+              {(industryData?.industry_sec_content)?.map((env, idx) => (
                 <div className="col-xl-3 col-md-6" key={idx}>
                   <div className="env-card">
                     <div className="env-icon-box">
-                      <img src={env.icon} alt="" className="env-figma-icon" onError={(e)=>{e.target.style.display='none'}} />
+                      <img src={environments[idx]} alt="" className="env-figma-icon" onError={(e)=>{e.target.style.display='none'}} />
                       {/* <span className="fallback-red-dot"></span> */}
                     </div>
                     <h5 className="env-title">{env.title}</h5>
-                    <p className="env-desc">{env.desc}</p>
+                    <p className="env-desc">{env.description}</p>
                   </div>
                 </div>
               ))}
@@ -140,13 +153,45 @@ const IndustriesScreen = () => {
                 <span className="fallback-red-dot"></span>VERTICALS
               </span>
             </div>
-            <h2 className="section-main-heading text-center mb-5">Tailored to your sector's specific demands.</h2>
+            <h2 className="section-main-heading text-center mb-5">{industryData?.industry_sec_vertical_content}</h2>
+
 
             <div className="sectors-stack">
+              {/* {sectors.map((sec, idx) => ( */}
+              {(industryData?.industry_sec_card_content)?.map((sec, idx) => (
+                <div className={`row sector-row align-items-stretch g-0 ${sec.imageRight === "1" ? "" : "flex-row-reverse"}`} key={idx}>
+                  
+                  {/* Text Column */}
+                  <div className="col-lg-6">
+                    <div className="sector-text-block">
+                      <h3 className="sector-title">{sec.title}</h3>
+                      <p className="sector-desc">{sec.description}</p>
+                      <ul className="sector-points-list">
+                        {sec.points.map((pt, pIdx) => (
+                          <li key={pIdx}>
+                            <span className="red-arrow"><img src={startBullet} alt="" /></span> 
+                            {pt}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Image Column */}
+                  <div className="col-lg-6">
+                    <div className="sector-image-block">
+                      <img src={sec?.image} alt={sec?.title} className="sector-display-img" />
+                    </div>
+                  </div>
+
+                </div>
+              ))}
+            </div>
+
+            {/* <div className="sectors-stack">
               {sectors.map((sec, idx) => (
                 <div className={`row sector-row align-items-stretch g-0 ${sec.imageRight ? "" : "flex-row-reverse"}`} key={idx}>
                   
-                  {/* Text Column */}
                   <div className="col-lg-6">
                     <div className="sector-text-block">
                       <h3 className="sector-title">{sec.title}</h3>
@@ -162,16 +207,16 @@ const IndustriesScreen = () => {
                     </div>
                   </div>
 
-                  {/* Image Column */}
                   <div className="col-lg-6">
                     <div className="sector-image-block">
-                      <img src={sec.image} alt={sec.title} className="sector-display-img" />
+                      <img src={sec?.image} alt={sec?.title} className="sector-display-img" />
                     </div>
                   </div>
 
                 </div>
               ))}
-            </div>
+            </div> */}
+
           </div>
         </section>
 
@@ -183,10 +228,10 @@ const IndustriesScreen = () => {
                 <span className="fallback-red-dot"></span>GET STARTED
               </span>
               <h2 className="cta-banner-title">
-                See how we'd structure compliance <br /> for your industry.
+                {industryData?.indusrty_sec_started_heading}
               </h2>
               <p className="cta-banner-desc">
-                A 45-minute working session tailored to your contract portfolio.
+                {industryData?.industry_sec_started_paragraph}
               </p>
               <div className="cta-buttons-group">
                 <Link to="/contact-us" className="cta-btn-white" style={{textDecoration:"none"}}>Schedule Consultation <span>→</span></Link>

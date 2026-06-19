@@ -1,7 +1,10 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import "../assets/css/resourceScreen.css";
 import Header from '../component/Header';
 import Footer from '../component/Footer';
+import { useDispatch, useSelector } from 'react-redux';
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
+
 import Content from '../assets/images/resourceScreen/Content.jpg';
 import puzzle from '../assets/images/resourceScreen/puzzle.png';
 import starShield from '../assets/images/resourceScreen/starShield.png';
@@ -22,43 +25,60 @@ import warning from "../assets/images/securityScreen/warning.png";
 import envIcon1 from "../assets/images/industryScreen/env-icon1.png";
 import icon6 from "../assets/images/complianceScreen/icon6.png"
 import downloadIcon from "../assets/images/resourceScreen/download-icon.png"
-import faqData from "../assets/faqData.json";
+// import faqData from "../assets/faqData.json";
 import { Link } from 'react-router-dom';
 
-import cmmcPdf from "../assets/pdfs/cmmc-2.0-explained.pdf";
-import resourcesPdf from "../assets/pdfs/free-templates-resources.pdf";
+// import cmmcPdf from "../assets/pdfs/cmmc-2.0-explained.pdf";
+// import resourcesPdf from "../assets/pdfs/free-templates-resources.pdf";
+import { getFaqData, resourceScreenData } from '../redux/slices/homeSlice';
 // import nistExcel from "/files/NIST-800-171-Security-Requirements-2.xlsx";
 
 export default function ResourceScreen() {
 
-      const [activeFaqId, setActiveFaqId] = useState(1);
+  const dispatch = useDispatch();
+  const { resourceData, loading } = useSelector((state) => state.home);
 
-      const toggleFaq = (id) => {
-        setActiveFaqId(activeFaqId === id ? null : id);
-      };
+  useEffect(() => {
+    dispatch(getFaqData());
+    dispatch(resourceScreenData());
+  }, [dispatch])
 
-      const downloadPdf = (pdfUrl, fileName) => {
-        const link = document.createElement("a");
-        link.href = pdfUrl;
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      };
+  console.log("@@@@@12", resourceData);
 
-      const downloadExcel = () => {
-        const link = document.createElement("a");
-        link.href = "/files/NIST-800-171-Security-Requirements-2.xlsx";
-        link.download = "NIST-800-171-Security-Requirements-2.xlsx";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      };
+  const [activeFaqId, setActiveFaqId] = useState();
+
+  const toggleFaq = (id) => {
+    setActiveFaqId(activeFaqId === id ? null : id);
+  };
+
+  // const downloadPdf = (pdfUrl, fileName) => {
+  //   const link = document.createElement("a");
+  //   link.href = pdfUrl;
+  //   link.download = fileName;
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
+
+  // const downloadExcel = () => {
+  //   const link = document.createElement("a");
+  //   link.href = "/files/NIST-800-171-Security-Requirements-2.xlsx";
+  //   link.download = "NIST-800-171-Security-Requirements-2.xlsx";
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
+
+  const downloadFile = (fileUrl) => {
+    window.open(fileUrl, "_blank");
+  };
+
+  const engagements = [tv, hotspot, key, doc, medal, people];
 
   return (
     <>
       <Header />
-      
+
       {/* =========================================================================
           SECTION 1: HERO HEADER
           ========================================================================= */}
@@ -77,7 +97,7 @@ export default function ResourceScreen() {
           </h1>
 
           <p className="hero-display-subtitle">
-          Compliance intelligence drawn from real CMMC and NIST engagements - plus press, recognition and speaking from Spartan leadership.
+            Compliance intelligence drawn from real CMMC and NIST engagements - plus press, recognition and speaking from Spartan leadership.
           </p>
         </div>
       </section>
@@ -87,10 +107,10 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-featured-section">
         <div className="section-inner-content">
-          
+
           {/* Main Card Container */}
           <div className="featured-card-container">
-            
+
             {/* Left Side: Pinned hard to Top, Bottom, and Left borders */}
             <div className="card-image-block">
               <img src={Content} alt="CMMC Operations Control Room" />
@@ -98,7 +118,7 @@ export default function ResourceScreen() {
 
             {/* Right Side: Floating Text Block with localized inner spacing */}
             <div className="card-text-block">
-              
+
               {/* Pill Tag */}
               <div className="featured-mini-badge">
                 <span className="badge-dot-indicator" />
@@ -127,7 +147,7 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-insights-section">
         <div className="section-inner-content">
-          
+
           {/* Centered Section Header */}
           <div className="insights-header-container">
             <div className="insights-mini-badge">
@@ -135,17 +155,28 @@ export default function ResourceScreen() {
               <span className="badge-label-text">Blog / Insights</span>
             </div>
             <h2 className="insights-main-title">
-              Field notes from the compliance frontline.
+              {resourceData?.resources?.mainTitle}
             </h2>
           </div>
 
           {/* 3-Column Grid Container */}
           <div className="insights-cards-grid">
-            
-            {/* Card 1 */}
-            <div className="insight-grid-card">
+            {(resourceData?.resources?.cards)?.map((item, index) => (
+                          <div className="insight-grid-card" key={index}>
+                          <div className="insight-image-wrapper">
+                            <img src={item?.image} alt="Microsoft 365 Security Checklist" />
+                          </div>
+                          <h3 className="insight-card-title">{item?.title}</h3>
+                          <div className="insight-card-meta">
+                            <span className="meta-date">{item?.date}</span>
+                            <span className="meta-divider">—</span>
+                            <Link to={`/blog/${item?.id}`} className="meta-link">Read More</Link>
+                          </div>
+                        </div>
+            ))}
+
+            {/* <div className="insight-grid-card">
               <div className="insight-image-wrapper">
-                {/* Replace with your image asset variable or path later */}
                 <img src={relatedImg1} alt="CMMC 2.0 Readiness Guide" />
               </div>
               <h3 className="insight-card-title">CMMC 2.0 Readiness Guide</h3>
@@ -156,10 +187,8 @@ export default function ResourceScreen() {
               </div>
             </div>
 
-            {/* Card 2 */}
             <div className="insight-grid-card">
               <div className="insight-image-wrapper">
-                {/* Replace with your image asset variable or path later */}
                 <img src={relatedImg2} alt="Microsoft 365 Security Checklist" />
               </div>
               <h3 className="insight-card-title">Microsoft 365 Security Checklist</h3>
@@ -170,10 +199,8 @@ export default function ResourceScreen() {
               </div>
             </div>
 
-            {/* Card 3 */}
             <div className="insight-grid-card">
               <div className="insight-image-wrapper">
-                {/* Replace with your image asset variable or path later */}
                 <img src={relatedImg3} alt="Federal Compliance Updates" />
               </div>
               <h3 className="insight-card-title">Federal Compliance Updates</h3>
@@ -182,7 +209,7 @@ export default function ResourceScreen() {
                 <span className="meta-divider">—</span>
                 <Link to="/blog" className="meta-link">Read More</Link>
               </div>
-            </div>
+            </div> */}
 
           </div>
 
@@ -194,7 +221,7 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-playbooks-section">
         <div className="section-inner-content">
-          
+
           {/* Centered Section Header Block */}
           <div className="playbooks-header-container">
             <div className="playbooks-mini-badge">
@@ -208,7 +235,7 @@ export default function ResourceScreen() {
 
           {/* 3-Column Block Container */}
           <div className="playbooks-cards-grid">
-            
+
             {/* Card 1 */}
             <div className="playbook-item-card">
               <div className="playbook-icon-box">
@@ -227,7 +254,7 @@ export default function ResourceScreen() {
             {/* Card 2 */}
             <div className="playbook-item-card">
               <div className="playbook-icon-box">
-              <img src={puzzle} alt="" />
+                <img src={puzzle} alt="" />
               </div>
               <h3 className="playbook-card-title">Building a System Security Plan that holds up</h3>
               <p className="playbook-card-body">
@@ -238,7 +265,7 @@ export default function ResourceScreen() {
             {/* Card 3 */}
             <div className="playbook-item-card">
               <div className="playbook-icon-box">
-              <img src={warning} alt="" />
+                <img src={warning} alt="" />
               </div>
               <h3 className="playbook-card-title">POA&M discipline for prime contractors</h3>
               <p className="playbook-card-body">
@@ -256,7 +283,7 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-templates-section">
         <div className="section-inner-content">
-          
+
           {/* Centered Dark Section Header */}
           <div className="templates-header-container">
             <div className="templates-mini-badge">
@@ -264,19 +291,40 @@ export default function ResourceScreen() {
               <span className="badge-label-text">Logging & Monitoring</span>
             </div>
             <h2 className="templates-main-title">
-              Free templates, ready to use.
+              {/* Free templates, ready to use. */}
+              {resourceData?.templatesSection?.mainTitle}
             </h2>
           </div>
 
           {/* 3-Column Dark Card Grid Layout */}
           <div className="templates-cards-grid">
-            
-            {/* Template Card 1 */}
+
+            {(resourceData?.templatesSection?.items)?.map((item, index) => (
+              <div className="template-item-card" key={index}>
+                <div className="template-download-icon">
+
+                  <img src={downloadIcon} alt="" style={{ height: "20px", width: "20px" }} />
+                </div>
+                <h3 className="template-card-title">{item?.title}</h3>
+                <p className="template-card-body">
+                  {item?.body}
+                </p>
+                <button className="template-action-btn" type="button"
+                  onClick={() => downloadFile(item?.pdfUrl)}
+                >
+                  <span>Download</span>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            ))}
+
+
+
+            {/*             
             <div className="template-item-card">
               <div className="template-download-icon">
-                {/* <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 11V14H2V11H0V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V11H14ZM13 7L11.59 5.59L9 8.17V0H7V8.17L4.41 5.59L3 7L8 12L13 7Z" fill="#FFFFFF"/>
-                </svg> */}
 
                 <img src={downloadIcon} alt="" style={{height: "20px", width: "20px"}} />
               </div>
@@ -296,12 +344,8 @@ export default function ResourceScreen() {
               </button>
             </div>
 
-              {/* Template Card 3 */}
               <div className="template-item-card">
               <div className="template-download-icon">
-                {/* <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 11V14H2V11H0V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V11H14ZM13 7L11.59 5.59L9 8.17V0H7V8.17L4.41 5.59L3 7L8 12L13 7Z" fill="#FFFFFF"/>
-                </svg> */}
                 <img src={downloadIcon} alt="" style={{height: "20px", width: "20px"}} />
               </div>
               <h3 className="template-card-title">Free Templates and Resources</h3>
@@ -320,12 +364,8 @@ export default function ResourceScreen() {
               </button>
             </div>
 
-            {/* Template Card 2 */}
             <div className="template-item-card">
               <div className="template-download-icon">
-                {/* <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 11V14H2V11H0V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V11H14ZM13 7L11.59 5.59L9 8.17V0H7V8.17L4.41 5.59L3 7L8 12L13 7Z" fill="#FFFFFF"/>
-                </svg> */}
                 <img src={downloadIcon} alt="" style={{height: "20px", width: "20px"}} />
               </div>
               <h3 className="template-card-title">NIST SP 800-171 Compliance Checklist</h3>
@@ -338,9 +378,9 @@ export default function ResourceScreen() {
                   <path d="M1 5.5H11M11 5.5L6.5 10M11 5.5L6.5 1" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-            </div>
+            </div> */}
 
-          
+
 
           </div>
 
@@ -352,7 +392,7 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-cases-section">
         <div className="section-inner-content">
-          
+
           {/* Centered Section Header Block */}
           <div className="cases-header-container">
             <div className="cases-mini-badge">
@@ -366,7 +406,7 @@ export default function ResourceScreen() {
 
           {/* 3-Column Grid Layout */}
           <div className="cases-cards-grid">
-            
+
             {/* Case Card 1 */}
             <div className="case-item-card">
               <div className="case-icon-box">
@@ -413,7 +453,7 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-recognition-section">
         <div className="section-inner-content">
-          
+
           {/* Centered Section Header Block */}
           <div className="recognition-header-container">
             <div className="recognition-mini-badge">
@@ -421,20 +461,30 @@ export default function ResourceScreen() {
               <span className="badge-label-text">Recognition</span>
             </div>
             <h2 className="recognition-main-title">
-              Awards, certifications and public recognition.
+              {resourceData?.awardSection?.mainTitle}
             </h2>
             <p className="recognition-main-subtitle">
-              A snapshot of the certifications, congressional recognitions and industry honors Spartan has received.
+              {resourceData?.awardSection?.mainSubtitle}
             </p>
           </div>
 
           {/* 3-Column White Card Media Grid Layout */}
           <div className="recognition-cards-grid">
-            
-            {/* Recognition Card 1 */}
-            <div className="recognition-item-card">
+
+            {(resourceData?.awardSection?.cards)?.map((item, index) => (
+              <div className="recognition-item-card" key={index}>
+                <div className="recognition-image-wrapper">
+                  {/* Replace src with your dynamic image asset reference path variable later */}
+                  <img src={`${IMAGE_URL}/${item?.image}`} alt="Veterans Institute for Procurement - Certificate of Achievement" />
+                </div>
+                <h3 className="recognition-card-title">
+                  {item?.title}
+                </h3>
+              </div>
+            ))}
+
+            {/* <div className="recognition-item-card">
               <div className="recognition-image-wrapper">
-                {/* Replace src with your dynamic image asset reference path variable later */}
                 <img src={image1} alt="Veterans Institute for Procurement - Certificate of Achievement" />
               </div>
               <h3 className="recognition-card-title">
@@ -442,10 +492,8 @@ export default function ResourceScreen() {
               </h3>
             </div>
 
-            {/* Recognition Card 2 */}
             <div className="recognition-item-card">
               <div className="recognition-image-wrapper">
-                {/* Replace src with your dynamic image asset reference path variable later */}
                 <img src={image2} alt="VIP Grow Program - Recognition Ceremony" />
               </div>
               <h3 className="recognition-card-title">
@@ -453,16 +501,14 @@ export default function ResourceScreen() {
               </h3>
             </div>
 
-            {/* Recognition Card 3 */}
             <div className="recognition-item-card">
               <div className="recognition-image-wrapper">
-                {/* Replace src with your dynamic image asset reference path variable later */}
                 <img src={image3} alt="Certificate of Special Congressional Recognition" />
               </div>
               <h3 className="recognition-card-title">
                 Certificate of Special Congressional Recognition
               </h3>
-            </div>
+            </div> */}
 
           </div>
 
@@ -474,7 +520,7 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-media-section">
         <div className="section-inner-content">
-          
+
           {/* Centered Dark Header Block */}
           <div className="media-header-container">
             <div className="media-mini-badge">
@@ -482,17 +528,29 @@ export default function ResourceScreen() {
               <span className="badge-label-text">Media Appearances & Engagements</span>
             </div>
             <h2 className="media-main-title">
-              Outlets, institutions and forums.
+              {resourceData?.mediaSection?.mainTitle}
             </h2>
           </div>
 
           {/* 2-Column Responsive Row Grid Layout */}
           <div className="media-outlets-grid">
-            
-            {/* Card 1 */}
-            <div className="media-outlet-card">
+
+            {(resourceData?.mediaSection?.engagements)?.map((item, index) => (
+              <div className="media-outlet-card" key={index}>
+                <div className="media-card-icon-box">
+                  <img src={engagements[index]} alt="" />
+                </div>
+                <div className="media-card-text-box">
+                  <h3 className="media-card-title">{item?.title}</h3>
+                  <p className="media-card-body">
+                    {item?.body}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+            {/* <div className="media-outlet-card">
               <div className="media-card-icon-box">
-                {/* Television Icon Representation */}
                 <img src={tv} alt="" />
               </div>
               <div className="media-card-text-box">
@@ -503,10 +561,8 @@ export default function ResourceScreen() {
               </div>
             </div>
 
-            {/* Card 2 */}
             <div className="media-outlet-card">
               <div className="media-card-icon-box">
-                {/* Broadcast / Signal Icon Representation */}
                 <img src={hotspot} alt="" />
               </div>
               <div className="media-card-text-box">
@@ -517,10 +573,8 @@ export default function ResourceScreen() {
               </div>
             </div>
 
-            {/* Card 3 */}
             <div className="media-outlet-card">
               <div className="media-card-icon-box">
-                {/* Key / Labs Icon Representation */}
                 <img src={key} alt="" />
               </div>
               <div className="media-card-text-box">
@@ -531,10 +585,8 @@ export default function ResourceScreen() {
               </div>
             </div>
 
-            {/* Card 4 */}
             <div className="media-outlet-card">
               <div className="media-card-icon-box">
-                {/* Article / Podcast Document Icon Representation */}
                 <img src={doc} alt="" />
               </div>
               <div className="media-card-text-box">
@@ -545,10 +597,8 @@ export default function ResourceScreen() {
               </div>
             </div>
 
-            {/* Card 5 */}
             <div className="media-outlet-card">
               <div className="media-card-icon-box">
-                {/* Award / Medal Icon Representation */}
                 <img src={medal} alt="" />
               </div>
               <div className="media-card-text-box">
@@ -559,10 +609,8 @@ export default function ResourceScreen() {
               </div>
             </div>
 
-            {/* Card 6 */}
             <div className="media-outlet-card">
               <div className="media-card-icon-box">
-                {/* Users / Board Advisor Icon Representation */}
                 <img src={people} alt="" />
               </div>
               <div className="media-card-text-box">
@@ -571,19 +619,19 @@ export default function ResourceScreen() {
                   International cybersecurity firm - governance and executive risk
                 </p>
               </div>
-            </div>
+            </div> */}
 
           </div>
 
         </div>
       </section>
 
-            {/* =========================================================================
+      {/* =========================================================================
           SECTION 9: FAQ ASYMMETRIC ACCORDION LAYOUT (References: Section9.jpg)
           ========================================================================= */}
       <section className="resource-faq-section">
         <div className="section-inner-content faq-layout-grid">
-          
+
           {/* Left Column Sticky Header Block */}
           <div className="faq-left-header-panel">
             <div className="faq-mini-badge">
@@ -597,35 +645,35 @@ export default function ResourceScreen() {
 
           {/* Right Column Interactive Accordion Stack */}
           <div className="faq-right-accordion-panel">
-            {faqData.map((item) => {
+            {(resourceData?.faqSection?.items)?.map((item, index) => {
               const isOpen = activeFaqId === item.id;
               return (
-                <div 
-                  key={item.id} 
+                <div
+                  key={item?.id}
                   className={`faq-accordion-row ${isOpen ? 'is-expanded' : ''}`}
-                  onClick={() => toggleFaq(item.id)}
+                  onClick={() => toggleFaq(item?.id)}
                 >
                   <div className="faq-row-trigger-line">
-                    <h3 className="faq-question-text">{item.question}</h3>
+                    <h3 className="faq-question-text">{item?.question}</h3>
                     <div className={`faq-toggle-circle-indicator ${isOpen ? 'active-minus' : 'inactive-plus'}`}>
                       {isOpen ? (
                         /* Minus SVG Icon */
                         <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M1 1H11" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round"/>
+                          <path d="M1 1H11" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
                         </svg>
                       ) : (
                         /* Plus SVG Icon */
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6 1V11M1 6H11" stroke="#27272A" strokeWidth="2" strokeLinecap="round"/>
+                          <path d="M6 1V11M1 6H11" stroke="#27272A" strokeWidth="2" strokeLinecap="round" />
                         </svg>
                       )}
                     </div>
                   </div>
-                  
+
                   {/* Smooth height container breakdown space */}
                   <div className="faq-row-collapsible-content">
                     <div className="faq-answer-inner-wrapper">
-                      <p className="faq-answer-paragraph">{item.answer}</p>
+                      <p className="faq-answer-paragraph">{item?.answer}</p>
                     </div>
                   </div>
                 </div>
@@ -641,10 +689,10 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-cta-billboard-section">
         <div className="section-inner-content">
-          
+
           {/* Glowing Matte Black Banner Board Box */}
           <div className="cta-billboard-card-container">
-            
+
             {/* Pill Badge Element */}
             <div className="cta-mini-badge">
               <span className="badge-dot-indicator" />
@@ -661,15 +709,15 @@ export default function ResourceScreen() {
 
             {/* Centered Dual-Action Button Rows */}
             <div className="cta-buttons-flex-group">
-              
-              <Link to="/contact-us" className="cta-btn-primary" type="button" style={{textDecoration: "none"}}>
+
+              <Link to="/contact-us" className="cta-btn-primary" type="button" style={{ textDecoration: "none" }}>
                 <span>Schedule Consultation</span>
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
 
-              <Link to="/compliance" className="cta-btn-secondary" type="button" style={{textDecoration: "none"}}>
+              <Link to="/compliance" className="cta-btn-secondary" type="button" style={{ textDecoration: "none" }}>
                 Explore Compliance
               </Link>
 

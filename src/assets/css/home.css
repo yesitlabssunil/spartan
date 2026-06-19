@@ -20,6 +20,7 @@
     text-align: center;
     color: #ffffff;
     padding: 40px 20px;
+    /* padding: 40px 20px 170px 20px; */
 }
 
 .hero-overlay {
@@ -60,10 +61,11 @@ span.dot-black {
     border-radius: 50%;
 }
 .hero h1 {
-    font-size: 62px;
+    font-size: 50px;
     font-weight: 500;
     line-height: 1.25;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    max-width: 1000px;
 }
 
 .hero-subtext {
@@ -2088,7 +2090,7 @@ span.dot-red {
 
 .accordion-header h4 {
     font-family: 'Overused Grotesk', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
     color: #000000;
     /* transition: color 0.25s ease; */

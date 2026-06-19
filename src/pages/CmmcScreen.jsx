@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "../assets/css/cmmcScreen.css";
+import { useDispatch, useSelector } from "react-redux";
 
 // ==========================================================================
 // ALL EXPORTED FIGMA IMAGE PATHS (MATCHING THE GRAPHICS DIRECTLY)
@@ -23,10 +24,22 @@ import cap from "../assets/images/cmmcScreen/cap.png";
 import file from "../assets/images/cmmcScreen/file.png";
 import hammer from "../assets/images/cmmcScreen/hammer.png";
 import { Link } from "react-router-dom";
+import { cmmcScreenData } from "../redux/slices/secondSlice";
 
 const CmmcScreen = () => {
     // const [activeCard, setActiveCard] = useState();
     // const [activeStep, setActiveStep] = useState();
+    const dispatch = useDispatch();
+    const { cmmcData, loading } = useSelector((state) => state.second);
+
+
+
+    useEffect(() => {
+        dispatch(cmmcScreenData())
+    }, [dispatch])
+
+    // console.log("cmmcData@@@", cmmcData);
+
     return (
         <>
             <Header />
@@ -38,7 +51,7 @@ const CmmcScreen = () => {
                         <div className="blog-hero-content text-start">
                             <div className="blog-breadcrumb">
                                 <span className="red-bullet-indicator"></span>
-                                <span>CMMC 2.0</span> <span className="separator">|</span> <span style={{color: "white"}}>HOME</span>
+                                <span>CMMC 2.0</span> <span className="separator">|</span> <span style={{ color: "white" }}>HOME</span>
                             </div>
                             <h1 className="blog-hero-title custom-hero-lh">
                                 CMMC 2.0 Executive Readiness<br />Without Noise
@@ -66,17 +79,17 @@ const CmmcScreen = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <p className="sec-body-text1 mb-4 font-size-16 line-height-1-8">
-                                CMMC 2.0 is a contractual obligation tied directly to eligibility, Supplier Performance Risk System (SPRS) scoring and formal assessment by a Certified Third-Party Assessor Organization (C3PAO). Organizations handling Controlled Unclassified Information (CUI) must demonstrate implemented controls, structured System Security Plans (SSP) and operational discipline aligned to NIST SP 800-171.
+                                    CMMC 2.0 is a contractual obligation tied directly to eligibility, Supplier Performance Risk System (SPRS) scoring and formal assessment by a Certified Third-Party Assessor Organization (C3PAO). Organizations handling Controlled Unclassified Information (CUI) must demonstrate implemented controls, structured System Security Plans (SSP) and operational discipline aligned to NIST SP 800-171.
                                 </p>
                                 <p className="sec-body-text1 mb-5 font-size-16 line-height-1-8">
-                                While our current operational focus centers on CMMC 2.0 readiness within the Defense Industrial Base, Spartan's governance practice also supports ISO/IEC 27001 information security management systems and ISO/IEC 42001 artificial intelligence governance frameworks for regulated environments.
+                                    While our current operational focus centers on CMMC 2.0 readiness within the Defense Industrial Base, Spartan's governance practice also supports ISO/IEC 27001 information security management systems and ISO/IEC 42001 artificial intelligence governance frameworks for regulated environments.
                                 </p>
 
                                 {/* Figma Callout Quote Component */}
                                 <div className="cmmc-callout-quote-box mt-4">
                                     <p className="cmmc-quote-text">
-                                    We build defensible cybersecurity governance structures aligned to<br/>
-                                    contractual and international standards.
+                                        We build defensible cybersecurity governance structures aligned to<br />
+                                        contractual and international standards.
                                     </p>
                                 </div>
                             </div>
@@ -336,18 +349,36 @@ const CmmcScreen = () => {
                         </div>
 
                         <h2 className="section-main-heading font-weight-500 mb-3 max-w-900 mx-auto font-size-38">
-                            From Scoping through C3PAO Handoff in<br />8 to 12 weeks.
+                            {cmmcData?.cmmc_heading}
                         </h2>
 
                         <p className="section-subtitle-text mb-5 max-w-780 mx-auto font-size-16">
-                            A four-stage program with weekly executive checkpoints - documentation, control implementation and evidence preparation aligned to assessor evaluation standards.
+                            {cmmcData?.cmmc_paragraph}
                         </p>
 
                         {/* Four-Column Process Cards */}
                         <div className="row g-4 justify-content-center text-start">
 
-                            {/* Stage 01 */}
-                            <div className="col-xl-3 col-md-6">
+                            {(cmmcData?.cmmc_content)?.map((item, index) => (
+                                <div className="col-xl-3 col-md-6" key={index}>
+
+                                    <div className="cmmc-process-card" >
+                                        <div className="process-meta">
+                                            <span className="process-number">{item?.week}</span>
+                                            <span className="process-label">Week</span>
+                                        </div>
+                                        <h4 className="process-card-title">{item?.title}</h4>
+                                        <p className="process-card-desc">
+                                            {item?.description}
+                                        </p>
+                                    </div>
+
+
+                                </div>
+                            ))}
+
+
+                            {/* <div className="col-xl-3 col-md-6">
                                 <div
                                     className="cmmc-process-card"
                                     onMouseEnter={() => setActiveStep(0)}
@@ -363,11 +394,9 @@ const CmmcScreen = () => {
                                 </div>
                             </div>
 
-                            {/* Stage 02 */}
                             <div className="col-xl-3 col-md-6">
                                 <div
                                     className="cmmc-process-card"
-                                // onMouseEnter={() => setActiveStep(1)}
                                 >
                                     <div className="process-meta">
                                         <span className="process-number">02</span>
@@ -380,11 +409,9 @@ const CmmcScreen = () => {
                                 </div>
                             </div>
 
-                            {/* Stage 03 */}
                             <div className="col-xl-3 col-md-6">
                                 <div
                                     className="cmmc-process-card"
-                                // onMouseEnter={() => setActiveStep(2)}
                                 >
                                     <div className="process-meta">
                                         <span className="process-number">03</span>
@@ -397,11 +424,9 @@ const CmmcScreen = () => {
                                 </div>
                             </div>
 
-                            {/* Stage 04 */}
                             <div className="col-xl-3 col-md-6">
                                 <div
                                     className="cmmc-process-card"
-                                // onMouseEnter={() => setActiveStep(3)}
                                 >
                                     <div className="process-meta">
                                         <span className="process-number">04</span>
@@ -412,7 +437,7 @@ const CmmcScreen = () => {
                                         Mock assessment, evidence package, executive sign-off.
                                     </p>
                                 </div>
-                            </div>
+                            </div> */}
 
                         </div>
                     </div>
@@ -714,7 +739,7 @@ const CmmcScreen = () => {
                             {/* Action Control Button Pair */}
                             <div className="cta-btn-group d-flex flex-sm-row flex-column align-items-center justify-content-center gap-3">
                                 <Link to="/contact-us" className="btn btn-white-action d-flex align-items-center justify-content-center">
-                                    <span style={{paddingRight: "6px"}}>Schedule Compliance Review</span>
+                                    <span style={{ paddingRight: "6px" }}>Schedule Compliance Review</span>
                                     {/* <svg className="ms-2 button-arrow-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.3335 8H12.6668M12.6668 8L8.00016 3.33334M12.6668 8L8.00016 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg> */}

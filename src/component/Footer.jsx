@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {Link} from "react-router-dom";
 import "../assets/css/footer.css";
 import logo from "../assets/images/logo.png";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   FaInstagram,
@@ -11,8 +12,16 @@ import {
   FaEnvelope,
   FaLocationDot,
 } from "react-icons/fa6";
+import { globalFooter } from "../redux/slices/secondSlice";
 
 const Footer = () => {
+  const dispatch = useDispatch();
+  const {footerData, loading} = useSelector((state) => state.second);
+
+  useEffect(() => {
+    dispatch(globalFooter())
+  }, [dispatch])
+
   return (
     <footer className="footer-wrapper">
       <div className="custom-container">
@@ -82,7 +91,18 @@ const Footer = () => {
             <h6>CONTACT</h6>
 
             <ul className="contact-list">
-              <li>
+
+              {
+                footerData?.emails?.map((item, index) => (
+                  <li key={index}>
+                  <FaEnvelope />
+                  <a href={`mailto:${item}`}>
+                  {item}
+                  </a>
+                </li>
+                ))
+              }
+              {/* <li>
                 <FaEnvelope />
                 <a href="mailto:spartanconsults@spartan-cs.com">
                 spartanconsults@spartan-cs.com
@@ -102,12 +122,13 @@ const Footer = () => {
                 <a href="mailto:tfinch@spartan-cs.com">
                 tfinch@spartan-cs.com
                 </a>
-              </li>
+              </li> */}
 
               <li>
                 <FaLocationDot />
-                <a href="https://www.google.com/maps/search/?api=1&query=Albuquerque,USA" target="_blank" rel="noopener noreferrer">
-                Albuquerque, USA
+                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(footerData?.location || "")}`}
+                  target="_blank" rel="noopener noreferrer">
+                {footerData?.location}
                 </a>
               </li>
             </ul>

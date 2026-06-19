@@ -3,7 +3,7 @@ import axios from "axios";
 import {toast} from 'react-toastify';
 
 export const API = axios.create({
-    baseURl: import.meta.env.VITE_API_URL,
+    baseURL: import.meta.env.VITE_API_URL,
     headers: {
         "Content-Type": "application/json",
         // "Content-Type": "multipart/form-data",
@@ -63,8 +63,28 @@ API.interceptors.response.use(
     }
 );
 
-
-
 // --------------------------- API FUNCTIONS ---------------------------
 
-export const homeData = (formData) => API.post(`/api/url`, formData);
+export const getFaqData = (formData) => API.get(`/faqs`, formData);
+
+export const getContactScreenData = (formData) => API.get(`/contact`, formData);
+
+export const postContactScreenData = (formData) => API.post(`/contact/submit`, formData);
+
+export const aboutScreenData = (formData) => API.get(`/about`, formData);
+
+export const resourceScreenData = (formData) => API.get(`/resource`, formData);
+
+export const homeScreenData = (formData) => API.get(`/home`, formData);
+
+export const cmmcScreenData = (formData) => API.get(`/cmmc`, formData);
+
+export const industryScreenData = (formData) => API.get(`/industry`, formData);
+
+export const approachScreenData = (formData) => API.get(`/approach`, formData);
+
+export const complianceScreenData = (formData) => API.get(`/compliance`, formData);
+
+export const getBlogDetails = (id) => API.get(`/blogs/${id}`);
+
+export const globalFooter = (formData) => API.get(`/global`, formData);

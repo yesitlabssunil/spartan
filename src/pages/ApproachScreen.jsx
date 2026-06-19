@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "../assets/css/approachScreen.css";
+import { useDispatch, useSelector } from "react-redux";
 
 // Assuming you have a small red page icon exported for the 3 methodology cards
 import docIcon from "../assets/images/approachScreen/doc-icon.png"; 
 import startBullet from "../assets/images/approachScreen/startBullet.png"; 
 import { Link } from "react-router-dom";
+import { approachScreenData } from "../redux/slices/secondSlice";
 
 const ApproachScreen = () => {
+
+  const dispatch = useDispatch();
+  const {approachData, loading} = useSelector((state) => state.second);
+
+  useEffect(() => {
+    dispatch(approachScreenData())
+  }, [dispatch])
+
+  // console.log("approachScreenData@@@", approachData);
   
   const disciplines = [
     {
@@ -121,23 +132,25 @@ const ApproachScreen = () => {
             <div className="section-tag-wrapper">
               <span className="section-mini-tag"> <span className="fallback-red-dot"></span>ENGAGEMENT</span>
             </div>
-            <h2 className="section-main-heading text-center">
-              From assessment to audit readiness in <br className="d-none d-md-block" /> 8–12 weeks.
+            <h2 className="section-main-heading text-center custom-container3">
+              {/* From assessment to audit readiness in <br className="d-none d-md-block" /> 8–12 weeks. */}
+              {approachData?.approach_sec_heading}
             </h2>
             <p className="section-sub-heading text-center">
-              A four-stage program with weekly executive checkpoints.
+            {approachData?.approach_sec_paragraph}
             </p>
 
             <div className="row g-4 mt-4">
-              {weeks.map((stage, idx) => (
+              {/* {weeks.map((stage, idx) => ( */}
+              {(approachData?.approach_sec_content)?.map((stage, idx) => (
                 <div className="col-xl-3 col-md-6" key={idx}>
                   <div className="timeline-week-card">
                     <div className="week-header-flex">
-                      <span className="week-number">{stage.num}</span>
-                      <span className="week-label">{stage.label}</span>
+                      <span className="week-number">{stage.week}</span>
+                      <span className="week-label">Week</span>
                     </div>
                     <h4 className="week-card-title">{stage.title}</h4>
-                    <p className="week-card-desc">{stage.desc}</p>
+                    <p className="week-card-desc">{stage.description}</p>
                   </div>
                 </div>
               ))}

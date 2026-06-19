@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import { useDispatch, useSelector } from "react-redux";
 import { FaShieldAlt, FaFileContract, FaTools, FaEye, FaUserShield, FaGraduationCap } from "react-icons/fa";
 import "../assets/css/complianceScreen.css";
 import checkIcon from "../assets/images/complianceScreen/check-icon.png"
@@ -11,8 +12,17 @@ import icon4 from "../assets/images/complianceScreen/icon4.png"
 import icon5 from "../assets/images/complianceScreen/icon5.png"
 import icon6 from "../assets/images/complianceScreen/icon6.png"
 import { Link } from "react-router-dom";
+import { complianceScreenData } from "../redux/slices/secondSlice";
 
 const ComplianceScreen = () => {
+
+  const dispatch = useDispatch();
+  const {complianceData, loading} = useSelector((state) => state.second);
+
+  useEffect(() => {
+    dispatch(complianceScreenData())
+  }, [dispatch])
+  console.log("complianceData@@@", complianceData);
 
   const frameworks = [
     { tag: "DOD", title: "CMMC 2.0", desc: "Foundational, Advanced and Expert levels for the Defense Industrial Base." },
@@ -23,14 +33,16 @@ const ComplianceScreen = () => {
     { tag: "ITAR", title: "ITAR & Export Control", desc: "Technical data segmentation and access controls." }
   ];
 
-  const services = [
-    { title: "CMMC 2.0 Readiness", desc: "Gap analysis, scoping, and Level 2 preparation aligned to C3PAO assessment.", image: icon1 },
-    { title: "NIST 800-171 Implementation", desc: "All 110 controls implemented with traceable evidence and SSP.", image: icon2 },
-    { title: "POA&M Remediation", desc: "Prioritized remediation roadmap with measurable closure milestones.", image: icon3 },
-    { title: "Security Operations", desc: "Continuous monitoring, IR planning, and assessor-ready reporting.", image: icon4 },
-    { title: "Contract Risk Advisory", desc: "Pre-bid compliance posture review for DFARS and FedRAMP work.", image: icon5 },
-    { title: "Audit Defense", desc: "On-site assessor support, evidence presentation, and finding response.", image: icon6 }
-  ];
+  // const services = [
+  //   { title: "CMMC 2.0 Readiness", desc: "Gap analysis, scoping, and Level 2 preparation aligned to C3PAO assessment.", image: icon1 },
+  //   { title: "NIST 800-171 Implementation", desc: "All 110 controls implemented with traceable evidence and SSP.", image: icon2 },
+  //   { title: "POA&M Remediation", desc: "Prioritized remediation roadmap with measurable closure milestones.", image: icon3 },
+  //   { title: "Security Operations", desc: "Continuous monitoring, IR planning, and assessor-ready reporting.", image: icon4 },
+  //   { title: "Contract Risk Advisory", desc: "Pre-bid compliance posture review for DFARS and FedRAMP work.", image: icon5 },
+  //   { title: "Audit Defense", desc: "On-site assessor support, evidence presentation, and finding response.", image: icon6 }
+  // ];
+
+  const services = [icon1, icon2, icon3, icon4, icon5, icon6];
 
   const outcomes = [
     { title: "Protect Revenue", desc: "Maintain eligibility for active and pipeline contracts." },
@@ -72,7 +84,7 @@ const ComplianceScreen = () => {
             <h2 className="section-main-heading text-center">Built for the standards your contracts require.</h2>
 
             <div className="row g-4 mt-4">
-              {frameworks.map((fw, idx) => (
+              {frameworks?.map((fw, idx) => (
                 <div className="col-lg-4 col-md-6" key={idx}>
                   <div className="framework-card">
                     <span className="framework-mini-label">{fw.tag}</span>
@@ -93,20 +105,21 @@ const ComplianceScreen = () => {
                 <span className="fallback-red-dot"></span>SERVICE LINES
               </span>
             </div>
-            <h2 className="section-main-heading text-center">Six services. One delivery program.</h2>
+            <h2 className="section-main-heading text-center">{complianceData?.serviceline_sec_heading}</h2>
             <p className="section-sub-heading text-center">
-            Tailored to your contract portfolio and starting maturity.
+            {complianceData?.serviceline_sec_paragraph}
             </p>
 
             <div className="row g-4 mt-4">
-              {services.map((svc, idx) => (
+              {/* {services.map((svc, idx) => ( */}
+              {(complianceData?.serviceline_sec_content)?.map((svc, idx) => (
                 <div className="col-lg-4 col-md-6" key={idx}>
                   <div className="service-feature-card">
                     <div className="service-feature-icon-box">
-                      <img src={svc?.image} alt="" />
+                      <img src={services[idx]} alt="" />
                     </div>
                     <h4 className="service-feature-title">{svc.title}</h4>
-                    <p className="service-feature-desc">{svc.desc}</p>
+                    <p className="service-feature-desc">{svc.description}</p>
                   </div>
                 </div>
               ))}
@@ -144,7 +157,7 @@ const ComplianceScreen = () => {
             </h2>
             
             <div className="row g-4 mt-5">
-              {outcomes.map((item, idx) => (
+              {outcomes?.map((item, idx) => (
                 <div className="col-lg-4 col-md-6" key={idx}>
                   <div className="outcome-dark-card">
                     <div className="outcome-icon-bullet">
