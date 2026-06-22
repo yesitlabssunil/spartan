@@ -227,13 +227,19 @@ const HomeScreen = () => {
       <section className="risk-section">
         <div className="risk-left-panel">
           <span className="badge-red-tag"> <span className="dot-red"></span> TIME-SENSITIVE</span>
-          <h2>Delayed Compliance can Cost You Contracts</h2>
-          <p>Federal cybersecurity regulations continue to tighten. Contractors who fail to secure systems, implement controls and prepare for audits risk losing contract eligibility, revenue and market trust.</p>
+          <h2>{homeData?.timeSection?.title}</h2>
+          <p>{homeData?.timeSection?.subtitle}</p>
           <Link to='/compliance' className="btn-red-action">Get Compliance Ready Now <i className="fas fa-arrow-right"></i></Link>
         </div>
 
         <div className="risk-right-grid">
-          <div className="risk-card fade-in">
+          {(homeData?.timeSection?.content)?.map((item, index) => (
+                      <div className="risk-card">
+                      <span className="risk-num">{item?.title}</span>
+                      <h4>{item?.description}</h4>
+                    </div>
+          ))}
+          {/* <div className="risk-card fade-in">
             <span className="risk-num">Risk 01</span>
             <h4>Failed assessments</h4>
           </div>
@@ -256,7 +262,7 @@ const HomeScreen = () => {
           <div className="risk-card fade-in">
             <span className="risk-num">Risk 06</span>
             <h4>Incomplete evidence systems</h4>
-          </div>
+          </div> */}
         </div>
       </section>
 
