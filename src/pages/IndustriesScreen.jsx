@@ -228,7 +228,7 @@ const IndustriesScreen = () => {
                 <span className="fallback-red-dot"></span>GET STARTED
               </span>
               <h2 className="cta-banner-title">
-                {industryData?.indusrty_sec_started_heading}
+                {industryData?.industry_sec_started_heading}
               </h2>
               <p className="cta-banner-desc">
                 {industryData?.industry_sec_started_paragraph}
