@@ -92,7 +92,8 @@ const BlogScreen = () => {
 
                             <h1 className="blog-hero-title blog-hero-title3">{blogDetails?.title}</h1>
                             <p className="blog-hero-subtitle">
-                            {blogDetails?.["sub-title"]}
+                            {blogDetails?.sub_title}
+                            {/* {blogDetails?.["sub-title"]} */}
                             </p>
                         </div>
                     </div>
