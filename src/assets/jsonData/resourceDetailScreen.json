@@ -1,0 +1,234 @@
+{
+    "success": true,
+    "data": {
+      "id": "beyond-compliance",
+      "heroSection": {
+        "categoryBadge": "RESOURCE LIBRARY",
+        "typeBadge": "ARTICLE",
+        "mainTitle": "Beyond Compliance: The Real Nature of Modern Government Cybersecurity Expectations"
+      },
+  
+      "articleContent": {
+        "sectionLabel": "EXECUTIVE SUMMARY",
+        "overview": {
+          "title": "Overview",
+          "paragraphs": [
+            "Many organizations struggle to understand what government expectations are in defense contracting. For years, commercial organizations relied on assurances that IT vendors and soft compliance was enough, or treated security as a checkbox exercise to achieve compliance.",
+            "This presumption is no longer valid or supported.",
+            "Modern defense risk management measures an organization's supplier security posture not through paper promises alone, but through operational execution. When government agencies or prime contractors evaluate suppliers, they look beyond baseline compliance to evaluate governance consistency, supplier reliability, cybersecurity maturity, delivery consistency, corrective action response, evidence-backed integrity history, executive discipline, and management over governance performance."
+          ]
+        },
+  
+        "purpose": {
+          "title": "Purpose",
+          "introText": "This guidance is designed to help organizations understand that cybersecurity risk management requires:",
+          "items": [
+            {
+              "boldPrefix": "A shift from legacy compliance",
+              "text": "to modern cybersecurity execution."
+            },
+            {
+              "boldPrefix": "Clear supplier risk operational",
+              "text": "management."
+            },
+            {
+              "boldPrefix": "A focus on governance",
+              "text": "over policy-only documents."
+            },
+            {
+              "boldPrefix": "Clear ownership",
+              "text": "of evidence and operational control."
+            },
+            {
+              "boldPrefix": "Aligning cybersecurity execution",
+              "text": "with overall corporate risk management."
+            }
+          ]
+        },
+  
+        "keyConcepts": {
+          "title": "Key Concepts",
+          "subsections": [
+            {
+              "redTitle": "The Compliance Illusion",
+              "paragraphs": [
+                "Many organizations developed the belief that cybersecurity maturity could be achieved passing through audit checklists, governing policies, and relying on commercial vendor marketing promises, or third-party assurances.",
+                "Operational reality however, has demonstrated that compliance on paper does not equate to security in reality. Technical security maturity requires continuous execution, active governance, supply chain controls, supply chain visibility, corrective action response, and evidence-backed governance over time."
+              ]
+            },
+            {
+              "redTitle": "Cybersecurity as an Operational Reliability",
+              "paragraphs": [
+                "An organization's security posture is not evaluated purely on paper; it is measured through operational reality. Technical security maturity requires continuous execution, active governance, supply chain controls, supply chain visibility, corrective action response, and evidence-backed governance over time.",
+                "Modern defense risk management measures reliability, operational transparency, system readiness, and governance consistency over time."
+              ]
+            },
+            {
+              "redTitle": "The Shift from Compliance to Accountability",
+              "paragraphs": [
+                "Historically, many organizations approached compliance through simple checklists, self-attestations, static documentation, and one-time audit cycles.",
+                "Operational security, however, demands active execution, continuous monitoring, and real-time operational discipline. Compliance is no longer treated as a one-time static event; it is treated as a continuous operational state."
+              ]
+            }
+          ]
+        },
+  
+        "hardwareConsiderations": {
+          "title": "Business Importance",
+          "calloutBox": {
+            "boldTitle": "Critical Implication for Defense Contractors:",
+            "text": "Relying on external third-party statements or assumptions is no longer enough. Higher-tier contractors and government agencies demand verified operational compliance."
+          },
+          "paragraphs": [
+            "Defense contractors often operate in environments where supply chain visibility, subcontractor management, and system boundaries carry significant operational implications. Relying on assumptions, static policies, or third-party assurances is no longer acceptable in high-scrutiny defense acquisition environments.",
+            "This shift is demonstrably evident through assessments, audit reviews, supplier evaluations, performance metrics, risk evaluations, past performance records, evidence history, and reporting mechanisms."
+          ]
+        },
+  
+        "bestPractices": {
+          "title": "Best Practices",
+          "items": [
+            {
+              "boldPrefix": "Proactive compliance posture:",
+              "text": "Shift from reactive audits to continuous operational discipline."
+            },
+            {
+              "boldPrefix": "Accurate governance documentation:",
+              "text": "Ensure policies directly reflect real-world technical controls."
+            },
+            {
+              "boldPrefix": "Executive oversight:",
+              "text": "Involve executive leadership directly in compliance and risk governance."
+            },
+            {
+              "boldPrefix": "Clear evidence discipline:",
+              "text": "Build clear, verifiable systems for tracking, logging, and storing evidence."
+            },
+            {
+              "boldPrefix": "Continuous risk assessment:",
+              "text": "Routinely test systems against dynamic threats and operational changes."
+            },
+            {
+              "boldPrefix": "Supply chain risk management:",
+              "text": "Ensure sub-tier vendors and partners meet standard security baselines."
+            },
+            {
+              "boldPrefix": "Align governance ecosystems:",
+              "text": "Align policies, procedures, evidence, technical implementation, training, and executive oversight."
+            }
+          ]
+        }
+      },
+  
+      "sidebarRelatedResources": {
+        "title": "Related Resources",
+        "items": [
+          {
+            "id": 1,
+            "title": "SPRS: The Supplier Performance Risk System",
+            "link": "/resources/sprs-supplier-performance-risk-system"
+          },
+          {
+            "id": 2,
+            "title": "CMMC 2.0 Level 2 Scoping Rules",
+            "link": "/resources/cmmc-2-scoping-rules"
+          },
+          {
+            "id": 3,
+            "title": "Evidence Management and Operational Discipline",
+            "link": "/resources/evidence-management"
+          },
+          {
+            "id": 4,
+            "title": "Building Integrated Governance Ecosystems",
+            "link": "/resources/building-integrated-governance"
+          }
+        ]
+      },
+  
+      "faqSection": {
+        "badge": "FAQS",
+        "title": "You Have Questions.\nWe Have Answers.",
+        "ctaButton": {
+          "text": "Reach Out to Us",
+          "url": "/contact"
+        },
+        "accordion": [
+          {
+            "id": 1,
+            "question": "Understanding corporate expectations & compliance",
+            "answer": "Non-compliance risks are evaluated as systemic risk across the procurement lifecycle, focusing on operational maturity, evidence discipline, and long-term risk rather than static yearly checklists.",
+            "isOpen": true
+          },
+          {
+            "id": 2,
+            "question": "How does government evaluation differ from traditional compliance audits?",
+            "answer": "Government evaluations assess ongoing operational reliability and past performance evidence rather than simple point-in-time documentation.",
+            "isOpen": false
+          },
+          {
+            "id": 3,
+            "question": "Why is an SPRS score vital for big defense contracts?",
+            "answer": "SPRS scores give contracting officers direct visibility into an organization's risk profile, directly influencing award decisions.",
+            "isOpen": false
+          },
+          {
+            "id": 4,
+            "question": "What is the difference between governance and documentation?",
+            "answer": "Documentation represents written policies; governance represents active execution, leadership oversight, and continuous operational enforcement.",
+            "isOpen": false
+          },
+          {
+            "id": 5,
+            "question": "Do you provide continuous monitoring?",
+            "answer": "Yes. Continuous monitoring keeps controls active, compliant, and defensible against changing threats.",
+            "isOpen": false
+          }
+        ]
+      },
+  
+      "bottomNavigation": {
+        "prev": {
+          "subLabel": "Previous",
+          "title": "Back to Library",
+          "url": "/resources"
+        },
+        "centerLabel": "1 of 50+ Resources",
+        "next": {
+          "subLabel": "NEXT",
+          "title": "SPRS Framework",
+          "url": "/resources/sprs-framework"
+        }
+      },
+  
+      "youAlsoMightLike": {
+        "title": "You also might like",
+        "cards": [
+          {
+            "id": "cmmc-readiness",
+            "image": "images/resource/cmmc-readiness.jpg",
+            "title": "CMMC 2.0 Readiness Outline",
+            "date": "JUL 18, 2026",
+            "readTime": "5 MIN READ",
+            "url": "/resources/cmmc-2-readiness-outline"
+          },
+          {
+            "id": "m365-security",
+            "image": "images/resource/m365-security.jpg",
+            "title": "Microsoft 365 Security Checklist",
+            "date": "MAY 12, 2026",
+            "readTime": "8 MIN READ",
+            "url": "/resources/microsoft-365-security-checklist"
+          },
+          {
+            "id": "federal-compliance",
+            "image": "images/resource/federal-compliance.jpg",
+            "title": "Federal Compliance Updates",
+            "date": "MAR 02, 2026",
+            "readTime": "4 MIN READ",
+            "url": "/resources/federal-compliance-updates"
+          }
+        ]
+      }
+    }
+  }

@@ -95,9 +95,9 @@ const HomeScreen = () => {
   //   }
   // ];
 
-//   if (loading) {
-//   return <div className="text-center py-5">Loading...</div>;
-// }
+  //   if (loading) {
+  //   return <div className="text-center py-5">Loading...</div>;
+  // }
 
   return (
     <>
@@ -113,9 +113,9 @@ const HomeScreen = () => {
       >
         <div className="hero-overlay"></div>
         <div className="hero-content fade-in">
-          {!loading && 
-          (<div className="badge-tag"><span className="dot-black"></span> {homeData?.hero?.badgeTag}
-          </div>)
+          {!loading &&
+            (<div className="badge-tag"><span className="dot-black"></span> {homeData?.hero?.badgeTag}
+            </div>)
           }
           <h1>{homeData?.hero?.title}</h1>
           <p className="hero-subtext">{homeData?.hero?.subtext}</p>
@@ -234,10 +234,10 @@ const HomeScreen = () => {
 
         <div className="risk-right-grid">
           {(homeData?.timeSection?.content)?.map((item, index) => (
-                      <div className="risk-card">
-                      <span className="risk-num">{item?.title}</span>
-                      <h4>{item?.description}</h4>
-                    </div>
+            <div className="risk-card">
+              <span className="risk-num">{item?.title}</span>
+              <h4>{item?.description}</h4>
+            </div>
           ))}
           {/* <div className="risk-card fade-in">
             <span className="risk-num">Risk 01</span>
@@ -652,7 +652,7 @@ const HomeScreen = () => {
           {(homeData?.resources?.cards)?.map((item, index) => (
             <div className="resource-card" key={item?.id}>
               <div className="res-img-box">
-                <img src={item?.image}/>
+                <img src={item?.image} />
               </div>
               <h3>{item?.title}</h3>
               <div className="res-meta">
@@ -660,8 +660,11 @@ const HomeScreen = () => {
                 <span className="res-divider">—</span>
                 <Link to={`/blog/${item?.id}`} className="res-link">READ MORE</Link>
               </div>
+              <hr style={{color: "#555555"}} />
             </div>
           ))}
+
+
 
           {/* <div className="resource-card fade-in">
             <div className="res-img-box">
@@ -696,6 +699,12 @@ const HomeScreen = () => {
               <Link to="/blog" className="res-link">READ MORE</Link>
             </div>
           </div> */}
+        </div>
+        <div className='text-center' style={{marginTop: "40px"}}>
+        {/* <Link to="/resources" className="contact-btn"> */}
+        <Link to="/resources" className="btn-red-action">
+          Browse all Resources <i className="fas fa-arrow-right"></i>
+        </Link>
         </div>
       </section>
 

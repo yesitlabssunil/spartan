@@ -88,3 +88,5 @@ export const complianceScreenData = (formData) => API.get(`/compliance`, formDat
 export const getBlogDetails = (id) => API.get(`/blogs/${id}`);
 
 export const globalFooter = (formData) => API.get(`/global`, formData);
+
+export const getFaqScreenData = (formData) => API.get(`/newfaqs`, formData);

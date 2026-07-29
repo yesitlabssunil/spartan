@@ -11,6 +11,8 @@ import ResourcesScreen from "../pages/ResourcesScreen";
 import AboutScreen from "../pages/AboutScreen";
 import NotFoundRedirect from "./NotFoundRedirect";
 import ScrollToTop from "./ScrollToTop";
+import Faq from "../pages/Faq";
+import ResourceDetailScreen from "../pages/ResourceDetailScreen";
 
 const AppRouter = () => (
     <Router>
@@ -60,6 +62,14 @@ const AppRouter = () => (
 
             <Route path="/about" element={
                 <AboutScreen/ >
+            } />
+
+            <Route path="/faq" element={
+                <Faq />
+            } />
+
+            <Route path="/resource-detail-screen" element={
+                <ResourceDetailScreen />
             } />
 
             <Route path="*" element={

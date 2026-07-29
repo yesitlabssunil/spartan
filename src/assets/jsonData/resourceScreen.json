@@ -1,0 +1,471 @@
+{
+  "resourceLibrary": {
+    "sectionBadge": "RESOURCE LIBRARY",
+    "sectionTitle": "CMMC 2.0 & Policy Template's Program Guides",
+    "categories": [
+      "All Resources",
+      "Strategic Guidance",
+      "Government Systems",
+      "Governance",
+      "Policy Templates",
+      "Risk & Compliance"
+    ],
+    "cards": [
+      {
+        "id": 1,
+        "badge": "Strategic Insight",
+        "category": "Strategic Guidance",
+        "title": "Beyond Compliance: Understanding Modern Government Expectations",
+        "description": "Explore why cybersecurity is no longer just an IT function but a core measure of organizational reliability in defense contracting."
+      },
+      {
+        "id": 2,
+        "badge": "Government Systems",
+        "category": "Government Systems",
+        "title": "SPRS: The Supplier Performance Risk System",
+        "description": "Understand how the Department of Defense uses SPRS to evaluate supplier reliability, predict risk and influence contract awards."
+      },
+      {
+        "id": 3,
+        "badge": "Governance",
+        "category": "Governance",
+        "title": "Operational Maturity and Governance",
+        "description": "Move beyond documentation to build mature cybersecurity governance programs that survive scrutiny and demonstrate lasting operational discipline."
+      },
+      {
+        "id": 4,
+        "badge": "Governance",
+        "category": "Governance",
+        "title": "Evidence Discipline and Operational Evidence",
+        "description": "Build evidence management systems that demonstrate control implementation and survive scrutiny during assessments and investigations."
+      },
+      {
+        "id": 5,
+        "badge": "Governance",
+        "category": "Governance",
+        "title": "Corrective Actions as Operational Signals",
+        "description": "Use corrective action discipline as a competitive advantage to demonstrate organizational learning and improvement."
+      },
+      {
+        "id": 6,
+        "badge": "Risk Assessment",
+        "category": "Risk & Compliance",
+        "title": "Supplier Risk as an Acquisition Problem",
+        "description": "Understand why government views cybersecurity weaknesses as acquisition risks that affect mission assurance, delivery reliability, and contract performance."
+      },
+      {
+        "id": 7,
+        "badge": "Risk Management",
+        "category": "Risk & Compliance",
+        "title": "Integrity and Representation Risk",
+        "description": "Ensure your cybersecurity representations are defensible operationally and understand integrity considerations in government evaluation."
+      },
+      {
+        "id": 8,
+        "badge": "Governance",
+        "category": "Governance",
+        "title": "Leadership Accountability in Cybersecurity Governance",
+        "description": "Build executive involvement and accountability structures that demonstrate organizational commitment to cybersecurity maturity."
+      },
+      {
+        "id": 9,
+        "badge": "Governance Framework",
+        "category": "Governance",
+        "title": "Building Integrated Governance Ecosystems",
+        "description": "Create aligned systems that integrate policies, procedures, evidence, technical implementation, training, and executive oversight."
+      },
+      {
+        "id": 10,
+        "badge": "Documentation",
+        "category": "Policy Templates",
+        "title": "System Security Plan Development",
+        "description": "Develop honest, defensible SSPs that accurately describe your operational implementations and survive scrutiny."
+      },
+      {
+        "id": 11,
+        "badge": "Resilience",
+        "category": "Strategic Guidance",
+        "title": "Cybersecurity Programs That Survive Operational Stress",
+        "description": "Design governance programs that remain defensible and functional during incidents, disputes, and investigations."
+      },
+      {
+        "id": 12,
+        "badge": "Strategic Insight",
+        "category": "Strategic Guidance",
+        "title": "Governance and Organizational Trust",
+        "description": "Build stronger long-term credibility within government contracting by making cybersecurity governance a trust indicator"
+      },
+      {
+        "id": 13,
+        "badge": "Strategic Insight",
+        "category": "Strategic Guidance",
+        "title": "Beyond Compliance: Understanding Modern Government Expectations",
+        "description": "Explore why cybersecurity is no longer just an IT function but a core measure of organizational reliability in defense contracting."
+      },
+      {
+        "id": 14,
+        "badge": "Government Systems",
+        "category": "Government Systems",
+        "title": "SPRS: The Supplier Performance Risk System",
+        "description": "Understand how the Department of Defense uses SPRS to evaluate supplier reliability, predict risk and influence contract awards."
+      },
+      {
+        "id": 15,
+        "badge": "Governance",
+        "category": "Governance",
+        "title": "Operational Maturity and Governance",
+        "description": "Move beyond documentation to build mature cybersecurity governance programs that survive scrutiny and demonstrate lasting operational discipline."
+      },
+      {
+        "id": 16,
+        "badge": "Governance",
+        "category": "Governance",
+        "title": "Evidence Discipline and Operational Evidence",
+        "description": "Build evidence management systems that demonstrate control implementation and survive scrutiny during assessments and investigations."
+      },
+      {
+        "id": 17,
+        "badge": "Governance",
+        "category": "Governance",
+        "title": "Corrective Actions as Operational Signals",
+        "description": "Use corrective action discipline as a competitive advantage to demonstrate organizational learning and improvement."
+      },
+      {
+        "id": 18,
+        "badge": "Risk Assessment",
+        "category": "Risk & Compliance",
+        "title": "Supplier Risk as an Acquisition Problem",
+        "description": "Understand why government views cybersecurity weaknesses as acquisition risks that affect mission assurance, delivery reliability, and contract performance."
+      },
+      {
+        "id": 19,
+        "badge": "Risk Management",
+        "category": "Risk & Compliance",
+        "title": "Integrity and Representation Risk",
+        "description": "Ensure your cybersecurity representations are defensible operationally and understand integrity considerations in government evaluation."
+      },
+      {
+        "id": 20,
+        "badge": "Governance",
+        "category": "Governance",
+        "title": "Leadership Accountability in Cybersecurity Governance",
+        "description": "Build executive involvement and accountability structures that demonstrate organizational commitment to cybersecurity maturity."
+      },
+      {
+        "id": 21,
+        "badge": "Governance Framework",
+        "category": "Governance",
+        "title": "Building Integrated Governance Ecosystems",
+        "description": "Create aligned systems that integrate policies, procedures, evidence, technical implementation, training, and executive oversight."
+      },
+      {
+        "id": 22,
+        "badge": "Documentation",
+        "category": "Policy Templates",
+        "title": "System Security Plan Development",
+        "description": "Develop honest, defensible SSPs that accurately describe your operational implementations and survive scrutiny."
+      },
+      {
+        "id": 23,
+        "badge": "Resilience",
+        "category": "Strategic Guidance",
+        "title": "Cybersecurity Programs That Survive Operational Stress",
+        "description": "Design governance programs that remain defensible and functional during incidents, disputes, and investigations."
+      },
+      {
+        "id": 27,
+        "badge": "Strategic Insight",
+        "category": "Strategic Guidance",
+        "title": "Governance and Organizational Trust",
+        "description": "Build stronger long-term credibility within government contracting by making cybersecurity governance a trust indicator"
+      },
+      {
+        "id": 24,
+        "badge": "Strategic Insight",
+        "category": "Strategic Guidance",
+        "title": "Governance and Organizational Trust",
+        "description": "Build stronger long-term credibility within government contracting by making cybersecurity governance a trust indicator"
+      },
+      {
+        "id": 25,
+        "badge": "Strategic Insight",
+        "category": "Strategic Guidance",
+        "title": "Governance and Organizational Trust",
+        "description": "Build stronger long-term credibility within government contracting by making cybersecurity governance a trust indicator"
+      },
+      {
+        "id": 26,
+        "badge": "Strategic Insight",
+        "category": "Strategic Guidance",
+        "title": "Governance and Organizational Trust",
+        "description": "Build stronger long-term credibility within government contracting by making cybersecurity governance a trust indicator"
+      }
+    ]
+  },
+  "awardSection": {
+    "mainTitle": "Awards, Certifications & Public Recognition",
+    "mainSubtitle": "A snapshot of the certifications, congressional recognitions and industry honors Spartan has received.",
+    "cards": [
+      {
+        "id": 1,
+        "badge": "CERTIFICATE",
+        "title": "Certificate of Achievement",
+        "subtitle": "Presented by",
+        "highlight": "Veterans Institute for Procurement",
+        "description": "Recognized for outstanding performance, supplier excellence, and continued commitment to supporting veteran-owned initiatives."
+      },
+      {
+        "id": 2,
+        "badge": "RECOGNITION",
+        "title": "Veteran Growth Recognition",
+        "subtitle": "Recognition Ceremony",
+        "highlight": "",
+        "description": "Honored for participation, leadership, and dedication to strengthening opportunities for veteran businesses nationwide."
+      },
+      {
+        "id": 3,
+        "badge": "CONGRESSIONAL RECOGNITION",
+        "title": "Special Congressional Honor",
+        "subtitle": "Awarded by the U.S. Congress",
+        "highlight": "",
+        "description": "Presented in recognition of exceptional service, leadership, and contributions to public safety and national security."
+      }
+    ]
+  },
+  "nistReferenceSection": {
+    "badge": "CONTROLS STATISTICS, CHECKLIST & DISTRIBUTION",
+    "title": "NIST SP 800–171 Controls Quick Reference",
+    "stats": [
+      {
+        "value": "110",
+        "label": "Total Controls"
+      },
+      {
+        "value": "14",
+        "label": "Control Families"
+      },
+      {
+        "value": "600+",
+        "label": "Assessment Objectives"
+      },
+      {
+        "value": "5.5",
+        "label": "Avg. Objectives per Control"
+      }
+    ],
+    "cards": [
+      {
+        "id": 1,
+        "badge": "AU – 9 Controls",
+        "title": "Audit and Accountability",
+        "subtitle": "Track system activities for security compliance",
+        "items": [
+          "Define audit events requiring logging",
+          "Create, protect, and retain system audit logs",
+          "Review and analyze system audit logs",
+          "Alert on audit logging process failures",
+          "Correlate audit logging information across systems",
+          "Protect audit information and tools",
+          "Limit access to audit functionality",
+          "Time-stamp audit records using synchronized clocks",
+          "Automate audit record analysis"
+        ]
+      },
+      {
+        "id": 2,
+        "badge": "AT – 3 Controls",
+        "title": "Awareness and Training",
+        "subtitle": "Educate users and staff on security practices",
+        "items": [
+          "Provide security awareness training",
+          "Provide role-based security training",
+          "Update training on organizational information security incidents"
+        ]
+      },
+      {
+        "id": 3,
+        "badge": "CM – 9 Controls",
+        "title": "Configuration Management",
+        "subtitle": "Manage and control system configurations",
+        "items": [
+          "Establish and maintain information system baseline configurations",
+          "Establish and enforce security configuration settings",
+          "Monitor system components and information for unauthorized changes",
+          "Monitor information system security",
+          "Restrict, disable, or prevent nonessential programs",
+          "Apply security settings to IT products",
+          "Track and document configuration changes",
+          "Analyze security impacts of proposed changes",
+          "Control physical and logical access to configuration"
+        ]
+      },
+      {
+        "id": 4,
+        "badge": "IA – 11 Controls",
+        "title": "Identification and Authentication",
+        "subtitle": "Uniquely identify and authenticate users and devices",
+        "items": [
+          "Identify system users, processes, or devices",
+          "Authenticate (or verify) the identity of users, processes, or devices",
+          "Use multifactor authentication for network access",
+          "Employ replay-resistant authentication mechanisms",
+          "Store and transmit passwords securely",
+          "Enforce password complexity and expiration",
+          "Disable accounts after specified inactivity periods",
+          "Lock out accounts after consecutive failed attempts",
+          "Prevent password reuse across cycles",
+          "Obscure password entry fields during typing",
+          "Use certificate-based authentication where applicable"
+        ]
+      },
+      {
+        "id": 5,
+        "badge": "AC – 22 Controls",
+        "title": "Access Control",
+        "subtitle": "Limit system access to authorized users and processes",
+        "items": [
+          "Limit system access to authorized users",
+          "Limit system access to the types of transactions and functions",
+          "Control the flow of CUI in accordance with approved authorizations",
+          "Separate the duties of individuals to reduce risk of malevolent activity",
+          "Employ the principle of least privilege",
+          "Use non-privileged accounts when accessing non-security functions",
+          "Prevent non-privileged users from executing privileged functions",
+          "Limit unsuccessful logon attempts",
+          "Provide privacy and security notices before granting access",
+          "Use session lock with pattern-hiding screensavers",
+          "Terminate sessions automatically after defined conditions",
+          "Monitor and control remote access sessions",
+          "Employ cryptographic mechanisms to protect confidentiality of remote access",
+          "Route remote access through managed access control points",
+          "Authorize wireless access prior to allowing connection",
+          "Protect wireless access using authentication and encryption",
+          "Control connection of mobile devices to organizational systems",
+          "Encrypt CUI on mobile computing devices",
+          "Verify and control connection to external systems",
+          "Control information posted or processed on publicly accessible systems",
+          "Limit use of portable storage devices on external systems",
+          "Control execution of embedded software code"
+        ]
+      },
+      {
+        "id": 6,
+        "badge": "MP – 9 Controls",
+        "title": "Media Protection",
+        "subtitle": "Protect physical and digital media containing CUI",
+        "items": [
+          "Protect system media containing CUI (paper and digital)",
+          "Limit access to CUI on system media to authorized users",
+          "Sanitize or destroy system media prior to disposal or reuse",
+          "Mark media with necessary CUI markings",
+          "Control access to media containing CUI during transportation",
+          "Maintain accountability for system media during transportation",
+          "Protect backups containing CUI at storage locations",
+          "Restrict the use of portable storage devices",
+          "Prohibit use of portable storage devices when unauthorized"
+        ]
+      },
+      {
+        "id": 7,
+        "badge": "PE – 6 Controls",
+        "title": "Physical Protection",
+        "subtitle": "Protect physical facility and system infrastructure",
+        "items": [
+          "Limit physical access to organizational systems and equipment",
+          "Protect and monitor physical facility perimeter",
+          "Escort visitors and monitor visitor activity",
+          "Maintain audit logs of physical access",
+          "Control and manage physical access devices",
+          "Enforce physical security for organizational assets"
+        ]
+      },
+      {
+        "id": 8,
+        "badge": "SI – 7 Controls",
+        "title": "System and Information Integrity",
+        "subtitle": "Identify, report, and correct system flaws promptly",
+        "items": [
+          "Identify, report, and correct system flaws in a timely manner",
+          "Provide protection against malicious code at appropriate locations",
+          "Monitor system security alerts and advisories",
+          "Update malicious code protection mechanisms when available",
+          "Perform periodic scans of the system and real-time scans of files",
+          "Monitor system for unauthorized communications",
+          "Identify unauthorized use of organizational systems"
+        ]
+      }
+    ],
+    "distribution": [
+      {
+        "label": "Access Control",
+        "count": 22,
+        "percentage": 100
+      },
+      {
+        "label": "Sys & Comms Protection",
+        "count": 16,
+        "percentage": 72
+      },
+      {
+        "label": "Identification & Auth",
+        "count": 11,
+        "percentage": 50
+      },
+      {
+        "label": "Audit & Accountability",
+        "count": 9,
+        "percentage": 40
+      },
+      {
+        "label": "Configuration Management",
+        "count": 9,
+        "percentage": 40
+      },
+      {
+        "label": "Media Protection",
+        "count": 9,
+        "percentage": 40
+      },
+      {
+        "label": "System & Info Integrity",
+        "count": 7,
+        "percentage": 31
+      },
+      {
+        "label": "Maintenance",
+        "count": 6,
+        "percentage": 27
+      },
+      {
+        "label": "Physical Protection",
+        "count": 6,
+        "percentage": 27
+      },
+      {
+        "label": "Security Assessment",
+        "count": 4,
+        "percentage": 18
+      },
+      {
+        "label": "Risk Assessment",
+        "count": 3,
+        "percentage": 13
+      },
+      {
+        "label": "Awareness & Training",
+        "count": 3,
+        "percentage": 13
+      },
+      {
+        "label": "Incident Response",
+        "count": 3,
+        "percentage": 13
+      },
+      {
+        "label": "Personnel Security",
+        "count": 2,
+        "percentage": 9
+      }
+    ]
+  }
+}
