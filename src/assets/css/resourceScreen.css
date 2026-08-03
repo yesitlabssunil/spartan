@@ -72,7 +72,7 @@
     font-weight: 500;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: color 0.2s ease;
 }
 
@@ -1158,7 +1158,7 @@
     width: 100%;
     background-color: #F8F9FA;
     padding-top: 80px;
-    padding-bottom: 90px;
+    padding-bottom: 60px;
 }
 
 .recognition-header-container {

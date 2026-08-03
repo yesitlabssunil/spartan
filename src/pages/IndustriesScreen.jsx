@@ -18,18 +18,18 @@ import industryImg4 from "../assets/images/industryScreen/engineering.jpg";
 import industryImg5 from "../assets/images/industryScreen/manufacturing.jpg";
 import { Link } from "react-router-dom";
 import { industryScreenData } from "../redux/slices/secondSlice";
+import SEO from "../component/SEO";
 
 const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 const IndustriesScreen = () => {
-
   const dispatch = useDispatch();
-  const {industryData, loading} = useSelector((state) => state.second);
+  const { industryData, loading } = useSelector((state) => state.second);
 
   useEffect(() => {
-    dispatch(industryScreenData())
-  }, [dispatch])
-  
+    dispatch(industryScreenData());
+  }, [dispatch]);
+
   // const environments = [
   //   { icon: envIcon1, title: "DOD Prime Contractors", desc: "Direct contract holders managing CUI." },
   //   { icon: envIcon2, title: "Subcontractors", desc: "Tier-2 and Tier-3 supply chain partners." },
@@ -46,10 +46,10 @@ const IndustriesScreen = () => {
       points: [
         "CUI protection for site plans, BIM/CAD and project schedules",
         "Subcontractor and trade partner flowdown management",
-        "Field device and mobile workforce hardening (tablets, BYOD)"
+        "Field device and mobile workforce hardening (tablets, BYOD)",
       ],
       image: industryImg1,
-      imageRight: true // Image on the right side
+      imageRight: true, // Image on the right side
     },
     {
       title: "Defense & Aerospace",
@@ -57,10 +57,10 @@ const IndustriesScreen = () => {
       points: [
         "CUI segmentation across engineering data",
         "ITAR-aligned access controls",
-        "Subcontractor flowdown management"
+        "Subcontractor flowdown management",
       ],
       image: industryImg2,
-      imageRight: false // Image on the left side (Alternating)
+      imageRight: false, // Image on the left side (Alternating)
     },
     {
       title: "Aviation & Logistics",
@@ -68,10 +68,10 @@ const IndustriesScreen = () => {
       points: [
         "Logistics data protection",
         "Multi-site compliance posture",
-        "Vendor risk management"
+        "Vendor risk management",
       ],
       image: industryImg3,
-      imageRight: true
+      imageRight: true,
     },
     {
       title: "Engineering & R&D",
@@ -79,10 +79,10 @@ const IndustriesScreen = () => {
       points: [
         "Research enclave architecture",
         "Lab and BYOD device control",
-        "Export-controlled data handling"
+        "Export-controlled data handling",
       ],
       image: industryImg4,
-      imageRight: false
+      imageRight: false,
     },
     {
       title: "Advanced Manufacturing",
@@ -90,28 +90,34 @@ const IndustriesScreen = () => {
       points: [
         "OT/IT segmentation for shop floors",
         "CAD and CAM data protection",
-        "Supplier portal hardening"
+        "Supplier portal hardening",
       ],
       image: industryImg5,
-      imageRight: true
-    }
+      imageRight: true,
+    },
   ];
 
   return (
     <>
+      <SEO
+        title="Cybersecurity & Compliance for Federal Contractors | Spartan Cyber Security"
+        description="Spartan Cyber Security supports defense, aerospace, aviation, and government contractors with CMMC 2.0 readiness, cybersecurity compliance, and operational resilience."
+      />
       <Header />
       <main className="industries-main">
-
         {/* 1. HERO SECTION */}
         <div className="blog-hero-fullwidth">
           <div className="custom-container">
             <div className="blog-hero-content blog-hero-content1">
               <div className="blog-breadcrumb">
-                <span>Industries</span> <span className="separator">|</span> <span style={{color: "white"}}>Home</span>
+                <span>Industries</span> <span className="separator">|</span>{" "}
+                <span style={{ color: "white" }}>Home</span>
               </div>
-              <h1 className="blog-hero-title">{industryData?.industry_sec_heading}</h1>
+              <h1 className="blog-hero-title">
+                {industryData?.industry_sec_heading}
+              </h1>
               <p className="blog-hero-subtitle">
-              {industryData?.industry_sec_paragraph}
+                {industryData?.industry_sec_paragraph}
               </p>
             </div>
           </div>
@@ -125,15 +131,24 @@ const IndustriesScreen = () => {
                 <span className="fallback-red-dot"></span>WHO WE SERVE
               </span>
             </div>
-            <h2 className="section-main-heading mb-5">{industryData?.industry_sec_serve_heading}</h2>
+            <h2 className="section-main-heading mb-5">
+              {industryData?.industry_sec_serve_heading}
+            </h2>
 
             <div className="row g-4">
               {/* {environments.map((env, idx) => ( */}
-              {(industryData?.industry_sec_content)?.map((env, idx) => (
+              {industryData?.industry_sec_content?.map((env, idx) => (
                 <div className="col-xl-3 col-md-6" key={idx}>
                   <div className="env-card">
                     <div className="env-icon-box">
-                      <img src={environments[idx]} alt="" className="env-figma-icon" onError={(e)=>{e.target.style.display='none'}} />
+                      <img
+                        src={environments[idx]}
+                        alt=""
+                        className="env-figma-icon"
+                        onError={(e) => {
+                          e.target.style.display = "none";
+                        }}
+                      />
                       {/* <span className="fallback-red-dot"></span> */}
                     </div>
                     <h5 className="env-title">{env.title}</h5>
@@ -153,14 +168,19 @@ const IndustriesScreen = () => {
                 <span className="fallback-red-dot"></span>VERTICALS
               </span>
             </div>
-            <h2 className="section-main-heading text-center mb-5">{industryData?.industry_sec_vertical_content}</h2>
-
+            <h2 className="section-main-heading text-center mb-5">
+              {industryData?.industry_sec_vertical_content}
+            </h2>
 
             <div className="sectors-stack">
               {/* {sectors.map((sec, idx) => ( */}
-              {(industryData?.industry_sec_card_content)?.map((sec, idx) => (
-                <div className={`row sector-row align-items-stretch g-0 ${sec.imageRight === "1" ? "" : "flex-row-reverse"}`} key={idx}>
-                  
+              {industryData?.industry_sec_card_content?.map((sec, idx) => (
+                <div
+                  className={`row sector-row align-items-stretch g-0 ${
+                    sec.imageRight === "1" ? "" : "flex-row-reverse"
+                  }`}
+                  key={idx}
+                >
                   {/* Text Column */}
                   <div className="col-lg-6">
                     <div className="sector-text-block">
@@ -169,7 +189,9 @@ const IndustriesScreen = () => {
                       <ul className="sector-points-list">
                         {sec.points.map((pt, pIdx) => (
                           <li key={pIdx}>
-                            <span className="red-arrow"><img src={startBullet} alt="" /></span> 
+                            <span className="red-arrow">
+                              <img src={startBullet} alt="" />
+                            </span>
                             {pt}
                           </li>
                         ))}
@@ -180,10 +202,13 @@ const IndustriesScreen = () => {
                   {/* Image Column */}
                   <div className="col-lg-6">
                     <div className="sector-image-block">
-                      <img src={sec?.image} alt={sec?.title} className="sector-display-img" />
+                      <img
+                        src={sec?.image}
+                        alt={sec?.title}
+                        className="sector-display-img"
+                      />
                     </div>
                   </div>
-
                 </div>
               ))}
             </div>
@@ -216,7 +241,6 @@ const IndustriesScreen = () => {
                 </div>
               ))}
             </div> */}
-
           </div>
         </section>
 
@@ -234,13 +258,24 @@ const IndustriesScreen = () => {
                 {industryData?.industry_sec_started_paragraph}
               </p>
               <div className="cta-buttons-group">
-                <Link to="/contact-us" className="cta-btn-white" style={{textDecoration:"none"}}>Schedule Consultation <span>→</span></Link>
-                <Link to="/compliance" className="cta-btn-outline" style={{textDecoration:"none"}}>Explore Compliance</Link>
+                <Link
+                  to="/contact-us"
+                  className="cta-btn-white"
+                  style={{ textDecoration: "none" }}
+                >
+                  Schedule Consultation <span>→</span>
+                </Link>
+                <Link
+                  to="/compliance"
+                  className="cta-btn-outline"
+                  style={{ textDecoration: "none" }}
+                >
+                  Explore Compliance
+                </Link>
               </div>
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </>

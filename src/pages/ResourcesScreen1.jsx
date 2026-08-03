@@ -1,47 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "../assets/css/resourceScreen.css";
-import Header from '../component/Header';
-import Footer from '../component/Footer';
-import { useDispatch, useSelector } from 'react-redux';
+import Header from "../component/Header";
+import Footer from "../component/Footer";
+import { useDispatch, useSelector } from "react-redux";
 const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
+import SEO from "../component/SEO";
 
-import Content from '../assets/images/resourceScreen/Content.jpg';
-import puzzle from '../assets/images/resourceScreen/puzzle.png';
-import starShield from '../assets/images/resourceScreen/starShield.png';
-import image1 from '../assets/images/resourceScreen/image1.png';
-import image2 from '../assets/images/resourceScreen/image2.png';
-import image3 from '../assets/images/resourceScreen/image3.png';
-import tv from '../assets/images/resourceScreen/tv.png';
-import key from '../assets/images/resourceScreen/key.png';
-import hotspot from '../assets/images/resourceScreen/hotspot.png';
-import doc from '../assets/images/resourceScreen/doc.png';
-import medal from '../assets/images/resourceScreen/medal.png';
-import people from '../assets/images/resourceScreen/people.png';
+import Content from "../assets/images/resourceScreen/Content.jpg";
+import puzzle from "../assets/images/resourceScreen/puzzle.png";
+import starShield from "../assets/images/resourceScreen/starShield.png";
+import image1 from "../assets/images/resourceScreen/image1.png";
+import image2 from "../assets/images/resourceScreen/image2.png";
+import image3 from "../assets/images/resourceScreen/image3.png";
+import tv from "../assets/images/resourceScreen/tv.png";
+import key from "../assets/images/resourceScreen/key.png";
+import hotspot from "../assets/images/resourceScreen/hotspot.png";
+import doc from "../assets/images/resourceScreen/doc.png";
+import medal from "../assets/images/resourceScreen/medal.png";
+import people from "../assets/images/resourceScreen/people.png";
 import relatedImg1 from "../assets/images/blogScreen/BlogThumbnail1.jpg";
 import relatedImg2 from "../assets/images/blogScreen/BlogThumbnail.jpg";
 import relatedImg3 from "../assets/images/blogScreen/BlogThumbnail2.jpg";
 import security from "../assets/images/complianceScreen/icon1.png";
 import warning from "../assets/images/securityScreen/warning.png";
 import envIcon1 from "../assets/images/industryScreen/env-icon1.png";
-import icon6 from "../assets/images/complianceScreen/icon6.png"
-import downloadIcon from "../assets/images/resourceScreen/download-icon.png"
+import icon6 from "../assets/images/complianceScreen/icon6.png";
+import downloadIcon from "../assets/images/resourceScreen/download-icon.png";
 // import faqData from "../assets/faqData.json";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // import cmmcPdf from "../assets/pdfs/cmmc-2.0-explained.pdf";
 // import resourcesPdf from "../assets/pdfs/free-templates-resources.pdf";
-import { getFaqData, resourceScreenData } from '../redux/slices/homeSlice';
+import { getFaqData, resourceScreenData } from "../redux/slices/homeSlice";
 // import nistExcel from "/files/NIST-800-171-Security-Requirements-2.xlsx";
 
 export default function ResourceScreen() {
-
   const dispatch = useDispatch();
   const { resourceData, loading } = useSelector((state) => state.home);
 
   useEffect(() => {
     dispatch(getFaqData());
     dispatch(resourceScreenData());
-  }, [dispatch])
+  }, [dispatch]);
 
   console.log("@@@@@12", resourceData);
 
@@ -93,11 +93,13 @@ export default function ResourceScreen() {
           </div>
 
           <h1 className="hero-display-title">
-            Guides, checklists, case studies <br className="hide-on-mobile" /> and coverage.
+            Guides, checklists, case studies <br className="hide-on-mobile" />{" "}
+            and coverage.
           </h1>
 
           <p className="hero-display-subtitle">
-            Compliance intelligence drawn from real CMMC and NIST engagements - plus press, recognition and speaking from Spartan leadership.
+            Compliance intelligence drawn from real CMMC and NIST engagements -
+            plus press, recognition and speaking from Spartan leadership.
           </p>
         </div>
       </section>
@@ -107,10 +109,8 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-featured-section">
         <div className="section-inner-content">
-
           {/* Main Card Container */}
           <div className="featured-card-container">
-
             {/* Left Side: Pinned hard to Top, Bottom, and Left borders */}
             <div className="card-image-block">
               <img src={Content} alt="CMMC Operations Control Room" />
@@ -118,7 +118,6 @@ export default function ResourceScreen() {
 
             {/* Right Side: Floating Text Block with localized inner spacing */}
             <div className="card-text-block">
-
               {/* Pill Tag */}
               <div className="featured-mini-badge">
                 <span className="badge-dot-indicator" />
@@ -127,18 +126,18 @@ export default function ResourceScreen() {
 
               {/* Title */}
               <h2 className="card-display-headline">
-                CMMC 2.0 readiness in 12 weeks:<br />a complete playbook
+                CMMC 2.0 readiness in 12 weeks:
+                <br />a complete playbook
               </h2>
 
               {/* Paragraph Summary */}
               <p className="card-abstract-text">
-                The exact 4-phase program we run with prime contractors - from scoping through C3PAO handoff. Includes evidence checklist and POA&M template.
+                The exact 4-phase program we run with prime contractors - from
+                scoping through C3PAO handoff. Includes evidence checklist and
+                POA&M template.
               </p>
-
             </div>
-
           </div>
-
         </div>
       </section>
 
@@ -147,7 +146,6 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-insights-section">
         <div className="section-inner-content">
-
           {/* Centered Section Header */}
           <div className="insights-header-container">
             <div className="insights-mini-badge">
@@ -161,18 +159,23 @@ export default function ResourceScreen() {
 
           {/* 3-Column Grid Container */}
           <div className="insights-cards-grid">
-            {(resourceData?.resources?.cards)?.map((item, index) => (
-                          <div className="insight-grid-card" key={index}>
-                          <div className="insight-image-wrapper">
-                            <img src={item?.image} alt="Microsoft 365 Security Checklist" />
-                          </div>
-                          <h3 className="insight-card-title">{item?.title}</h3>
-                          <div className="insight-card-meta">
-                            <span className="meta-date">{item?.date}</span>
-                            <span className="meta-divider">—</span>
-                            <Link to={`/blog/${item?.id}`} className="meta-link">Read More</Link>
-                          </div>
-                        </div>
+            {resourceData?.resources?.cards?.map((item, index) => (
+              <div className="insight-grid-card" key={index}>
+                <div className="insight-image-wrapper">
+                  <img
+                    src={item?.image}
+                    alt="Microsoft 365 Security Checklist"
+                  />
+                </div>
+                <h3 className="insight-card-title">{item?.title}</h3>
+                <div className="insight-card-meta">
+                  <span className="meta-date">{item?.date}</span>
+                  <span className="meta-divider">—</span>
+                  <Link to={`/blog/${item?.id}`} className="meta-link">
+                    Read More
+                  </Link>
+                </div>
+              </div>
             ))}
 
             {/* <div className="insight-grid-card">
@@ -210,9 +213,7 @@ export default function ResourceScreen() {
                 <Link to="/blog" className="meta-link">Read More</Link>
               </div>
             </div> */}
-
           </div>
-
         </div>
       </section>
 
@@ -221,7 +222,6 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-playbooks-section">
         <div className="section-inner-content">
-
           {/* Centered Section Header Block */}
           <div className="playbooks-header-container">
             <div className="playbooks-mini-badge">
@@ -235,7 +235,6 @@ export default function ResourceScreen() {
 
           {/* 3-Column Block Container */}
           <div className="playbooks-cards-grid">
-
             {/* Card 1 */}
             <div className="playbook-item-card">
               <div className="playbook-icon-box">
@@ -245,7 +244,9 @@ export default function ResourceScreen() {
                 </svg> */}
                 <img src={security} alt="" />
               </div>
-              <h3 className="playbook-card-title">CMMC 2.0 Readiness Playbook</h3>
+              <h3 className="playbook-card-title">
+                CMMC 2.0 Readiness Playbook
+              </h3>
               <p className="playbook-card-body">
                 Step-by-step 12-week roadmap for Level 2 preparation.
               </p>
@@ -256,7 +257,9 @@ export default function ResourceScreen() {
               <div className="playbook-icon-box">
                 <img src={puzzle} alt="" />
               </div>
-              <h3 className="playbook-card-title">Building a System Security Plan that holds up</h3>
+              <h3 className="playbook-card-title">
+                Building a System Security Plan that holds up
+              </h3>
               <p className="playbook-card-body">
                 Structure, evidence and ownership patterns assessors expect.
               </p>
@@ -267,14 +270,14 @@ export default function ResourceScreen() {
               <div className="playbook-icon-box">
                 <img src={warning} alt="" />
               </div>
-              <h3 className="playbook-card-title">POA&M discipline for prime contractors</h3>
+              <h3 className="playbook-card-title">
+                POA&M discipline for prime contractors
+              </h3>
               <p className="playbook-card-body">
                 Reduce remediation risk before the C3PAO arrives.
               </p>
             </div>
-
           </div>
-
         </div>
       </section>
 
@@ -283,7 +286,6 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-templates-section">
         <div className="section-inner-content">
-
           {/* Centered Dark Section Header */}
           <div className="templates-header-container">
             <div className="templates-mini-badge">
@@ -298,29 +300,41 @@ export default function ResourceScreen() {
 
           {/* 3-Column Dark Card Grid Layout */}
           <div className="templates-cards-grid">
-
-            {(resourceData?.templatesSection?.items)?.map((item, index) => (
+            {resourceData?.templatesSection?.items?.map((item, index) => (
               <div className="template-item-card" key={index}>
                 <div className="template-download-icon">
-
-                  <img src={downloadIcon} alt="" style={{ height: "20px", width: "20px" }} />
+                  <img
+                    src={downloadIcon}
+                    alt=""
+                    style={{ height: "20px", width: "20px" }}
+                  />
                 </div>
                 <h3 className="template-card-title">{item?.title}</h3>
-                <p className="template-card-body">
-                  {item?.body}
-                </p>
-                <button className="template-action-btn" type="button"
+                <p className="template-card-body">{item?.body}</p>
+                <button
+                  className="template-action-btn"
+                  type="button"
                   onClick={() => downloadFile(item?.pdfUrl)}
                 >
                   <span>Download</span>
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10"
+                      stroke="#111111"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </button>
               </div>
             ))}
-
-
 
             {/*             
             <div className="template-item-card">
@@ -379,11 +393,7 @@ export default function ResourceScreen() {
                 </svg>
               </button>
             </div> */}
-
-
-
           </div>
-
         </div>
       </section>
 
@@ -392,7 +402,6 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-cases-section">
         <div className="section-inner-content">
-
           {/* Centered Section Header Block */}
           <div className="cases-header-container">
             <div className="cases-mini-badge">
@@ -406,16 +415,18 @@ export default function ResourceScreen() {
 
           {/* 3-Column Grid Layout */}
           <div className="cases-cards-grid">
-
             {/* Case Card 1 */}
             <div className="case-item-card">
               <div className="case-icon-box">
                 {/* Custom Ribbon / Award SVG */}
                 <img src={icon6} alt="" />
               </div>
-              <h3 className="case-card-title">Prime Contractor – From SPRS 42 to Audit–Ready in 11 Weeks</h3>
+              <h3 className="case-card-title">
+                Prime Contractor – From SPRS 42 to Audit–Ready in 11 Weeks
+              </h3>
               <p className="case-card-body res-padd">
-                How a $180M aerospace prime closed 68 control gaps and passed mock C3PAO on first attempt.
+                How a $180M aerospace prime closed 68 control gaps and passed
+                mock C3PAO on first attempt.
               </p>
             </div>
 
@@ -425,9 +436,12 @@ export default function ResourceScreen() {
                 {/* Custom Office Buildings SVG */}
                 <img src={envIcon1} alt="" />
               </div>
-              <h3 className="case-card-title">Mid–Sized MSP – Multi–Tenant CUI Boundary Redesign</h3>
+              <h3 className="case-card-title">
+                Mid–Sized MSP – Multi–Tenant CUI Boundary Redesign
+              </h3>
               <p className="case-card-body res-padd">
-                Network segmentation and identity architecture that protected 14 DIB clients under one program.
+                Network segmentation and identity architecture that protected 14
+                DIB clients under one program.
               </p>
             </div>
 
@@ -437,14 +451,15 @@ export default function ResourceScreen() {
                 {/* Custom Shield with Gear SVG */}
                 <img src={starShield} alt="" />
               </div>
-              <h3 className="case-card-title">MILCON General Contractor – Field–First Hardening</h3>
+              <h3 className="case-card-title">
+                MILCON General Contractor – Field–First Hardening
+              </h3>
               <p className="case-card-body res-padd">
-                Mobile workforce, BIM/CAD protection and subcontractor flowdown across 9 active project sites.
+                Mobile workforce, BIM/CAD protection and subcontractor flowdown
+                across 9 active project sites.
               </p>
             </div>
-
           </div>
-
         </div>
       </section>
 
@@ -453,7 +468,6 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-recognition-section">
         <div className="section-inner-content">
-
           {/* Centered Section Header Block */}
           <div className="recognition-header-container">
             <div className="recognition-mini-badge">
@@ -470,16 +484,16 @@ export default function ResourceScreen() {
 
           {/* 3-Column White Card Media Grid Layout */}
           <div className="recognition-cards-grid">
-
-            {(resourceData?.awardSection?.cards)?.map((item, index) => (
+            {resourceData?.awardSection?.cards?.map((item, index) => (
               <div className="recognition-item-card" key={index}>
                 <div className="recognition-image-wrapper">
                   {/* Replace src with your dynamic image asset reference path variable later */}
-                  <img src={`${IMAGE_URL}/${item?.image}`} alt="Veterans Institute for Procurement - Certificate of Achievement" />
+                  <img
+                    src={`${IMAGE_URL}/${item?.image}`}
+                    alt="Veterans Institute for Procurement - Certificate of Achievement"
+                  />
                 </div>
-                <h3 className="recognition-card-title">
-                  {item?.title}
-                </h3>
+                <h3 className="recognition-card-title">{item?.title}</h3>
               </div>
             ))}
 
@@ -509,9 +523,7 @@ export default function ResourceScreen() {
                 Certificate of Special Congressional Recognition
               </h3>
             </div> */}
-
           </div>
-
         </div>
       </section>
 
@@ -520,12 +532,13 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-media-section">
         <div className="section-inner-content">
-
           {/* Centered Dark Header Block */}
           <div className="media-header-container">
             <div className="media-mini-badge">
               <span className="badge-dot-indicator" />
-              <span className="badge-label-text">Media Appearances & Engagements</span>
+              <span className="badge-label-text">
+                Media Appearances & Engagements
+              </span>
             </div>
             <h2 className="media-main-title">
               {resourceData?.mediaSection?.mainTitle}
@@ -534,17 +547,14 @@ export default function ResourceScreen() {
 
           {/* 2-Column Responsive Row Grid Layout */}
           <div className="media-outlets-grid">
-
-            {(resourceData?.mediaSection?.engagements)?.map((item, index) => (
+            {resourceData?.mediaSection?.engagements?.map((item, index) => (
               <div className="media-outlet-card" key={index}>
                 <div className="media-card-icon-box">
                   <img src={engagements[index]} alt="" />
                 </div>
                 <div className="media-card-text-box">
                   <h3 className="media-card-title">{item?.title}</h3>
-                  <p className="media-card-body">
-                    {item?.body}
-                  </p>
+                  <p className="media-card-body">{item?.body}</p>
                 </div>
               </div>
             ))}
@@ -620,9 +630,7 @@ export default function ResourceScreen() {
                 </p>
               </div>
             </div> */}
-
           </div>
-
         </div>
       </section>
 
@@ -631,7 +639,6 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-faq-section">
         <div className="section-inner-content faq-layout-grid">
-
           {/* Left Column Sticky Header Block */}
           <div className="faq-left-header-panel">
             <div className="faq-mini-badge">
@@ -639,32 +646,60 @@ export default function ResourceScreen() {
               <span className="badge-label-text">FAQ</span>
             </div>
             <h2 className="faq-panel-title">
-              You Have Questions.<br />We Have Answers.
+              You Have Questions.
+              <br />
+              We Have Answers.
             </h2>
           </div>
 
           {/* Right Column Interactive Accordion Stack */}
           <div className="faq-right-accordion-panel">
-            {(resourceData?.faqSection?.items)?.map((item, index) => {
+            {resourceData?.faqSection?.items?.map((item, index) => {
               const isOpen = activeFaqId === item.id;
               return (
                 <div
                   key={item?.id}
-                  className={`faq-accordion-row ${isOpen ? 'is-expanded' : ''}`}
+                  className={`faq-accordion-row ${isOpen ? "is-expanded" : ""}`}
                   onClick={() => toggleFaq(item?.id)}
                 >
                   <div className="faq-row-trigger-line">
                     <h3 className="faq-question-text">{item?.question}</h3>
-                    <div className={`faq-toggle-circle-indicator ${isOpen ? 'active-minus' : 'inactive-plus'}`}>
+                    <div
+                      className={`faq-toggle-circle-indicator ${
+                        isOpen ? "active-minus" : "inactive-plus"
+                      }`}
+                    >
                       {isOpen ? (
                         /* Minus SVG Icon */
-                        <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M1 1H11" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+                        <svg
+                          width="12"
+                          height="2"
+                          viewBox="0 0 12 2"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 1H11"
+                            stroke="#FFFFFF"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                          />
                         </svg>
                       ) : (
                         /* Plus SVG Icon */
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6 1V11M1 6H11" stroke="#27272A" strokeWidth="2" strokeLinecap="round" />
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6 1V11M1 6H11"
+                            stroke="#27272A"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                          />
                         </svg>
                       )}
                     </div>
@@ -680,7 +715,6 @@ export default function ResourceScreen() {
               );
             })}
           </div>
-
         </div>
       </section>
 
@@ -689,10 +723,8 @@ export default function ResourceScreen() {
           ========================================================================= */}
       <section className="resource-cta-billboard-section">
         <div className="section-inner-content">
-
           {/* Glowing Matte Black Banner Board Box */}
           <div className="cta-billboard-card-container">
-
             {/* Pill Badge Element */}
             <div className="cta-mini-badge">
               <span className="badge-dot-indicator" />
@@ -709,22 +741,40 @@ export default function ResourceScreen() {
 
             {/* Centered Dual-Action Button Rows */}
             <div className="cta-buttons-flex-group">
-
-              <Link to="/contact-us" className="cta-btn-primary" type="button" style={{ textDecoration: "none" }}>
+              <Link
+                to="/contact-us"
+                className="cta-btn-primary"
+                type="button"
+                style={{ textDecoration: "none" }}
+              >
                 <span>Schedule Consultation</span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10"
+                    stroke="#111111"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </Link>
 
-              <Link to="/compliance" className="cta-btn-secondary" type="button" style={{ textDecoration: "none" }}>
+              <Link
+                to="/compliance"
+                className="cta-btn-secondary"
+                type="button"
+                style={{ textDecoration: "none" }}
+              >
                 Explore Compliance
               </Link>
-
             </div>
-
           </div>
-
         </div>
       </section>
 

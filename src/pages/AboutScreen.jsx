@@ -15,19 +15,18 @@ import hammer from "../assets/images/cmmcScreen/hammer.png";
 import purse from "../assets/images/securityScreen/purse.png";
 import people from "../assets/images/securityScreen/people.png";
 import security from "../assets/images/complianceScreen/icon1.png";
-import icon6 from "../assets/images/complianceScreen/icon6.png"
+import icon6 from "../assets/images/complianceScreen/icon6.png";
 import { Link } from "react-router-dom";
 import { aboutScreenData } from "../redux/slices/homeSlice";
-
+import SEO from "../component/SEO";
 const AboutScreen = () => {
-
   const dispatch = useDispatch();
-  const {aboutData, loading} = useSelector((state) => state.home); 
+  const { aboutData, loading } = useSelector((state) => state.home);
   // console.log("first111", aboutData);
 
   useEffect(() => {
-    dispatch(aboutScreenData())
-  }, [dispatch])
+    dispatch(aboutScreenData());
+  }, [dispatch]);
 
   // const highlights = [
   //   { title: "Cyber Operations", desc: "Decades of military and federal cyber defense leadership.", image: security },
@@ -36,32 +35,27 @@ const AboutScreen = () => {
   //   { title: "Compliance Execution", desc: "CMMC 2.0, NIST SP 800-171, and ISO/IEC 27001 readiness delivery.", image: purse }
   // ];
 
-  const highlights = [
-    security,
-    hammer,
-    icon6,
-    purse,
-  ];
+  const highlights = [security, hammer, icon6, purse];
 
   const team = [
     {
       image: leaderImg1,
       rank: "FOUNDER AND PRESIDENT",
       name: "Brigadier General (Ret.) Raphael Warren - MS, CIS",
-      desc: "Brigadier General (Ret.) Raphael Warren is an executive cybersecurity governance advisor, retired senior military officer and former federal agent with more than three decades of experience in cybersecurity leadership, federal operations and executive risk management."
+      desc: "Brigadier General (Ret.) Raphael Warren is an executive cybersecurity governance advisor, retired senior military officer and former federal agent with more than three decades of experience in cybersecurity leadership, federal operations and executive risk management.",
     },
     {
       image: leaderImg2,
       rank: "Vice President, Legal",
       name: "Colonel (Ret.) Joe M. Romero - JD",
-      desc: "Colonel (Ret.) Joe M. Romero is a former federal prosecutor and legal strategist with extensive experience in cybersecurity law, federal investigations and executive risk exposure."
+      desc: "Colonel (Ret.) Joe M. Romero is a former federal prosecutor and legal strategist with extensive experience in cybersecurity law, federal investigations and executive risk exposure.",
     },
     {
       image: leaderImg3,
       rank: "Vice President, Operations",
       name: "Lieutenant Colonel (Ret.) Tyrone Finch - BS",
-      desc: "Lieutenant Colonel (Ret.) Tyrone Finch is a cybersecurity compliance and operational execution strategist specializing in CMMC 2.0, NIST SP 800-171, ISO/IEC 27001, and C3PAO readiness preparation."
-    }
+      desc: "Lieutenant Colonel (Ret.) Tyrone Finch is a cybersecurity compliance and operational execution strategist specializing in CMMC 2.0, NIST SP 800-171, ISO/IEC 27001, and C3PAO readiness preparation.",
+    },
   ];
 
   // const advantages = [
@@ -73,30 +67,29 @@ const AboutScreen = () => {
   //   { icon: icon6, title: "Senior-Only Bench", desc: "Retired flag officers, federal prosecutors and field-grade cyber leaders - no offshore handoffs or boilerplate deliverables." }
   // ];
 
-  const advantages = [
-    rings,
-    security,
-    hammer,
-    people,
-    purse,
-    icon6
-  ]
+  const advantages = [rings, security, hammer, people, purse, icon6];
 
   return (
     <>
+      <SEO
+        title="About Spartan Cyber Security | CMMC & Cybersecurity Experts"
+        description="Learn about Spartan Cyber Security, an executive advisory firm helping federal contractors and regulated organizations strengthen cybersecurity, compliance, and audit readiness."
+      />
       <Header />
       <main className="about-main">
-
         {/* 1. HERO SECTION */}
         <div className="blog-hero-fullwidth">
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-                <span>About</span> <span className="separator">|</span> <span style={{color: "white"}}>Home</span>
+                <span>About</span> <span className="separator">|</span>{" "}
+                <span style={{ color: "white" }}>Home</span>
               </div>
-              <h1 className="blog-hero-title blog-hero-title1">{aboutData?.about?.heading}</h1>
+              <h1 className="blog-hero-title blog-hero-title1">
+                {aboutData?.about?.heading}
+              </h1>
               <p className="blog-hero-subtitle">
-              {aboutData?.about?.paragraph}
+                {aboutData?.about?.paragraph}
               </p>
             </div>
           </div>
@@ -115,14 +108,13 @@ const AboutScreen = () => {
                 <h2 className="about-intro-heading">
                   {aboutData?.company?.heading}
                 </h2>
-
               </div>
 
               <div className="col-xl-12 col-lg-10">
-                {(aboutData?.company?.paragraph)?.map((item, index) => (
+                {aboutData?.company?.paragraph?.map((item, index) => (
                   <p key={index}>{item}</p>
                 ))}
-              {/* <p className="about-intro-text">
+                {/* <p className="about-intro-text">
               Spartan Cyber Security LLC is an executive advisory firm led by senior leaders with backgrounds spanning military command, federal prosecution, cyber operations and enterprise compliance execution.<br />
                 </p> */}
                 {/* <p className="about-intro-text">
@@ -141,7 +133,6 @@ const AboutScreen = () => {
         {/* 3. PRINCIPALS & LEADERSHIP (DARK SECTION) - Matches Section - Values.jpg */}
         <section className="about-leadership-section">
           <div className="custom-container">
-
             {/* Centered Top Header Badge Block */}
             <div className="section-tag-wrapper">
               <span className="section-mini-tag dark-theme-tag">
@@ -154,14 +145,19 @@ const AboutScreen = () => {
             </h2>
 
             <p className="dark-section-subheading text-center">
-            {aboutData?.leadership?.paragraph}          </p>
+              {aboutData?.leadership?.paragraph}{" "}
+            </p>
 
             {/* 4-Column Horizontal Stat Highlights Grid Array */}
             <div className="highlights-stats-matrix-grid">
-              {(aboutData?.leadership?.content)?.map((item, idx) => (
+              {aboutData?.leadership?.content?.map((item, idx) => (
                 <div className="highlight-stat-card" key={idx}>
                   <div className="highlight-bullet-box">
-                    <img src={highlights[idx]} alt="" className="highlight-card-vector-icon" />
+                    <img
+                      src={highlights[idx]}
+                      alt=""
+                      className="highlight-card-vector-icon"
+                    />
                   </div>
                   <h5 className="highlight-card-title">{item.title}</h5>
                   <p className="highlight-card-desc">{item.description}</p>
@@ -171,27 +167,34 @@ const AboutScreen = () => {
 
             {/* 3-Column Profile Grid with Seamless Bottom Photo Merging Effect */}
             <div className="leader-profiles-canvas-grid">
-              {(aboutData?.leadership?.cards)?.map((member, idx) => (
+              {aboutData?.leadership?.cards?.map((member, idx) => (
                 <div className="leader-profile-card" key={idx}>
-
                   {/* Photo Frame Container with Absolute Bottom Gradient Blend Overlay */}
                   <div className="leader-image-container">
-                    <img src={`${IMAGE_URL}/${member?.image}`} alt={member?.title} className="leader-photo" />
+                    <img
+                      src={`${IMAGE_URL}/${member?.image}`}
+                      alt={member?.title}
+                      className="leader-photo"
+                    />
                     {/* The crucial blending element layer */}
                     <div className="leader-fade-overlay" />
                   </div>
 
                   {/* Grounded Typography Content Metadata Panel */}
                   <div className="leader-info-block">
-                    <span className="leader-rank-tag"><span className="fallback-red-dot" style={{ marginRight: "4px" }}></span>{member?.rank}</span>
+                    <span className="leader-rank-tag">
+                      <span
+                        className="fallback-red-dot"
+                        style={{ marginRight: "4px" }}
+                      ></span>
+                      {member?.rank}
+                    </span>
                     <h4 className="leader-name">{member?.title}</h4>
                     <p className="leader-bio">{member?.description}</p>
                   </div>
-
                 </div>
               ))}
             </div>
-
           </div>
         </section>
 
@@ -203,17 +206,26 @@ const AboutScreen = () => {
                 <span className="fallback-red-dot"></span>WHY SPARTAN
               </span>
             </div>
-            <h2 className="section-main-heading text-center mb-2">{aboutData?.spartan?.heading}</h2>
+            <h2 className="section-main-heading text-center mb-2">
+              {aboutData?.spartan?.heading}
+            </h2>
             <p className="section-sub-heading text-center mb-5">
-            {aboutData?.spartan?.paragraph}
+              {aboutData?.spartan?.paragraph}
             </p>
 
             <div className="row g-4 mt-2">
-              {(aboutData?.spartan?.data)?.map((adv, idx) => (
+              {aboutData?.spartan?.data?.map((adv, idx) => (
                 <div className="col-lg-4 col-md-6" key={idx}>
                   <div className="advantage-grid-card">
                     <div className="advantage-icon-wrapper">
-                      <img src={advantages[idx]} alt="" className="advantage-figma-icon" onError={(e) => { e.target.style.display = 'none' }} />
+                      <img
+                        src={advantages[idx]}
+                        alt=""
+                        className="advantage-figma-icon"
+                        onError={(e) => {
+                          e.target.style.display = "none";
+                        }}
+                      />
                       {/* <span className="fallback-red-dot"></span> */}
                     </div>
                     <h4 className="advantage-card-title">{adv.title}</h4>
@@ -236,25 +248,40 @@ const AboutScreen = () => {
                 {/* Engage Spartan's principal-led <br /> advisory team. */}
                 {aboutData?.work?.heading}
               </h2>
-              <p className="cta-banner-desc">
-              {aboutData?.work?.paragraph}           </p>
+              <p className="cta-banner-desc">{aboutData?.work?.paragraph} </p>
               {/* <div className="cta-buttons-group">
                 <button className="cta-btn-white">Schedule Consultation <span>→</span></button>
                 <button className="cta-btn-outline">Explore Compliance</button>
               </div> */}
 
               <div className="cta-buttons-group">
-                <Link to="/contact-us" className="cta-btn-white linknav">Schedule Consultation <span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                  </span></Link>
-                <Link to="/compliance" className="cta-btn-outline linknav">Explore Compliance</Link>
+                <Link to="/contact-us" className="cta-btn-white linknav">
+                  Schedule Consultation{" "}
+                  <span>
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 5.5H11M11 5.5L6.5 1M11 5.5L6.5 10"
+                        stroke="#111111"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </Link>
+                <Link to="/compliance" className="cta-btn-outline linknav">
+                  Explore Compliance
+                </Link>
               </div>
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </>

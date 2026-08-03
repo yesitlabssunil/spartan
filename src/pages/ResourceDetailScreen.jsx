@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import '../assets/css/resourceDetailScreen.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { getFaqData, resourceScreenData } from '../redux/slices/homeSlice';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import "../assets/css/resourceDetailScreen.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getFaqData, resourceScreenData } from "../redux/slices/homeSlice";
+import { Link } from "react-router-dom";
+import SEO from "../component/SEO";
 
 const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 // 1. DIRECT JSON IMPORT
 import resourceDetailData from "../assets/jsonData/resourceDetailScreen.json";
-import Header from '../component/Header';
-import Footer from '../component/Footer';
-import ResourceScreen from './ResourcesScreen';
+import Header from "../component/Header";
+import Footer from "../component/Footer";
+import ResourceScreen from "./ResourcesScreen";
 
 const ResourceDetailScreen = () => {
-
   const dispatch = useDispatch();
   const { resourceData, loading } = useSelector((state) => state.home);
 
   useEffect(() => {
     dispatch(getFaqData());
     dispatch(resourceScreenData());
-  }, [dispatch])
+  }, [dispatch]);
 
   // Read directly from the imported JSON
   const data = resourceDetailData?.data;
@@ -34,7 +34,9 @@ const ResourceDetailScreen = () => {
 
   // Fallback check
   if (!data) {
-    return <div className="error-state">JSON data missing or invalid format.</div>;
+    return (
+      <div className="error-state">JSON data missing or invalid format.</div>
+    );
   }
 
   const {
@@ -43,11 +45,15 @@ const ResourceDetailScreen = () => {
     sidebarRelatedResources,
     faqSection,
     bottomNavigation,
-    youAlsoMightLike
+    youAlsoMightLike,
   } = data;
 
   return (
     <>
+      <SEO
+        title="CMMC & Cybersecurity Resources for Federal Contractors"
+        description="Access practical CMMC 2.0 guides, cybersecurity insights, compliance updates, and resources designed to help federal contractors prepare for audits and strengthen security."
+      />
       <Header />
       <div className="resource-detail-page">
         {/* 1. HERO SECTION */}
@@ -73,11 +79,11 @@ const ResourceDetailScreen = () => {
             </div>
 
             <h1 className="detail-hero-display-title">
-              {heroSection?.mainTitle || "Beyond Compliance: The Real Nature of Modern Government Cybersecurity Expectations"}
+              {heroSection?.mainTitle ||
+                "Beyond Compliance: The Real Nature of Modern Government Cybersecurity Expectations"}
             </h1>
           </div>
         </section>
-
 
         {/* 2. MAIN CONTENT & SIDEBAR */}
         {/* <div className="detail-container">
@@ -166,10 +172,8 @@ const ResourceDetailScreen = () => {
 
         {/* MAIN CONTENT & SIDEBAR CONTAINER */}
         <div className="detail-container">
-
           {/* Main Article Body */}
           <main className="article-main">
-
             {/* Meta Label Top */}
             {articleContent?.sectionLabel && (
               <div className="section-meta-wrapper">
@@ -183,9 +187,13 @@ const ResourceDetailScreen = () => {
             {/* 1. OVERVIEW */}
             {articleContent?.overview && (
               <section className="article-section">
-                <h2 className="section-title">{articleContent.overview.title}</h2>
+                <h2 className="section-title">
+                  {articleContent.overview.title}
+                </h2>
                 {articleContent.overview.paragraphs?.map((paragraph, index) => (
-                  <p key={index} className="article-paragraph">{paragraph}</p>
+                  <p key={index} className="article-paragraph">
+                    {paragraph}
+                  </p>
                 ))}
               </section>
             )}
@@ -193,15 +201,25 @@ const ResourceDetailScreen = () => {
             {/* 2. PURPOSE */}
             {articleContent?.purpose && (
               <section className="article-section">
-                <h2 className="section-title">{articleContent.purpose.title}</h2>
+                <h2 className="section-title">
+                  {articleContent.purpose.title}
+                </h2>
                 {articleContent.purpose.introText && (
-                  <p className="intro-text">{articleContent.purpose.introText}</p>
+                  <p className="intro-text">
+                    {articleContent.purpose.introText}
+                  </p>
                 )}
                 <ul className="red-star-list">
                   {articleContent.purpose.items?.map((item, index) => (
                     <li key={index} className="star-list-item">
                       {/* <span className="red-star-icon">✦</span> */}
-                      <svg className="nist-star-icon" width="17" height="17" viewBox="0 0 24 24" fill="#E11D48">
+                      <svg
+                        className="nist-star-icon"
+                        width="17"
+                        height="17"
+                        viewBox="0 0 24 24"
+                        fill="#E11D48"
+                      >
                         <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
                       </svg>
                       <div className="list-text-content">
@@ -217,12 +235,16 @@ const ResourceDetailScreen = () => {
             {/* 3. KEY CONCEPTS */}
             {articleContent?.keyConcepts && (
               <section className="article-section">
-                <h2 className="section-title">{articleContent.keyConcepts.title}</h2>
+                <h2 className="section-title">
+                  {articleContent.keyConcepts.title}
+                </h2>
                 {articleContent.keyConcepts.subsections?.map((sub, index) => (
                   <div key={index} className="key-concept-block">
                     <h3 className="red-subheading">{sub.redTitle}</h3>
                     {sub.paragraphs?.map((p, pIndex) => (
-                      <p key={pIndex} className="article-paragraph">{p}</p>
+                      <p key={pIndex} className="article-paragraph">
+                        {p}
+                      </p>
                     ))}
                   </div>
                 ))}
@@ -232,34 +254,52 @@ const ResourceDetailScreen = () => {
             {/* 4. HARDWARE CONSIDERATIONS / CALLOUT */}
             {articleContent?.hardwareConsiderations && (
               <section className="article-section">
-                <h2 className="section-title">{articleContent.hardwareConsiderations.title}</h2>
+                <h2 className="section-title">
+                  {articleContent.hardwareConsiderations.title}
+                </h2>
 
                 {articleContent.hardwareConsiderations.calloutBox && (
                   <div className="pink-callout-box">
                     <p className="callout-text">
                       <strong className="red-callout-title">
-                        {articleContent.hardwareConsiderations.calloutBox.boldTitle}:
-                      </strong>{' '}
+                        {
+                          articleContent.hardwareConsiderations.calloutBox
+                            .boldTitle
+                        }
+                        :
+                      </strong>{" "}
                       {articleContent.hardwareConsiderations.calloutBox.text}
                     </p>
                   </div>
                 )}
 
-                {articleContent.hardwareConsiderations.paragraphs?.map((paragraph, index) => (
-                  <p key={index} className="article-paragraph">{paragraph}</p>
-                ))}
+                {articleContent.hardwareConsiderations.paragraphs?.map(
+                  (paragraph, index) => (
+                    <p key={index} className="article-paragraph">
+                      {paragraph}
+                    </p>
+                  )
+                )}
               </section>
             )}
 
             {/* 5. BEST PRACTICES */}
             {articleContent?.bestPractices && (
               <section className="article-section">
-                <h2 className="section-title">{articleContent.bestPractices.title}</h2>
+                <h2 className="section-title">
+                  {articleContent.bestPractices.title}
+                </h2>
                 <ul className="red-star-list">
                   {articleContent.bestPractices.items?.map((item, index) => (
                     <li key={index} className="star-list-item">
                       {/* <span className="red-star-icon">✦</span> */}
-                      <svg className="nist-star-icon" width="17" height="17" viewBox="0 0 24 24" fill="#E11D48">
+                      <svg
+                        className="nist-star-icon"
+                        width="17"
+                        height="17"
+                        viewBox="0 0 24 24"
+                        fill="#E11D48"
+                      >
                         <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
                       </svg>
                       <div className="list-text-content">
@@ -272,13 +312,14 @@ const ResourceDetailScreen = () => {
                 </ul>
               </section>
             )}
-
           </main>
 
           {/* SIDEBAR (FIXED / STICKY POSITIONED ON SCROLL) */}
           <aside className="article-sidebar">
             <div className="sticky-sidebar-card">
-              <h3 className="sidebar-title">{sidebarRelatedResources?.title || "Related Resources"}</h3>
+              <h3 className="sidebar-title">
+                {sidebarRelatedResources?.title || "Related Resources"}
+              </h3>
               <ul className="related-links-list">
                 {sidebarRelatedResources?.items?.map((link) => (
                   <li key={link.id || link.title}>
@@ -288,7 +329,6 @@ const ResourceDetailScreen = () => {
               </ul>
             </div>
           </aside>
-
         </div>
 
         {/* 3. INLINE FAQ SECTION */}
@@ -333,9 +373,11 @@ const ResourceDetailScreen = () => {
         {/* =========================================================================
                   SECTION 9: FAQ ASYMMETRIC ACCORDION LAYOUT (References: Section9.jpg)
                   ========================================================================= */}
-        <section className="resource-faq-section" style={{ backgroundColor: "#FFFFFF" }}>
+        <section
+          className="resource-faq-section"
+          style={{ backgroundColor: "#FFFFFF" }}
+        >
           <div className="section-inner-content faq-layout-grid">
-
             {/* Left Column Sticky Header Block */}
             <div className="faq-left-header-panel">
               <div className="faq-mini-badge">
@@ -343,33 +385,69 @@ const ResourceDetailScreen = () => {
                 <span className="badge-label-text">FAQ</span>
               </div>
               <h2 className="faq-panel-title">
-                You Have Questions.<br />We Have Answers.
+                You Have Questions.
+                <br />
+                We Have Answers.
               </h2>
-              <Link to="/faq" className="btn-red-action" style={{marginTop: "15px"}}>Find More Answers <i className="fas fa-arrow-right"></i></Link>
+              <Link
+                to="/faq"
+                className="btn-red-action"
+                style={{ marginTop: "15px" }}
+              >
+                Find More Answers <i className="fas fa-arrow-right"></i>
+              </Link>
             </div>
 
             {/* Right Column Interactive Accordion Stack */}
             <div className="faq-right-accordion-panel">
-              {(faqSection?.accordion)?.map((item, index) => {
+              {faqSection?.accordion?.map((item, index) => {
                 const isOpen = activeFaqId === item.id;
                 return (
                   <div
                     key={item?.id}
-                    className={`faq-accordion-row ${isOpen ? 'is-expanded' : ''}`}
+                    className={`faq-accordion-row ${
+                      isOpen ? "is-expanded" : ""
+                    }`}
                     onClick={() => toggleFaq(item?.id)}
                   >
                     <div className="faq-row-trigger-line">
                       <h3 className="faq-question-text">{item?.question}</h3>
-                      <div className={`faq-toggle-circle-indicator ${isOpen ? 'active-minus' : 'inactive-plus'}`}>
+                      <div
+                        className={`faq-toggle-circle-indicator ${
+                          isOpen ? "active-minus" : "inactive-plus"
+                        }`}
+                      >
                         {isOpen ? (
                           /* Minus SVG Icon */
-                          <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1H11" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+                          <svg
+                            width="12"
+                            height="2"
+                            viewBox="0 0 12 2"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1 1H11"
+                              stroke="#FFFFFF"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
                           </svg>
                         ) : (
                           /* Plus SVG Icon */
-                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 1V11M1 6H11" stroke="#27272A" strokeWidth="2" strokeLinecap="round" />
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 1V11M1 6H11"
+                              stroke="#27272A"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
                           </svg>
                         )}
                       </div>
@@ -385,7 +463,6 @@ const ResourceDetailScreen = () => {
                 );
               })}
             </div>
-
           </div>
         </section>
 
@@ -403,28 +480,68 @@ const ResourceDetailScreen = () => {
         </nav> */}
 
         <nav className="bottom-article-nav">
-          <a href={bottomNavigation?.prev?.url || "#"} className="nav-item prev">
+          <a
+            href={bottomNavigation?.prev?.url || "#"}
+            className="nav-item prev"
+          >
             <div className="sublabel-wrapper">
-              <svg className="nav-arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 6H1M1 6L6 1M1 6L6 11" stroke="#E62225" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              <svg
+                className="nav-arrow"
+                width="20"
+                height="12"
+                viewBox="0 0 20 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 6H1M1 6L6 1M1 6L6 11"
+                  stroke="#E62225"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
-              <span className="nav-sublabel">{bottomNavigation?.prev?.subLabel || "PREVIOUS"}</span>
+              <span className="nav-sublabel">
+                {bottomNavigation?.prev?.subLabel || "PREVIOUS"}
+              </span>
             </div>
-            <strong className="nav-title">{bottomNavigation?.prev?.title || "Back to Library"}</strong>
+            <strong className="nav-title">
+              {bottomNavigation?.prev?.title || "Back to Library"}
+            </strong>
           </a>
 
           <div className="nav-center-date">
             {bottomNavigation?.centerLabel || "1 of 50+ Resources"}
           </div>
 
-          <a href={bottomNavigation?.next?.url || "#"} className="nav-item next">
+          <a
+            href={bottomNavigation?.next?.url || "#"}
+            className="nav-item next"
+          >
             <div className="sublabel-wrapper">
-              <span className="nav-sublabel">{bottomNavigation?.next?.subLabel || "NEXT"}</span>
-              <svg className="nav-arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 6H19M19 6L14 1M19 6L14 11" stroke="#E62225" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              <span className="nav-sublabel">
+                {bottomNavigation?.next?.subLabel || "NEXT"}
+              </span>
+              <svg
+                className="nav-arrow"
+                width="20"
+                height="12"
+                viewBox="0 0 20 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 6H19M19 6L14 1M19 6L14 11"
+                  stroke="#E62225"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </div>
-            <strong className="nav-title">{bottomNavigation?.next?.title || "SPRS Framework"}</strong>
+            <strong className="nav-title">
+              {bottomNavigation?.next?.title || "SPRS Framework"}
+            </strong>
           </a>
         </nav>
 
@@ -450,40 +567,43 @@ const ResourceDetailScreen = () => {
 
         <section className="resource-insights-section">
           <div className="section-inner-content">
-
             {/* Centered Section Header */}
             {/* <div className="insights-header-container"> */}
             {/* <div className="insights-mini-badge">
                 <span className="badge-dot-indicator" />
                 <span className="badge-label-text">Blog / Insights</span>
               </div> */}
-            <h2 className="insights-main-title" style={{ marginBottom: "30px" }}>
+            <h2
+              className="insights-main-title"
+              style={{ marginBottom: "30px" }}
+            >
               {"You also might like" || resourceData?.resources?.mainTitle}
             </h2>
             {/* </div> */}
 
             {/* 3-Column Grid Container */}
             <div className="insights-cards-grid">
-              {(resourceData?.resources?.cards)?.map((item, index) => (
+              {resourceData?.resources?.cards?.map((item, index) => (
                 <div className="insight-grid-card" key={index}>
                   <div className="insight-image-wrapper">
-                    <img src={item?.image} alt="Microsoft 365 Security Checklist" />
+                    <img
+                      src={item?.image}
+                      alt="Microsoft 365 Security Checklist"
+                    />
                   </div>
                   <h3 className="insight-card-title">{item?.title}</h3>
                   <div className="insight-card-meta">
                     <span className="meta-date">{item?.date}</span>
                     <span className="meta-divider">—</span>
-                    <Link to={`/blog/${item?.id}`} className="meta-link">Read More</Link>
+                    <Link to={`/blog/${item?.id}`} className="meta-link">
+                      Read More
+                    </Link>
                   </div>
                 </div>
               ))}
-
-
             </div>
-
           </div>
         </section>
-
       </div>
       <Footer />
     </>

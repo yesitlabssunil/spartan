@@ -73,7 +73,7 @@ export const postContactScreenData = (formData) => API.post(`/contact/submit`, f
 
 export const aboutScreenData = (formData) => API.get(`/about`, formData);
 
-export const resourceScreenData = (formData) => API.get(`/resource`, formData);
+export const resourceScreenData = (formData) => API.get(`/resource`, {params: formData});
 
 export const homeScreenData = (formData) => API.get(`/home`, formData);
 

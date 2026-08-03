@@ -103,7 +103,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: color 0.2s ease;
 }
 

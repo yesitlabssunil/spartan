@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+
+Disallow: /*?utm_
+
+Sitemap: https://spartan-cs.com/sitemap.xml

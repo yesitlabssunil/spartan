@@ -13,52 +13,51 @@ import relatedImg1 from "../assets/images/blogScreen/BlogThumbnail1.jpg";
 import relatedImg2 from "../assets/images/blogScreen/BlogThumbnail.jpg";
 import relatedImg3 from "../assets/images/blogScreen/BlogThumbnail2.jpg";
 import { getBlogDetails } from "../redux/slices/secondSlice";
+import SEO from "../component/SEO";
 
-const IMAGE_URL = import.meta.env.VITE_IMAGE_URL; 
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 const BlogScreen = () => {
- 
-    const {id} = useParams();
-    
-    const dispatch = useDispatch();
-    const {blogDetails, loading} = useSelector((state) => state.second);
+  const { id } = useParams();
 
-    console.log("blogDetails@@@@@", blogDetails);
+  const dispatch = useDispatch();
+  const { blogDetails, loading } = useSelector((state) => state.second);
 
-    useEffect(() => {
-        if (id) {
-            dispatch(getBlogDetails(id))
-        }
-    }, [dispatch, id])
+  console.log("blogDetails@@@@@", blogDetails);
 
-    const relatedArticles = [
-        {
-            title: "CMMC 2.0 Readiness Guide",
-            date: "JUL 5, 2025",
-            link: "/",
-            image: relatedImg1,
-        },
-        {
-            title: "Microsoft 365 Security Checklist",
-            date: "MAR 12, 2025",
-            link: "/",
-            image: relatedImg2,
-        },
-        {
-            title: "Federal Compliance Updates",
-            date: "MAR 05, 2025",
-            link: "/",
-            image: relatedImg3,
-        },
-    ];
+  useEffect(() => {
+    if (id) {
+      dispatch(getBlogDetails(id));
+    }
+  }, [dispatch, id]);
 
-    return (
-        <>
-            <Header />
-            <main className="blog-main">
+  const relatedArticles = [
+    {
+      title: "CMMC 2.0 Readiness Guide",
+      date: "JUL 5, 2025",
+      link: "/",
+      image: relatedImg1,
+    },
+    {
+      title: "Microsoft 365 Security Checklist",
+      date: "MAR 12, 2025",
+      link: "/",
+      image: relatedImg2,
+    },
+    {
+      title: "Federal Compliance Updates",
+      date: "MAR 05, 2025",
+      link: "/",
+      image: relatedImg3,
+    },
+  ];
 
-                {/* Hero Section */}
-                {/* <div className="blog-hero">
+  return (
+    <>
+      <Header />
+      <main className="blog-main">
+        {/* Hero Section */}
+        {/* <div className="blog-hero">
                     <div className="hero-gradient-bg">
              
                         <div className="blog-breadcrumb">
@@ -79,42 +78,53 @@ const BlogScreen = () => {
 
                     </div> */}
 
-                {/* NEW FULL-WIDTH HERO WRAPPER */}
-                <div className="blog-hero-fullwidth">
-                    <div className="custom-container">
-                        <div className="blog-hero-content">
-                            {/* Breadcrumb */}
-                            <div className="blog-breadcrumb">
-                                <span>Resources</span> <span className="separator">|</span>{" "}
-                                <span>Blogs</span> <span className="separator">|</span>{" "}
-                                <span style={{color: "white"}}>Home</span>
-                            </div>
+        {/* NEW FULL-WIDTH HERO WRAPPER */}
+        <div className="blog-hero-fullwidth">
+          <div className="custom-container">
+            <div className="blog-hero-content">
+              {/* Breadcrumb */}
+              <div className="blog-breadcrumb">
+                <span>Resources</span> <span className="separator">|</span>{" "}
+                <span>Blogs</span> <span className="separator">|</span>{" "}
+                <span style={{ color: "white" }}>Home</span>
+              </div>
 
-                            <h1 className="blog-hero-title blog-hero-title3">{blogDetails?.title}</h1>
-                            <p className="blog-hero-subtitle">
-                            {blogDetails?.sub_title}
-                            {/* {blogDetails?.["sub-title"]} */}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+              <h1 className="blog-hero-title blog-hero-title3">
+                {blogDetails?.title}
+              </h1>
+              <p className="blog-hero-subtitle">
+                {blogDetails?.sub_title}
+                {/* {blogDetails?.["sub-title"]} */}
+              </p>
+            </div>
+          </div>
+        </div>
 
-                <div className="custom-container">
-
-                    {/* Article Content */}
-                    <article className="blog-article">
-                        <div className="article-meta">
-                            <div className="blog-hero-image">
-                                <img src={`${IMAGE_URL}/${blogDetails?.currentArticle?.image}` || heroImage} alt="Microsoft 365 Security" />
-                            </div>
-                            <span className="article-date">{blogDetails?.currentArticle?.date}</span>
-                        </div>
-                        <h5 style={{marginTop: "1.5rem"}}>{blogDetails?.currentArticle?.title}</h5>
-                        <div className="article-content">
-                            {(blogDetails?.currentArticle?.paragraphs)?.map((item, index)=> (
-                                <p key={index}>{item}</p>
-                            ))}
-                            {/* <p>
+        <div className="custom-container">
+          {/* Article Content */}
+          <article className="blog-article">
+            <div className="article-meta">
+              <div className="blog-hero-image">
+                <img
+                  src={
+                    `${IMAGE_URL}/${blogDetails?.currentArticle?.image}` ||
+                    heroImage
+                  }
+                  alt="Microsoft 365 Security"
+                />
+              </div>
+              <span className="article-date">
+                {blogDetails?.currentArticle?.date}
+              </span>
+            </div>
+            <h5 style={{ marginTop: "1.5rem" }}>
+              {blogDetails?.currentArticle?.title}
+            </h5>
+            <div className="article-content">
+              {blogDetails?.currentArticle?.paragraphs?.map((item, index) => (
+                <p key={index}>{item}</p>
+              ))}
+              {/* <p>
                                 Microsoft 365 has become the foundation of modern business operations,
                                 powering communication, collaboration, cloud storage, and productivity
                                 across organizations of every size. While the platform offers powerful
@@ -157,36 +167,36 @@ const BlogScreen = () => {
                                 today can prevent costly incidents tomorrow and create a stronger,
                                 more resilient cloud security posture for the future.
                             </p> */}
-                        </div>
-                    </article>
+            </div>
+          </article>
 
-                    {/* "You also might like" Section with images */}
-                    <section className="blog-related">
-                        <h2 className="related-title">You also might like</h2>
-                        <div className="related-grid">
-                            {(blogDetails?.relatedArticles)?.map((item, index) => (
-                                <div key={index} className="related-card">
-                                    <div className="related-card-image">
-                                        <img src={`${IMAGE_URL}/${item?.image}`} alt={item.title} />
-                                    </div>
-                                    <div className="related-card-content">
-                                        <h3 className="related-card-title">{item.title}</h3>
-                                        <span className="related-card-meta">
-                                            {item.date} — {" "}
-                                            <Link to={`/blog/${item?.id}`} className="read-more-link">
-                                                READ MORE
-                                            </Link>
-                                        </span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
+          {/* "You also might like" Section with images */}
+          <section className="blog-related">
+            <h2 className="related-title">You also might like</h2>
+            <div className="related-grid">
+              {blogDetails?.relatedArticles?.map((item, index) => (
+                <div key={index} className="related-card">
+                  <div className="related-card-image">
+                    <img src={`${IMAGE_URL}/${item?.image}`} alt={item.title} />
+                  </div>
+                  <div className="related-card-content">
+                    <h3 className="related-card-title">{item.title}</h3>
+                    <span className="related-card-meta">
+                      {item.date} —{" "}
+                      <Link to={`/blog/${item?.id}`} className="read-more-link">
+                        READ MORE
+                      </Link>
+                    </span>
+                  </div>
                 </div>
-            </main>
-            <Footer />
-        </>
-    );
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default BlogScreen;
