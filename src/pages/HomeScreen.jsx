@@ -26,6 +26,7 @@ import icon17 from "../assets/images/home/icon17.png";
 import SEO from "../component/SEO";
 
 import { getFaqData, homeScreenData } from "../redux/slices/homeSlice";
+import BlogHorizontalScroll from "../component/BlogHorizontalScroll";
 const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 const HomeScreen = () => {
@@ -134,7 +135,7 @@ const HomeScreen = () => {
             <Link to="/contact-us" className="btn-white">
               Schedule Consultation <i className="fas fa-arrow-right"></i>
             </Link>
-            <Link to="/compliance" className="btn-transparent">
+            <Link to="/compliance-systems" className="btn-transparent">
               Get Compliance Ready
             </Link>
           </div>
@@ -291,14 +292,14 @@ const HomeScreen = () => {
           </span>
           <h2>{homeData?.timeSection?.title}</h2>
           <p>{homeData?.timeSection?.subtitle}</p>
-          <Link to="/compliance" className="btn-red-action">
+          <Link to="/compliance-systems" className="btn-red-action">
             Get Compliance Ready Now <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
 
         <div className="risk-right-grid">
           {homeData?.timeSection?.content?.map((item, index) => (
-            <div className="risk-card">
+            <div className="risk-card" key={index}>
               <span className="risk-num">{item?.title}</span>
               <h4>{item?.description}</h4>
             </div>
@@ -884,7 +885,7 @@ const HomeScreen = () => {
           </p>
         </div>
 
-        <div className="resources-grid">
+        {/* <div className="resources-grid">
           {homeData?.resources?.cards?.map((item, index) => (
             <div className="resource-card" key={item?.id}>
               <div className="res-img-box">
@@ -901,41 +902,10 @@ const HomeScreen = () => {
               <hr style={{ color: "#555555" }} />
             </div>
           ))}
+        </div> */}
 
-          {/* <div className="resource-card fade-in">
-            <div className="res-img-box">
-              <img src="images/cmm-img-1.svg" alt="CMMC 2.0 Readiness Guide" />
-            </div>
-            <h3>CMMC 2.0 Readiness Guide</h3>
-            <div className="res-meta">
-              <span className="res-date">JUL 5, 2025</span>
-              <span className="res-divider">—</span>
-              <Link to="/blog" className="res-link">READ MORE</Link>
-            </div>
-          </div>
-          <div className="resource-card fade-in">
-            <div className="res-img-box">
-              <img src="images/micro-soft.svg" />
-            </div>
-            <h3>Microsoft 365 Security Checklist</h3>
-            <div className="res-meta">
-              <span className="res-date">MAR 12, 2025</span>
-              <span className="res-divider">—</span>
-              <Link to="/blog" className="res-link">READ MORE</Link>
-            </div>
-          </div>
-          <div className="resource-card fade-in">
-            <div className="res-img-box">
-              <img src="images/fedel.svg" alt="Federal Compliance Updates" />
-            </div>
-            <h3>Federal Compliance Updates</h3>
-            <div className="res-meta">
-              <span className="res-date">MAR 05, 2025</span>
-              <span className="res-divider">—</span>
-              <Link to="/blog" className="res-link">READ MORE</Link>
-            </div>
-          </div> */}
-        </div>
+        <BlogHorizontalScroll items={homeData?.resources?.cards || []} />
+
         <div className="text-center" style={{ marginTop: "40px" }}>
           {/* <Link to="/resources" className="contact-btn"> */}
           <Link to="/resources" className="btn-red-action">

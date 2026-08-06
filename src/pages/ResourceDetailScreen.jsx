@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../assets/css/resourceDetailScreen.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getFaqData, resourceScreenData } from "../redux/slices/homeSlice";
-import { Link } from "react-router-dom";
+import { getFaqData, resourceDetailScreen, resourceScreenData } from "../redux/slices/homeSlice";
+import { Link, useParams, useLocation } from "react-router-dom";
 import SEO from "../component/SEO";
 
 const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
@@ -12,15 +12,26 @@ import resourceDetailData from "../assets/jsonData/resourceDetailScreen.json";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import ResourceScreen from "./ResourcesScreen";
+import BlogHorizontalScroll from "../component/BlogHorizontalScroll";
 
 const ResourceDetailScreen = () => {
+  const location = useLocation();
+  const resource_id = location.state?.id;
+  const { id } = useParams();
   const dispatch = useDispatch();
-  const { resourceData, loading } = useSelector((state) => state.home);
+  const { resourceData, resourceDetailScreenData, loading } = useSelector((state) => state.home);
+
+  console.log("Resource ID%%%%%%%%%:", id);
+  console.log("Resource ID%%%%%%%%%:", resource_id);
+  console.log("resourceDetailScreenData**************", resourceDetailScreenData)
 
   useEffect(() => {
     dispatch(getFaqData());
     dispatch(resourceScreenData());
-  }, [dispatch]);
+    dispatch(resourceDetailScreen({
+      resource_id: resource_id,
+    }));
+  }, [dispatch, resource_id]);
 
   // Read directly from the imported JSON
   const data = resourceDetailData?.data;
@@ -79,9 +90,17 @@ const ResourceDetailScreen = () => {
             </div>
 
             <h1 className="detail-hero-display-title">
-              {heroSection?.mainTitle ||
-                "Beyond Compliance: The Real Nature of Modern Government Cybersecurity Expectations"}
+              {resourceDetailScreenData?.heroSection?.mainTitle}
             </h1>
+            {
+              resourceDetailScreenData?.heroSection?.subTitle && (
+
+                <p className="blog-hero-subtitle">
+                  {resourceDetailScreenData?.heroSection?.subTitle}
+                </p>
+              )
+            }
+
           </div>
         </section>
 
@@ -175,42 +194,42 @@ const ResourceDetailScreen = () => {
           {/* Main Article Body */}
           <main className="article-main">
             {/* Meta Label Top */}
-            {articleContent?.sectionLabel && (
+            {resourceDetailScreenData?.articleContent?.sectionLabel && (
               <div className="section-meta-wrapper">
                 <span className="section-meta-line" />
                 <span className="section-meta-label">
-                  {articleContent?.sectionLabel || "EXECUTIVE SUMMARY"}
+                  {articleContent?.sectionLabel}
                 </span>
               </div>
             )}
 
             {/* 1. OVERVIEW */}
-            {articleContent?.overview && (
+            {resourceDetailScreenData?.articleContent?.overview && (
               <section className="article-section">
                 <h2 className="section-title">
-                  {articleContent.overview.title}
+                  {resourceDetailScreenData?.articleContent.overview.title}
                 </h2>
-                {articleContent.overview.paragraphs?.map((paragraph, index) => (
+                {resourceDetailScreenData?.articleContent.overview.paragraphs?.map((paragraph, index) => (
                   <p key={index} className="article-paragraph">
-                    {paragraph}
+                    {paragraph?.content}
                   </p>
                 ))}
               </section>
             )}
 
             {/* 2. PURPOSE */}
-            {articleContent?.purpose && (
+            {resourceDetailScreenData?.articleContent?.purpose && (
               <section className="article-section">
                 <h2 className="section-title">
-                  {articleContent.purpose.title}
+                  {resourceDetailScreenData?.articleContent.purpose.title}
                 </h2>
-                {articleContent.purpose.introText && (
+                {resourceDetailScreenData?.articleContent.purpose.introText && (
                   <p className="intro-text">
-                    {articleContent.purpose.introText}
+                    {resourceDetailScreenData?.articleContent.purpose.introText}
                   </p>
                 )}
                 <ul className="red-star-list">
-                  {articleContent.purpose.items?.map((item, index) => (
+                  {resourceDetailScreenData?.articleContent.purpose.items?.map((item, index) => (
                     <li key={index} className="star-list-item">
                       {/* <span className="red-star-icon">✦</span> */}
                       <svg
@@ -224,7 +243,7 @@ const ResourceDetailScreen = () => {
                       </svg>
                       <div className="list-text-content">
                         {/* {item.boldPrefix && <strong>{item.boldPrefix} </strong>} */}
-                        {item.text}
+                        {item?.content}
                       </div>
                     </li>
                   ))}
@@ -233,50 +252,74 @@ const ResourceDetailScreen = () => {
             )}
 
             {/* 3. KEY CONCEPTS */}
-            {articleContent?.keyConcepts && (
+            {resourceDetailScreenData?.articleContent?.keyConcepts && (
               <section className="article-section">
                 <h2 className="section-title">
-                  {articleContent.keyConcepts.title}
+                  {resourceDetailScreenData?.articleContent?.keyConcepts?.title}
                 </h2>
-                {articleContent.keyConcepts.subsections?.map((sub, index) => (
+                {resourceDetailScreenData?.articleContent?.keyConcepts?.subsections?.map((sub, index) => (
                   <div key={index} className="key-concept-block">
                     <h3 className="red-subheading">{sub.redTitle}</h3>
                     {sub.paragraphs?.map((p, pIndex) => (
                       <p key={pIndex} className="article-paragraph">
-                        {p}
+                        {p?.content}
                       </p>
                     ))}
+                    {sub?.points &&
+                      (<ul className="red-star-list">
+                        {sub?.points?.map((point, pIndex) => (
+                          <li key={pIndex} className="star-list-item">
+                            {/* <span className="red-star-icon">✦</span> */}
+                            <svg
+                              className="nist-star-icon"
+                              width="17"
+                              height="17"
+                              viewBox="0 0 24 24"
+                              fill="#E11D48"
+                            >
+                              <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
+                            </svg>
+                            <div className="list-text-content">
+                              {/* {item.boldPrefix && <strong>{item.boldPrefix} </strong>} */}
+                              {point?.content}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>)
+                    }
+
                   </div>
                 ))}
+
               </section>
             )}
 
             {/* 4. HARDWARE CONSIDERATIONS / CALLOUT */}
-            {articleContent?.hardwareConsiderations && (
+            {resourceDetailScreenData?.articleContent?.businessImportance && (
               <section className="article-section">
                 <h2 className="section-title">
-                  {articleContent.hardwareConsiderations.title}
+                  {resourceDetailScreenData?.articleContent?.businessImportance?.title}
                 </h2>
 
-                {articleContent.hardwareConsiderations.calloutBox && (
+                {resourceDetailScreenData?.articleContent?.businessImportance?.calloutBox && (
                   <div className="pink-callout-box">
                     <p className="callout-text">
                       <strong className="red-callout-title">
                         {
-                          articleContent.hardwareConsiderations.calloutBox
-                            .boldTitle
+                          resourceDetailScreenData?.articleContent?.businessImportance?.calloutBox
+                            ?.boldTitle
                         }
                         :
                       </strong>{" "}
-                      {articleContent.hardwareConsiderations.calloutBox.text}
+                      {resourceDetailScreenData?.articleContent?.businessImportance?.calloutBox?.text}
                     </p>
                   </div>
                 )}
 
-                {articleContent.hardwareConsiderations.paragraphs?.map(
+                {resourceDetailScreenData?.articleContent?.businessImportance.paragraphs?.map(
                   (paragraph, index) => (
                     <p key={index} className="article-paragraph">
-                      {paragraph}
+                      {paragraph?.content}
                     </p>
                   )
                 )}
@@ -284,15 +327,14 @@ const ResourceDetailScreen = () => {
             )}
 
             {/* 5. BEST PRACTICES */}
-            {articleContent?.bestPractices && (
+            {resourceDetailScreenData?.articleContent?.bestPractices && (
               <section className="article-section">
                 <h2 className="section-title">
-                  {articleContent.bestPractices.title}
+                  {resourceDetailScreenData?.articleContent.bestPractices.title}
                 </h2>
                 <ul className="red-star-list">
-                  {articleContent.bestPractices.items?.map((item, index) => (
+                  {resourceDetailScreenData?.articleContent.bestPractices.items?.map((item, index) => (
                     <li key={index} className="star-list-item">
-                      {/* <span className="red-star-icon">✦</span> */}
                       <svg
                         className="nist-star-icon"
                         width="17"
@@ -303,7 +345,6 @@ const ResourceDetailScreen = () => {
                         <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
                       </svg>
                       <div className="list-text-content">
-                        {/* {item.boldPrefix && <strong>{item.boldPrefix}: </strong>} */}
                         {item.boldPrefix && <strong>{item.boldPrefix} </strong>}
                         {item.text}
                       </div>
@@ -318,12 +359,12 @@ const ResourceDetailScreen = () => {
           <aside className="article-sidebar">
             <div className="sticky-sidebar-card">
               <h3 className="sidebar-title">
-                {sidebarRelatedResources?.title || "Related Resources"}
+                {resourceDetailScreenData?.sidebarRelatedResources?.title}
               </h3>
               <ul className="related-links-list">
-                {sidebarRelatedResources?.items?.map((link) => (
-                  <li key={link.id || link.title}>
-                    <a href={link.link || "#"}>{link.title}</a>
+                {resourceDetailScreenData?.sidebarRelatedResources?.items?.map((link) => (
+                  <li key={link?.id}>
+                    <Link to={`/resource-detail/${link?.slug}`} state={{id: link?.id}} >{link?.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -400,22 +441,20 @@ const ResourceDetailScreen = () => {
 
             {/* Right Column Interactive Accordion Stack */}
             <div className="faq-right-accordion-panel">
-              {faqSection?.accordion?.map((item, index) => {
+              {resourceDetailScreenData?.faqSection?.items?.map((item, index) => {
                 const isOpen = activeFaqId === item.id;
                 return (
                   <div
                     key={item?.id}
-                    className={`faq-accordion-row ${
-                      isOpen ? "is-expanded" : ""
-                    }`}
+                    className={`faq-accordion-row ${isOpen ? "is-expanded" : ""
+                      }`}
                     onClick={() => toggleFaq(item?.id)}
                   >
                     <div className="faq-row-trigger-line">
                       <h3 className="faq-question-text">{item?.question}</h3>
                       <div
-                        className={`faq-toggle-circle-indicator ${
-                          isOpen ? "active-minus" : "inactive-plus"
-                        }`}
+                        className={`faq-toggle-circle-indicator ${isOpen ? "active-minus" : "inactive-plus"
+                          }`}
                       >
                         {isOpen ? (
                           /* Minus SVG Icon */
@@ -479,9 +518,9 @@ const ResourceDetailScreen = () => {
           </a>
         </nav> */}
 
-        <nav className="bottom-article-nav">
-          <a
-            href={bottomNavigation?.prev?.url || "#"}
+        {/* <nav className="bottom-article-nav">
+          <Link
+            to={`/resource-detail/${resourceDetailScreenData?.bottomNavigation?.prev?.id}`}
             className="nav-item prev"
           >
             <div className="sublabel-wrapper">
@@ -502,25 +541,25 @@ const ResourceDetailScreen = () => {
                 />
               </svg>
               <span className="nav-sublabel">
-                {bottomNavigation?.prev?.subLabel || "PREVIOUS"}
+                PREVIOUS
               </span>
             </div>
             <strong className="nav-title">
-              {bottomNavigation?.prev?.title || "Back to Library"}
+              {resourceDetailScreenData?.bottomNavigation?.prev?.title}
             </strong>
-          </a>
+          </Link>
 
           <div className="nav-center-date">
-            {bottomNavigation?.centerLabel || "1 of 50+ Resources"}
+            {resourceDetailScreenData?.bottomNavigation?.centerLabel}
           </div>
 
-          <a
-            href={bottomNavigation?.next?.url || "#"}
+          <Link
+            to={`/resource-detail/${resourceDetailScreenData?.bottomNavigation?.next?.id}`}
             className="nav-item next"
           >
             <div className="sublabel-wrapper">
               <span className="nav-sublabel">
-                {bottomNavigation?.next?.subLabel || "NEXT"}
+                NEXT
               </span>
               <svg
                 className="nav-arrow"
@@ -540,10 +579,126 @@ const ResourceDetailScreen = () => {
               </svg>
             </div>
             <strong className="nav-title">
-              {bottomNavigation?.next?.title || "SPRS Framework"}
+              {resourceDetailScreenData?.bottomNavigation?.next?.title}
             </strong>
-          </a>
+          </Link>
+        </nav> */}
+
+
+
+        <nav className="bottom-article-nav">
+          {/* PREVIOUS LINK OR DISABLED DIV */}
+          {resourceDetailScreenData?.bottomNavigation?.prev ? (
+            <Link
+              to={`/resource-detail/${resourceDetailScreenData?.bottomNavigation?.prev?.slug}`}
+              state={{id: resourceDetailScreenData?.bottomNavigation?.prev?.id}}
+              className="nav-item prev"
+            >
+              <div className="sublabel-wrapper">
+                <svg
+                  className="nav-arrow"
+                  width="20"
+                  height="12"
+                  viewBox="0 0 20 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 6H1M1 6L6 1M1 6L6 11"
+                    stroke="#E62225"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span className="nav-sublabel">PREVIOUS</span>
+              </div>
+              <strong className="nav-title">{resourceDetailScreenData?.bottomNavigation?.prev.title}</strong>
+            </Link>
+          ) : (
+            <div className="nav-item prev disabled">
+              <div className="sublabel-wrapper">
+                <svg
+                  className="nav-arrow"
+                  width="20"
+                  height="12"
+                  viewBox="0 0 20 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 6H1M1 6L6 1M1 6L6 11"
+                    stroke="#ccc"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span className="nav-sublabel">PREVIOUS</span>
+              </div>
+              {/* <strong className="nav-title">-</strong> */}
+            </div>
+          )}
+
+          {/* CENTER LABEL */}
+          <div className="nav-center-date">
+            {resourceDetailScreenData?.bottomNavigation?.centerLabel}
+          </div>
+
+          {/* NEXT LINK OR DISABLED DIV */}
+          {resourceDetailScreenData?.bottomNavigation?.next ? (
+            <Link
+              to={`/resource-detail/${resourceDetailScreenData?.bottomNavigation?.next?.slug}`}
+              state={{id: resourceDetailScreenData?.bottomNavigation?.next?.id}}
+              className="nav-item next"
+            >
+              <div className="sublabel-wrapper">
+                <span className="nav-sublabel">NEXT</span>
+                <svg
+                  className="nav-arrow"
+                  width="20"
+                  height="12"
+                  viewBox="0 0 20 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 6H19M19 6L14 1M19 6L14 11"
+                    stroke="#E62225"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <strong className="nav-title">{resourceDetailScreenData?.bottomNavigation?.next.title}</strong>
+            </Link>
+          ) : (
+            <div className="nav-item next disabled">
+              <div className="sublabel-wrapper">
+                <span className="nav-sublabel">NEXT</span>
+                <svg
+                  className="nav-arrow"
+                  width="20"
+                  height="12"
+                  viewBox="0 0 20 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 6H19M19 6L14 1M19 6L14 11"
+                    stroke="#ccc"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              {/* <strong className="nav-title">-</strong> */}
+            </div>
+          )}
         </nav>
+
 
         {/* 5. SUGGESTED ARTICLES */}
         {/* <section className="you-might-like-wrapper">
@@ -577,13 +732,13 @@ const ResourceDetailScreen = () => {
               className="insights-main-title"
               style={{ marginBottom: "30px" }}
             >
-              {"You also might like" || resourceData?.resources?.mainTitle}
+              {resourceDetailScreenData?.blogData?.mainTitle}
             </h2>
             {/* </div> */}
 
             {/* 3-Column Grid Container */}
-            <div className="insights-cards-grid">
-              {resourceData?.resources?.cards?.map((item, index) => (
+            {/* <div className="insights-cards-grid">
+              {resourceDetailScreenData?.blogData?.cards?.map((item, index) => (
                 <div className="insight-grid-card" key={index}>
                   <div className="insight-image-wrapper">
                     <img
@@ -601,9 +756,12 @@ const ResourceDetailScreen = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
+
+            <BlogHorizontalScroll items={resourceDetailScreenData?.blogData?.cards} />
           </div>
         </section>
+
       </div>
       <Footer />
     </>

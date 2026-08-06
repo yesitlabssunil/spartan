@@ -266,7 +266,7 @@ const IndustriesScreen = () => {
                   Schedule Consultation <span>→</span>
                 </Link>
                 <Link
-                  to="/compliance"
+                  to="/compliance-systems"
                   className="cta-btn-outline"
                   style={{ textDecoration: "none" }}
                 >

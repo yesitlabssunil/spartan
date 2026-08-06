@@ -275,7 +275,7 @@ const AboutScreen = () => {
                     </svg>
                   </span>
                 </Link>
-                <Link to="/compliance" className="cta-btn-outline linknav">
+                <Link to="/compliance-systems" className="cta-btn-outline linknav">
                   Explore Compliance
                 </Link>
               </div>

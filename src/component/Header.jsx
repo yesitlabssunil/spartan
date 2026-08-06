@@ -46,7 +46,7 @@ const Header = () => {
               <li className="nav-item">
                 <NavLink className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
-                } to="/security">
+                } to="/microsoft-365-security">
                   Microsoft 365 Security
                 </NavLink>
               </li>
@@ -54,7 +54,7 @@ const Header = () => {
               <li className="nav-item">
                 <NavLink className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
-                } to="/compliance">
+                } to="/compliance-systems">
                   Compliance Systems
                 </NavLink>
               </li>

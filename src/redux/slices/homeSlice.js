@@ -74,6 +74,20 @@ export const resourceScreenData = createAsyncThunk(
     },
   );
 
+export const resourceDetailScreen = createAsyncThunk(
+    "/home/resourceDetailScreen",
+    async (formData, { rejectWithValue }) => {
+      try {
+        const response = await api.resourceDetailScreen(formData);
+        return response.data;
+      } catch (error) {
+        return rejectWithValue(
+          error.response?.data || { message: error.message },
+        );
+      }
+    },
+  );
+
 export const homeScreenData = createAsyncThunk(
     "/home/homeScreenData",
     async (formData, { rejectWithValue }) => {
@@ -98,6 +112,7 @@ export const homeScreenData = createAsyncThunk(
       resourceData: [],
       homeData: [],
       aboutData: null,
+      resourceDetailScreenData: [],
       submitLoading: false, 
 
     },
@@ -181,6 +196,21 @@ export const homeScreenData = createAsyncThunk(
           .addCase(resourceScreenData.rejected, (state, action) => {
             state.loading = false;
             state.resourceData = [];
+            state.error = action.payload?.message;
+          })
+
+          .addCase(resourceDetailScreen.pending, (state) => {
+            state.loading = true;
+            state.error = null;
+          })
+          .addCase(resourceDetailScreen.fulfilled, (state, action) => {
+            state.loading = false;
+            state.error = null;
+            state.resourceDetailScreenData = action.payload?.data;
+            // console.log("resourceDetailScreenData$$$$$$$$", state.resourceDetailScreenData);
+          })
+          .addCase(resourceDetailScreen.rejected, (state, action) => {
+            state.loading = false;
             state.error = action.payload?.message;
           })
 

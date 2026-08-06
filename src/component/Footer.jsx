@@ -82,8 +82,8 @@ const Footer = () => {
 
             <ul>
               <li><Link to="/cmmc">CMMC 2.0</Link></li>
-              <li><Link to="/security">Microsoft 365 Security</Link></li>
-              <li><Link to="/compliance">Compliance Systems</Link></li>
+              <li><Link to="/microsoft-365-security">Microsoft 365 Security</Link></li>
+              <li><Link to="/compliance-systems">Compliance Systems</Link></li>
             </ul>
           </div>
 

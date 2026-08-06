@@ -284,9 +284,9 @@
     transition: opacity 0.2s ease;
   }
   
-  .nav-item:hover {
+  /* .nav-item:hover {
     opacity: 0.8;
-  }
+  } */
   
   .sublabel-wrapper {
     display: flex;
@@ -607,4 +607,14 @@
   .sticky-sidebar-card {
     position: static;
   }
+}
+
+.nav-item.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-item.disabled .nav-sublabel {
+  color: #888;
 }

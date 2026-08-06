@@ -1,0 +1,66 @@
+/* Container Wrapper */
+.blog-scroll-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Track Container - Completely hides default scrollbars */
+  .blog-scroll-track {
+    display: flex;
+    gap: 32px; /* Restores exact 32px gap from original layout */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    
+    /* Hide scrollbars across all browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  .blog-scroll-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  /* Card Sizing: 3 cards fit 100% of the screen width */
+  .blog-scroll-track .insight-grid-card {
+    flex: 0 0 calc((100% - 64px) / 3); /* (100% width minus two 32px gaps) divided by 3 */
+    min-width: 280px; /* Safety minimum for smaller laptop screens */
+    box-sizing: border-box;
+  }
+  
+  /* Red Arrow Buttons (Matches Image 2) */
+  .blog-scroll-arrow {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 20;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #FF0000; /* Solid red background */
+    color: #FFFFFF; /* White arrow icon */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  /* .blog-scroll-arrow:hover {
+    background-color: #D60000;
+    transform: translateY(-50%) scale(1.05);
+  } */
+  
+  .blog-scroll-arrow.left-arrow {
+    left: 10px;
+  }
+  
+  .blog-scroll-arrow.right-arrow {
+    right: 10px;
+  }
+
+  .no-blogs-found{
+    text-align: center;
+  }

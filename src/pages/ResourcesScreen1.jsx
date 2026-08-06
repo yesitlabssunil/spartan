@@ -766,7 +766,7 @@ export default function ResourceScreen() {
               </Link>
 
               <Link
-                to="/compliance"
+                to="/compliance-systems"
                 className="cta-btn-secondary"
                 type="button"
                 style={{ textDecoration: "none" }}

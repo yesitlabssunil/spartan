@@ -40,7 +40,7 @@ const AppRouter = () => (
                 <ApproachScreen />
             } />
 
-            <Route path="/compliance" element={
+            <Route path="/compliance-systems" element={
                 <ComplianceScreen />
             } />
 
@@ -48,7 +48,7 @@ const AppRouter = () => (
                 <IndustriesScreen />
             } />
 
-            <Route path="/security" element={
+            <Route path="/microsoft-365-security" element={
                 <SecurityScreen />
             } />
 
@@ -68,7 +68,7 @@ const AppRouter = () => (
                 <Faq />
             } />
 
-            <Route path="/resource-detail-screen" element={
+            <Route path="/resource-detail/:id" element={
                 <ResourceDetailScreen />
             } />
 

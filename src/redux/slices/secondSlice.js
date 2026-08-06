@@ -60,9 +60,9 @@ export const approachScreenData = createAsyncThunk(
 
   export const getBlogDetails = createAsyncThunk(
     "/home/getBlogDetails",
-    async (id, {rejectWithValue}) => {
+    async (formData, {rejectWithValue}) => {
       try {
-        const response = await api.getBlogDetails(id);
+        const response = await api.getBlogDetails(formData);
         return response.data;
       } catch (error) {
         return rejectWithValue(

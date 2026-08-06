@@ -951,7 +951,7 @@ const CmmcScreen = () => {
                     />
                   </svg>
                 </Link>
-                <Link to="/compliance" className="btn btn-dark-outline-action">
+                <Link to="/compliance-systems" className="btn btn-dark-outline-action">
                   Explore Compliance
                 </Link>
               </div>

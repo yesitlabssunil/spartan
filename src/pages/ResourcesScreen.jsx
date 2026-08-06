@@ -38,6 +38,7 @@ import {
   resourceScreenData,
   getContactScreenData,
 } from "../redux/slices/homeSlice";
+import BlogHorizontalScroll from "../component/BlogHorizontalScroll";
 
 export default function ResourceScreen() {
   const resourceCategories = [
@@ -189,7 +190,13 @@ export default function ResourceScreen() {
           <div className="res-lib-cards-grid">
             {paginatedCards?.length > 0 ? (
               paginatedCards.map((card) => (
-                <div key={card.id} className="res-lib-card">
+                <Link key={card.id}
+                  to={`/resource-detail/${card?.slug}`}
+                  state={{id: card?.id}}
+                  className="res-lib-card"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  {/* <div key={card.id} className="res-lib-card"> */}
                   <div className="res-lib-card-top">
                     <span className="res-lib-card-badge">{card.badge}</span>
                     <h3 className="res-lib-card-title">{card.title}</h3>
@@ -197,29 +204,29 @@ export default function ResourceScreen() {
                   </div>
 
                   <div className="res-lib-card-bottom">
-                    <Link
-                      to="/resource-detail-screen"
+                    {/* <Link
+                      to={`/resource-detail-screen/${card?.id}`}
                       className="res-lib-learn-more"
+                    > */}
+                    <span style={{ fontFamily: "Geist" }}>Learn More</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <span style={{ fontFamily: "Geist" }}>Learn More</span>
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3.33334 8H12.6667M12.6667 8L8 3.33334M12.6667 8L8 12.6667"
-                          stroke="#111111"
-                          strokeWidth="1.6"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </Link>
+                      <path
+                        d="M3.33334 8H12.6667M12.6667 8L8 3.33334M12.6667 8L8 12.6667"
+                        stroke="#111111"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </div>
-                </div>
+                  {/* </div> */}
+                </Link>
               ))
             ) : (
               <div
@@ -478,7 +485,7 @@ export default function ResourceScreen() {
           </div>
 
           {/* 3-Column Grid Container */}
-          <div className="insights-cards-grid">
+          {/* <div className="insights-cards-grid">
             {resourceData?.resources?.cards?.map((item, index) => (
               <div className="insight-grid-card" key={index}>
                 <div className="insight-image-wrapper">
@@ -497,7 +504,9 @@ export default function ResourceScreen() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
+
+          <BlogHorizontalScroll items={resourceData?.resources?.cards || []} />
         </div>
       </section>
 
