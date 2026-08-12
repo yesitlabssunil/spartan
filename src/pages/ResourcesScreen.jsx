@@ -48,6 +48,28 @@ export default function ResourceScreen() {
     "Governance",
     "Policy Templates",
     "Risk & Compliance",
+    "Risk Assessment",
+    "Resilience",
+    "Strategic Insight",
+    "Documentation",
+    "Identity Security",
+    "System Security",
+    "Risk Management",
+    "Security Governance",
+    "Security Operations",
+    "Human Resources",
+    "Physical Security",
+    "Remote Security",
+    "Network Security",
+    "Access Control",
+    "Asset Management",
+    "Data Protection",
+    "Network Security",
+    "Compliance",
+    "Change Management",
+    "Configuration Management",
+    "Business Continuity",
+    "Operational Governance"
   ];
 
   const dispatch = useDispatch();
@@ -378,10 +400,15 @@ export default function ResourceScreen() {
               ref={cardsContainerRef}
             >
               {resourceData?.controlFamilies?.items.map((card) => (
-                <div className="nist-card" key={card.id}>
-                  <div className="nist-card-badge">{card.code}</div>
-                  <h3 className="nist-card-title">{card.full_name}</h3>
-                  <p className="nist-card-subtitle">{card.description}</p>
+                <div className="nist-card" key={card?.id}>
+                  <div className="nist-card-badge">{card?.code}</div>
+                  <h3 className="nist-card-title">{card?.full_name}</h3>
+                  {
+                    (card?.description) && (
+
+                      <p className="nist-card-subtitle">{card?.description}</p>
+                    )
+                  }
 
                   <div className="nist-card-divider" />
 
@@ -439,7 +466,7 @@ export default function ResourceScreen() {
           {/* Bottom Distribution Table Box */}
           <div className="nist-distribution-box">
             <div className="nist-dist-grid">
-              {resourceData?.controlStatistics?.items.map((item, idx) => (
+              {/* {resourceData?.controlStatistics?.items.map((item, idx) => (
                 <div className="nist-dist-row" key={idx}>
                   <span className="nist-dist-label">{item.label}</span>
                   <div className="nist-dist-bar-bg">
@@ -450,9 +477,26 @@ export default function ResourceScreen() {
                   </div>
                   <span className="nist-dist-count">{item.count}</span>
                 </div>
-              ))}
+              ))} */}
+              {resourceData?.controlFamilies?.items.map((item, idx) => {
+                const maxControls = 22;
+                const percentage = (item?.control_count / maxControls) * 100;
+
+                return (
+                <div className="nist-dist-row" key={idx}>
+                  <span className="nist-dist-label">{item?.full_name}</span>
+                  <div className="nist-dist-bar-bg">
+                    <div
+                      className="nist-dist-bar-fill"
+                      style={{ width: `${percentage}%` }}
+                    />
+                  </div>
+                  <span className="nist-dist-count">{item?.control_count}</span>
+                </div>
+              )})}
             </div>
           </div>
+
           <div className="text-center" style={{ marginTop: "40px" }}>
             <a
               href={

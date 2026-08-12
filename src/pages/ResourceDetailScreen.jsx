@@ -19,11 +19,11 @@ const ResourceDetailScreen = () => {
   const resource_id = location.state?.id;
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { resourceData, resourceDetailScreenData, loading } = useSelector((state) => state.home);
+  const {resourceDetailScreenData, loading } = useSelector((state) => state.home);
 
-  console.log("Resource ID%%%%%%%%%:", id);
-  console.log("Resource ID%%%%%%%%%:", resource_id);
-  console.log("resourceDetailScreenData**************", resourceDetailScreenData)
+  // console.log("Resource ID%%%%%%%%%:", id);
+  // console.log("Resource ID%%%%%%%%%:", resource_id);
+  // console.log("resourceDetailScreenData**************", resourceDetailScreenData)
 
   useEffect(() => {
     dispatch(getFaqData());
@@ -32,6 +32,12 @@ const ResourceDetailScreen = () => {
       resource_id: resource_id,
     }));
   }, [dispatch, resource_id]);
+
+  const getRandomItems = (items = [], count = 5) => {
+    return [...items]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, count);
+  };
 
   // Read directly from the imported JSON
   const data = resourceDetailData?.data;
@@ -58,6 +64,10 @@ const ResourceDetailScreen = () => {
     bottomNavigation,
     youAlsoMightLike,
   } = data;
+
+  const relatedResources = getRandomItems(
+    resourceDetailScreenData?.sidebarRelatedResources?.items,
+  )
 
   return (
     <>
@@ -265,11 +275,14 @@ const ResourceDetailScreen = () => {
                         {p?.content}
                       </p>
                     ))}
-                    {sub?.points &&
+                    {/* {sub?.points &&
                       (<ul className="red-star-list">
-                        {sub?.points?.map((point, pIndex) => (
+                        {sub?.points?.map((point, pIndex) => ( */}
+                    {sub?.points?.some((point) => point?.content?.trim()) &&
+                      (<ul className="red-star-list">
+                        {sub?.points.filter((point) => point?.content?.trim())
+                        .map((point, pIndex) => (
                           <li key={pIndex} className="star-list-item">
-                            {/* <span className="red-star-icon">✦</span> */}
                             <svg
                               className="nist-star-icon"
                               width="17"
@@ -309,7 +322,11 @@ const ResourceDetailScreen = () => {
                           resourceDetailScreenData?.articleContent?.businessImportance?.calloutBox
                             ?.boldTitle
                         }
-                        :
+                        {/* {
+                          resourceDetailScreenData?.articleContent?.businessImportance?.calloutBox
+                            ?.text
+                        } */}
+                        
                       </strong>{" "}
                       {resourceDetailScreenData?.articleContent?.businessImportance?.calloutBox?.text}
                     </p>
@@ -362,9 +379,9 @@ const ResourceDetailScreen = () => {
                 {resourceDetailScreenData?.sidebarRelatedResources?.title}
               </h3>
               <ul className="related-links-list">
-                {resourceDetailScreenData?.sidebarRelatedResources?.items?.map((link) => (
+                {relatedResources.map((link) => (
                   <li key={link?.id}>
-                    <Link to={`/resource-detail/${link?.slug}`} state={{id: link?.id}} >{link?.title}</Link>
+                    <Link to={`/resource-detail/${link?.slug}`} state={{id: link?.resource_id}} >{link?.hero_title}</Link>
                   </li>
                 ))}
               </ul>
