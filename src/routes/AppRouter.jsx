@@ -68,7 +68,7 @@ const AppRouter = () => (
                 <Faq />
             } />
 
-            <Route path="/resource-detail/:id" element={
+            <Route path="/resource/:id" element={
                 <ResourceDetailScreen />
             } />
 

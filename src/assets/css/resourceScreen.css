@@ -161,25 +161,32 @@
     line-height: 1.25;
 }
 
-/* Category Navigation Tabs */
+
+
+/* CSS Fix in resourceScreen.css */
+
 /* .res-lib-tabs-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 48px;
-} */
-
-.res-lib-tabs-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 8px;
-    row-gap: 4px;
-    margin-bottom: 40px;
-}
+    flex-wrap: nowrap;          
+    overflow-x: auto;           
+    white-space: nowrap;       
+    gap: 12px;                  
+    padding-bottom: 8px;       
+    -webkit-overflow-scrolling: touch; 
+  }
+  
+  .res-lib-tabs-wrapper::-webkit-scrollbar {
+    display: none;             
+  }
+  
+  .res-lib-tabs-wrapper {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+  }
+  
+  .res-lib-tab-btn {
+    flex-shrink: 0;             
+  }
 
 .res-lib-tab-btn {
     background-color: transparent;
@@ -194,7 +201,6 @@
 }
 
 .res-lib-tab-btn:hover {
-    /* color: #111111; */
     color: red;
 }
 
@@ -203,15 +209,110 @@
     color: #FFFFFF;
     font-weight: 600;
     box-shadow: 0px 4px 12px rgba(227, 6, 19, 0.25);
-}
+} */
 
-/* Cards Grid */
+/* ==========================================
+   TABS CAROUSEL CONTAINER & BUTTON STYLING
+   ========================================== */
+
+   .res-lib-tabs-carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  /* Tabs Wrapper Layout */
+  .res-lib-tabs-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+    scroll-behavior: smooth;
+    padding: 6px 4px;
+    width: 100%;
+  
+    /* Hide Scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  .res-lib-tabs-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  /* Category Tab Buttons Styling */
+  .res-lib-tab-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px; /* Rounded pill shape */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+  }
+  
+  .res-lib-tab-btn:hover {
+    background-color: #e5e7eb;
+    color: red;
+  }
+  
+  /* Active Category Tab Style */
+  .res-lib-tab-btn.active {
+    background-color: red; /* Dark active background */
+    color: #ffffff;
+    border-color: red;
+  }
+  
+  /* Navigation Arrow Buttons Styling */
+  .tabs-nav-arrow {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+    font-size: 14px;
+    color: #334155;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .tabs-nav-arrow:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+  }
+  
+  .tabs-nav-arrow:active {
+    transform: scale(0.95);
+  }
+  
+  .tabs-nav-arrow.left {
+    margin-right: 10px;
+  }
+  
+  .tabs-nav-arrow.right {
+    margin-left: 10px;
+  }
+
+  /* ----------------------------------------- */
+
 .res-lib-cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
-
 .res-lib-card {
     background-color: #FFFFFF;
     border: 1px solid #EAEAEA;
@@ -230,9 +331,6 @@
     border: 1.5px solid #E30613;
 }
 
-/* Highlighted border matching Figma card #2 */
-/* .res-lib-card.featured-border {
-  } */
 
 /* Card Content */
 .res-lib-card-badge {

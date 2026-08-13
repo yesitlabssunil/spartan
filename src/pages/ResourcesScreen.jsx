@@ -132,10 +132,22 @@ export default function ResourceScreen() {
 
   const cardsContainerRef = useRef(null);
 
+  const tabsContainerRef = useRef(null);
+
   const handleScroll = (direction) => {
     if (cardsContainerRef.current) {
       const scrollAmount = 380; // Roughly one card width + gap
       cardsContainerRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleTabsScroll = (direction) => {
+    if (tabsContainerRef.current) {
+      const scrollAmount = 300; // Adjust scroll distance per click
+      tabsContainerRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
       });
@@ -193,8 +205,34 @@ export default function ResourceScreen() {
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="res-lib-tabs-wrapper">
-            {/* {resourceData?.categories?.map((cat, idx) => ( */}
+
+          {/* <div className="res-lib-tabs-wrapper">
+            {resourceCategories?.map((cat, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={`res-lib-tab-btn ${activeCategory === cat ? "active" : ""
+                  }`}
+                onClick={() => handleTabClick(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div> */}
+
+          <div className="res-lib-tabs-carousel-container">
+            <button type="button" className="tabs-nav-arrow left" onClick={()=> handleTabsScroll("left")} aria-label="Scroll Left">
+            &#10094;
+            </button>
+
+          <div className="res-lib-tabs-wrapper" 
+          ref={tabsContainerRef}
+          onWheel={(e) => {
+            if (e.deltaY !== 0){
+              e.currentTarget.scrollLeft += e.deltaY;
+            }
+          }}
+          >
             {resourceCategories?.map((cat, idx) => (
               <button
                 key={idx}
@@ -208,13 +246,19 @@ export default function ResourceScreen() {
             ))}
           </div>
 
+          <button type="button" className="tabs-nav-arrow right" onClick={() => handleTabsScroll("right")} aria-label="Scroll Right">
+          &#10095;
+          </button>
+
+          </div>
+
           {/* Cards Grid */}
           <div className="res-lib-cards-grid">
             {paginatedCards?.length > 0 ? (
               paginatedCards.map((card) => (
                 <Link key={card.id}
-                  to={`/resource-detail/${card?.slug}`}
-                  state={{id: card?.id}}
+                  to={`/resource/${card?.slug}`}
+                  state={{ id: card?.id }}
                   className="res-lib-card"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
@@ -483,17 +527,18 @@ export default function ResourceScreen() {
                 const percentage = (item?.control_count / maxControls) * 100;
 
                 return (
-                <div className="nist-dist-row" key={idx}>
-                  <span className="nist-dist-label">{item?.full_name}</span>
-                  <div className="nist-dist-bar-bg">
-                    <div
-                      className="nist-dist-bar-fill"
-                      style={{ width: `${percentage}%` }}
-                    />
+                  <div className="nist-dist-row" key={idx}>
+                    <span className="nist-dist-label">{item?.full_name}</span>
+                    <div className="nist-dist-bar-bg">
+                      <div
+                        className="nist-dist-bar-fill"
+                        style={{ width: `${percentage}%` }}
+                      />
+                    </div>
+                    <span className="nist-dist-count">{item?.control_count}</span>
                   </div>
-                  <span className="nist-dist-count">{item?.control_count}</span>
-                </div>
-              )})}
+                )
+              })}
             </div>
           </div>
 

@@ -381,7 +381,7 @@ const ResourceDetailScreen = () => {
               <ul className="related-links-list">
                 {relatedResources.map((link) => (
                   <li key={link?.id}>
-                    <Link to={`/resource-detail/${link?.slug}`} state={{id: link?.resource_id}} >{link?.hero_title}</Link>
+                    <Link to={`/resource/${link?.slug}`} state={{id: link?.resource_id}} >{link?.hero_title}</Link>
                   </li>
                 ))}
               </ul>
@@ -607,7 +607,7 @@ const ResourceDetailScreen = () => {
           {/* PREVIOUS LINK OR DISABLED DIV */}
           {resourceDetailScreenData?.bottomNavigation?.prev ? (
             <Link
-              to={`/resource-detail/${resourceDetailScreenData?.bottomNavigation?.prev?.slug}`}
+              to={`/resource/${resourceDetailScreenData?.bottomNavigation?.prev?.slug}`}
               state={{id: resourceDetailScreenData?.bottomNavigation?.prev?.id}}
               className="nav-item prev"
             >
@@ -665,7 +665,7 @@ const ResourceDetailScreen = () => {
           {/* NEXT LINK OR DISABLED DIV */}
           {resourceDetailScreenData?.bottomNavigation?.next ? (
             <Link
-              to={`/resource-detail/${resourceDetailScreenData?.bottomNavigation?.next?.slug}`}
+              to={`/resource/${resourceDetailScreenData?.bottomNavigation?.next?.slug}`}
               state={{id: resourceDetailScreenData?.bottomNavigation?.next?.id}}
               className="nav-item next"
             >
