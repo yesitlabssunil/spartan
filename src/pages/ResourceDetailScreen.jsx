@@ -8,7 +8,7 @@ import SEO from "../component/SEO";
 const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 // 1. DIRECT JSON IMPORT
-import resourceDetailData from "../assets/jsonData/resourceDetailScreen.json";
+// import resourceDetailData from "../assets/jsonData/resourceDetailScreen.json";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import ResourceScreen from "./ResourcesScreen";
@@ -19,7 +19,7 @@ const ResourceDetailScreen = () => {
   const resource_id = location.state?.id;
   const { id } = useParams();
   const dispatch = useDispatch();
-  const {resourceDetailScreenData, loading } = useSelector((state) => state.home);
+  const {resourceStatus, resourceDetailScreenData, loading } = useSelector((state) => state.home);
 
   // console.log("Resource ID%%%%%%%%%:", id);
   // console.log("Resource ID%%%%%%%%%:", resource_id);
@@ -40,7 +40,7 @@ const ResourceDetailScreen = () => {
   };
 
   // Read directly from the imported JSON
-  const data = resourceDetailData?.data;
+  // const data = resourceDetailData?.data;
 
   // State for Accordion FAQ (default first FAQ open as per Figma)
   const [activeFaqId, setActiveFaqId] = useState();
@@ -50,20 +50,20 @@ const ResourceDetailScreen = () => {
   };
 
   // Fallback check
-  if (!data) {
-    return (
-      <div className="error-state">JSON data missing or invalid format.</div>
-    );
-  }
+  // if (!resourceStatus) {
+  //   return (
+  //     <div className="error-state">No data found.</div>
+  //   );
+  // }
 
-  const {
-    heroSection,
-    articleContent,
-    sidebarRelatedResources,
-    faqSection,
-    bottomNavigation,
-    youAlsoMightLike,
-  } = data;
+  // const {
+  //   heroSection,
+  //   articleContent,
+  //   sidebarRelatedResources,
+  //   faqSection,
+  //   bottomNavigation,
+  //   youAlsoMightLike,
+  // } = data;
 
   const relatedResources = getRandomItems(
     resourceDetailScreenData?.sidebarRelatedResources?.items,
@@ -94,9 +94,9 @@ const ResourceDetailScreen = () => {
 
           <div className="detail-section-inner-content">
             <div className="detail-resource-badge-pill">
-              <span className="detail-tag-red-primary">Resources & Media</span>
+             <Link to="/" style={{textDecoration: "none"}}> <span className="detail-tag-home-link">Home</span></Link>
               <span className="detail-tag-separator">|</span>
-              <span className="detail-tag-home-link">Home</span>
+              <span className="detail-tag-red-primary">Resources & Media</span>
             </div>
 
             <h1 className="detail-hero-display-title">

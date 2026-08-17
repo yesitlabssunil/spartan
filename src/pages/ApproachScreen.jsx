@@ -113,8 +113,8 @@ const ApproachScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-                <span>Approach</span> <span className="separator">|</span>{" "}
-                <span style={{ color: "white" }}>Home</span>
+               <Link to="/" style={{textDecoration: "none"}}> <span style={{ color: "white" }}>Home</span></Link> <span className="separator">|</span>{" "}
+                <span>Approach</span> 
               </div>
               <h1 className="blog-hero-title">A method, not a checklist.</h1>
               <p className="blog-hero-subtitle">

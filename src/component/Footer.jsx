@@ -139,10 +139,6 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="footer-bottom">
           <p>© 2026 Spartan Cybersecurity. All rights reserved.</p>
-
-          <p>
-            Developed with ❤️ by YES IT Labs LLC
-          </p>
         </div>
       </div>
     </footer>

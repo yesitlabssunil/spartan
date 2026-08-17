@@ -322,10 +322,7 @@
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     /* background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%),
-       radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
-       linear-gradient(135deg, #0e0202 0%, #000000 100%);
-     background-color: #000000; */
+   
      background: radial-gradient(ellipse at 85% 30%, rgba(139, 0, 0, 0.40) 0%, rgba(80, 0, 0, 0.22) 30%, rgba(0, 0, 0, 0) 65%), #000;
    }
 
@@ -456,7 +453,6 @@
      align-items: center;
      justify-content: center;
      margin-bottom: 16px;
-     /* Spacing between icon and the <h6> heading */
    }
 
    .micro-box .panel-icon {
@@ -476,8 +472,6 @@
 
    .panel-icon-box.dark-box {
      background-color: #7d7b5c1a;
-     /* Dark mode themed background container for icons */
-     /* border: 1px solid rgba(224, 27, 27, 0.2); */
    }
 
    /* Section 7 Continuous Monitoring: Left Side Icon Alignment styles */
@@ -641,15 +635,3 @@
      }
    }
 
-   /* .cards-pad {
-     padding-left: 70px;
-   }
-
-   @media (max-width: 991.98px) {
-     .cards-pad {
-       padding-left: 0;
-     }
-   } */
-   /* .fosize{
-    font-size: 41px;
-  } */

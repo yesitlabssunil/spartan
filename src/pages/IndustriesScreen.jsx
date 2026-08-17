@@ -110,8 +110,8 @@ const IndustriesScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content blog-hero-content1">
               <div className="blog-breadcrumb">
-                <span>Industries</span> <span className="separator">|</span>{" "}
-                <span style={{ color: "white" }}>Home</span>
+                <Link to="/" style={{textDecoration: "none"}}><span style={{ color: "white" }}>Home</span></Link> <span className="separator">|</span>{" "}
+                <span>Industries</span> 
               </div>
               <h1 className="blog-hero-title">
                 {industryData?.industry_sec_heading}

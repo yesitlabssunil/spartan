@@ -114,6 +114,7 @@ export const homeScreenData = createAsyncThunk(
       aboutData: null,
       resourceDetailScreenData: [],
       submitLoading: false, 
+      resourceStatus: null,
 
     },
 
@@ -207,7 +208,7 @@ export const homeScreenData = createAsyncThunk(
             state.loading = false;
             state.error = null;
             state.resourceDetailScreenData = action.payload?.data;
-            // console.log("resourceDetailScreenData$$$$$$$$", state.resourceDetailScreenData);
+            state.resourceStatus = action.payload?.success;
           })
           .addCase(resourceDetailScreen.rejected, (state, action) => {
             state.loading = false;

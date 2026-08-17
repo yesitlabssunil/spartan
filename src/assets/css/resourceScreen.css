@@ -163,54 +163,6 @@
 
 
 
-/* CSS Fix in resourceScreen.css */
-
-/* .res-lib-tabs-wrapper {
-    display: flex;
-    flex-wrap: nowrap;          
-    overflow-x: auto;           
-    white-space: nowrap;       
-    gap: 12px;                  
-    padding-bottom: 8px;       
-    -webkit-overflow-scrolling: touch; 
-  }
-  
-  .res-lib-tabs-wrapper::-webkit-scrollbar {
-    display: none;             
-  }
-  
-  .res-lib-tabs-wrapper {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;     
-  }
-  
-  .res-lib-tab-btn {
-    flex-shrink: 0;             
-  }
-
-.res-lib-tab-btn {
-    background-color: transparent;
-    color: #555555;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.res-lib-tab-btn:hover {
-    color: red;
-}
-
-.res-lib-tab-btn.active {
-    background-color: #E30613;
-    color: #FFFFFF;
-    font-weight: 600;
-    box-shadow: 0px 4px 12px rgba(227, 6, 19, 0.25);
-} */
-
 /* ==========================================
    TABS CAROUSEL CONTAINER & BUTTON STYLING
    ========================================== */
@@ -1682,11 +1634,7 @@
 .cta-billboard-card-container {
     width: 100%;
     position: relative;
-    /* Reuses our dark high-fidelity ambient glow look from Approach-PAGE.jpg */
-    /* background: radial-gradient(circle at 92% 80%, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 55%), 
-                radial-gradient(circle at 8% 20%, rgba(100, 5, 5, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
-                linear-gradient(135deg, #0e0202 0%, #000000 100%);
-    background-color: #000000; */
+
     background: radial-gradient(ellipse at 85% 30%, rgba(139, 0, 0, 0.40) 0%, rgba(80, 0, 0, 0.22) 30%, rgba(0, 0, 0, 0) 65%), #000;
 
     border-radius: 8px;

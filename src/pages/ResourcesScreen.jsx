@@ -30,7 +30,7 @@ import cerBack from "../assets/images/resourceScreen/Vector1.png";
 import fortBack from "../assets/images/resourceScreen/Vector2.png";
 import shieldBack from "../assets/images/resourceScreen/Vector3.png";
 // import faqData from "../assets/faqData.json";
-import resourceJsonData from "../assets/jsonData/resourceScreen.json";
+// import resourceJsonData from "../assets/jsonData/resourceScreen.json";
 import { Link } from "react-router-dom";
 import { BsDownload } from "react-icons/bs";
 import {
@@ -100,8 +100,8 @@ export default function ResourceScreen() {
 
   const engagements = [tv, hotspot, key, doc, medal, people];
 
-  const data = resourceJsonData?.nistReferenceSection;
-  const libraryData = resourceJsonData?.resourceLibrary;
+  // const data = resourceJsonData?.nistReferenceSection;
+  // const libraryData = resourceJsonData?.resourceLibrary;
 
   const [activeCategory, setActiveCategory] = useState("All Resources");
   const [currentPage, setCurrentPage] = useState(1);
@@ -209,9 +209,9 @@ export default function ResourceScreen() {
 
         <div className="section-inner-content">
           <div className="resource-badge-pill">
-            <span className="tag-red-primary">Resources & Media</span>
+            <Link to="/" style={{textDecoration: "none"}}><span className="tag-home-link">Home</span></Link>
             <span className="tag-separator">|</span>
-            <span className="tag-home-link">Home</span>
+            <span className="tag-red-primary">Resources & Media</span>
           </div>
 
           <h1 className="hero-display-title">

@@ -16,6 +16,7 @@ import {
 } from "../redux/slices/homeSlice";
 
 import SEO from "../component/SEO";
+import { Link } from "react-router-dom";
 
 const ContactScreen = () => {
   const dispatch = useDispatch();
@@ -144,8 +145,8 @@ const ContactScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-                <span>Contact Us</span> <span className="separator">|</span>{" "}
-                <span style={{ color: "white" }}>Home</span>
+                <Link to="/" style={{textDecoration: "none"}}><span style={{ color: "white" }}>Home</span> </Link> <span className="separator">|</span>{" "}
+                <span>Contact Us</span> 
               </div>
               <h1 className="blog-hero-title">
                 Schedule your strategic compliance review.
