@@ -43,9 +43,9 @@ const SecurityScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-                <span>MICROSOFT 365 SECURITY</span>{" "}
+                <Link to="/" style={{textDecoration: "none"}}><span style={{ color: "white" }}>Home</span></Link>
                 <span className="separator">|</span>{" "}
-                <span style={{ color: "white" }}>Home</span>
+                <span>MICROSOFT 365 SECURITY</span>
               </div>
               <h1 className="blog-hero-title">
                 Hardened Microsoft 365 Security <br />

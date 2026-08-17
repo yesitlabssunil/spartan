@@ -34,7 +34,7 @@ import resourceJsonData from "../assets/jsonData/resourceScreen.json";
 import { Link } from "react-router-dom";
 import { BsDownload } from "react-icons/bs";
 import {
-  getFaqData,
+  // getFaqData,
   resourceScreenData,
   getContactScreenData,
 } from "../redux/slices/homeSlice";
@@ -69,7 +69,22 @@ export default function ResourceScreen() {
     "Change Management",
     "Configuration Management",
     "Business Continuity",
-    "Operational Governance"
+    "Operational Governance",
+    "Evidence Management",
+    "Supplier Risk",
+    "Leadership",
+    "Usage Policy",
+    "Policy Framework",
+    "Access Management",
+    "Incident Management",
+    "Training",
+    "Cryptography",
+    "Audit & Logging",
+    "Systems & Operations",
+    "Disaster Recovery",
+    "Vendor Management",
+    "Communications",
+    "Data Management"
   ];
 
   const dispatch = useDispatch();
@@ -91,8 +106,20 @@ export default function ResourceScreen() {
   const [activeCategory, setActiveCategory] = useState("All Resources");
   const [currentPage, setCurrentPage] = useState(1);
 
+  // useEffect(() => {
+  //   dispatch(
+  //     resourceScreenData({
+  //       page: currentPage,
+  //       category: activeCategory,
+  //       itemsPerPage: 12,
+  //     })
+  //   );
+  //   dispatch(getContactScreenData());
+  // }, [currentPage, activeCategory]);
+
+  const contactCalledRef = useRef(false);
+
   useEffect(() => {
-    dispatch(getFaqData());
     dispatch(
       resourceScreenData({
         page: currentPage,
@@ -100,8 +127,14 @@ export default function ResourceScreen() {
         itemsPerPage: 12,
       })
     );
+  }, [currentPage, activeCategory]);
+
+  useEffect(() => {
+    if (contactCalledRef.current) return;
+
+    contactCalledRef.current = true;
     dispatch(getContactScreenData());
-  }, [dispatch, currentPage, activeCategory]);
+  }, []);
 
   // const filteredCards = resourceData?.rsourceLibrary?.items.filter((card) => {
   //     if (activeCategory === "All Resources") return true;
@@ -153,6 +186,12 @@ export default function ResourceScreen() {
       });
     }
   };
+
+  const maxControls = Math.max(
+    ...(resourceData?.controlFamilies?.items?.map(
+      (item) => item?.control_count || 0
+    ) || [0])
+  );
 
   return (
     <>
@@ -221,34 +260,34 @@ export default function ResourceScreen() {
           </div> */}
 
           <div className="res-lib-tabs-carousel-container">
-            <button type="button" className="tabs-nav-arrow left" onClick={()=> handleTabsScroll("left")} aria-label="Scroll Left">
-            &#10094;
+            <button type="button" className="tabs-nav-arrow left" onClick={() => handleTabsScroll("left")} aria-label="Scroll Left">
+              &#10094;
             </button>
 
-          <div className="res-lib-tabs-wrapper" 
-          ref={tabsContainerRef}
-          onWheel={(e) => {
-            if (e.deltaY !== 0){
-              e.currentTarget.scrollLeft += e.deltaY;
-            }
-          }}
-          >
-            {resourceCategories?.map((cat, idx) => (
-              <button
-                key={idx}
-                type="button"
-                className={`res-lib-tab-btn ${activeCategory === cat ? "active" : ""
-                  }`}
-                onClick={() => handleTabClick(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+            <div className="res-lib-tabs-wrapper"
+              ref={tabsContainerRef}
+              onWheel={(e) => {
+                if (e.deltaY !== 0) {
+                  e.currentTarget.scrollLeft += e.deltaY;
+                }
+              }}
+            >
+              {resourceCategories?.map((cat, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className={`res-lib-tab-btn ${activeCategory === cat ? "active" : ""
+                    }`}
+                  onClick={() => handleTabClick(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
 
-          <button type="button" className="tabs-nav-arrow right" onClick={() => handleTabsScroll("right")} aria-label="Scroll Right">
-          &#10095;
-          </button>
+            <button type="button" className="tabs-nav-arrow right" onClick={() => handleTabsScroll("right")} aria-label="Scroll Right">
+              &#10095;
+            </button>
 
           </div>
 
@@ -523,8 +562,10 @@ export default function ResourceScreen() {
                 </div>
               ))} */}
               {resourceData?.controlFamilies?.items.map((item, idx) => {
-                const maxControls = 22;
-                const percentage = (item?.control_count / maxControls) * 100;
+                // const maxControls = 22;
+                // const percentage = (item?.control_count / maxControls) * 100;
+
+                const percentage = maxControls > 0 ? (item?.control_count / maxControls) * 100 : 0;
 
                 return (
                   <div className="nist-dist-row" key={idx}>

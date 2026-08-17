@@ -52,9 +52,9 @@ const CmmcScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content text-start">
               <div className="blog-breadcrumb">
-                <span className="red-bullet-indicator"></span>
-                <span>CMMC 2.0</span> <span className="separator">|</span>{" "}
-                <span style={{ color: "white" }}>HOME</span>
+                {/* <span className="red-bullet-indicator"></span> */}
+                <Link to="/" style={{textDecoration: "none"}}><span style={{ color: "white", textDecoration: "none" }}>HOME</span></Link><span className="separator">|</span>{" "}
+                <span>CMMC 2.0</span> 
               </div>
               <h1 className="blog-hero-title custom-hero-lh">
                 CMMC 2.0 Executive Readiness

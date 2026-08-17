@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../assets/css/resourceDetailScreen.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getFaqData, resourceDetailScreen, resourceScreenData } from "../redux/slices/homeSlice";
+import { resourceDetailScreen, resourceScreenData } from "../redux/slices/homeSlice";
 import { Link, useParams, useLocation } from "react-router-dom";
 import SEO from "../component/SEO";
 
@@ -26,7 +26,7 @@ const ResourceDetailScreen = () => {
   // console.log("resourceDetailScreenData**************", resourceDetailScreenData)
 
   useEffect(() => {
-    dispatch(getFaqData());
+    // dispatch(getFaqData());
     dispatch(resourceScreenData());
     dispatch(resourceDetailScreen({
       resource_id: resource_id,

@@ -37,26 +37,26 @@ const AboutScreen = () => {
 
   const highlights = [security, hammer, icon6, purse];
 
-  const team = [
-    {
-      image: leaderImg1,
-      rank: "FOUNDER AND PRESIDENT",
-      name: "Brigadier General (Ret.) Raphael Warren - MS, CIS",
-      desc: "Brigadier General (Ret.) Raphael Warren is an executive cybersecurity governance advisor, retired senior military officer and former federal agent with more than three decades of experience in cybersecurity leadership, federal operations and executive risk management.",
-    },
-    {
-      image: leaderImg2,
-      rank: "Vice President, Legal",
-      name: "Colonel (Ret.) Joe M. Romero - JD",
-      desc: "Colonel (Ret.) Joe M. Romero is a former federal prosecutor and legal strategist with extensive experience in cybersecurity law, federal investigations and executive risk exposure.",
-    },
-    {
-      image: leaderImg3,
-      rank: "Vice President, Operations",
-      name: "Lieutenant Colonel (Ret.) Tyrone Finch - BS",
-      desc: "Lieutenant Colonel (Ret.) Tyrone Finch is a cybersecurity compliance and operational execution strategist specializing in CMMC 2.0, NIST SP 800-171, ISO/IEC 27001, and C3PAO readiness preparation.",
-    },
-  ];
+  // const team = [
+  //   {
+  //     image: leaderImg1,
+  //     rank: "FOUNDER AND PRESIDENT",
+  //     name: "Brigadier General (Ret.) Raphael Warren - MS, CIS",
+  //     desc: "Brigadier General (Ret.) Raphael Warren is an executive cybersecurity governance advisor, retired senior military officer and former federal agent with more than three decades of experience in cybersecurity leadership, federal operations and executive risk management.",
+  //   },
+  //   {
+  //     image: leaderImg2,
+  //     rank: "Vice President, Legal",
+  //     name: "Colonel (Ret.) Joe M. Romero - JD",
+  //     desc: "Colonel (Ret.) Joe M. Romero is a former federal prosecutor and legal strategist with extensive experience in cybersecurity law, federal investigations and executive risk exposure.",
+  //   },
+  //   {
+  //     image: leaderImg3,
+  //     rank: "Vice President, Operations",
+  //     name: "Lieutenant Colonel (Ret.) Tyrone Finch - BS",
+  //     desc: "Lieutenant Colonel (Ret.) Tyrone Finch is a cybersecurity compliance and operational execution strategist specializing in CMMC 2.0, NIST SP 800-171, ISO/IEC 27001, and C3PAO readiness preparation.",
+  //   },
+  // ];
 
   // const advantages = [
   //   { icon: rings, title: "Principal-Led Engagements", desc: "Every engagement is led directly by senior principals - not delegated to junior staff. Executives work with the people who own the outcome." },
@@ -82,8 +82,8 @@ const AboutScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-                <span>About</span> <span className="separator">|</span>{" "}
-                <span style={{ color: "white" }}>Home</span>
+               <Link to="/" style={{textDecoration: "none"}}> <span style={{ color: "white" }}>Home</span> </Link> <span className="separator">|</span>{" "}
+                <span>About</span>
               </div>
               <h1 className="blog-hero-title blog-hero-title1">
                 {aboutData?.about?.heading}
