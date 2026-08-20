@@ -29,8 +29,7 @@ import downloadIcon from "../assets/images/resourceScreen/download-icon.png";
 import cerBack from "../assets/images/resourceScreen/Vector1.png";
 import fortBack from "../assets/images/resourceScreen/Vector2.png";
 import shieldBack from "../assets/images/resourceScreen/Vector3.png";
-// import faqData from "../assets/faqData.json";
-// import resourceJsonData from "../assets/jsonData/resourceScreen.json";
+
 import { Link } from "react-router-dom";
 import { BsDownload } from "react-icons/bs";
 import {
@@ -43,10 +42,7 @@ import BlogHorizontalScroll from "../component/BlogHorizontalScroll";
 export default function ResourceScreen() {
   const resourceCategories = [
     "All Resources",
-    "Strategic Guidance",
-    "Government Systems",
     "Governance",
-    "Policy Templates",
     "Risk & Compliance",
     "Risk Assessment",
     "Resilience",
@@ -84,7 +80,10 @@ export default function ResourceScreen() {
     "Disaster Recovery",
     "Vendor Management",
     "Communications",
-    "Data Management"
+    "Data Management",
+    // "Strategic Guidance",
+    // "Government Systems",
+    // "Policy Templates",
   ];
 
   const dispatch = useDispatch();
@@ -99,9 +98,6 @@ export default function ResourceScreen() {
   };
 
   const engagements = [tv, hotspot, key, doc, medal, people];
-
-  // const data = resourceJsonData?.nistReferenceSection;
-  // const libraryData = resourceJsonData?.resourceLibrary;
 
   const [activeCategory, setActiveCategory] = useState("All Resources");
   const [currentPage, setCurrentPage] = useState(1);
@@ -136,28 +132,11 @@ export default function ResourceScreen() {
     dispatch(getContactScreenData());
   }, []);
 
-  // const filteredCards = resourceData?.rsourceLibrary?.items.filter((card) => {
-  //     if (activeCategory === "All Resources") return true;
-  //     return card.badge === activeCategory;
-  // });
-
-  // const filteredCards = libraryData?.cards.filter((card) => {
-  //     if (activeCategory === "All Resources") return true;
-  //     return card.category === activeCategory;
-  // });
 
   const handleTabClick = (category) => {
     setActiveCategory(category);
     setCurrentPage(1);
   };
-
-  // const itemsPerPage = 12;
-  // const totalPages = Math.ceil(filteredCards?.length / itemsPerPage);
-
-  // const startIndex = (currentPage - 1) * itemsPerPage;
-  // const endIndex = startIndex + itemsPerPage;
-
-  // const paginatedCards = filteredCards?.slice(startIndex, endIndex);
 
   const totalPages = resourceData?.resourceLibrary?.pagination?.totalPages;
 
@@ -245,20 +224,6 @@ export default function ResourceScreen() {
 
           {/* Category Filter Tabs */}
 
-          {/* <div className="res-lib-tabs-wrapper">
-            {resourceCategories?.map((cat, idx) => (
-              <button
-                key={idx}
-                type="button"
-                className={`res-lib-tab-btn ${activeCategory === cat ? "active" : ""
-                  }`}
-                onClick={() => handleTabClick(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div> */}
-
           <div className="res-lib-tabs-carousel-container">
             <button type="button" className="tabs-nav-arrow left" onClick={() => handleTabsScroll("left")} aria-label="Scroll Left">
               &#10094;
@@ -297,7 +262,7 @@ export default function ResourceScreen() {
               paginatedCards.map((card) => (
                 <Link key={card.id}
                   to={`/resource/${card?.slug}`}
-                  state={{ id: card?.id }}
+                  // state={{ id: card?.id }}
                   className="res-lib-card"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
@@ -309,10 +274,7 @@ export default function ResourceScreen() {
                   </div>
 
                   <div className="res-lib-card-bottom">
-                    {/* <Link
-                      to={`/resource-detail-screen/${card?.id}`}
-                      className="res-lib-learn-more"
-                    > */}
+                 
                     <span style={{ fontFamily: "Geist" }}>Learn More</span>
                     <svg
                       width="14"
@@ -330,7 +292,6 @@ export default function ResourceScreen() {
                       />
                     </svg>
                   </div>
-                  {/* </div> */}
                 </Link>
               ))
             ) : (
@@ -549,18 +510,7 @@ export default function ResourceScreen() {
           {/* Bottom Distribution Table Box */}
           <div className="nist-distribution-box">
             <div className="nist-dist-grid">
-              {/* {resourceData?.controlStatistics?.items.map((item, idx) => (
-                <div className="nist-dist-row" key={idx}>
-                  <span className="nist-dist-label">{item.label}</span>
-                  <div className="nist-dist-bar-bg">
-                    <div
-                      className="nist-dist-bar-fill"
-                      style={{ width: `${item.percentage}%` }}
-                    />
-                  </div>
-                  <span className="nist-dist-count">{item.count}</span>
-                </div>
-              ))} */}
+              
               {resourceData?.controlFamilies?.items.map((item, idx) => {
                 // const maxControls = 22;
                 // const percentage = (item?.control_count / maxControls) * 100;
@@ -614,28 +564,6 @@ export default function ResourceScreen() {
             </h2>
           </div>
 
-          {/* 3-Column Grid Container */}
-          {/* <div className="insights-cards-grid">
-            {resourceData?.resources?.cards?.map((item, index) => (
-              <div className="insight-grid-card" key={index}>
-                <div className="insight-image-wrapper">
-                  <img
-                    src={item?.image}
-                    alt="Microsoft 365 Security Checklist"
-                  />
-                </div>
-                <h3 className="insight-card-title">{item?.title}</h3>
-                <div className="insight-card-meta">
-                  <span className="meta-date">{item?.date}</span>
-                  <span className="meta-divider">—</span>
-                  <Link to={`/blog/${item?.id}`} className="meta-link">
-                    Read More
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div> */}
-
           <BlogHorizontalScroll items={resourceData?.resources?.cards || []} />
         </div>
       </section>
@@ -665,10 +593,6 @@ export default function ResourceScreen() {
           {/* 3-Column Award Cards Grid */}
           <div className="recognition-cards-grid">
             {(resourceData?.awardSection?.cards || []).map((item, index) => {
-              // 1. Store icons array
-              // const icons = [cerBack, fortBack, shieldBack];
-              // 2. Select specific icon by index
-              // const cardIcon = icons[index % icons.length];
 
               return (
                 <div className="recognition-item-card" key={item.id || index}>
@@ -739,7 +663,7 @@ export default function ResourceScreen() {
               We Have Answers.
             </h2>
             <Link
-              to="/faq"
+              to=""
               className="btn-red-action"
               style={{ marginTop: "15px" }}
             >
@@ -860,13 +784,10 @@ export default function ResourceScreen() {
               </Link>
 
               <a
-                href={
-                  contactData?.[0]?.contact_sec_email
-                    ? `mailto:${contactData?.[0]?.contact_sec_email}`
-                    : "#"
-                }
+                href="https://lms.spartan-cs.com/"
                 className="cta-btn-secondary"
                 type="button"
+                target="_blank"
                 style={{ textDecoration: "none" }}
               >
                 Resource Request

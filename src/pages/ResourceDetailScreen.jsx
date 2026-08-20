@@ -15,32 +15,22 @@ import ResourceScreen from "./ResourcesScreen";
 import BlogHorizontalScroll from "../component/BlogHorizontalScroll";
 
 const ResourceDetailScreen = () => {
-  const location = useLocation();
-  const resource_id = location.state?.id;
-  const { id } = useParams();
+  // const location = useLocation();
+  // const resource_id = location.state?.id;
+  const { slug } = useParams();
   const dispatch = useDispatch();
   const {resourceStatus, resourceDetailScreenData, loading } = useSelector((state) => state.home);
 
-  // console.log("Resource ID%%%%%%%%%:", id);
-  // console.log("Resource ID%%%%%%%%%:", resource_id);
-  // console.log("resourceDetailScreenData**************", resourceDetailScreenData)
-
   useEffect(() => {
-    // dispatch(getFaqData());
     dispatch(resourceScreenData());
-    dispatch(resourceDetailScreen({
-      resource_id: resource_id,
-    }));
-  }, [dispatch, resource_id]);
+    dispatch(resourceDetailScreen(slug));
+  }, [dispatch, slug]);
 
   const getRandomItems = (items = [], count = 5) => {
     return [...items]
       .sort(() => Math.random() - 0.5)
       .slice(0, count);
   };
-
-  // Read directly from the imported JSON
-  // const data = resourceDetailData?.data;
 
   // State for Accordion FAQ (default first FAQ open as per Figma)
   const [activeFaqId, setActiveFaqId] = useState();
@@ -56,15 +46,6 @@ const ResourceDetailScreen = () => {
   //   );
   // }
 
-  // const {
-  //   heroSection,
-  //   articleContent,
-  //   sidebarRelatedResources,
-  //   faqSection,
-  //   bottomNavigation,
-  //   youAlsoMightLike,
-  // } = data;
-
   const relatedResources = getRandomItems(
     resourceDetailScreenData?.sidebarRelatedResources?.items,
   )
@@ -78,16 +59,6 @@ const ResourceDetailScreen = () => {
       <Header />
       <div className="resource-detail-page">
         {/* 1. HERO SECTION */}
-        {/* <header className="detail-hero">
-        <div className="hero-container">
-          <div className="hero-breadcrumbs">
-            <span className="breadcrumb-red">{heroSection.categoryBadge}</span> /{' '}
-            <span>{heroSection.typeBadge}</span>
-          </div>
-          <h1 className="hero-main-title">{heroSection.mainTitle}</h1>
-        </div>
-      </header> */}
-
         {/* HERO SECTION */}
         <section className="resource-detail-hero-section">
           <div className="detail-hero-ambient-glow" />
@@ -113,91 +84,6 @@ const ResourceDetailScreen = () => {
 
           </div>
         </section>
-
-        {/* 2. MAIN CONTENT & SIDEBAR */}
-        {/* <div className="detail-container">
-          <main className="article-main">
-            <span className="section-meta-label">{articleContent.sectionLabel}</span>
-
-           
-            <section className="article-section">
-              <h2 className="section-title">{articleContent.overview.title}</h2>
-              {articleContent.overview.paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </section>
-
-           
-            <section className="article-section">
-              <h2 className="section-title">{articleContent.purpose.title}</h2>
-              <p className="intro-text">{articleContent.purpose.introText}</p>
-              <ul className="red-diamond-list">
-                {articleContent.purpose.items.map((item, index) => (
-                  <li key={index}>
-                    <strong>{item.boldPrefix}</strong> {item.text}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-           
-            <section className="article-section">
-              <h2 className="section-title">{articleContent.keyConcepts.title}</h2>
-              {articleContent.keyConcepts.subsections.map((sub, index) => (
-                <div key={index} className="key-concept-block">
-                  <h3 className="red-subheading">{sub.redTitle}</h3>
-                  {sub.paragraphs.map((p, pIndex) => (
-                    <p key={pIndex}>{p}</p>
-                  ))}
-                </div>
-              ))}
-            </section>
-
-          
-            <section className="article-section">
-              <h2 className="section-title">{articleContent.hardwareConsiderations.title}</h2>
-
-              <div className="pink-callout-box">
-                <p>
-                  <strong className="red-callout-title">
-                    {articleContent.hardwareConsiderations.calloutBox.boldTitle}
-                  </strong>{' '}
-                  {articleContent.hardwareConsiderations.calloutBox.text}
-                </p>
-              </div>
-
-              {articleContent.hardwareConsiderations.paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </section>
-
-            
-            <section className="article-section">
-              <h2 className="section-title">{articleContent.bestPractices.title}</h2>
-              <ul className="red-diamond-list">
-                {articleContent.bestPractices.items.map((item, index) => (
-                  <li key={index}>
-                    <strong>{item.boldPrefix}</strong> {item.text}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </main>
-
-         
-          <aside className="article-sidebar">
-            <div className="sticky-sidebar-card">
-              <h3 className="sidebar-title">{sidebarRelatedResources.title}</h3>
-              <ul className="related-links-list">
-                {sidebarRelatedResources.items.map((link) => (
-                  <li key={link.id}>
-                    <a href={link.link}>{link.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
-        </div> */}
 
         {/* MAIN CONTENT & SIDEBAR CONTAINER */}
         <div className="detail-container">
@@ -381,7 +267,7 @@ const ResourceDetailScreen = () => {
               <ul className="related-links-list">
                 {relatedResources.map((link) => (
                   <li key={link?.id}>
-                    <Link to={`/resource/${link?.slug}`} state={{id: link?.resource_id}} >{link?.hero_title}</Link>
+                    <Link to={`/resource/${link?.slug}`} >{link?.hero_title}</Link>
                   </li>
                 ))}
               </ul>
@@ -389,44 +275,6 @@ const ResourceDetailScreen = () => {
           </aside>
         </div>
 
-        {/* 3. INLINE FAQ SECTION */}
-        {/* <section className="detail-faq-section">
-          <div className="faq-inner-container">
-            <div className="faq-left-col">
-              <span className="faq-badge">{faqSection.badge}</span>
-              <h2 className="faq-main-title">
-                {faqSection.title.split('\n').map((line, i) => (
-                  <React.Fragment key={i}>
-                    {line}
-                    <br />
-                  </React.Fragment>
-                ))}
-              </h2>
-              <a href={faqSection.ctaButton.url} className="faq-red-btn">
-                {faqSection.ctaButton.text} &rarr;
-              </a>
-            </div>
-
-            <div className="faq-right-col">
-              {faqSection.accordion.map((item) => {
-                const isOpen = openFaqId === item.id;
-                return (
-                  <div key={item.id} className={`faq-accordion-item ${isOpen ? 'open' : ''}`}>
-                    <div className="faq-item-header" onClick={() => toggleFaq(item.id)}>
-                      <h4>{item.question}</h4>
-                      <span className="faq-status-icon">{isOpen ? '●' : '›'}</span>
-                    </div>
-                    {isOpen && (
-                      <div className="faq-item-body">
-                        <p>{item.answer}</p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section> */}
 
         {/* =========================================================================
                   SECTION 9: FAQ ASYMMETRIC ACCORDION LAYOUT (References: Section9.jpg)
@@ -448,7 +296,7 @@ const ResourceDetailScreen = () => {
                 We Have Answers.
               </h2>
               <Link
-                to="/faq"
+                to=""
                 className="btn-red-action"
                 style={{ marginTop: "15px" }}
               >
@@ -522,85 +370,6 @@ const ResourceDetailScreen = () => {
           </div>
         </section>
 
-        {/* 4. BOTTOM NAVIGATION */}
-        {/* <nav className="bottom-article-nav">
-          <a href={bottomNavigation.prev.url} className="nav-item prev">
-            <span className="nav-sublabel">{bottomNavigation.prev.subLabel}</span>
-            <strong className="nav-title">{bottomNavigation.prev.title}</strong>
-          </a>
-          <div className="nav-center-date">{bottomNavigation.centerLabel}</div>
-          <a href={bottomNavigation.next.url} className="nav-item next">
-            <span className="nav-sublabel">{bottomNavigation.next.subLabel}</span>
-            <strong className="nav-title">{bottomNavigation.next.title}</strong>
-          </a>
-        </nav> */}
-
-        {/* <nav className="bottom-article-nav">
-          <Link
-            to={`/resource-detail/${resourceDetailScreenData?.bottomNavigation?.prev?.id}`}
-            className="nav-item prev"
-          >
-            <div className="sublabel-wrapper">
-              <svg
-                className="nav-arrow"
-                width="20"
-                height="12"
-                viewBox="0 0 20 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M19 6H1M1 6L6 1M1 6L6 11"
-                  stroke="#E62225"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="nav-sublabel">
-                PREVIOUS
-              </span>
-            </div>
-            <strong className="nav-title">
-              {resourceDetailScreenData?.bottomNavigation?.prev?.title}
-            </strong>
-          </Link>
-
-          <div className="nav-center-date">
-            {resourceDetailScreenData?.bottomNavigation?.centerLabel}
-          </div>
-
-          <Link
-            to={`/resource-detail/${resourceDetailScreenData?.bottomNavigation?.next?.id}`}
-            className="nav-item next"
-          >
-            <div className="sublabel-wrapper">
-              <span className="nav-sublabel">
-                NEXT
-              </span>
-              <svg
-                className="nav-arrow"
-                width="20"
-                height="12"
-                viewBox="0 0 20 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 6H19M19 6L14 1M19 6L14 11"
-                  stroke="#E62225"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <strong className="nav-title">
-              {resourceDetailScreenData?.bottomNavigation?.next?.title}
-            </strong>
-          </Link>
-        </nav> */}
-
 
 
         <nav className="bottom-article-nav">
@@ -608,7 +377,7 @@ const ResourceDetailScreen = () => {
           {resourceDetailScreenData?.bottomNavigation?.prev ? (
             <Link
               to={`/resource/${resourceDetailScreenData?.bottomNavigation?.prev?.slug}`}
-              state={{id: resourceDetailScreenData?.bottomNavigation?.prev?.id}}
+              // state={{id: resourceDetailScreenData?.bottomNavigation?.prev?.id}}
               className="nav-item prev"
             >
               <div className="sublabel-wrapper">
@@ -666,7 +435,7 @@ const ResourceDetailScreen = () => {
           {resourceDetailScreenData?.bottomNavigation?.next ? (
             <Link
               to={`/resource/${resourceDetailScreenData?.bottomNavigation?.next?.slug}`}
-              state={{id: resourceDetailScreenData?.bottomNavigation?.next?.id}}
+              // state={{id: resourceDetailScreenData?.bottomNavigation?.next?.id}}
               className="nav-item next"
             >
               <div className="sublabel-wrapper">
@@ -716,35 +485,9 @@ const ResourceDetailScreen = () => {
           )}
         </nav>
 
-
-        {/* 5. SUGGESTED ARTICLES */}
-        {/* <section className="you-might-like-wrapper">
-          <div className="you-might-like-container">
-            <h2 className="suggested-heading">{youAlsoMightLike.title}</h2>
-            <div className="suggested-grid">
-              {youAlsoMightLike.cards.map((card) => (
-                <a key={card.id} href={card.url} className="suggested-card">
-                  <div className="card-thumb-wrapper">
-                    <img src={card.image} alt={card.title} />
-                  </div>
-                  <h3 className="card-title">{card.title}</h3>
-                  <div className="card-meta">
-                    <span>{card.date}</span> • <span>{card.readTime}</span>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
         <section className="resource-insights-section">
           <div className="section-inner-content">
             {/* Centered Section Header */}
-            {/* <div className="insights-header-container"> */}
-            {/* <div className="insights-mini-badge">
-                <span className="badge-dot-indicator" />
-                <span className="badge-label-text">Blog / Insights</span>
-              </div> */}
             <h2
               className="insights-main-title"
               style={{ marginBottom: "30px" }}
@@ -753,27 +496,6 @@ const ResourceDetailScreen = () => {
             </h2>
             {/* </div> */}
 
-            {/* 3-Column Grid Container */}
-            {/* <div className="insights-cards-grid">
-              {resourceDetailScreenData?.blogData?.cards?.map((item, index) => (
-                <div className="insight-grid-card" key={index}>
-                  <div className="insight-image-wrapper">
-                    <img
-                      src={item?.image}
-                      alt="Microsoft 365 Security Checklist"
-                    />
-                  </div>
-                  <h3 className="insight-card-title">{item?.title}</h3>
-                  <div className="insight-card-meta">
-                    <span className="meta-date">{item?.date}</span>
-                    <span className="meta-divider">—</span>
-                    <Link to={`/blog/${item?.id}`} className="meta-link">
-                      Read More
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div> */}
 
             <BlogHorizontalScroll items={resourceDetailScreenData?.blogData?.cards} />
           </div>

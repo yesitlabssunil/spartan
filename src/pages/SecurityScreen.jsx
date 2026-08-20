@@ -4,10 +4,6 @@ import Footer from "../component/Footer";
 import "../assets/css/securityScreen.css";
 import SEO from "../component/SEO";
 
-// ==========================================================================
-// ALL EXPORTED FIGMA IMAGE PATHS (MATCHING THE GRAPHICS DIRECTLY)
-// ==========================================================================
-
 // Global / Common Elements
 import checkBulletRed from "../assets/images/approachScreen/startBullet.png";
 
@@ -367,111 +363,6 @@ const SecurityScreen = () => {
             </div>
           </div>
         </section>
-
-        {/* 6. PURVIEW DLP (PREMIUM DARK SECTION) */}
-        {/* <section className="sec-dark-section">
-                    <div className="custom-container">
-                        <div className="section-tag-wrapper">
-                            <span className="section-mini-tag dark-theme-tag">
-                                <span className="fallback-red-dot"></span>DATA PROTECTION
-                            </span>
-                        </div>
-                        <h2 className="dark-section-title text-center">Purview DLP and sensitivity labels protecting CUI everywhere.</h2>
-                        <p className="dark-section-subtitle text-center mb-5">
-                            Track, tag, and lock sensitive data artifacts continuously regardless of storage environments.
-                        </p>
-
-                        <div className="row g-4">
-                            <div className="col-lg-4">
-                                <div className="dark-panel-card">
-                                    <div className="panel-icon-box dark-box"><img src={envIcon3} alt="Sensitivity Labels" className="panel-icon" /></div>
-                                    <h5>Sensitivity Labels</h5>
-                                    <p>Automated classification injection tracking documents across filesystems.</p>
-                                    <ul className="dark-card-list">
-                                        <li><img src={checkBulletRed} alt="bullet" /> Automatic encryption filters</li>
-                                        <li><img src={checkBulletRed} alt="bullet" /> Visual marking enforcement</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="dark-panel-card">
-                                    <div className="panel-icon-box dark-box"><img src={security} alt="DLP Profiles" className="panel-icon" /></div>
-                                    <h5>DLP Profiles</h5>
-                                    <p>Mitigating exfiltration actions across endpoints and shared workspaces.</p>
-                                    <ul className="dark-card-list">
-                                        <li><img src={checkBulletRed} alt="bullet" /> Blocking unsanctioned external sharing</li>
-                                        <li><img src={checkBulletRed} alt="bullet" /> Strict file export filtering</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="dark-panel-card">
-                                    <div className="panel-icon-box dark-box"><img src={purse} alt="In-depth Audits" className="panel-icon" /></div>
-                                    <h5>In-depth Audits</h5>
-                                    <p>Comprehensive tracking of interaction paths for forensic compliance reviews.</p>
-                                    <ul className="dark-card-list">
-                                        <li><img src={checkBulletRed} alt="bullet" /> Complete tracking matrix</li>
-                                        <li><img src={checkBulletRed} alt="bullet" /> Retain activity indexing records</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
-
-        {/* 7. CONTINUOUS VISIBILITY (DARK LIST WITH ICONS) */}
-        {/* <section className="sec-dark-section black-bg-accent border-top-dark">
-                    <div className="custom-container">
-                        <div className="section-tag-wrapper">
-                            <span className="section-mini-tag dark-theme-tag">
-                                <span className="fallback-red-dot"></span>MONITORING POSTURE
-                            </span>
-                        </div>
-                        <h2 className="dark-section-title text-center">Continuous visibility across the Microsoft 365 Security estate.</h2>
-                        <p className="dark-section-subtitle text-center mb-5">
-                            Our automated architecture ensures continuous compliance health tracking to eliminate drift.
-                        </p>
-
-                        <div className="row g-4 row-cols-md-2 row-cols-1 max-width-800 mx-auto">
-                            <div className="col">
-                                <div className="dark-list-item-with-icon">
-                                    <div className="dark-list-icon-wrapper"><img src={iconTracking} alt="Tracking" /></div>
-                                    <div>
-                                        <h6>Unified Tracking</h6>
-                                        <p>Aggregating tenant infrastructure health data into a centralized overview profile.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="dark-list-item-with-icon">
-                                    <div className="dark-list-icon-wrapper"><img src={iconAlerts} alt="Alerts" /></div>
-                                    <div>
-                                        <h6>Anomaly Alerts</h6>
-                                        <p>Instant containment workflows trigger the moment anomalous access attempts occur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="dark-list-item-with-icon">
-                                    <div className="dark-list-icon-wrapper"><img src={iconDrift} alt="Drift" /></div>
-                                    <div>
-                                        <h6>Drift Controls</h6>
-                                        <p>Automated policy resets correct drift deviations when settings are changed.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="dark-list-item-with-icon">
-                                    <div className="dark-list-icon-wrapper"><img src={iconReadiness} alt="Readiness" /></div>
-                                    <div>
-                                        <h6>Audit Readiness</h6>
-                                        <p>Continuous evidence aggregation ensures systems remain prepared for immediate inspection.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
 
         {/* 6. PURVIEW DLP & SENSITIVITY LABELS */}
         <section className="sec-dark-section separation-top-glow">

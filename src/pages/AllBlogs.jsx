@@ -7,7 +7,7 @@ import { getFaqScreenData } from "../redux/slices/secondSlice";
 import SEO from "../component/SEO";
 import { Link } from "react-router-dom";
 
-const Faq = () => {
+const AllBlogs = () => {
 
   const dispatch = useDispatch();
   const { newFaqData } = useSelector((state) => state.second);
@@ -39,7 +39,7 @@ const Faq = () => {
               <div className="blog-breadcrumb">
                 <Link to="/" style={{textDecoration: "none"}}><span style={{ color: "#FFFFFF" }}>HOME</span></Link>{" "}
                 <span className="separator">|</span>{" "}
-                <span style={{ color: "#E62E2D" }}>FAQ'S</span>
+                <span style={{ color: "#E62E2D" }}>BLOGS</span>
               </div>
               <h1 className="blog-hero-title">Frequently Asked Questions</h1>
               <p className="blog-hero-subtitle">
@@ -126,4 +126,4 @@ const Faq = () => {
   );
 };
 
-export default Faq;
+export default AllBlogs;

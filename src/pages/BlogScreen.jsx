@@ -19,20 +19,21 @@ import BlogHorizontalScroll from "../component/BlogHorizontalScroll";
 const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 const BlogScreen = () => {
-  const location = useLocation();
-  const id = location.state?.id;
-  // const { id } = useParams();
+  // const location = useLocation();
+  // const id = location.state?.id;
+  const { slug } = useParams();
+
+  console.log("BLOG SLUG:", slug);
 
   const dispatch = useDispatch();
   const { blogDetails, loading } = useSelector((state) => state.second);
 
-  // console.log("blogDetails@@@@@", blogDetails);
 
   useEffect(() => {
-    if (id) {
-      dispatch(getBlogDetails({id}));
+    if (slug) {
+      dispatch(getBlogDetails(slug));
     }
-  }, [dispatch, id]);
+  }, [dispatch, slug]);
 
   return (
     <>
@@ -46,9 +47,9 @@ const BlogScreen = () => {
             <div className="blog-hero-content">
               {/* Breadcrumb */}
               <div className="blog-breadcrumb">
-                <span>Resources</span> <span className="separator">|</span>{" "}
-                <span>Blogs</span> <span className="separator">|</span>{" "}
-                <span style={{ color: "white" }}>Home</span>
+                <Link to="/" style={{textDecoration: "none"}}><span style={{ color: "white" }}>Home</span> </Link> <span className="separator">|</span>{" "}
+               <Link to="/resources" style={{textDecoration: "none", color: "red"}}> <span>Resources</span></Link> <span className="separator">|</span>{" "}
+                <span>Blogs</span>
               </div>
 
               <h1 className="blog-hero-title blog-hero-title3">
@@ -68,10 +69,6 @@ const BlogScreen = () => {
             <div className="article-meta">
               <div className="blog-hero-image">
                 <img
-                  // src={
-                  //   `${IMAGE_URL}/${blogDetails?.currentArticle?.image}` ||
-                  //   heroImage
-                  // }
                   src={blogDetails?.currentArticle?.image}
                   alt={blogDetails?.currentArticle?.title}
                 />
@@ -94,24 +91,6 @@ const BlogScreen = () => {
           {/* "You also might like" Section with images */}
           <section className="blog-related">
             <h2 className="related-title">You also might like</h2>
-            {/* <div className="related-grid">
-              {blogDetails?.relatedArticles?.map((item, index) => (
-                <div key={index} className="related-card">
-                  <div className="related-card-image">
-                    <img src={`${IMAGE_URL}/${item?.image}`} alt={item.title} />
-                  </div>
-                  <div className="related-card-content">
-                    <h3 className="related-card-title">{item.title}</h3>
-                    <span className="related-card-meta">
-                      {item.date} —{" "}
-                      <Link to={`/blog/${item?.id}`} className="read-more-link">
-                        READ MORE
-                      </Link>
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div> */}
 
             <BlogHorizontalScroll items={blogDetails?.relatedArticles || []} />
           </section>

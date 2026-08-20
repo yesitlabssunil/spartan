@@ -342,7 +342,8 @@ background: radial-gradient(ellipse at 85% 30%, rgba(139, 0, 0, 0.40) 0%, rgba(8
       padding: 50px 0;
     }
     .section-main-heading, .dark-section-heading {
-      font-size: 1.75rem;
+      /* font-size: 1.75rem; */
+      font-size: 27px;
     }
     .midway-split-wrapper {
       flex-direction: column;
@@ -357,5 +358,9 @@ background: radial-gradient(ellipse at 85% 30%, rgba(139, 0, 0, 0.40) 0%, rgba(8
     .compliance-cta-banner .cta-buttons-group, 
     .compliance-cta-banner .cta-btn-white {
       width: 100%;
+    }
+
+    .custom-container.custom-container1{
+      padding: 0 24px;
     }
   }

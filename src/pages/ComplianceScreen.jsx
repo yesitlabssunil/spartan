@@ -64,15 +64,6 @@ const ComplianceScreen = () => {
     },
   ];
 
-  // const services = [
-  //   { title: "CMMC 2.0 Readiness", desc: "Gap analysis, scoping, and Level 2 preparation aligned to C3PAO assessment.", image: icon1 },
-  //   { title: "NIST 800-171 Implementation", desc: "All 110 controls implemented with traceable evidence and SSP.", image: icon2 },
-  //   { title: "POA&M Remediation", desc: "Prioritized remediation roadmap with measurable closure milestones.", image: icon3 },
-  //   { title: "Security Operations", desc: "Continuous monitoring, IR planning, and assessor-ready reporting.", image: icon4 },
-  //   { title: "Contract Risk Advisory", desc: "Pre-bid compliance posture review for DFARS and FedRAMP work.", image: icon5 },
-  //   { title: "Audit Defense", desc: "On-site assessor support, evidence presentation, and finding response.", image: icon6 }
-  // ];
-
   const services = [icon1, icon2, icon3, icon4, icon5, icon6];
 
   const outcomes = [
@@ -116,7 +107,7 @@ const ComplianceScreen = () => {
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
                <Link to="/" style={{textDecoration: "none"}}> <span style={{ color: "white" }}>Home</span></Link> <span className="separator">|</span>{" "}
-                <span>Compliance</span> 
+                <span>Compliance Systems</span> 
               </div>
               <h1 className="blog-hero-title">
                 One Program Every Framework

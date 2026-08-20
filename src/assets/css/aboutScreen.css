@@ -445,6 +445,7 @@
     .about-cta-banner .cta-banner-title {
       font-size: 2rem;
     }
+
   }
   
   @media (max-width: 767px) {
@@ -494,6 +495,10 @@
     .about-cta-banner .cta-btn-white,
     .about-cta-banner .cta-btn-outline {
       width: 100%;
+    }
+
+    .section-main-heading{
+      font-size: 24px;
     }
   }
 

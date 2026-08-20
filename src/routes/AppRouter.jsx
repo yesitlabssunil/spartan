@@ -13,6 +13,7 @@ import NotFoundRedirect from "./NotFoundRedirect";
 import ScrollToTop from "./ScrollToTop";
 import Faq from "../pages/Faq";
 import ResourceDetailScreen from "../pages/ResourceDetailScreen";
+import AllBlogs from "../pages/AllBlogs";
 
 const AppRouter = () => (
     <Router>
@@ -28,7 +29,7 @@ const AppRouter = () => (
             {/* <Route path="/blog" element={
                 <BlogScreen />
             } /> */}
-            <Route path="/blog/:id" element={
+            <Route path="/blog/:slug" element={
                 <BlogScreen />
             } />
 
@@ -67,8 +68,11 @@ const AppRouter = () => (
             <Route path="/faq" element={
                 <Faq />
             } />
+            <Route path="/blogs" element={
+                <AllBlogs />
+            } />
 
-            <Route path="/resource/:id" element={
+            <Route path="/resource/:slug" element={
                 <ResourceDetailScreen />
             } />
 

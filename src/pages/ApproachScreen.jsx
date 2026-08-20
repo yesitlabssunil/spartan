@@ -19,8 +19,6 @@ const ApproachScreen = () => {
     dispatch(approachScreenData());
   }, [dispatch]);
 
-  // console.log("approachScreenData@@@", approachData);
-
   const disciplines = [
     {
       title: "Execution – Driven Security",

@@ -30,13 +30,6 @@ const IndustriesScreen = () => {
     dispatch(industryScreenData());
   }, [dispatch]);
 
-  // const environments = [
-  //   { icon: envIcon1, title: "DOD Prime Contractors", desc: "Direct contract holders managing CUI." },
-  //   { icon: envIcon2, title: "Subcontractors", desc: "Tier-2 and Tier-3 supply chain partners." },
-  //   { icon: envIcon3, title: "Cloud & MSP Providers", desc: "Service providers in the DIB." },
-  //   { icon: envIcon4, title: "Federal Civilian Agencies", desc: "NIST 800-53 and FISMA aligned." }
-  // ];
-
   const environments = [envIcon1, envIcon2, envIcon3, envIcon4];
 
   const sectors = [
@@ -213,34 +206,6 @@ const IndustriesScreen = () => {
               ))}
             </div>
 
-            {/* <div className="sectors-stack">
-              {sectors.map((sec, idx) => (
-                <div className={`row sector-row align-items-stretch g-0 ${sec.imageRight ? "" : "flex-row-reverse"}`} key={idx}>
-                  
-                  <div className="col-lg-6">
-                    <div className="sector-text-block">
-                      <h3 className="sector-title">{sec.title}</h3>
-                      <p className="sector-desc">{sec.desc}</p>
-                      <ul className="sector-points-list">
-                        {sec.points.map((pt, pIdx) => (
-                          <li key={pIdx}>
-                            <span className="red-arrow"><img src={startBullet} alt="" /></span> 
-                            {pt}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-6">
-                    <div className="sector-image-block">
-                      <img src={sec?.image} alt={sec?.title} className="sector-display-img" />
-                    </div>
-                  </div>
-
-                </div>
-              ))}
-            </div> */}
           </div>
         </section>
 

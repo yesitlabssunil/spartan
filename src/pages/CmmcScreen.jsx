@@ -4,10 +4,6 @@ import Footer from "../component/Footer";
 import "../assets/css/cmmcScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 
-// ==========================================================================
-// ALL EXPORTED FIGMA IMAGE PATHS (MATCHING THE GRAPHICS DIRECTLY)
-// ==========================================================================
-
 // Global / Common Elements
 import checkBulletRed from "../assets/images/approachScreen/startBullet.png";
 
@@ -28,16 +24,13 @@ import { cmmcScreenData } from "../redux/slices/secondSlice";
 import SEO from "../component/SEO";
 
 const CmmcScreen = () => {
-  // const [activeCard, setActiveCard] = useState();
-  // const [activeStep, setActiveStep] = useState();
+
   const dispatch = useDispatch();
   const { cmmcData, loading } = useSelector((state) => state.second);
 
   useEffect(() => {
     dispatch(cmmcScreenData());
   }, [dispatch]);
-
-  // console.log("cmmcData@@@", cmmcData);
 
   return (
     <>
@@ -205,7 +198,6 @@ const CmmcScreen = () => {
               </div>
             </div>
 
-            {/* ... The rest of your 14 Domain Framework code stays exactly the same ... */}
 
             {/* 14 Domain Requirement Grid Tier (Figma Specification) */}
             <div className="row g-3 text-start mt-4">
@@ -494,67 +486,6 @@ const CmmcScreen = () => {
                   </div>
                 </div>
               ))}
-
-              {/* <div className="col-xl-3 col-md-6">
-                                <div
-                                    className="cmmc-process-card"
-                                    onMouseEnter={() => setActiveStep(0)}
-                                >
-                                    <div className="process-meta">
-                                        <span className="process-number">01</span>
-                                        <span className="process-label">Week</span>
-                                    </div>
-                                    <h4 className="process-card-title">Scoping & Gap Analysis</h4>
-                                    <p className="process-card-desc">
-                                        CUI boundary, contract risk profile, baseline scoring.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="col-xl-3 col-md-6">
-                                <div
-                                    className="cmmc-process-card"
-                                >
-                                    <div className="process-meta">
-                                        <span className="process-number">02</span>
-                                        <span className="process-label">Week</span>
-                                    </div>
-                                    <h4 className="process-card-title">Architecture & Plan</h4>
-                                    <p className="process-card-desc">
-                                        SSP, POA&M and remediation roadmap signed off.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="col-xl-3 col-md-6">
-                                <div
-                                    className="cmmc-process-card"
-                                >
-                                    <div className="process-meta">
-                                        <span className="process-number">03</span>
-                                        <span className="process-label">Week</span>
-                                    </div>
-                                    <h4 className="process-card-title">Implementation</h4>
-                                    <p className="process-card-desc">
-                                        Controls deployed, evidence captured, operations stood up.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="col-xl-3 col-md-6">
-                                <div
-                                    className="cmmc-process-card"
-                                >
-                                    <div className="process-meta">
-                                        <span className="process-number">04</span>
-                                        <span className="process-label">Week</span>
-                                    </div>
-                                    <h4 className="process-card-title">Audit Readiness</h4>
-                                    <p className="process-card-desc">
-                                        Mock assessment, evidence package, executive sign-off.
-                                    </p>
-                                </div>
-                            </div> */}
             </div>
           </div>
         </section>
@@ -676,10 +607,6 @@ const CmmcScreen = () => {
             >
               What happens if You Ignore CMMC 2.0?
             </h2>
-            {/* Kept here for vertical layout balance matching your UI example */}
-            {/* <p className="dark-section-subtitle text-center mb-5">
-                            Neglecting framework deadlines introduces critical contractual obstacles across your defense pipeline.
-                        </p> */}
 
             {/* Figma Layout Matrix matching your existing screen */}
             <div className="row g-0 figma-monitoring-grid text-start">
@@ -932,9 +859,7 @@ const CmmcScreen = () => {
                   <span style={{ paddingRight: "6px" }}>
                     Schedule Compliance Review
                   </span>
-                  {/* <svg className="ms-2 button-arrow-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3.3335 8H12.6668M12.6668 8L8.00016 3.33334M12.6668 8L8.00016 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg> */}
+
                   <svg
                     width="12"
                     height="12"

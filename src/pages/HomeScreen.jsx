@@ -33,17 +33,9 @@ const HomeScreen = () => {
   const dispatch = useDispatch();
   const { AllFaq, homeData, loading } = useSelector((state) => state.home);
 
-  // console.log("1234home", homeData);
-
-  //   console.log("@@@@@@@@", homeData?.statsBanner?.stats);
-  // console.log("#######", homeData?.solution?.cards);
-  // console.log("$$$$$$$$", homeData?.industries?.cards);
-
   useEffect(() => {
-    // Initialize all the vanilla JS listeners once the HTML structure is loaded
     const cleanup = initHomeScripts();
 
-    // Clean up event listeners automatically when switching pages
     return () => {
       cleanup();
     };
@@ -72,29 +64,6 @@ const HomeScreen = () => {
     "/images/built-2.svg",
     "/images/built-3.svg",
   ];
-
-  // const faqData = [
-  //   {
-  //     question: "What is CMMC 2.0?",
-  //     answer: "The Cybersecurity Maturity Model Certification (CMMC) 2.0 is the DoD's framework for safeguarding controlled unclassified information across the defense industrial base."
-  //   },
-  //   {
-  //     question: "How does Microsoft 365 security impact compliance?",
-  //     answer: "Proper configuration of Microsoft 365 ensures data governance, identity protection, and access logging, which align directly with federal compliance baselines."
-  //   },
-  //   {
-  //     question: "How long does readiness take?",
-  //     answer: "Depending on your current framework infrastructure and organization scope, readiness typically takes anywhere from 3 to 9 months of active implementation."
-  //   },
-  //   {
-  //     question: "What documentation is required?",
-  //     answer: "You need a comprehensive System Security Plan (SSP), Plan of Action and Milestones (POA&M), policy records, and consistent operation logs."
-  //   },
-  //   {
-  //     question: "Can Spartan prepare us for audits?",
-  //     answer: "Yes, Spartan engineers end-to-end operational readiness by simulating audits, mapping required evidence controls, and validating system integrity."
-  //   }
-  // ];
 
   //   if (loading) {
   //   return <div className="text-center py-5">Loading...</div>;
@@ -247,37 +216,37 @@ const HomeScreen = () => {
         <div className="problems-grid">
           <div className="problem-item fade-in">
             <div className="prob-icon">
-              <img src="images/document-img-h.svg" />
+              <img src="images/document-img-h.svg" alt="Documentation without execution" />
             </div>
             <div className="prob-text">Documentation without execution</div>
           </div>
           <div className="problem-item fade-in">
             <div className="prob-icon">
-              <img src="images/weak-cloud.svg" />
+              <img src="images/weak-cloud.svg" alt="Weak cloud security" />
             </div>
             <div className="prob-text">Weak cloud security</div>
           </div>
           <div className="problem-item fade-in">
             <div className="prob-icon">
-              <img src="images/governance-gaps.svg" />
+              <img src="images/governance-gaps.svg" alt="Governance gaps" />
             </div>
             <div className="prob-text">Governance gaps</div>
           </div>
           <div className="problem-item fade-in">
             <div className="prob-icon">
-              <img src="images/poor-enforcement.svg" />
+              <img src="images/poor-enforcement.svg" alt="Poor policy enforcement" />
             </div>
             <div className="prob-text">Poor policy enforcement</div>
           </div>
           <div className="problem-item fade-in">
             <div className="prob-icon">
-              <img src={icon1} />
+              <img src={icon1} alt="Missing evidence" />
             </div>
             <div className="prob-text">Missing evidence</div>
           </div>
           <div className="problem-item fade-in">
             <div className="prob-icon">
-              <img src="images/audit-exposure.svg" />
+              <img src="images/audit-exposure.svg" alt="Audit failure exposure" />
             </div>
             <div className="prob-text">Audit failure exposure</div>
           </div>
@@ -304,30 +273,6 @@ const HomeScreen = () => {
               <h4>{item?.description}</h4>
             </div>
           ))}
-          {/* <div className="risk-card fade-in">
-            <span className="risk-num">Risk 01</span>
-            <h4>Failed assessments</h4>
-          </div>
-          <div className="risk-card fade-in">
-            <span className="risk-num">Risk 02</span>
-            <h4>Contract disqualification</h4>
-          </div>
-          <div className="risk-card fade-in">
-            <span className="risk-num">Risk 03</span>
-            <h4>Revenue disruption</h4>
-          </div>
-          <div className="risk-card fade-in">
-            <span className="risk-num">Risk 04</span>
-            <h4>Security vulnerabilities</h4>
-          </div>
-          <div className="risk-card fade-in">
-            <span className="risk-num">Risk 05</span>
-            <h4>Weak Microsoft 365 configurations</h4>
-          </div>
-          <div className="risk-card fade-in">
-            <span className="risk-num">Risk 06</span>
-            <h4>Incomplete evidence systems</h4>
-          </div> */}
         </div>
       </section>
 
@@ -343,22 +288,6 @@ const HomeScreen = () => {
                 <p>{item?.label}</p>
               </div>
             ))}
-            {/* <div className="stat-box fade-in">
-              <h2>30+</h2>
-              <p>Years Experience</p>
-            </div>
-            <div className="stat-box fade-in">
-              <h2>BG (Ret.)</h2>
-              <p>Leadership</p>
-            </div>
-            <div className="stat-box fade-in">
-              <h2>100%</h2>
-              <p>Audit-Focused</p>
-            </div>
-            <div className="stat-box fade-in">
-              <h2>CMMC 2.0</h2>
-              <p>Specialists</p>
-            </div> */}
           </div>
         </div>
       </section>
@@ -382,26 +311,6 @@ const HomeScreen = () => {
               <p>{item?.description}</p>
             </div>
           ))}
-          {/* <div className="sol-card fade-in">
-            <div className="sol-card-icon"><img src="images/compliance-training.svg" alt="" /></div>
-            <h3>CMMC 2.0 Compliance Training</h3>
-            <p>Structured cybersecurity learning programs designed to help organizations meet CMMC 2.0 compliance requirements through guided modules and assessments.</p>
-          </div>
-          <div className="sol-card fade-in">
-            <div className="sol-card-icon"><img src="images/security-awareness.svg" alt="" /></div>
-            <h3>Security Awareness & Workforce Readiness</h3>
-            <p>Interactive LMS-based training that equips teams with practical cybersecurity knowledge, policy awareness, and secure operational practices.</p>
-          </div>
-          <div className="sol-card fade-in">
-            <div className="sol-card-icon"><img src="images/audit-preparation.svg" alt="" /></div>
-            <h3>Audit Preparation & Evidence Readiness</h3>
-            <p>Training solutions focused on preparing organizations for federal audits with compliance-focused learning, documentation awareness, and readiness tracking.</p>
-          </div>
-          <div className="sol-card fade-in">
-            <div className="sol-card-icon"><img src="images/certification.svg" alt="" /></div>
-            <h3>Certification-Driven Learning Platform</h3>
-            <p>Centralized LMS experience with role-based learning, progress tracking, quizzes, and certification workflows to validate cybersecurity training completion.</p>
-          </div> */}
         </div>
 
         <div className="solution-footer-action text-center">
@@ -638,26 +547,6 @@ const HomeScreen = () => {
                 <span className="chk-text">{item?.title}</span>
               </div>
             ))}
-            {/* <div className="checklist-row">
-              <span className="chk-icon"><img src="images/check-icon-militry.svg" alt="" /></span>
-              <span className="chk-text">Military precision to execution</span>
-            </div>
-            <div className="checklist-row">
-              <span className="chk-icon"><img src="images/check-icon-militry.svg" alt="" /></span>
-              <span className="chk-text">Governance-first strategy</span>
-            </div>
-            <div className="checklist-row">
-              <span className="chk-icon"><img src="images/check-icon-militry.svg" alt="" /></span>
-              <span className="chk-text">Operational compliance systems.</span>
-            </div>
-            <div className="checklist-row">
-              <span className="chk-icon"><img src="images/check-icon-militry.svg" alt="" /></span>
-              <span className="chk-text">Audit preparedness from day one</span>
-            </div>
-            <div className="checklist-row">
-              <span className="chk-icon"><img src="images/check-icon-militry.svg" alt="" /></span>
-              <span className="chk-text">Long-term resilience and oversight</span>
-            </div> */}
           </div>
         </div>
 
@@ -849,28 +738,11 @@ const HomeScreen = () => {
               }}
               key={index}
             >
-              {/* {console.log("11111111", `${IMAGE_URL}/${item?.image}`)} */}
               <span className="ind-num">0{index + 1}</span>
               <h3>{item?.title}</h3>
               <p>{item?.description}</p>
             </div>
           ))}
-
-          {/* <div className="industry-image-box fade-in" style={{ backgroundImage: "url('../images/built-1.svg')" }}>
-            <span className="ind-num">01</span>
-            <h3>Defense Contractors</h3>
-            <p>Secure pipeline and win subcontracts with CMMC 2.0 readiness, security controls, and advanced defenses.</p>
-          </div>
-          <div className="industry-image-box fade-in" style={{ backgroundImage: "url('../images/built-2.svg')" }}>
-            <span className="ind-num">02</span>
-            <h3>Aerospace & Aviation</h3>
-            <p>Strengthening advanced system protection for organization operating within sensitive federal and defense ecosystems.</p>
-          </div>
-          <div className="industry-image-box fade-in" style={{ backgroundImage: "url('../images/built-3.svg')" }}>
-            <span className="ind-num">03</span>
-            <h3>Government Subcontractors</h3>
-            <p>Providing seamless compliance tracking that ensures nesting within a supplier frameworks securely.</p>
-          </div> */}
         </div>
       </section>
 
@@ -885,105 +757,14 @@ const HomeScreen = () => {
           </p>
         </div>
 
-        {/* <div className="resources-grid">
-          {homeData?.resources?.cards?.map((item, index) => (
-            <div className="resource-card" key={item?.id}>
-              <div className="res-img-box">
-                <img src={item?.image} />
-              </div>
-              <h3>{item?.title}</h3>
-              <div className="res-meta">
-                <span className="res-date">{item?.date}</span>
-                <span className="res-divider">—</span>
-                <Link to={`/blog/${item?.id}`} className="res-link">
-                  READ MORE
-                </Link>
-              </div>
-              <hr style={{ color: "#555555" }} />
-            </div>
-          ))}
-        </div> */}
-
         <BlogHorizontalScroll items={homeData?.resources?.cards || []} />
 
-        <div className="text-center" style={{ marginTop: "40px" }}>
-          {/* <Link to="/resources" className="contact-btn"> */}
+        {/* <div className="text-center" style={{ marginTop: "40px" }}>
           <Link to="/resources" className="btn-red-action">
             Browse all Resources <i className="fas fa-arrow-right"></i>
           </Link>
-        </div>
+        </div> */}
       </section>
-
-      {/* <section className="faq-section">
-        <div className="faq-left-block">
-          <span className="badge-red-pill">FAQ</span>
-          <h2>You Have Questions.<br />We Have Answers.</h2>
-          <p>Not sure where to start? Book a free 30-minute discovery call and let's figure it out together.</p>
-          <a href="#" className="btn-red-action">Schedule a Call <i className="fas fa-arrow-right"></i></a>
-        </div>
-
-        <div className="faq-accordion-container">
-          <div className="accordion-item active">
-            <div className="accordion-header">
-              <h4>What is CMMC 2.0?</h4>
-              <span className="accordion-icon"></span>
-            </div>
-            <div className="accordion-body">
-              <div className="accordion-body-content">
-                The Cybersecurity Maturity Model Certification (CMMC) 2.0 is the DoD's framework for safeguarding controlled unclassified information across the defense industrial base.
-              </div>
-            </div>
-          </div>
-
-          <div className="accordion-item">
-            <div className="accordion-header">
-              <h4>How does Microsoft 365 security impact compliance?</h4>
-              <span className="accordion-icon"></span>
-            </div>
-            <div className="accordion-body">
-              <div className="accordion-body-content">
-                Proper configuration of Microsoft 365 ensures data governance, identity protection, and access logging, which align directly with federal compliance baselines.
-              </div>
-            </div>
-          </div>
-
-          <div className="accordion-item">
-            <div className="accordion-header">
-              <h4>How long does readiness take?</h4>
-              <span className="accordion-icon"></span>
-            </div>
-            <div className="accordion-body">
-              <div className="accordion-body-content">
-                Depending on your current framework infrastructure and organization scope, readiness typically takes anywhere from 3 to 9 months of active implementation.
-              </div>
-            </div>
-          </div>
-
-          <div className="accordion-item">
-            <div className="accordion-header">
-              <h4>What documentation is required?</h4>
-              <span className="accordion-icon"></span>
-            </div>
-            <div className="accordion-body">
-              <div className="accordion-body-content">
-                You need a comprehensive System Security Plan (SSP), Plan of Action and Milestones (POA&M), policy records, and consistent operation logs.
-              </div>
-            </div>
-          </div>
-
-          <div className="accordion-item">
-            <div className="accordion-header">
-              <h4>Can Spartan prepare us for audits?</h4>
-              <span className="accordion-icon"></span>
-            </div>
-            <div className="accordion-body">
-              <div className="accordion-body-content">
-                Yes, Spartan engineers end-to-end operational readiness by simulating audits, mapping required evidence controls, and validating system integrity.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="faq-section">
         <div className="faq-left-block">
@@ -1036,7 +817,6 @@ const HomeScreen = () => {
                     transition: "max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
                   }}
                 >
-                  {/* Giving the inner element a matching ID allows our maxHeight calculation to read it perfectly */}
                   <div
                     id={`faq-content-${index}`}
                     className="accordion-body-content"

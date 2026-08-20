@@ -62,6 +62,7 @@
    .section-mini-tag.dark-theme-tag .fallback-red-dot {
      background-color: #ff3b3b;
    }
+
    /* .block-size{
     max-width: 650px;
    } */
@@ -74,6 +75,7 @@
      letter-spacing: -0.015em;
      line-height: 1.25;
    }
+
    .section-main-heading1 {
      font-family: 'Overused Grotesk', sans-serif;
      /* font-size: 2.3rem; */
@@ -92,6 +94,7 @@
      margin: 0 auto;
      line-height: 1.55;
    }
+
    .section-sub-heading2 {
      font-size: 1.05rem;
      color: #64748B;
@@ -99,8 +102,9 @@
      margin: 0 auto;
      line-height: 1.55;
    }
-   .section-sub-heading.section-sub-heading1{
-    max-width: 1110px !important;
+
+   .section-sub-heading.section-sub-heading1 {
+     max-width: 1110px !important;
    }
 
    .sec-body-text {
@@ -110,6 +114,7 @@
      color: #000000B2;
      max-width: 384px;
    }
+
    .sec-body-text2 {
      font-family: 'Geist', sans-serif;
      font-size: 17px;
@@ -174,7 +179,7 @@
    }
 
    .security-panel-card h5 {
-    font-family: 'Overused Grotesk', sans-serif;
+     font-family: 'Overused Grotesk', sans-serif;
      font-size: 1.15rem;
      font-weight: 500;
      color: #111111;
@@ -189,7 +194,7 @@
    }
 
    .security-panel-card p {
-    font-family: 'Geist', sans-serif;
+     font-family: 'Geist', sans-serif;
      font-size: 0.9rem;
      line-height: 1.4;
      color: #000000B2;
@@ -219,7 +224,7 @@
    }
 
    .dark-section-subtitle {
-    font-family: 'Geist', sans-serif;
+     font-family: 'Geist', sans-serif;
      font-size: 1.05rem;
      color: #FFFFFFB2;
      max-width: 640px;
@@ -236,7 +241,7 @@
    }
 
    .dark-panel-card h5 {
-    font-family: 'Overused Grotesk', sans-serif;
+     font-family: 'Overused Grotesk', sans-serif;
      /* font-size: 1.2rem; */
      font-size: 21px;
      font-weight: 500;
@@ -245,7 +250,7 @@
    }
 
    .dark-panel-card p {
-    font-family: 'Geist', sans-serif;
+     font-family: 'Geist', sans-serif;
      /* font-size: 0.92rem; */
      font-size: 16px;
      color: #FFFFFFB2;
@@ -260,7 +265,7 @@
    }
 
    .dark-card-list li {
-    font-family: 'Geist', sans-serif;
+     font-family: 'Geist', sans-serif;
      font-size: 0.88rem;
      color: #FFFFFFB2;
      margin-bottom: 10px;
@@ -322,7 +327,7 @@
      flex-direction: column;
      align-items: center;
      justify-content: center;
-   
+
      background: radial-gradient(ellipse at 85% 30%, rgba(139, 0, 0, 0.40) 0%, rgba(80, 0, 0, 0.22) 30%, rgba(0, 0, 0, 0) 65%), #000;
    }
 
@@ -336,8 +341,8 @@
    }
 
    .security-cta-banner .cta-banner-desc {
-    font-family: 'Geist', sans-serif;
-    color: #FFFFFF !important;
+     font-family: 'Geist', sans-serif;
+     color: #FFFFFF !important;
      font-size: 1.05rem;
      /* color: #cccccc; */
      max-width: 700px;
@@ -440,6 +445,10 @@
      .security-cta-banner .cta-btn-white,
      .security-cta-banner .cta-btn-outline {
        width: 100%;
+     }
+
+     .section-main-heading1{
+      font-size: 32px;
      }
    }
 
@@ -555,7 +564,7 @@
    }
 
    .dark-card-list li {
-    font-family: 'Geist', sans-serif;
+     font-family: 'Geist', sans-serif;
      color: #FFFFFFB2 !important;
      /* font-size: 0.9rem !important; */
      font-size: 15px !important;
@@ -599,7 +608,7 @@
    }
 
    .figma-monitoring-grid h6 {
-    /* font-family: 'Overused Grotesk', sans-serif; */
+     /* font-family: 'Overused Grotesk', sans-serif; */
      font-size: 1.1rem;
      font-weight: 600;
      color: #ffffff;
@@ -607,7 +616,7 @@
    }
 
    .figma-monitoring-grid p {
-    font-family: 'Geist', sans-serif;
+     font-family: 'Geist', sans-serif;
      color: #FFFFFFB2;
      font-size: 0.92rem;
      line-height: 1.6;
@@ -634,4 +643,3 @@
        padding-right: 0;
      }
    }
-

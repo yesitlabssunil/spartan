@@ -28,45 +28,7 @@ const AboutScreen = () => {
     dispatch(aboutScreenData());
   }, [dispatch]);
 
-  // const highlights = [
-  //   { title: "Cyber Operations", desc: "Decades of military and federal cyber defense leadership.", image: security },
-  //   { title: "Federal Prosecution", desc: "Investigative and litigation experience across cybercrime and national security.", image: hammer },
-  //   { title: "Executive Governance", desc: "Board-level advisory across regulated and high-risk industries.", image: icon6 },
-  //   { title: "Compliance Execution", desc: "CMMC 2.0, NIST SP 800-171, and ISO/IEC 27001 readiness delivery.", image: purse }
-  // ];
-
   const highlights = [security, hammer, icon6, purse];
-
-  // const team = [
-  //   {
-  //     image: leaderImg1,
-  //     rank: "FOUNDER AND PRESIDENT",
-  //     name: "Brigadier General (Ret.) Raphael Warren - MS, CIS",
-  //     desc: "Brigadier General (Ret.) Raphael Warren is an executive cybersecurity governance advisor, retired senior military officer and former federal agent with more than three decades of experience in cybersecurity leadership, federal operations and executive risk management.",
-  //   },
-  //   {
-  //     image: leaderImg2,
-  //     rank: "Vice President, Legal",
-  //     name: "Colonel (Ret.) Joe M. Romero - JD",
-  //     desc: "Colonel (Ret.) Joe M. Romero is a former federal prosecutor and legal strategist with extensive experience in cybersecurity law, federal investigations and executive risk exposure.",
-  //   },
-  //   {
-  //     image: leaderImg3,
-  //     rank: "Vice President, Operations",
-  //     name: "Lieutenant Colonel (Ret.) Tyrone Finch - BS",
-  //     desc: "Lieutenant Colonel (Ret.) Tyrone Finch is a cybersecurity compliance and operational execution strategist specializing in CMMC 2.0, NIST SP 800-171, ISO/IEC 27001, and C3PAO readiness preparation.",
-  //   },
-  // ];
-
-  // const advantages = [
-  //   { icon: rings, title: "Principal-Led Engagements", desc: "Every engagement is led directly by senior principals - not delegated to junior staff. Executives work with the people who own the outcome." },
-  //   { icon: security, title: "Defensible by Design", desc: "Programs are built to withstand contracting officer review, third-party assessment, regulatory inquiry, and litigation discovery." },
-  //   { icon: hammer, title: "Legal & Regulatory Fluency", desc: "Advisory recommendations are shaped by federal enforcement experience, not theoretical compliance posture." },
-  //   { icon: people, title: "Mission-Aligned Execution", desc: "We translate regulatory frameworks into operational processes that match how your organization actually functions." },
-  //   { icon: purse, title: "Confidential & Discreet", desc: "Sensitive engagements are handled with the operational discretion expected of senior military and federal practitioners." },
-  //   { icon: icon6, title: "Senior-Only Bench", desc: "Retired flag officers, federal prosecutors and field-grade cyber leaders - no offshore handoffs or boilerplate deliverables." }
-  // ];
-
   const advantages = [rings, security, hammer, people, purse, icon6];
 
   return (
@@ -114,16 +76,8 @@ const AboutScreen = () => {
                 {aboutData?.company?.paragraph?.map((item, index) => (
                   <p key={index}>{item}</p>
                 ))}
-                {/* <p className="about-intro-text">
-              Spartan Cyber Security LLC is an executive advisory firm led by senior leaders with backgrounds spanning military command, federal prosecution, cyber operations and enterprise compliance execution.<br />
-                </p> */}
-                {/* <p className="about-intro-text">
-                Our work centers on ensuring that cybersecurity programs are structured to withstand contractual, regulatory and third-party assessment scrutiny - from CMMC 2.0 certification to NIST SP 800-171 alignment, ISO/IEC 27001 readiness and board-level governance reporting.
-                </p> */}
 
-                {/* <p className="about-intro-text">
-                Spartan is headquartered to serve federal contractors, defense industrial base organizations and regulated enterprises navigating Department of Defense enforcement, executive risk exposure and evolving compliance obligations.
-                </p> */}
+
               </div>
             </div>
           </div>
@@ -249,10 +203,6 @@ const AboutScreen = () => {
                 {aboutData?.work?.heading}
               </h2>
               <p className="cta-banner-desc">{aboutData?.work?.paragraph} </p>
-              {/* <div className="cta-buttons-group">
-                <button className="cta-btn-white">Schedule Consultation <span>→</span></button>
-                <button className="cta-btn-outline">Explore Compliance</button>
-              </div> */}
 
               <div className="cta-buttons-group">
                 <Link to="/contact-us" className="cta-btn-white linknav">
