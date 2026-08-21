@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "../assets/css/securityScreen.css";
 import SEO from "../component/SEO";
+import { useSelector, useDispatch } from "react-redux";
 
 // Global / Common Elements
 import checkBulletRed from "../assets/images/approachScreen/startBullet.png";
@@ -24,13 +25,53 @@ import warning from "../assets/images/securityScreen/warning.png";
 import security from "../assets/images/complianceScreen/icon1.png";
 import envIcon3 from "../assets/images/industryScreen/env-icon3.png";
 import { Link } from "react-router-dom";
+import { securityScreenData } from "../redux/slices/secondSlice";
 
 const SecurityScreen = () => {
+  const dispatch = useDispatch();
+  const { securityScreenFaqData } = useSelector((state) => state.second);
+
+  // console.log("securityScreenFaqData", securityScreenFaqData);
+  const [activeFaqId, setActiveFaqId] = useState();
+
+  const toggleFaq = (id) => {
+    setActiveFaqId(activeFaqId === id ? null : id);
+  }
+
+  useEffect(() => {
+    dispatch(securityScreenData())
+  }, [dispatch]);
+
+  const microsoft365SecuritySchema = {
+    "@type": "Service",
+    "@id": "https://spartan-cs.com/microsoft-365-security#service",
+    "name": "Microsoft 365 Security Consulting",
+    "serviceType": "Microsoft 365 Security Hardening & Compliance",
+    "provider": {
+      "@id": "https://spartan-cs.com/#organization"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Federal Contractors / Defense Industrial Base"
+    },
+    "description": "GCC High migration, CUI enclave design, Microsoft 365 hardening, identity protection, Defender, Purview DLP, Azure security, and incident response for federal contractors.",
+    "url": "https://spartan-cs.com/microsoft-365-security",
+    "mainEntityOfPage": "https://spartan-cs.com/microsoft-365-security"
+  };
+
   return (
     <>
       <SEO
-        title="Cybersecurity Services for Federal Contractors | Spartan Cyber Security"
-        description="Strengthen your cybersecurity posture with security governance, risk management, Microsoft 365 security, identity protection, and operational compliance solutions."
+        title="Microsoft 365 Compliance for Defense Contractors | Spartan Cyber Security"
+        description="Microsoft 365 compliance for defense contractors, with GCC High configuration, access controls, and monitoring built to meet CMMC and NIST 800-171."
+        url="https://spartan-cs.com/microsoft-365-security"
+        schema={[
+          microsoft365SecuritySchema,
+        ]}
       />
       <Header />
       <main className="security-main">
@@ -39,7 +80,7 @@ const SecurityScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-                <Link to="/" style={{textDecoration: "none"}}><span style={{ color: "white" }}>Home</span></Link>
+                <Link to="/" style={{ textDecoration: "none" }}><span style={{ color: "white" }}>Home</span></Link>
                 <span className="separator">|</span>{" "}
                 <span>MICROSOFT 365 SECURITY</span>
               </div>
@@ -728,6 +769,95 @@ const SecurityScreen = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =================faq================ */}
+
+        <section className="resource-faq-section">
+          <div className="section-inner-content faq-layout-grid">
+            {/* Left Column Sticky Header Block */}
+            <div className="faq-left-header-panel">
+              <div className="faq-mini-badge">
+                <span className="badge-dot-indicator" />
+                <span className="badge-label-text">FAQ</span>
+              </div>
+              <h2 className="faq-panel-title">
+                You Have Questions.
+                <br />
+                We Have Answers.
+              </h2>
+              <Link
+                to=""
+                className="btn-red-action"
+                style={{ marginTop: "15px" }}
+              >
+                Find More Answers <i className="fas fa-arrow-right"></i>
+              </Link>
+            </div>
+
+            {/* Right Column Interactive Accordion Stack */}
+            <div className="faq-right-accordion-panel">
+              {securityScreenFaqData?.microsoft_faq_content?.map((item, index) => {
+                const isOpen = activeFaqId === item.id;
+                return (
+                  <div
+                    key={item?.id}
+                    className={`faq-accordion-row ${isOpen ? "is-expanded" : ""}`}
+                    onClick={() => toggleFaq(item?.id)}
+                  >
+                    <div className="faq-row-trigger-line">
+                      <h3 className="faq-question-text">{item?.question}</h3>
+                      <div
+                        className={`faq-toggle-circle-indicator ${isOpen ? "active-minus" : "inactive-plus"
+                          }`}
+                      >
+                        {isOpen ? (
+                          /* Minus SVG Icon */
+                          <svg
+                            width="12"
+                            height="2"
+                            viewBox="0 0 12 2"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1 1H11"
+                              stroke="#FFFFFF"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        ) : (
+                          /* Plus SVG Icon */
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 1V11M1 6H11"
+                              stroke="#27272A"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Smooth height container breakdown space */}
+                    <div className="faq-row-collapsible-content">
+                      <div className="faq-answer-inner-wrapper">
+                        <p className="faq-answer-paragraph">{item?.answer}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

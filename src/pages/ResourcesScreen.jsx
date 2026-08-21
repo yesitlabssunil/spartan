@@ -172,11 +172,47 @@ export default function ResourceScreen() {
     ) || [0])
   );
 
+  const resourcesPageSchema = {
+    "@type": "CollectionPage",
+    "@id": "https://spartan-cs.com/resources#collectionpage",
+    "name": "Resources",
+    "url": "https://spartan-cs.com/resources",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://spartan-cs.com/#website",
+      "name": "Spartan Cyber Security",
+      "url": "https://spartan-cs.com/"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "CMMC 2.0, NIST 800-171, and federal contractor cybersecurity compliance"
+    },
+    "description": "Cybersecurity compliance resources covering CMMC 2.0, NIST 800-171, and federal contractor security requirements."
+  };
+
+  const faqSchema = {
+    "@type": "FAQPage",
+    "@id": "https://spartan-cs.com/#faq",
+    "mainEntity": resourceData?.faqSection?.items?.map((faq) => ({
+      "@type": "Question",
+      "name": faq?.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq?.answer
+      }
+    }))
+  };
+
   return (
     <>
       <SEO
-        title="Cybersecurity & CMMC Compliance Resources | Spartan Cyber Security"
-        description="Explore CMMC 2.0 guides, cybersecurity insights, compliance updates, and practical resources to help federal contractors strengthen security and audit readiness."
+        title="CMMC 2.0 Compliance Resources | Spartan Cyber Security"
+        description="CMMC 2.0 compliance resources, including NIST 800-171 policy guides, audit readiness playbooks, and governance frameworks for defense contractors."
+        url="https://spartan-cs.com/resources"
+        schema={[
+          resourcesPageSchema,
+          faqSchema
+        ]}
       />
       <Header />
 

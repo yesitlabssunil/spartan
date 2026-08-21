@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "../assets/css/industryScreen.css";
@@ -25,6 +25,12 @@ const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 const IndustriesScreen = () => {
   const dispatch = useDispatch();
   const { industryData, loading } = useSelector((state) => state.second);
+
+  const [activeFaqId, setActiveFaqId] = useState();
+
+  const toggleFaq = (id) => {
+    setActiveFaqId(activeFaqId === id ? null : id);
+  };
 
   useEffect(() => {
     dispatch(industryScreenData());
@@ -93,8 +99,9 @@ const IndustriesScreen = () => {
   return (
     <>
       <SEO
-        title="Cybersecurity & Compliance for Federal Contractors | Spartan Cyber Security"
-        description="Spartan Cyber Security supports defense, aerospace, aviation, and government contractors with CMMC 2.0 readiness, cybersecurity compliance, and operational resilience."
+        title="CMMC 2.0 Compliance by Industry | Spartan Cyber Security"
+        description="CMMC 2.0 compliance by industry — sector-specific guidance for manufacturing, aerospace, and defense supply chain contractors pursuing certification."
+        url="https://spartan-cs.com/industries"
       />
       <Header />
       <main className="industries-main">
@@ -103,8 +110,8 @@ const IndustriesScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content blog-hero-content1">
               <div className="blog-breadcrumb">
-                <Link to="/" style={{textDecoration: "none"}}><span style={{ color: "white" }}>Home</span></Link> <span className="separator">|</span>{" "}
-                <span>Industries</span> 
+                <Link to="/" style={{ textDecoration: "none" }}><span style={{ color: "white" }}>Home</span></Link> <span className="separator">|</span>{" "}
+                <span>Industries</span>
               </div>
               <h1 className="blog-hero-title">
                 {industryData?.industry_sec_heading}
@@ -169,9 +176,8 @@ const IndustriesScreen = () => {
               {/* {sectors.map((sec, idx) => ( */}
               {industryData?.industry_sec_card_content?.map((sec, idx) => (
                 <div
-                  className={`row sector-row align-items-stretch g-0 ${
-                    sec.imageRight === "1" ? "" : "flex-row-reverse"
-                  }`}
+                  className={`row sector-row align-items-stretch g-0 ${sec.imageRight === "1" ? "" : "flex-row-reverse"
+                    }`}
                   key={idx}
                 >
                   {/* Text Column */}
@@ -206,6 +212,95 @@ const IndustriesScreen = () => {
               ))}
             </div>
 
+          </div>
+        </section>
+
+        {/* ===================faq section=========== */}
+
+        <section className="resource-faq-section">
+          <div className="section-inner-content faq-layout-grid">
+            {/* Left Column Sticky Header Block */}
+            <div className="faq-left-header-panel">
+              <div className="faq-mini-badge">
+                <span className="badge-dot-indicator" />
+                <span className="badge-label-text">FAQ</span>
+              </div>
+              <h2 className="faq-panel-title">
+                You Have Questions.
+                <br />
+                We Have Answers.
+              </h2>
+              <Link
+                to=""
+                className="btn-red-action"
+                style={{ marginTop: "15px" }}
+              >
+                Find More Answers <i className="fas fa-arrow-right"></i>
+              </Link>
+            </div>
+
+            {/* Right Column Interactive Accordion Stack */}
+            <div className="faq-right-accordion-panel">
+              {industryData?.industry_faq_content.map((item, index) => {
+                const isOpen = activeFaqId === item.id;
+                return (
+                  <div
+                    key={item?.id}
+                    className={`faq-accordion-row ${isOpen ? "is-expanded" : ""}`}
+                    onClick={() => toggleFaq(item?.id)}
+                  >
+                    <div className="faq-row-trigger-line">
+                      <h3 className="faq-question-text">{item?.question}</h3>
+                      <div
+                        className={`faq-toggle-circle-indicator ${isOpen ? "active-minus" : "inactive-plus"
+                          }`}
+                      >
+                        {isOpen ? (
+                          /* Minus SVG Icon */
+                          <svg
+                            width="12"
+                            height="2"
+                            viewBox="0 0 12 2"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1 1H11"
+                              stroke="#FFFFFF"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        ) : (
+                          /* Plus SVG Icon */
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 1V11M1 6H11"
+                              stroke="#27272A"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Smooth height container breakdown space */}
+                    <div className="faq-row-collapsible-content">
+                      <div className="faq-answer-inner-wrapper">
+                        <p className="faq-answer-paragraph">{item?.answer}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 

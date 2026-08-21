@@ -28,16 +28,47 @@ const CmmcScreen = () => {
   const dispatch = useDispatch();
   const { cmmcData, loading } = useSelector((state) => state.second);
 
+  const [activeFaqId, setActiveFaqId] = useState();
+
+  const toggleFaq = (id) => {
+    setActiveFaqId(activeFaqId === id ? null : id);
+  }
+
   useEffect(() => {
     dispatch(cmmcScreenData());
   }, [dispatch]);
 
+  const cmmcServiceSchema = {
+    "@type": "Service",
+    "@id": "https://spartan-cs.com/cmmc#service",
+    "name": "CMMC 2.0 and NIST 800-171 Compliance Consulting",
+    "serviceType": "CMMC 2.0 and NIST 800-171 Compliance Consulting",
+    "provider": {
+      "@id": "https://spartan-cs.com/#organization"
+    },
+    "url": "https://spartan-cs.com/cmmc",
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Federal Contractors / Defense Industrial Base"
+    },
+    "description": "Audit-ready cybersecurity programs built for C3PAO assessment and contract defense."
+  };
+
   return (
     <>
       <SEO
-        title="CMMC 2.0 Compliance & Readiness Services | Spartan Cyber Security"
-        description="Prepare for CMMC 2.0 with principal-led advisory support, NIST SP 800-171 alignment, gap assessments, SSP and POA&M development, and audit readiness."
+        title="CMMC 2.0 Compliance & Certification Readiness | Spartan Cyber Security"
+        description="CMMC 2.0 readiness assessments, gap analysis, and audit-ready documentation to help defense contractors achieve certification and protect DoD contracts."
+        url="https://spartan-cs.com/cmmc"
+        schema={[
+          cmmcServiceSchema,
+        ]}
       />
+
       <Header />
       <main className="security-main">
         {/* 1. HERO SECTION (Dark Mode - Exact Typography Metrics) */}
@@ -46,8 +77,8 @@ const CmmcScreen = () => {
             <div className="blog-hero-content text-start">
               <div className="blog-breadcrumb">
                 {/* <span className="red-bullet-indicator"></span> */}
-                <Link to="/" style={{textDecoration: "none"}}><span style={{ color: "white", textDecoration: "none" }}>HOME</span></Link><span className="separator">|</span>{" "}
-                <span>CMMC 2.0</span> 
+                <Link to="/" style={{ textDecoration: "none" }}><span style={{ color: "white", textDecoration: "none" }}>HOME</span></Link><span className="separator">|</span>{" "}
+                <span>CMMC 2.0</span>
               </div>
               <h1 className="blog-hero-title custom-hero-lh">
                 CMMC 2.0 Executive Readiness
@@ -135,7 +166,7 @@ const CmmcScreen = () => {
               <div className="col-lg-4 col-md-6">
                 <div
                   className="cmmc-level-card text-start"
-                  // onMouseEnter={() => setActiveCard(0)}
+                // onMouseEnter={() => setActiveCard(0)}
                 >
                   <div className="card-icon-wrapper mb-4">
                     <img
@@ -157,7 +188,7 @@ const CmmcScreen = () => {
               <div className="col-lg-4 col-md-6">
                 <div
                   className="cmmc-level-card text-start"
-                  // onMouseEnter={() => setActiveCard(1)}
+                // onMouseEnter={() => setActiveCard(1)}
                 >
                   <div className="card-icon-wrapper mb-4">
                     <img
@@ -179,7 +210,7 @@ const CmmcScreen = () => {
               <div className="col-lg-4 col-md-6">
                 <div
                   className="cmmc-level-card text-start"
-                  // onMouseEnter={() => setActiveCard(2)}
+                // onMouseEnter={() => setActiveCard(2)}
                 >
                   <div className="card-icon-wrapper mb-4">
                     <img
@@ -823,6 +854,96 @@ const CmmcScreen = () => {
             </div>
           </div>
         </section>
+
+        {/* ===========new faq section============== */}
+
+        <section className="resource-faq-section" style={{marginBottom: "40px"}}>
+          <div className="section-inner-content faq-layout-grid">
+            {/* Left Column Sticky Header Block */}
+            <div className="faq-left-header-panel">
+              <div className="faq-mini-badge">
+                <span className="badge-dot-indicator" />
+                <span className="badge-label-text">FAQ</span>
+              </div>
+              <h2 className="faq-panel-title">
+                You Have Questions.
+                <br />
+                We Have Answers.
+              </h2>
+              <Link
+                to=""
+                className="btn-red-action"
+                style={{ marginTop: "15px" }}
+              >
+                Find More Answers <i className="fas fa-arrow-right"></i>
+              </Link>
+            </div>
+
+            {/* Right Column Interactive Accordion Stack */}
+            <div className="faq-right-accordion-panel">
+              {cmmcData?.cmmc_faq_content.map((item, index) => {
+                const isOpen = activeFaqId === item.id;
+                return (
+                  <div
+                    key={item?.id}
+                    className={`faq-accordion-row ${isOpen ? "is-expanded" : ""}`}
+                    onClick={() => toggleFaq(item?.id)}
+                  >
+                    <div className="faq-row-trigger-line">
+                      <h3 className="faq-question-text">{item?.question}</h3>
+                      <div
+                        className={`faq-toggle-circle-indicator ${isOpen ? "active-minus" : "inactive-plus"
+                          }`}
+                      >
+                        {isOpen ? (
+                          /* Minus SVG Icon */
+                          <svg
+                            width="12"
+                            height="2"
+                            viewBox="0 0 12 2"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1 1H11"
+                              stroke="#FFFFFF"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        ) : (
+                          /* Plus SVG Icon */
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 1V11M1 6H11"
+                              stroke="#27272A"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Smooth height container breakdown space */}
+                    <div className="faq-row-collapsible-content">
+                      <div className="faq-answer-inner-wrapper">
+                        <p className="faq-answer-paragraph">{item?.answer}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
 
         {/* 10. FINAL BILLBOARD CTA SECTION (Deep Dark Radiant Card Container) */}
         <section

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "../assets/css/approachScreen.css";
@@ -14,6 +14,12 @@ import SEO from "../component/SEO";
 const ApproachScreen = () => {
   const dispatch = useDispatch();
   const { approachData, loading } = useSelector((state) => state.second);
+
+  const [activeFaqId, setActiveFaqId] = useState();
+
+  const toggleFaq = (id) => {
+    setActiveFaqId(activeFaqId === id ? null : id);
+  };
 
   useEffect(() => {
     dispatch(approachScreenData());
@@ -101,8 +107,9 @@ const ApproachScreen = () => {
   return (
     <>
       <SEO
-        title="Our Cybersecurity & Compliance Approach | Spartan Cyber Security"
-        description="Discover Spartan Cyber Security's structured approach to cybersecurity and compliance, from gap assessment and strategic planning to implementation and audit readiness."
+        title="Cybersecurity Compliance Approach | Spartan Cyber Security"
+        description="Cybersecurity compliance approach built on governance-first principles, turning CMMC and NIST 800-171 requirements into audit-ready operational security."
+        url="https://spartan-cs.com/approach"
       />
       <Header />
       <main className="approach-main">
@@ -111,8 +118,8 @@ const ApproachScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-               <Link to="/" style={{textDecoration: "none"}}> <span style={{ color: "white" }}>Home</span></Link> <span className="separator">|</span>{" "}
-                <span>Approach</span> 
+                <Link to="/" style={{ textDecoration: "none" }}> <span style={{ color: "white" }}>Home</span></Link> <span className="separator">|</span>{" "}
+                <span>Approach</span>
               </div>
               <h1 className="blog-hero-title">A method, not a checklist.</h1>
               <p className="blog-hero-subtitle">
@@ -236,6 +243,96 @@ const ApproachScreen = () => {
             </div>
           </div>
         </section>
+
+        {/* ==================faq================= */}
+
+        <section className="resource-faq-section">
+          <div className="section-inner-content faq-layout-grid">
+            {/* Left Column Sticky Header Block */}
+            <div className="faq-left-header-panel">
+              <div className="faq-mini-badge">
+                <span className="badge-dot-indicator" />
+                <span className="badge-label-text">FAQ</span>
+              </div>
+              <h2 className="faq-panel-title">
+                You Have Questions.
+                <br />
+                We Have Answers.
+              </h2>
+              <Link
+                to=""
+                className="btn-red-action"
+                style={{ marginTop: "15px" }}
+              >
+                Find More Answers <i className="fas fa-arrow-right"></i>
+              </Link>
+            </div>
+
+            {/* Right Column Interactive Accordion Stack */}
+            <div className="faq-right-accordion-panel">
+              {approachData?.approach_faq_content.map((item, index) => {
+                const isOpen = activeFaqId === item.id;
+                return (
+                  <div
+                    key={item?.id}
+                    className={`faq-accordion-row ${isOpen ? "is-expanded" : ""}`}
+                    onClick={() => toggleFaq(item?.id)}
+                  >
+                    <div className="faq-row-trigger-line">
+                      <h3 className="faq-question-text">{item?.question}</h3>
+                      <div
+                        className={`faq-toggle-circle-indicator ${isOpen ? "active-minus" : "inactive-plus"
+                          }`}
+                      >
+                        {isOpen ? (
+                          /* Minus SVG Icon */
+                          <svg
+                            width="12"
+                            height="2"
+                            viewBox="0 0 12 2"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1 1H11"
+                              stroke="#FFFFFF"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        ) : (
+                          /* Plus SVG Icon */
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 1V11M1 6H11"
+                              stroke="#27272A"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Smooth height container breakdown space */}
+                    <div className="faq-row-collapsible-content">
+                      <div className="faq-answer-inner-wrapper">
+                        <p className="faq-answer-paragraph">{item?.answer}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
 
         {/* 5. CALL TO ACTION SECTION */}
         <section className="approach-cta-section">

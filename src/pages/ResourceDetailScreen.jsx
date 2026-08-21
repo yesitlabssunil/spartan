@@ -53,8 +53,11 @@ const ResourceDetailScreen = () => {
   return (
     <>
       <SEO
-        title="CMMC & Cybersecurity Resources for Federal Contractors"
-        description="Access practical CMMC 2.0 guides, cybersecurity insights, compliance updates, and resources designed to help federal contractors prepare for audits and strengthen security."
+        title={resourceDetailScreen?.heroSection?.mainTitle ||
+          "CMMC & Cybersecurity Resources for Federal Contractors"}
+        description={resourceDetailScreen?.heroSection?.subTitle ||
+          "Access practical CMMC 2.0 guides, cybersecurity insights, compliance updates, and resources designed to help federal contractors prepare for audits and strengthen security."}
+          url={`https://spartan-cs.com/resource/${slug}`}
       />
       <Header />
       <div className="resource-detail-page">

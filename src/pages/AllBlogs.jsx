@@ -29,6 +29,12 @@ const AllBlogs = () => {
 
   return (
     <>
+
+    <SEO 
+    title=""
+    description=""
+    url="https://spartan-cs.com/blogs"
+    />
       <Header />
 
       <main className="faq-main-wrapper">

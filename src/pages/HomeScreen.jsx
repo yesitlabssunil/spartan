@@ -68,12 +68,115 @@ const HomeScreen = () => {
   //   if (loading) {
   //   return <div className="text-center py-5">Loading...</div>;
   // }
+  const professionalServiceSchema = {
+    "@type": "ProfessionalService",
+    "@id": "https://spartan-cs.com/#professional-service",
+    "name": "Spartan Cyber Security",
+    "url": "https://spartan-cs.com/",
+    "logo": "https://spartan-cs.com/assets/logo-DH4HSouC.png",
+    "description":
+      "Executive advisory firm specializing in CMMC 2.0, NIST 800-171 compliance, and cybersecurity for federal contractors.",
+  
+    "founder": {
+      "@type": "Person",
+      "name": "Raphael Warren",
+      "jobTitle": "Founder & CEO",
+      "honorificPrefix": "Brigadier General (Ret.)"
+    },
+  
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-505-639-3883",
+      "contactType": "customer service",
+      "email": "rwarren@spartan-cs.com",
+      "availableLanguage": "English"
+    },
+  
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Albuquerque",
+      "addressRegion": "NM",
+      "postalCode": "87113",
+      "addressCountry": "US"
+    },
+  
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+  
+    "openingHours": "Mo-Fr 09:00-17:00",
+    "priceRange": "$$$",
+  
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Cybersecurity & Compliance Services",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "name": "CMMC 2.0 Readiness",
+          "description":
+            "Gap assessments, readiness roadmaps, SSP creation, POAM development, security controls implementation, audit preparation",
+          "serviceOutput":
+            "Audit-ready CMMC 2.0 compliance certification"
+        },
+        {
+          "@type": "Service",
+          "name": "NIST SP 800-171 Compliance",
+          "description":
+            "Security control alignment, governance support and operational readiness built around NIST SP 800-171 standards",
+          "serviceOutput":
+            "Compliant security posture for federal contracts"
+        },
+        {
+          "@type": "Service",
+          "name": "Audit Readiness & Evidence Preparation",
+          "description":
+            "Documentation, evidence and operational validation designed to withstand formal assessment scrutiny",
+          "serviceOutput":
+            "Validated audit evidence and assessment support"
+        },
+        {
+          "@type": "Service",
+          "name": "Microsoft 365 Security",
+          "description":
+            "Identity management, conditional access, endpoint protection, secure cloud configuration, data governance, compliance controls",
+          "serviceOutput":
+            "Hardened M365 environment for regulated workloads"
+        }
+      ]
+    },
+  
+    "sameAs": [
+      "https://www.linkedin.com/company/spartan-cyber-security",
+      "https://twitter.com/spartan_cs"
+    ]
+  };
+
+  const faqSchema = {
+    "@type": "FAQPage",
+    "@id": "https://spartan-cs.com/#faq",
+    "mainEntity": AllFaq?.map((faq) => ({
+      "@type": "Question",
+      "name": faq?.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq?.answer
+      }
+    }))
+  };
 
   return (
     <>
       <SEO
-        title="CMMC 2.0 & NIST Compliance Consulting | Spartan Cyber Security"
-        description="CMMC 2.0 and NIST 800-171 compliance consulting for federal contractors. Audit-ready cybersecurity programs built for C3PAO assessment and contract defense."
+        title="CMMC Compliance Consultant | Spartan Cyber Security"
+        description="CMMC compliance consultant helping defense contractors achieve CMMC 2.0 and NIST 800-171 certification with audit-ready, evidence-driven security programs."
+        url="https://spartan-cs.com"
+        schema={[
+          professionalServiceSchema,
+          faqSchema
+        ]}
+        
       />
       <Header />
 

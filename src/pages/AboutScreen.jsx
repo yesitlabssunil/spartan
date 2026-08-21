@@ -36,6 +36,7 @@ const AboutScreen = () => {
       <SEO
         title="About Spartan Cyber Security | CMMC & Cybersecurity Experts"
         description="Learn about Spartan Cyber Security, an executive advisory firm helping federal contractors and regulated organizations strengthen cybersecurity, compliance, and audit readiness."
+        url="https://spartan-cs.com/about"
       />
       <Header />
       <main className="about-main">

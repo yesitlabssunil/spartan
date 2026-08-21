@@ -58,6 +58,8 @@ export const homeScreenData = (formData) => API.get(`/home`, formData);
 
 export const cmmcScreenData = (formData) => API.get(`/cmmc`, formData);
 
+export const securityScreenData = (formData) => API.get(`/microsoft-security`, formData)
+
 export const industryScreenData = (formData) => API.get(`/industry`, formData);
 
 export const approachScreenData = (formData) => API.get(`/approach`, formData);

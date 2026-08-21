@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,10 +26,17 @@ const ComplianceScreen = () => {
   const dispatch = useDispatch();
   const { complianceData, loading } = useSelector((state) => state.second);
 
+  const [activeFaqId, setActiveFaqId] = useState();
+
+  const toggleFaq = (id) => {
+    setActiveFaqId(activeFaqId === id ? null : id);
+  };
+
+
+
   useEffect(() => {
     dispatch(complianceScreenData());
   }, [dispatch]);
-  console.log("complianceData@@@", complianceData);
 
   const frameworks = [
     {
@@ -93,11 +100,38 @@ const ComplianceScreen = () => {
     },
   ];
 
+  const complianceSystemsSchema = {
+    "@type": "Service",
+    "@id": "https://spartan-cs.com/compliance-systems#service",
+    "name": "Compliance Systems Development",
+    "serviceType": "GRC Program Design and Compliance System Implementation",
+    "provider": {
+      "@id": "https://spartan-cs.com/#organization"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Federal Contractors / Defense Industrial Base"
+    },
+    "description": "Cybersecurity compliance programs aligned to CMMC 2.0, NIST SP 800-171, NIST 800-53, DFARS, FedRAMP, and ITAR requirements for federal contractors.",
+    "url": "https://spartan-cs.com/compliance-systems",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://spartan-cs.com/compliance-systems"
+    }
+  };
   return (
     <>
       <SEO
-        title="Cybersecurity Compliance Services | CMMC & NIST | Spartan Cyber Security"
-        description="Build a defensible compliance program with CMMC 2.0, NIST SP 800-171, governance, security controls, documentation, and audit readiness support."
+        title="Cybersecurity Compliance Services for Defense Contractors | Spartan Cyber Security"
+        description="Cybersecurity compliance services for defense contractors — governance, risk assessments, and continuous compliance support built for CMMC and NIST 800-171."
+        url="https://spartan-cs.com/compliance-systems"
+        schema={[
+          complianceSystemsSchema,
+        ]}
       />
       <Header />
       <main className="compliance-main">
@@ -106,8 +140,8 @@ const ComplianceScreen = () => {
           <div className="custom-container">
             <div className="blog-hero-content">
               <div className="blog-breadcrumb">
-               <Link to="/" style={{textDecoration: "none"}}> <span style={{ color: "white" }}>Home</span></Link> <span className="separator">|</span>{" "}
-                <span>Compliance Systems</span> 
+                <Link to="/" style={{ textDecoration: "none" }}> <span style={{ color: "white" }}>Home</span></Link> <span className="separator">|</span>{" "}
+                <span>Compliance Systems</span>
               </div>
               <h1 className="blog-hero-title">
                 One Program Every Framework
@@ -232,6 +266,95 @@ const ComplianceScreen = () => {
             </div>
           </div>
         </section>
+
+        {/* ==========FAQ SECTION============ */}
+        <section className="resource-faq-section">
+          <div className="section-inner-content faq-layout-grid">
+            {/* Left Column Sticky Header Block */}
+            <div className="faq-left-header-panel">
+              <div className="faq-mini-badge">
+                <span className="badge-dot-indicator" />
+                <span className="badge-label-text">FAQ</span>
+              </div>
+              <h2 className="faq-panel-title">
+                You Have Questions.
+                <br />
+                We Have Answers.
+              </h2>
+              <Link
+                to=""
+                className="btn-red-action"
+                style={{ marginTop: "15px" }}
+              >
+                Find More Answers <i className="fas fa-arrow-right"></i>
+              </Link>
+            </div>
+
+            {/* Right Column Interactive Accordion Stack */}
+            <div className="faq-right-accordion-panel">
+              {complianceData?.compliance_faq_content.map((item, index) => {
+                const isOpen = activeFaqId === item.id;
+                return (
+                  <div
+                    key={item?.id}
+                    className={`faq-accordion-row ${isOpen ? "is-expanded" : ""}`}
+                    onClick={() => toggleFaq(item?.id)}
+                  >
+                    <div className="faq-row-trigger-line">
+                      <h3 className="faq-question-text">{item?.question}</h3>
+                      <div
+                        className={`faq-toggle-circle-indicator ${isOpen ? "active-minus" : "inactive-plus"
+                          }`}
+                      >
+                        {isOpen ? (
+                          /* Minus SVG Icon */
+                          <svg
+                            width="12"
+                            height="2"
+                            viewBox="0 0 12 2"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1 1H11"
+                              stroke="#FFFFFF"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        ) : (
+                          /* Plus SVG Icon */
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 1V11M1 6H11"
+                              stroke="#27272A"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Smooth height container breakdown space */}
+                    <div className="faq-row-collapsible-content">
+                      <div className="faq-answer-inner-wrapper">
+                        <p className="faq-answer-paragraph">{item?.answer}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+        {/* ========================================== */}
 
         {/* 6. CALL TO ACTION SECTION */}
         <section className="compliance-cta-section">

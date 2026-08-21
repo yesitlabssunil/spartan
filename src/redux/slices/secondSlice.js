@@ -100,6 +100,20 @@ export const approachScreenData = createAsyncThunk(
     },
   )
 
+  export const securityScreenData = createAsyncThunk(
+    "/home/securityScreenData",
+    async (formData, {rejectWithValue}) => {
+      try{
+        const response = await api.securityScreenData(formData);
+        return response.data;
+      } catch (error) {
+        return rejectWithValue(
+          error.response?.data || {message: error.message},
+        );
+      }
+    },
+  )
+
   const homeSlice = createSlice({
     name: "home",
     initialState: {
@@ -112,6 +126,7 @@ export const approachScreenData = createAsyncThunk(
       blogDetails: null,
       footerData: null,
       newFaqData: null,
+      securityScreenFaqData: null,
 
     },
 
@@ -219,6 +234,20 @@ export const approachScreenData = createAsyncThunk(
             state.newFaqData = action.payload?.data?.faq_content;
           })
           .addCase(getFaqScreenData.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.payload?.message;
+          })
+
+          .addCase(securityScreenData.pending, (state) => {
+            state.loading = true;
+            state.error = null;
+          })
+          .addCase(securityScreenData.fulfilled, (state, action) => {
+            state.loading = false;
+            state.error = null;
+            state.securityScreenFaqData = action.payload?.data;
+          })
+          .addCase(securityScreenData.rejected, (state, action) => {
             state.loading = false;
             state.error = action.payload?.message;
           })

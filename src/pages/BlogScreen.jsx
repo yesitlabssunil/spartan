@@ -23,7 +23,7 @@ const BlogScreen = () => {
   // const id = location.state?.id;
   const { slug } = useParams();
 
-  console.log("BLOG SLUG:", slug);
+  // console.log("BLOG SLUG:", slug);
 
   const dispatch = useDispatch();
   const { blogDetails, loading } = useSelector((state) => state.second);
@@ -37,6 +37,13 @@ const BlogScreen = () => {
 
   return (
     <>
+      <SEO
+        title={blogDetails?.title || "Spartan Cyber Security Blogs"}
+        description={
+          blogDetails?.sub_title || "Cybersecurity and compliance insights from Spartan Cyber Security."
+        }
+        url={`https://spartan-cs.com/blog/${slug}`}
+      />
       <Header />
       <main className="blog-main">
         {/* Hero Section */}
@@ -47,8 +54,8 @@ const BlogScreen = () => {
             <div className="blog-hero-content">
               {/* Breadcrumb */}
               <div className="blog-breadcrumb">
-                <Link to="/" style={{textDecoration: "none"}}><span style={{ color: "white" }}>Home</span> </Link> <span className="separator">|</span>{" "}
-               <Link to="/resources" style={{textDecoration: "none", color: "red"}}> <span>Resources</span></Link> <span className="separator">|</span>{" "}
+                <Link to="/" style={{ textDecoration: "none" }}><span style={{ color: "white" }}>Home</span> </Link> <span className="separator">|</span>{" "}
+                <Link to="/resources" style={{ textDecoration: "none", color: "red" }}> <span>Resources</span></Link> <span className="separator">|</span>{" "}
                 <span>Blogs</span>
               </div>
 
