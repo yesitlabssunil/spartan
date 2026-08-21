@@ -46,6 +46,19 @@ const ResourceDetailScreen = () => {
   //   );
   // }
 
+  const faqSchema = {
+    "@type": "FAQPage",
+    "@id": `https://spartan-cs.com/resource/${slug}#faq`,
+    "mainEntity": resourceDetailScreenData?.faqSection?.items?.map((faq) => ({
+      "@type": "Question",
+      "name": faq?.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq?.answer
+      }
+    }))
+  };
+
   const relatedResources = getRandomItems(
     resourceDetailScreenData?.sidebarRelatedResources?.items,
   )
@@ -58,6 +71,9 @@ const ResourceDetailScreen = () => {
         description={resourceDetailScreen?.heroSection?.subTitle ||
           "Access practical CMMC 2.0 guides, cybersecurity insights, compliance updates, and resources designed to help federal contractors prepare for audits and strengthen security."}
           url={`https://spartan-cs.com/resource/${slug}`}
+          schema={[
+
+          ]}
       />
       <Header />
       <div className="resource-detail-page">

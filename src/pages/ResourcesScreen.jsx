@@ -192,7 +192,7 @@ export default function ResourceScreen() {
 
   const faqSchema = {
     "@type": "FAQPage",
-    "@id": "https://spartan-cs.com/#faq",
+    "@id": "https://spartan-cs.com/resources#faq",
     "mainEntity": resourceData?.faqSection?.items?.map((faq) => ({
       "@type": "Question",
       "name": faq?.question,

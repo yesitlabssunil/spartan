@@ -104,12 +104,28 @@ const ApproachScreen = () => {
     },
   ];
 
+  const faqSchema = {
+    "@type": "FAQPage",
+    "@id": "https://spartan-cs.com/approach#faq",
+    "mainEntity": approachData?.approach_faq_content?.map((faq) => ({
+      "@type": "Question",
+      "name": faq?.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq?.answer
+      }
+    }))
+  };
+
   return (
     <>
       <SEO
         title="Cybersecurity Compliance Approach | Spartan Cyber Security"
         description="Cybersecurity compliance approach built on governance-first principles, turning CMMC and NIST 800-171 requirements into audit-ready operational security."
         url="https://spartan-cs.com/approach"
+        schema={[
+          faqSchema
+        ]}
       />
       <Header />
       <main className="approach-main">

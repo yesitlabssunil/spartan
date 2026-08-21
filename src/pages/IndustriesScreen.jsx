@@ -96,12 +96,30 @@ const IndustriesScreen = () => {
     },
   ];
 
+  const faqSchema = {
+    "@type": "FAQPage",
+    "@id": "https://spartan-cs.com/industries#faq",
+    "mainEntity": industryData?.industry_faq_content?.map((faq) => ({
+      "@type": "Question",
+      "name": faq?.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq?.answer
+      }
+    }))
+  };
+
+  // console.log("industryData___", industryData?.industry_faq_content)
+
   return (
     <>
       <SEO
         title="CMMC 2.0 Compliance by Industry | Spartan Cyber Security"
         description="CMMC 2.0 compliance by industry — sector-specific guidance for manufacturing, aerospace, and defense supply chain contractors pursuing certification."
         url="https://spartan-cs.com/industries"
+        schema={[
+          faqSchema
+        ]}
       />
       <Header />
       <main className="industries-main">

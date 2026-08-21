@@ -58,6 +58,19 @@ const CmmcScreen = () => {
     "description": "Audit-ready cybersecurity programs built for C3PAO assessment and contract defense."
   };
 
+  const faqSchema = {
+    "@type": "FAQPage",
+    "@id": "https://spartan-cs.com/cmmc#faq",
+    "mainEntity": cmmcData?.cmmc_faq_content?.map((faq) => ({
+      "@type": "Question",
+      "name": faq?.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq?.answer
+      }
+    }))
+  };
+
   return (
     <>
       <SEO
@@ -66,6 +79,7 @@ const CmmcScreen = () => {
         url="https://spartan-cs.com/cmmc"
         schema={[
           cmmcServiceSchema,
+          faqSchema
         ]}
       />
 

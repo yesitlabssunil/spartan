@@ -123,6 +123,20 @@ const ComplianceScreen = () => {
       "@id": "https://spartan-cs.com/compliance-systems"
     }
   };
+
+  const faqSchema = {
+    "@type": "FAQPage",
+    "@id": "https://spartan-cs.com/compliance-systems#faq",
+    "mainEntity": complianceData?.compliance_faq_content?.map((faq) => ({
+      "@type": "Question",
+      "name": faq?.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq?.answer
+      }
+    }))
+  };
+
   return (
     <>
       <SEO
@@ -131,6 +145,7 @@ const ComplianceScreen = () => {
         url="https://spartan-cs.com/compliance-systems"
         schema={[
           complianceSystemsSchema,
+          faqSchema
         ]}
       />
       <Header />
@@ -292,7 +307,7 @@ const ComplianceScreen = () => {
 
             {/* Right Column Interactive Accordion Stack */}
             <div className="faq-right-accordion-panel">
-              {complianceData?.compliance_faq_content.map((item, index) => {
+              {complianceData?.compliance_faq_content?.map((item, index) => {
                 const isOpen = activeFaqId === item.id;
                 return (
                   <div

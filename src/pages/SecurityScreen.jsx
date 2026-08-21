@@ -63,6 +63,19 @@ const SecurityScreen = () => {
     "mainEntityOfPage": "https://spartan-cs.com/microsoft-365-security"
   };
 
+  const faqSchema = {
+    "@type": "FAQPage",
+    "@id": "https://spartan-cs.com/microsoft-365-security#faq",
+    "mainEntity": securityScreenFaqData?.microsoft_faq_content?.map((faq) => ({
+      "@type": "Question",
+      "name": faq?.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq?.answer
+      }
+    }))
+  };
+
   return (
     <>
       <SEO
@@ -71,6 +84,7 @@ const SecurityScreen = () => {
         url="https://spartan-cs.com/microsoft-365-security"
         schema={[
           microsoft365SecuritySchema,
+          faqSchema
         ]}
       />
       <Header />
