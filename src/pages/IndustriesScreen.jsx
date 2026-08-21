@@ -217,7 +217,7 @@ const IndustriesScreen = () => {
 
         {/* ===================faq section=========== */}
 
-        <section className="resource-faq-section">
+        <section className="resource-faq-section" style={{marginTop: "60px"}}>
           <div className="section-inner-content faq-layout-grid">
             {/* Left Column Sticky Header Block */}
             <div className="faq-left-header-panel">
@@ -241,7 +241,7 @@ const IndustriesScreen = () => {
 
             {/* Right Column Interactive Accordion Stack */}
             <div className="faq-right-accordion-panel">
-              {industryData?.industry_faq_content.map((item, index) => {
+              {industryData?.industry_faq_content?.map((item, index) => {
                 const isOpen = activeFaqId === item.id;
                 return (
                   <div
