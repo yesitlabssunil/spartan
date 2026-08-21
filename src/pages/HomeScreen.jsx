@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
-import { useDispatch, useSelector } from "react-redux";
 import "../assets/css/home.css";
-import { initHomeScripts } from "../homeInteractions";
 import checkBulletRed from "../assets/images/approachScreen/startBullet.png";
 import icon1 from "../assets/images/home/icon1.png";
 import icon2 from "../assets/images/home/icon2.png";
@@ -24,33 +22,14 @@ import icon15 from "../assets/images/home/icon15.png";
 import icon16 from "../assets/images/home/icon16.png";
 import icon17 from "../assets/images/home/icon17.png";
 import SEO from "../component/SEO";
-
-import { getFaqData, homeScreenData } from "../redux/slices/homeSlice";
 import BlogHorizontalScroll from "../component/BlogHorizontalScroll";
-const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 const HomeScreen = () => {
-  const dispatch = useDispatch();
-  const { AllFaq, homeData, loading } = useSelector((state) => state.home);
-
-  useEffect(() => {
-    const cleanup = initHomeScripts();
-
-    return () => {
-      cleanup();
-    };
-  }, []);
-
-  useEffect(() => {
-    dispatch(getFaqData());
-    dispatch(homeScreenData());
-  }, [dispatch]);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-
-  const [activeIndex, setActiveIndex] = useState(null);
 
   const solutionIcons = [
     "/images/compliance-training.svg",
@@ -65,143 +44,115 @@ const HomeScreen = () => {
     "/images/built-3.svg",
   ];
 
-  //   if (loading) {
-  //   return <div className="text-center py-5">Loading...</div>;
-  // }
-  const professionalServiceSchema = {
-    "@type": "ProfessionalService",
-    "@id": "https://spartan-cs.com/#professional-service",
-    "name": "Spartan Cyber Security",
-    "url": "https://spartan-cs.com/",
-    "logo": "https://spartan-cs.com/assets/logo-DH4HSouC.png",
-    "description":
-      "Executive advisory firm specializing in CMMC 2.0, NIST 800-171 compliance, and cybersecurity for federal contractors.",
-  
-    "founder": {
-      "@type": "Person",
-      "name": "Raphael Warren",
-      "jobTitle": "Founder & CEO",
-      "honorificPrefix": "Brigadier General (Ret.)"
+  const timeSectionItems = [
+    {
+      title: "8-12 Weeks",
+      description:
+        "Average implementation timeline to reach full audit readiness.",
     },
-  
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-505-639-3883",
-      "contactType": "customer service",
-      "email": "rwarren@spartan-cs.com",
-      "availableLanguage": "English"
+    {
+      title: "110 Controls",
+      description:
+        "NIST SP 800-171 requirements verified with tangible evidence.",
     },
-  
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Albuquerque",
-      "addressRegion": "NM",
-      "postalCode": "87113",
-      "addressCountry": "US"
+    {
+      title: "100% Defensible",
+      description:
+        "Assessment protocols structured directly for C3PAO scrutiny.",
     },
-  
-    "areaServed": {
-      "@type": "Country",
-      "name": "United States"
-    },
-  
-    "openingHours": "Mo-Fr 09:00-17:00",
-    "priceRange": "$$$",
-  
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Cybersecurity & Compliance Services",
-      "itemListElement": [
-        {
-          "@type": "Service",
-          "name": "CMMC 2.0 Readiness",
-          "description":
-            "Gap assessments, readiness roadmaps, SSP creation, POAM development, security controls implementation, audit preparation",
-          "serviceOutput":
-            "Audit-ready CMMC 2.0 compliance certification"
-        },
-        {
-          "@type": "Service",
-          "name": "NIST SP 800-171 Compliance",
-          "description":
-            "Security control alignment, governance support and operational readiness built around NIST SP 800-171 standards",
-          "serviceOutput":
-            "Compliant security posture for federal contracts"
-        },
-        {
-          "@type": "Service",
-          "name": "Audit Readiness & Evidence Preparation",
-          "description":
-            "Documentation, evidence and operational validation designed to withstand formal assessment scrutiny",
-          "serviceOutput":
-            "Validated audit evidence and assessment support"
-        },
-        {
-          "@type": "Service",
-          "name": "Microsoft 365 Security",
-          "description":
-            "Identity management, conditional access, endpoint protection, secure cloud configuration, data governance, compliance controls",
-          "serviceOutput":
-            "Hardened M365 environment for regulated workloads"
-        }
-      ]
-    },
-  
-    "sameAs": [
-      "https://www.linkedin.com/company/spartan-cyber-security",
-      "https://twitter.com/spartan_cs"
-    ]
-  };
+  ];
 
-  const faqSchema = {
-    "@type": "FAQPage",
-    "@id": "https://spartan-cs.com/#faq",
-    "mainEntity": AllFaq?.map((faq) => ({
-      "@type": "Question",
-      "name": faq?.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq?.answer
-      }
-    }))
-  };
+  const solutionCards = [
+    {
+      title: "CMMC 2.0 Compliance",
+      description:
+        "End-to-end readiness roadmaps, SSP creation, and control deployment.",
+    },
+    {
+      title: "Microsoft 365 Security",
+      description:
+        "Enforcing zero-trust architecture, conditional access, and GCC High baselines.",
+    },
+    {
+      title: "Audit-Ready Systems",
+      description:
+        "Packaging verifiable operational evidence to defend federal contracts.",
+    },
+  ];
+
+  const industryCards = [
+    {
+      title: "Defense Industrial Base",
+      description:
+        "Prime contractors and subcontractors managing critical Controlled Unclassified Information.",
+    },
+    {
+      title: "Aerospace & Engineering",
+      description:
+        "Precision engineering suppliers requiring DFARS and NIST 800-171 compliance.",
+    },
+    {
+      title: "GovTech & Cloud Services",
+      description:
+        "Software providers and technology vendors delivering secure systems to federal agencies.",
+    },
+  ];
+
+  const faqList = [
+    {
+      id: "faq-1",
+      question: "What is CMMC 2.0 and why is it required?",
+      answer:
+        "CMMC 2.0 is the Department of Defense framework requiring contractors to protect Controlled Unclassified Information (CUI) through validated NIST SP 800-171 security controls.",
+    },
+    {
+      id: "faq-2",
+      question: "How long does it take to reach audit readiness?",
+      answer:
+        "Typically between 8 to 12 weeks depending on your current cybersecurity baseline and Microsoft 365 environment setup.",
+    },
+    {
+      id: "faq-3",
+      question: "What happens if our organization fails a C3PAO audit?",
+      answer:
+        "Failing an assessment can result in losing active DoD contracts or being disqualified from bidding on future federal solicitations.",
+    },
+  ];
 
   return (
     <>
       <SEO
-        title="CMMC Compliance Consultant | Spartan Cyber Security"
-        description="CMMC compliance consultant helping defense contractors achieve CMMC 2.0 and NIST 800-171 certification with audit-ready, evidence-driven security programs."
+        title="CMMC 2.0 & NIST Compliance Consulting | Spartan Cyber Security"
+        description="CMMC 2.0 and NIST 800-171 compliance consulting for federal contractors. Audit-ready cybersecurity programs built for C3PAO assessment and contract defense."
         url="https://spartan-cs.com"
-        schema={[
-          professionalServiceSchema,
-          faqSchema
-        ]}
-        
       />
       <Header />
 
+      {/* Hero Section */}
       <section
         className="hero"
         style={{
-          backgroundImage: `linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)), url(${
-            homeData?.hero?.backgroundImage
-              ? `${IMAGE_URL}/${homeData.hero.backgroundImage}`
-              : "/images/hero-banner-bg.svg"
-          })`,
+          backgroundImage: `linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)), url(/images/hero-banner-bg.svg)`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
           backgroundSize: "cover",
         }}
       >
         <div className="hero-overlay"></div>
-        <div className="hero-content fade-in">
-          {!loading && (
-            <div className="badge-tag">
-              <span className="dot-black"></span> {homeData?.hero?.badgeTag}
-            </div>
-          )}
-          <h1>{homeData?.hero?.title}</h1>
-          <p className="hero-subtext">{homeData?.hero?.subtext}</p>
+        <div
+          className="hero-content"
+          style={{ opacity: 1, visibility: "visible" }}
+        >
+          <div className="badge-tag">
+            <span className="dot-black"></span> CMMC 2.0 • DFARS • NIST 800-171
+          </div>
+
+          <h1>Audit-Ready CMMC 2.0 & NIST Compliance in 8-12 Weeks</h1>
+
+          <p className="hero-subtext">
+            Helping Federal Contractors & Subcontractors secure systems,
+            implement compliance controls and prepare for audit readiness.
+          </p>
 
           <div className="hero-btns">
             <Link to="/contact-us" className="btn-white">
@@ -214,39 +165,22 @@ const HomeScreen = () => {
         </div>
       </section>
 
+      {/* Clients Ribbon */}
       <div className="clients-ribbon">
         <div className="marquee-track">
-          <div className="marquee-group">
-            <span>DoD Contractors</span>
-            <span>Defense Supply Chain Partners</span>
-            <span>Small & Mid-Sized Businesses</span>
-            <span>Government Vendors</span>
-            <span>High-Compliance Entities</span>
-          </div>
-          <div className="marquee-group">
-            <span>DoD Contractors</span>
-            <span>Defense Supply Chain Partners</span>
-            <span>Small & Mid-Sized Businesses</span>
-            <span>Government Vendors</span>
-            <span>High-Compliance Entities</span>
-          </div>
-          <div className="marquee-group">
-            <span>DoD Contractors</span>
-            <span>Defense Supply Chain Partners</span>
-            <span>Small & Mid-Sized Businesses</span>
-            <span>Government Vendors</span>
-            <span>High-Compliance Entities</span>
-          </div>
-          <div className="marquee-group">
-            <span>DoD Contractors</span>
-            <span>Defense Supply Chain Partners</span>
-            <span>Small & Mid-Sized Businesses</span>
-            <span>Government Vendors</span>
-            <span>High-Compliance Entities</span>
-          </div>
+          {[...Array(4)].map((_, i) => (
+            <div className="marquee-group" key={i}>
+              <span>DoD Contractors</span>
+              <span>Defense Supply Chain Partners</span>
+              <span>Small & Mid-Sized Businesses</span>
+              <span>Government Vendors</span>
+              <span>High-Compliance Entities</span>
+            </div>
+          ))}
         </div>
       </div>
 
+      {/* Info Section */}
       <section className="info-section">
         <div className="center-tag">
           <span className="dot-red"></span> WHAT IS IT
@@ -269,7 +203,7 @@ const HomeScreen = () => {
         </p>
 
         <div className="levels-grid">
-          <div className="level-card fade-in">
+          <div className="level-card">
             <span className="level-badge">LEVEL 1</span>
             <h3>Foundational</h3>
             <p>
@@ -277,7 +211,7 @@ const HomeScreen = () => {
               Contract Information (FCI).
             </p>
           </div>
-          <div className="level-card fade-in">
+          <div className="level-card">
             <span className="level-badge">LEVEL 2</span>
             <h3>Advanced</h3>
             <p>
@@ -285,7 +219,7 @@ const HomeScreen = () => {
               handling Controlled Unclassified Information (CUI).
             </p>
           </div>
-          <div className="level-card fade-in">
+          <div className="level-card">
             <span className="level-badge">LEVEL 3</span>
             <h3>Expert</h3>
             <p>
@@ -297,6 +231,7 @@ const HomeScreen = () => {
         </div>
       </section>
 
+      {/* Problem Section */}
       <section className="problem-section">
         <div className="problem-header-split">
           <div className="left-head">
@@ -317,101 +252,123 @@ const HomeScreen = () => {
         </div>
 
         <div className="problems-grid">
-          <div className="problem-item fade-in">
+          <div className="problem-item">
             <div className="prob-icon">
-              <img src="images/document-img-h.svg" alt="Documentation without execution" />
+              <img
+                src="/images/document-img-h.svg"
+                alt="Documentation without execution"
+              />
             </div>
             <div className="prob-text">Documentation without execution</div>
           </div>
-          <div className="problem-item fade-in">
+          <div className="problem-item">
             <div className="prob-icon">
-              <img src="images/weak-cloud.svg" alt="Weak cloud security" />
+              <img src="/images/weak-cloud.svg" alt="Weak cloud security" />
             </div>
             <div className="prob-text">Weak cloud security</div>
           </div>
-          <div className="problem-item fade-in">
+          <div className="problem-item">
             <div className="prob-icon">
-              <img src="images/governance-gaps.svg" alt="Governance gaps" />
+              <img src="/images/governance-gaps.svg" alt="Governance gaps" />
             </div>
             <div className="prob-text">Governance gaps</div>
           </div>
-          <div className="problem-item fade-in">
+          <div className="problem-item">
             <div className="prob-icon">
-              <img src="images/poor-enforcement.svg" alt="Poor policy enforcement" />
+              <img
+                src="/images/poor-enforcement.svg"
+                alt="Poor policy enforcement"
+              />
             </div>
             <div className="prob-text">Poor policy enforcement</div>
           </div>
-          <div className="problem-item fade-in">
+          <div className="problem-item">
             <div className="prob-icon">
               <img src={icon1} alt="Missing evidence" />
             </div>
             <div className="prob-text">Missing evidence</div>
           </div>
-          <div className="problem-item fade-in">
+          <div className="problem-item">
             <div className="prob-icon">
-              <img src="images/audit-exposure.svg" alt="Audit failure exposure" />
+              <img
+                src="/images/audit-exposure.svg"
+                alt="Audit failure exposure"
+              />
             </div>
             <div className="prob-text">Audit failure exposure</div>
           </div>
         </div>
       </section>
 
+      {/* Risk / Time-Sensitive Section */}
       <section className="risk-section">
         <div className="risk-left-panel">
           <span className="badge-red-tag">
-            {" "}
             <span className="dot-red"></span> TIME-SENSITIVE
           </span>
-          <h2>{homeData?.timeSection?.title}</h2>
-          <p>{homeData?.timeSection?.subtitle}</p>
+          <h2>Contract Defense Requires Immediate Action</h2>
+          <p>
+            Federal compliance enforcement timelines leave no margin for
+            reactive implementation.
+          </p>
           <Link to="/compliance-systems" className="btn-red-action">
             Get Compliance Ready Now <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
 
         <div className="risk-right-grid">
-          {homeData?.timeSection?.content?.map((item, index) => (
+          {timeSectionItems.map((item, index) => (
             <div className="risk-card" key={index}>
-              <span className="risk-num">{item?.title}</span>
-              <h4>{item?.description}</h4>
+              <span className="risk-num">{item.title}</span>
+              <h4>{item.description}</h4>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Stats Banner */}
       <section className="stats-banner">
         <div className="stats-banner-overlay"></div>
         <div className="stats-banner-content">
-          <h3>{homeData?.statsBanner?.heading}</h3>
+          <h3>Quantified Compliance Acceleration</h3>
 
           <div className="stats-counter-row">
-            {(homeData?.statsBanner?.stats || [])?.map((item, index) => (
-              <div className="stat-box" key={index}>
-                <h2>{item?.value}</h2>
-                <p>{item?.label}</p>
-              </div>
-            ))}
+            <div className="stat-box">
+              <h2>100%</h2>
+              <p>C3PAO Alignment</p>
+            </div>
+            <div className="stat-box">
+              <h2>8-12</h2>
+              <p>Weeks to Audit Ready</p>
+            </div>
+            <div className="stat-box">
+              <h2>110</h2>
+              <p>NIST Controls Covered</p>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Solution Section */}
       <section className="solution-section">
         <div className="solution-header text-center">
           <span className="solution-pill">
-            {" "}
             <span className="dot-white"></span> THE SOLUTION
           </span>
-          <h2>{homeData?.solution?.title}</h2>
+          <h2>Engineered Compliance Systems</h2>
         </div>
 
         <div className="solution-cards-grid">
-          {(homeData?.solution?.cards || [])?.map((item, index) => (
+          {solutionCards.map((item, index) => (
             <div className="sol-card" key={index}>
               <div className="sol-card-icon">
-                <img src={solutionIcons[index]} alt={item.title} />
+                <img
+                  src={solutionIcons[index] || solutionIcons[0]}
+                  alt={item.title}
+                />
               </div>
-              <h3>{item?.title}</h3>
-              <p>{item?.description}</p>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </div>
           ))}
         </div>
@@ -421,16 +378,18 @@ const HomeScreen = () => {
             href="https://lms.spartan-cs.com/"
             className="btn-white-secondary"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Start with an Assessment <i className="fas fa-arrow-right"></i>
           </a>
         </div>
       </section>
 
+      {/* Services Section */}
       <section className="services-section">
         <div className="text-center section-header-margin">
           <span className="service-pill">
-            <span className="dot-red"></span> OUR SERVICES{" "}
+            <span className="dot-red"></span> OUR SERVICES
           </span>
           <h2>
             Strategic Cybersecurity & <br /> Compliance Services
@@ -442,7 +401,7 @@ const HomeScreen = () => {
         </div>
 
         <div className="services-cards-grid">
-          <div className="service-image-card fade-in">
+          <div className="service-image-card">
             <span className="card-number">01</span>
             <h3>CMMC 2.0 Readiness</h3>
             <p>
@@ -450,7 +409,7 @@ const HomeScreen = () => {
               aligned to CMMC 2.0 institutional requirements.
             </p>
           </div>
-          <div className="service-image-card fade-in">
+          <div className="service-image-card">
             <span className="card-number">02</span>
             <h3>NIST SP 800-171 Compliance</h3>
             <p>
@@ -458,7 +417,7 @@ const HomeScreen = () => {
               readiness built around NIST SP 800-171 standards.
             </p>
           </div>
-          <div className="service-image-card fade-in">
+          <div className="service-image-card">
             <span className="card-number">03</span>
             <h3>Audit Readiness & Evidence Preparation</h3>
             <p>
@@ -469,11 +428,11 @@ const HomeScreen = () => {
         </div>
       </section>
 
+      {/* Pillars Section */}
       <section className="pillars-section">
         <div className="pillars-header-split">
           <div className="pillars-left-title">
             <span className="pillars-pill">
-              {" "}
               <span className="dot-red"></span> Methodology
             </span>
             <h2>Three Pillars of Operational Compliance</h2>
@@ -487,10 +446,10 @@ const HomeScreen = () => {
         </div>
 
         <div className="pillars-grid-row">
-          <div className="pillar-column-card fade-in">
+          <div className="pillar-column-card">
             <div className="pillar-card-head">
               <div className="pillar-icon-red">
-                <img src={icon3} alt="" />
+                <img src={icon3} alt="CMMC Icon" />
               </div>
               <h4>CMMC 2.0 Compliance</h4>
             </div>
@@ -517,10 +476,10 @@ const HomeScreen = () => {
             </ul>
           </div>
 
-          <div className="pillar-column-card fade-in">
+          <div className="pillar-column-card">
             <div className="pillar-card-head">
               <div className="pillar-icon-red">
-                <img src={icon2} alt="" />
+                <img src={icon2} alt="M365 Icon" />
               </div>
               <h4>Microsoft 365 Security</h4>
             </div>
@@ -546,10 +505,10 @@ const HomeScreen = () => {
             </ul>
           </div>
 
-          <div className="pillar-column-card fade-in">
+          <div className="pillar-column-card">
             <div className="pillar-card-head">
               <div className="pillar-icon-red">
-                <img src={icon4} alt="" />
+                <img src={icon4} alt="Systems Icon" />
               </div>
               <h4>Compliance Systems</h4>
             </div>
@@ -577,6 +536,7 @@ const HomeScreen = () => {
         </div>
       </section>
 
+      {/* Trust Section */}
       <section className="trust-section">
         <div className="text-center section-header-margin">
           <span className="trust-pill">
@@ -591,7 +551,7 @@ const HomeScreen = () => {
         </div>
 
         <div className="trust-boxes-grid">
-          <div className="trust-box-card fade-in">
+          <div className="trust-box-card">
             <div className="trust-box-icon">
               <img src={icon5} alt="" />
             </div>
@@ -601,7 +561,7 @@ const HomeScreen = () => {
               executive security leadership.
             </p>
           </div>
-          <div className="trust-box-card fade-in">
+          <div className="trust-box-card">
             <div className="trust-box-icon">
               <img src={icon6} alt="" />
             </div>
@@ -611,7 +571,7 @@ const HomeScreen = () => {
               withstands federal audits.
             </p>
           </div>
-          <div className="trust-box-card fade-in">
+          <div className="trust-box-card">
             <div className="trust-box-icon">
               <img src={icon7} alt="" />
             </div>
@@ -621,7 +581,7 @@ const HomeScreen = () => {
               compliance systems.
             </p>
           </div>
-          <div className="trust-box-card fade-in">
+          <div className="trust-box-card">
             <div className="trust-box-icon">
               <img src={icon8} alt="" />
             </div>
@@ -634,20 +594,27 @@ const HomeScreen = () => {
         </div>
       </section>
 
+      {/* Who We Are Section */}
       <section className="who-we-are-section">
         <div className="who-left-col">
           <span className="section-tag-red no-mar">
             <span className="dot-red"></span> WHO WE ARE
           </span>
-          <h2>{homeData?.whoWeAre?.title}</h2>
+          <h2>Built by Military & Cyber Security Leaders</h2>
 
           <div className="strategic-checklist-box">
-            {homeData?.whoWeAre?.checklist?.map((item, index) => (
+            {[
+              {
+                title: "20+ Years Executive Military Cybersecurity Leadership",
+              },
+              { title: "Defense-Grade Framework Implementation" },
+              { title: "Measurable, Defensible Audit Protocols" },
+            ].map((item, index) => (
               <div className="checklist-row" key={index}>
                 <span className="chk-icon">
-                  <img src="images/check-icon-militry.svg" alt="" />
+                  <img src="/images/check-icon-militry.svg" alt="" />
                 </span>
-                <span className="chk-text">{item?.title}</span>
+                <span className="chk-text">{item.title}</span>
               </div>
             ))}
           </div>
@@ -656,28 +623,26 @@ const HomeScreen = () => {
         <div className="who-right-col">
           <div className="built-text">
             <p className="who-top-intro-text">
-              {homeData?.whoWeAre?.topIntroText}
+              Spartan delivers high-assurance cybersecurity architectures and
+              compliance strategies for organizations navigating rigorous
+              federal standards.
             </p>
           </div>
 
           <div className="founder-card-container">
             <div className="founder-main-img">
-              <img
-                src={homeData?.whoWeAre?.founderCard?.image}
-                alt={homeData?.whoWeAre?.founderCard?.name}
-              />
+              <img src="/images/founder.png" alt="Raphael Warren" />
             </div>
 
             <div className="founder-quote-content">
               <p className="quote-paragraph">
-                “{homeData?.whoWeAre?.founderCard?.quote}”
+                “Compliance is not a static checklist; it is an active
+                operational defense of your federal contracts.”
               </p>
               <div className="founder-meta">
-                <span className="meta-name">
-                  {homeData?.whoWeAre?.founderCard?.name}
-                </span>
+                <span className="meta-name">BG (Ret.) Raphael Warren</span>
                 <span className="meta-title">
-                  {homeData?.whoWeAre?.founderCard?.title}
+                  Founder & Principal Consultant
                 </span>
               </div>
             </div>
@@ -685,6 +650,7 @@ const HomeScreen = () => {
         </div>
       </section>
 
+      {/* Focus Section */}
       <section className="focus-section">
         <div className="text-center section-header-margin">
           <span className="section-tag-red">
@@ -694,42 +660,42 @@ const HomeScreen = () => {
         </div>
 
         <div className="focus-grid">
-          <div className="focus-card fade-in">
+          <div className="focus-card">
             <div className="focus-icon trust-box-icon">
               <img src={icon17} alt="" />
             </div>
             <h4>Audit Readiness</h4>
             <p>Walk into any assessment with evidence in hand.</p>
           </div>
-          <div className="focus-card fade-in">
+          <div className="focus-card">
             <div className="focus-icon trust-box-icon">
               <img src={icon16} alt="" />
             </div>
             <h4>Contract Protection</h4>
             <p>Protect the federal revenue you've already won.</p>
           </div>
-          <div className="focus-card fade-in">
+          <div className="focus-card">
             <div className="focus-icon trust-box-icon">
               <img src={icon9} alt="" />
             </div>
             <h4>Reduced Risk</h4>
             <p>Quantifiable reduction in compliance and breach exposure.</p>
           </div>
-          <div className="focus-card fade-in">
+          <div className="focus-card">
             <div className="focus-icon trust-box-icon">
               <img src={icon10} alt="" />
             </div>
             <h4>Security Resilience</h4>
             <p>Systems that perform under real-world adversarial pressure.</p>
           </div>
-          <div className="focus-card fade-in">
+          <div className="focus-card">
             <div className="focus-icon trust-box-icon">
               <img src={icon15} alt="" />
             </div>
             <h4>Leadership Confidence</h4>
             <p>Executive oversight backed by clear governance.</p>
           </div>
-          <div className="focus-card fade-in">
+          <div className="focus-card">
             <div className="focus-icon trust-box-icon">
               <img src={icon11} alt="" />
             </div>
@@ -739,6 +705,7 @@ const HomeScreen = () => {
         </div>
       </section>
 
+      {/* Process Flow Section */}
       <section className="process-flow-section">
         <div className="text-center process-header-block">
           <span className="section-tag-red">
@@ -783,6 +750,7 @@ const HomeScreen = () => {
               </p>
             </div>
           </div>
+
           <div className="process-linear-column">
             <div className="step-top-header">
               <h3>Implement & Secure Systems</h3>
@@ -817,58 +785,55 @@ const HomeScreen = () => {
         </div>
       </section>
 
+      {/* Industries Section */}
       <section className="industries-section conpad">
         <div className="text-center section-header-margin">
           <span className="section-tag-red">
             <span className="dot-red"></span>INDUSTRIES
           </span>
-          <h2>{homeData?.industries?.title}</h2>
+          <h2>Industries We Protect</h2>
           <p className="industries-top-desc">
-            {homeData?.industries?.description}
+            Specialized compliance systems engineered for defense suppliers and
+            federal contractors.
           </p>
         </div>
 
         <div className="industry-cards-row">
-          {homeData?.industries?.cards?.map((item, index) => (
+          {industryCards.map((item, index) => (
             <div
               className="industry-image-box"
               style={{
                 backgroundImage: `url(${
-                  item?.image
-                    ? `${IMAGE_URL}/${item?.image}`
-                    : fallbackImages[index]
+                  fallbackImages[index] || fallbackImages[0]
                 })`,
               }}
               key={index}
             >
               <span className="ind-num">0{index + 1}</span>
-              <h3>{item?.title}</h3>
-              <p>{item?.description}</p>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Resources Section */}
       <section className="resources-section conpad">
         <div className="text-center section-header-margin">
           <span className="badge-red-pill">
             <span className="dot-red"></span>RESOURCES
           </span>
-          <h2>{homeData?.resources?.title}</h2>
+          <h2>Compliance Insights & Guides</h2>
           <p className="resources-subtext">
-            {homeData?.resources?.description}
+            Practical resources to navigate CMMC 2.0, NIST 800-171, and federal
+            cybersecurity standards.
           </p>
         </div>
 
-        <BlogHorizontalScroll items={homeData?.resources?.cards || []} />
-
-        {/* <div className="text-center" style={{ marginTop: "40px" }}>
-          <Link to="/resources" className="btn-red-action">
-            Browse all Resources <i className="fas fa-arrow-right"></i>
-          </Link>
-        </div> */}
+        <BlogHorizontalScroll items={[]} />
       </section>
 
+      {/* FAQ Section */}
       <section className="faq-section">
         <div className="faq-left-block">
           <span className="badge-red-pill no-mar">
@@ -889,12 +854,12 @@ const HomeScreen = () => {
         </div>
 
         <div className="faq-accordion-container">
-          {AllFaq?.map((faq, index) => {
+          {faqList.map((faq, index) => {
             const isOpen = activeIndex === index;
 
             return (
               <div
-                key={faq?.id}
+                key={faq.id}
                 className={`accordion-item ${isOpen ? "active" : ""}`}
               >
                 <div
@@ -902,30 +867,19 @@ const HomeScreen = () => {
                   onClick={() => toggleFAQ(index)}
                   style={{ cursor: "pointer" }}
                 >
-                  <h4>{faq?.question}</h4>
+                  <h4>{faq.question}</h4>
                   <span className="accordion-icon"></span>
                 </div>
 
                 <div
                   className="accordion-body"
                   style={{
-                    // Dynamically calculates the exact pixel height required by the text
-                    maxHeight: isOpen
-                      ? `${
-                          document.getElementById(`faq-content-${index}`)
-                            ?.scrollHeight
-                        }px`
-                      : "0px",
+                    maxHeight: isOpen ? "400px" : "0px",
                     overflow: "hidden",
                     transition: "max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
                   }}
                 >
-                  <div
-                    id={`faq-content-${index}`}
-                    className="accordion-body-content"
-                  >
-                    {faq?.answer}
-                  </div>
+                  <div className="accordion-body-content">{faq.answer}</div>
                 </div>
               </div>
             );
