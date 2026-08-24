@@ -86,20 +86,6 @@ export const approachScreenData = createAsyncThunk(
     },
   )
 
-  export const getFaqScreenData = createAsyncThunk(
-    "/home/getFaqScreenData",
-    async (formData, {rejectWithValue}) => {
-      try{
-        const response = await api.getFaqScreenData(formData);
-        return response.data;
-      } catch (error) {
-        return rejectWithValue(
-          error.response?.data || {message: error.message},
-        );
-      }
-    },
-  )
-
   export const securityScreenData = createAsyncThunk(
     "/home/securityScreenData",
     async (formData, {rejectWithValue}) => {
@@ -221,23 +207,8 @@ export const approachScreenData = createAsyncThunk(
           })
           .addCase(globalFooter.rejected, (state, action) => {
             state.loading = false;
-            state.error = action.payload?.message;
+            // state.error = action.payload?.message;
           })
-
-          .addCase(getFaqScreenData.pending, (state) => {
-            state.loading = true;
-            state.error = null;
-          })
-          .addCase(getFaqScreenData.fulfilled, (state, action) => {
-            state.loading = false;
-            state.error = null;
-            state.newFaqData = action.payload?.data?.faq_content;
-          })
-          .addCase(getFaqScreenData.rejected, (state, action) => {
-            state.loading = false;
-            state.error = action.payload?.message;
-          })
-
           .addCase(securityScreenData.pending, (state) => {
             state.loading = true;
             state.error = null;

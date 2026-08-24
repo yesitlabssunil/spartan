@@ -2111,3 +2111,8 @@ span.dot-red {
         padding: 0;
     }
 }
+
+.new-up{
+    display: flex;
+    gap: 20px;
+}

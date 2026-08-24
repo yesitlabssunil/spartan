@@ -135,7 +135,7 @@ export const homeScreenData = createAsyncThunk(
           .addCase(getFaqData.rejected, (state, action) => {
             state.loading = false;
             state.AllFaq = [];
-            state.error = action.payload?.message;
+            // state.error = action.payload?.message;
           })
 
           .addCase(getContactScreenData.pending, (state) => {
@@ -150,7 +150,7 @@ export const homeScreenData = createAsyncThunk(
           .addCase(getContactScreenData.rejected, (state, action) => {
             state.loading = false;
             state.contactData = [];
-            state.error = action.payload?.message;
+            // state.error = action.payload?.message;
           })
 
           .addCase(postContactScreenData.pending, (state) => {

@@ -65,9 +65,9 @@ const HomeScreen = () => {
     "/images/built-3.svg",
   ];
 
-    if (loading) {
-    return <div className="text-center py-5">Loading...</div>;
-  }
+  //   if (loading) {
+  //   return <div className="text-center py-5">Loading...</div>;
+  // }
   const professionalServiceSchema = {
     "@type": "ProfessionalService",
     "@id": "https://spartan-cs.com/#professional-service",
@@ -156,7 +156,7 @@ const HomeScreen = () => {
   const faqSchema = {
     "@type": "FAQPage",
     "@id": "https://spartan-cs.com/#faq",
-    "mainEntity": safeArray(AllFaq)?.map((faq) => ({
+    "mainEntity": AllFaq?.map((faq) => ({
       "@type": "Question",
       "name": faq?.question,
       "acceptedAnswer": {
@@ -165,8 +165,6 @@ const HomeScreen = () => {
       }
     }))
   };
-
-  const safeArray = (value) => Array.isArray(value) ? value : [];
 
   return (
     <>
@@ -372,7 +370,7 @@ const HomeScreen = () => {
         </div>
 
         <div className="risk-right-grid">
-          {safeArray(homeData?.timeSection?.content).map((item, index) => (
+          {homeData?.timeSection?.content?.map((item, index) => (
             <div className="risk-card" key={index}>
               <span className="risk-num">{item?.title}</span>
               <h4>{item?.description}</h4>
@@ -387,7 +385,7 @@ const HomeScreen = () => {
           <h3>{homeData?.statsBanner?.heading}</h3>
 
           <div className="stats-counter-row">
-            {safeArray(homeData?.statsBanner?.stats).map((item, index) => (
+            {(homeData?.statsBanner?.stats || [])?.map((item, index) => (
               <div className="stat-box" key={index}>
                 <h2>{item?.value}</h2>
                 <p>{item?.label}</p>
@@ -407,7 +405,7 @@ const HomeScreen = () => {
         </div>
 
         <div className="solution-cards-grid">
-          {safeArray(homeData?.solution?.cards ).map((item, index) => (
+          {(homeData?.solution?.cards || [])?.map((item, index) => (
             <div className="sol-card" key={index}>
               <div className="sol-card-icon">
                 <img src={solutionIcons[index]} alt={item.title} />
@@ -644,7 +642,7 @@ const HomeScreen = () => {
           <h2>{homeData?.whoWeAre?.title}</h2>
 
           <div className="strategic-checklist-box">
-            {safeArray(homeData?.whoWeAre?.checklist).map((item, index) => (
+            {homeData?.whoWeAre?.checklist?.map((item, index) => (
               <div className="checklist-row" key={index}>
                 <span className="chk-icon">
                   <img src="images/check-icon-militry.svg" alt="" />
@@ -863,7 +861,7 @@ const HomeScreen = () => {
         </div>
 
         <div className="industry-cards-row">
-          {safeArray(homeData?.industries?.cards)?.map((item, index) => (
+          {homeData?.industries?.cards?.map((item, index) => (
             <div
               className="industry-image-box"
               style={{
@@ -894,7 +892,7 @@ const HomeScreen = () => {
           </p>
         </div>
 
-        <BlogHorizontalScroll items={safeArray(homeData?.resources?.cards)} />
+        <BlogHorizontalScroll items={homeData?.resources?.cards || []} />
 
         {/* <div className="text-center" style={{ marginTop: "40px" }}>
           <Link to="/resources" className="btn-red-action">
@@ -923,7 +921,7 @@ const HomeScreen = () => {
         </div>
 
         <div className="faq-accordion-container">
-          {safeArray(AllFaq).map((faq, index) => {
+          {AllFaq?.map((faq, index) => {
             const isOpen = activeIndex === index;
 
             return (

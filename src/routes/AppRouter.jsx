@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomeScreen from "../pages/HomeScreen";
+import HomeScreen from "../pages/HomeScreen1";
 import BlogScreen from "../pages/BlogScreen";
 import ContactScreen from "../pages/ContactScreen";
 import ApproachScreen from "../pages/ApproachScreen";
@@ -11,7 +11,7 @@ import ResourcesScreen from "../pages/ResourcesScreen";
 import AboutScreen from "../pages/AboutScreen";
 import NotFoundRedirect from "./NotFoundRedirect";
 import ScrollToTop from "./ScrollToTop";
-import Faq from "../pages/Faq";
+// import Faq from "../pages/Faq";
 import ResourceDetailScreen from "../pages/ResourceDetailScreen";
 import AllBlogs from "../pages/AllBlogs";
 
@@ -65,9 +65,9 @@ const AppRouter = () => (
                 <AboutScreen/ >
             } />
 
-            <Route path="/faq" element={
+            {/* <Route path="/faq" element={
                 <Faq />
-            } />
+            } /> */}
             <Route path="/blogs" element={
                 <AllBlogs />
             } />

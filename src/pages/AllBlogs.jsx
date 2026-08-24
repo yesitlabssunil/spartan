@@ -13,126 +13,7 @@ import "../assets/css/allBlogs.css";
 //     title: "Understanding CMMC 2.0 Compliance: A Complete Roadmap",
 //     date: "August 10, 2026",
 //     image: "/assets/images/blog1.jpg",
-//   },
-//   {
-//     id: 2,
-//     slug: "nist-800-171-key-controls",
-//     title: "Top 10 NIST SP 800-171 Controls Federal Contractors Miss",
-//     date: "July 28, 2026",
-//     image: "/assets/images/blog2.jpg",
-//   },
-//   {
-//     id: 3,
-//     slug: "microsoft-365-gcc-high-setup",
-//     title: "Hardening Microsoft 365 GCC High for CMMC Audit Readiness",
-//     date: "July 15, 2026",
-//     image: "/assets/images/blog3.jpg",
-//   },
-//   {
-//     id: 4,
-//     slug: "c3pao-assessment-preparation",
-//     title: "How to Prepare Your Security Team for a C3PAO Assessment",
-//     date: "June 30, 2026",
-//     image: "/assets/images/blog4.jpg",
-//   },
-//   {
-//     id: 5,
-//     slug: "ssp-and-poam-best-practices",
-//     title: "Best Practices for Writing System Security Plans (SSP)",
-//     date: "June 12, 2026",
-//     image: "/assets/images/blog5.jpg",
-//   },
-//   {
-//     id: 6,
-//     slug: "zero-trust-architecture-dod",
-//     title: "Implementing Zero Trust Architecture in the Defense Base",
-//     date: "May 22, 2026",
-//     image: "/assets/images/blog6.jpg",
-//   },
-//   {
-//     id: 1,
-//     slug: "cmmc-2-compliance-guide",
-//     title: "Understanding CMMC 2.0 Compliance: A Complete Roadmap",
-//     date: "August 10, 2026",
-//     image: "/assets/images/blog1.jpg",
-//   },
-//   {
-//     id: 2,
-//     slug: "nist-800-171-key-controls",
-//     title: "Top 10 NIST SP 800-171 Controls Federal Contractors Miss",
-//     date: "July 28, 2026",
-//     image: "/assets/images/blog2.jpg",
-//   },
-//   {
-//     id: 3,
-//     slug: "microsoft-365-gcc-high-setup",
-//     title: "Hardening Microsoft 365 GCC High for CMMC Audit Readiness",
-//     date: "July 15, 2026",
-//     image: "/assets/images/blog3.jpg",
-//   },
-//   {
-//     id: 4,
-//     slug: "c3pao-assessment-preparation",
-//     title: "How to Prepare Your Security Team for a C3PAO Assessment",
-//     date: "June 30, 2026",
-//     image: "/assets/images/blog4.jpg",
-//   },
-//   {
-//     id: 5,
-//     slug: "ssp-and-poam-best-practices",
-//     title: "Best Practices for Writing System Security Plans (SSP)",
-//     date: "June 12, 2026",
-//     image: "/assets/images/blog5.jpg",
-//   },
-//   {
-//     id: 6,
-//     slug: "zero-trust-architecture-dod",
-//     title: "Implementing Zero Trust Architecture in the Defense Base",
-//     date: "May 22, 2026",
-//     image: "/assets/images/blog6.jpg",
-//   },
-//   {
-//     id: 1,
-//     slug: "cmmc-2-compliance-guide",
-//     title: "Understanding CMMC 2.0 Compliance: A Complete Roadmap",
-//     date: "August 10, 2026",
-//     image: "/assets/images/blog1.jpg",
-//   },
-//   {
-//     id: 2,
-//     slug: "nist-800-171-key-controls",
-//     title: "Top 10 NIST SP 800-171 Controls Federal Contractors Miss",
-//     date: "July 28, 2026",
-//     image: "/assets/images/blog2.jpg",
-//   },
-//   {
-//     id: 3,
-//     slug: "microsoft-365-gcc-high-setup",
-//     title: "Hardening Microsoft 365 GCC High for CMMC Audit Readiness",
-//     date: "July 15, 2026",
-//     image: "/assets/images/blog3.jpg",
-//   },
-//   {
-//     id: 4,
-//     slug: "c3pao-assessment-preparation",
-//     title: "How to Prepare Your Security Team for a C3PAO Assessment",
-//     date: "June 30, 2026",
-//     image: "/assets/images/blog4.jpg",
-//   },
-//   {
-//     id: 5,
-//     slug: "ssp-and-poam-best-practices",
-//     title: "Best Practices for Writing System Security Plans (SSP)",
-//     date: "June 12, 2026",
-//     image: "/assets/images/blog5.jpg",
-//   },
-//   {
-//     id: 6,
-//     slug: "zero-trust-architecture-dod",
-//     title: "Implementing Zero Trust Architecture in the Defense Base",
-//     date: "May 22, 2026",
-//     image: "/assets/images/blog6.jpg",
-//   },
+//   }
 // ];
 
 const AllBlogs = () => {
@@ -186,9 +67,9 @@ const AllBlogs = () => {
                 <span style={{ color: "#E62E2D" }}>BLOGS</span>
               </div>
               <h1 className="blog-hero-title">Insights & Articles</h1>
-              <p className="blog-hero-subtitle">
+              {/* <p className="blog-hero-subtitle">
                 Practical intelligence for cybersecurity, compliance, and defense.
-              </p>
+              </p> */}
               <p className="blog-hero-subtitle">
                 Expert analysis, compliance guidance, and actionable insights for federal contractors and organizations navigating CMMC 2.0, NIST SP 800-171, cybersecurity governance, audit readiness, and evolving federal security requirements.
               </p>
