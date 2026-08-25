@@ -83,7 +83,83 @@ export default async function middleware(request) {
   if (!BOT_UA.test(ua)) return;
 
   const url = new URL(request.url);
-  const meta = PAGE_META[url.pathname] || PAGE_META['/'];
+//   const meta = PAGE_META[url.pathname] || PAGE_META['/'];
+
+const getPageMeta = async (pathname) => {
+    // Static pages
+    if (PAGE_META[pathname]) {
+      return PAGE_META[pathname];
+    }
+  
+    // Blog dynamic page
+    if (pathname.startsWith("/blog/")) {
+      const slug = pathname.replace("/blog/", "");
+  
+      return await getBlogMeta(slug);
+    }
+  
+    // Resource dynamic page
+    if (pathname.startsWith("/resource/")) {
+      const slug = pathname.replace("/resource/", "");
+  
+      return await getResourceMeta(slug);
+    }
+  
+    // Fallback
+    return PAGE_META["/"];
+  };
+
+  
+
+  const getBlogMeta = async (slug) => {
+    try {
+      const response = await fetch(
+        `https://spartanapi.yilstaging.com/api/blogs/${encodeURIComponent(slug)}`
+      );
+  
+      if (!response.ok) {
+        return PAGE_META["/"];
+      }
+  
+      const data = await response.json();
+  
+      return {
+        title: data.title,
+        description: data.description,
+        image: data.image,
+      };
+    } catch (error) {
+      console.error("Blog SEO fetch failed:", error);
+  
+      return PAGE_META["/"];
+    }
+  };
+
+  const getResourceMeta = async (slug) => {
+    try {
+      const response = await fetch(
+        `https://spartanapi.yilstaging.com/api/resource-details/${encodeURIComponent(slug)}`
+      );
+  
+      if (!response.ok) {
+        return PAGE_META["/"];
+      }
+  
+      const data = await response.json();
+  
+      return {
+        title: data.title,
+        description: data.description,
+        image: data.image,
+      };
+    } catch (error) {
+      console.error("Resource SEO fetch failed:", error);
+  
+      return PAGE_META["/"];
+    }
+  };
+
+  const meta = await getPageMeta(url.pathname);
 
   // Fetch the STATIC template file (never the SPA itself, so no loop risk)
   const templateRes = await fetch(new URL('/meta-template.html', request.url));
