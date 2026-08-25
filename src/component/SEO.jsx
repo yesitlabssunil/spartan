@@ -5,7 +5,8 @@ const SEO = ({
   title,
   description,
   url = "https://spartan-cs.com/",
-  image = "https://spartan-cs.com/assets/logo-DH4HSouC.png",
+  // image = "https://spartan-cs.com/assets/logo-DH4HSouC.png",
+  image = "https://spartanlms.tgastaging.com/spartan_cms/uploads/1781779101_hero.svg",
   schema = null,
 }) => {
 
@@ -57,17 +58,17 @@ const SEO = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" content="https://spartan-cs.com/assets/logo-DH4HSouC.png" />
+      <meta property="og:image" content="https://spartanlms.tgastaging.com/spartan_cms/uploads/1781779101_hero.svg" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Spartan Cyber Security — CMMC 2.0 & NIST 800-171 Compliance Consulting" />
+      <meta property="og:image:alt" content={title} />
       <meta property="og:locale" content="en_US" />
 
       {/* <!-- Twitter --> */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content="https://spartan-cs.com/assets/logo-DH4HSouC.png" />
+      <meta name="twitter:image" content={title} />
       <meta name="twitter:site" content="@spartan_handle" />
 
       {/* Global Schema */}
