@@ -176,7 +176,16 @@ export default async function middleware(request) {
     .replaceAll('__IMAGE__', meta.image)
     .replaceAll('__URL__', url.href);
 
-  return new Response(html, {
-    headers: { 'content-type': 'text/html; charset=utf-8' },
+//   return new Response(html, {
+//     headers: { 'content-type': 'text/html; charset=utf-8' },
+//   });
+
+return new Response(html, {
+    headers: {
+      'content-type': 'text/html; charset=utf-8',
+      'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+      'CDN-Cache-Control': 'no-store',
+      'Vercel-CDN-Cache-Control': 'no-store',
+    },
   });
 }
