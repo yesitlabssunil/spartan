@@ -37,7 +37,7 @@
   z-index: 2;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 32px;
+  /* padding: 0 32px; */
 }
 
 /* Pill Badge */
@@ -338,7 +338,7 @@
 
   /* Container Layout */
 .detail-container {
-  max-width: 1200px;
+  max-width: 1260px;
   margin: 0 auto;
   padding: 55px 24px 55px;
   display: flex;
@@ -530,4 +530,14 @@
 
 .nav-item.disabled .nav-sublabel {
   color: #888;
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  .section-inner-content {
+    padding: 0 24px;
+  }
+
+  .resource-detail-hero-section .detail-section-inner-content {
+    padding: 0 24px;
+  }
 }

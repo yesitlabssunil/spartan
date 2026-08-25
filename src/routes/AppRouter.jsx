@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomeScreen from "../pages/HomeScreen1";
+// import HomeScreen from "../pages/Home1";
+import HomeScreen from "../pages/HomeScreen";
 import BlogScreen from "../pages/BlogScreen";
 import ContactScreen from "../pages/ContactScreen";
 import ApproachScreen from "../pages/ApproachScreen";

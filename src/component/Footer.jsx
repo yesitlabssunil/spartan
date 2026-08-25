@@ -37,6 +37,7 @@ const Footer = () => {
                 <br />
                 Federal contract protection.
               </p>
+              {/* <p>Cybersecurity Compliance Built for the <br/> Federal Mission</p> */}
 
               <div className="social-icons">
                   {/* <Link to="">

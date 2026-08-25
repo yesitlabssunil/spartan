@@ -99,7 +99,7 @@ export default function BlogHorizontalScroll({ items = [], getBlogUrl }) {
                 <div className="text-center mt-4">
                     <Link
                         to="/blogs"
-                        state={{blogs: items}}
+                        // state={{blogs: items}}
                         className="btn-red-action"
                         style={{ textDecoration: "none" }}
                     >

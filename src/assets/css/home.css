@@ -1497,8 +1497,16 @@ span.dot-red {
     font-weight: 600;
     color: rgba(255, 255, 255, 0.6);
     position: absolute;
-    top: 180px;
-    left: 44px;
+    top: 165px;
+    left: 28px;
+    background-color: #FFFFFF0D;
+    height: 26px;
+    width: 38px;
+    border-radius: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -1681,7 +1689,7 @@ span.dot-red {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0px; /* Aligned columns side-by-side */
-    border-top: 1px solid #e0e0e0;
+    /* border-top: 1px solid #e0e0e0; */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -1973,8 +1981,8 @@ span.dot-red {
     font-weight: 500;
     line-height: 1.25;
     color: #000000E5;
-    margin-top: 15px;
-    margin-bottom: 55px;
+    margin-top: 22px;
+    margin-bottom: 60px;
 }
 
 .faq-left-block p {
@@ -2116,3 +2124,41 @@ span.dot-red {
     display: flex;
     gap: 20px;
 }
+
+
+/* @media (max-width: 768px) {
+    .clients-ribbon::before,
+    .clients-ribbon::after {
+        display: none !important;
+    }
+    .marquee-group span {
+        color: #000000 !important;
+    }
+} */
+
+@media (max-width: 768px) {
+    /* Shrink the fade overlays so they don't cover the text */
+    .clients-ribbon::before,
+    .clients-ribbon::after {
+        width: 40px !important;
+    }
+
+    /* Tune the gradient to be more subtle on mobile */
+    .clients-ribbon::before {
+        background: linear-gradient(to right, #f4f5f7 20%, rgba(244, 245, 247, 0) 100%) !important;
+    }
+
+    .clients-ribbon::after {
+        background: linear-gradient(to left, #f4f5f7 20%, rgba(244, 245, 247, 0) 100%) !important;
+    }
+
+    /* Force black text to ensure visibility */
+    .marquee-group span {
+        color: #000000 !important;
+    }
+
+    .ind-num {
+        top: 122px;
+    }
+}
+

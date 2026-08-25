@@ -67,3 +67,46 @@
     color: red;
     font-weight: 600;
   }
+
+
+
+  /* for ipad pro responsive issue */
+
+  /* ============================================
+   IPAD PRO & SMALL DESKTOP HEADER FIX
+   (Targets landscape tablets / 1024px - 1366px)
+   ============================================ */
+/* @media (min-width: 992px) and (max-width: 1366px) { */
+@media (min-width: 992px) and (max-width: 1050px) {
+  
+  /* 1. Reduce container padding to gain horizontal space */
+  .custom-container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    max-width: 100% !important; /* Prevents Bootstrap container from restricting width */
+  }
+
+  /* 2. Shrink the logo slightly */
+  .navbar-brand img {
+    max-width: 130px !important;
+  }
+
+  /* 3. Tighter spacing between nav items */
+  .navbar-nav {
+    gap: 2px !important;
+  }
+
+  /* 4. Smaller font & margins for nav links */
+  .navbar-nav .nav-link {
+    font-size: 13px !important;
+    margin: 0 4px !important;
+    padding: 8px 6px !important;
+  }
+
+  /* 5. Compact the "Contact Us" button */
+  .contact-btn {
+    padding: 9px 16px !important;
+    font-size: 13px !important;
+    white-space: nowrap;
+  }
+}

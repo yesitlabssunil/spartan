@@ -885,11 +885,11 @@ const CmmcScreen = () => {
                 We Have Answers.
               </h2>
               <Link
-                to=""
+                to="/contact-us"
                 className="btn-red-action"
                 style={{ marginTop: "15px" }}
               >
-                Find More Answers <i className="fas fa-arrow-right"></i>
+                Schedule a call <i className="fas fa-arrow-right"></i>
               </Link>
             </div>
 

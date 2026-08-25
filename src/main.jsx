@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import React from "react";
 
 createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <HelmetProvider>
       <Provider store={store}>
         <App />
@@ -23,5 +23,5 @@ createRoot(document.getElementById("root")).render(
         />
       </Provider>
     </HelmetProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

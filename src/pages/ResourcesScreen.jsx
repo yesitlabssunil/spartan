@@ -223,10 +223,15 @@ export default function ResourceScreen() {
         <div className="hero-ambient-glow" />
 
         <div className="section-inner-content">
-          <div className="resource-badge-pill">
+          {/* <div className="resource-badge-pill">
             <Link to="/" style={{textDecoration: "none"}}><span className="tag-home-link">Home</span></Link>
             <span className="tag-separator">|</span>
             <span className="tag-red-primary">Resources & Media</span>
+          </div> */}
+          <div className="blog-breadcrumb">
+            <Link to="/" style={{textDecoration: "none"}}><span style={{color: "white"}}>Home</span></Link>
+            <span className="separator">|</span>{" "}
+            <span>Resources & Media</span>
           </div>
 
           <h1 className="hero-display-title">
@@ -254,7 +259,7 @@ export default function ResourceScreen() {
               <span className="res-lib-badge-text">RESOURCE LIBRARY</span>
             </div>
             <h2 className="res-lib-title">
-              {resourceData?.rsourceLibrary?.title}
+              {resourceData?.resourceLibrary?.section_heading}
             </h2>
           </div>
 
@@ -699,11 +704,11 @@ export default function ResourceScreen() {
               We Have Answers.
             </h2>
             <Link
-              to=""
+              to="/contact-us"
               className="btn-red-action"
               style={{ marginTop: "15px" }}
             >
-              Find More Answers <i className="fas fa-arrow-right"></i>
+              Schedule a call <i className="fas fa-arrow-right"></i>
             </Link>
           </div>
 

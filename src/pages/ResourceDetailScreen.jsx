@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import "../assets/css/resourceDetailScreen.css";
 import { useDispatch, useSelector } from "react-redux";
-import { resourceDetailScreen, resourceScreenData } from "../redux/slices/homeSlice";
+import { resourceDetailScreen } from "../redux/slices/homeSlice";
 import { Link, useParams, useLocation } from "react-router-dom";
 import SEO from "../component/SEO";
 
@@ -19,10 +19,10 @@ const ResourceDetailScreen = () => {
   // const resource_id = location.state?.id;
   const { slug } = useParams();
   const dispatch = useDispatch();
-  const {resourceStatus, resourceDetailScreenData, loading } = useSelector((state) => state.home);
+  const { resourceStatus, resourceDetailScreenData, loading } = useSelector((state) => state.home);
 
   useEffect(() => {
-    dispatch(resourceScreenData());
+    // dispatch(resourceScreenData());
     dispatch(resourceDetailScreen(slug));
   }, [dispatch, slug]);
 
@@ -59,9 +59,16 @@ const ResourceDetailScreen = () => {
     }))
   };
 
-  const relatedResources = getRandomItems(
-    resourceDetailScreenData?.sidebarRelatedResources?.items,
-  )
+  // const relatedResources = getRandomItems(
+  //   resourceDetailScreenData?.sidebarRelatedResources?.items,
+  // );
+
+  const relatedResourceItems =
+    resourceDetailScreenData?.sidebarRelatedResources?.items || [];
+
+  const relatedResources = useMemo(() => {
+    return getRandomItems(relatedResourceItems);
+  }, [relatedResourceItems]);
 
   return (
     <>
@@ -70,10 +77,10 @@ const ResourceDetailScreen = () => {
           "CMMC & Cybersecurity Resources for Federal Contractors"}
         description={resourceDetailScreen?.heroSection?.subTitle ||
           "Access practical CMMC 2.0 guides, cybersecurity insights, compliance updates, and resources designed to help federal contractors prepare for audits and strengthen security."}
-          url={`https://spartan-cs.com/resource/${slug}`}
-          schema={[
+        url={`https://spartan-cs.com/resource/${slug}`}
+        schema={[
 
-          ]}
+        ]}
       />
       <Header />
       <div className="resource-detail-page">
@@ -83,10 +90,15 @@ const ResourceDetailScreen = () => {
           <div className="detail-hero-ambient-glow" />
 
           <div className="detail-section-inner-content">
-            <div className="detail-resource-badge-pill">
+            {/* <div className="detail-resource-badge-pill">
              <Link to="/" style={{textDecoration: "none"}}> <span className="detail-tag-home-link">Home</span></Link>
               <span className="detail-tag-separator">|</span>
               <span className="detail-tag-red-primary">Resources & Media</span>
+            </div> */}
+            <div className="blog-breadcrumb">
+              <Link to="/" style={{ textDecoration: "none" }}> <span style={{ color: "white" }}>Home</span></Link>
+              <span className="separator">|</span>{" "}
+              <span>Resources & Media</span>
             </div>
 
             <h1 className="detail-hero-display-title">
@@ -186,23 +198,23 @@ const ResourceDetailScreen = () => {
                     {sub?.points?.some((point) => point?.content?.trim()) &&
                       (<ul className="red-star-list">
                         {sub?.points.filter((point) => point?.content?.trim())
-                        .map((point, pIndex) => (
-                          <li key={pIndex} className="star-list-item">
-                            <svg
-                              className="nist-star-icon"
-                              width="17"
-                              height="17"
-                              viewBox="0 0 24 24"
-                              fill="#E11D48"
-                            >
-                              <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
-                            </svg>
-                            <div className="list-text-content">
-                              {/* {item.boldPrefix && <strong>{item.boldPrefix} </strong>} */}
-                              {point?.content}
-                            </div>
-                          </li>
-                        ))}
+                          .map((point, pIndex) => (
+                            <li key={pIndex} className="star-list-item">
+                              <svg
+                                className="nist-star-icon"
+                                width="17"
+                                height="17"
+                                viewBox="0 0 24 24"
+                                fill="#E11D48"
+                              >
+                                <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
+                              </svg>
+                              <div className="list-text-content">
+                                {/* {item.boldPrefix && <strong>{item.boldPrefix} </strong>} */}
+                                {point?.content}
+                              </div>
+                            </li>
+                          ))}
                       </ul>)
                     }
 
@@ -231,7 +243,7 @@ const ResourceDetailScreen = () => {
                           resourceDetailScreenData?.articleContent?.businessImportance?.calloutBox
                             ?.text
                         } */}
-                        
+
                       </strong>{" "}
                       {resourceDetailScreenData?.articleContent?.businessImportance?.calloutBox?.text}
                     </p>
@@ -315,11 +327,11 @@ const ResourceDetailScreen = () => {
                 We Have Answers.
               </h2>
               <Link
-                to=""
+                to="/contact-us"
                 className="btn-red-action"
                 style={{ marginTop: "15px" }}
               >
-                Find More Answers <i className="fas fa-arrow-right"></i>
+                Schedule a call <i className="fas fa-arrow-right"></i>
               </Link>
             </div>
 

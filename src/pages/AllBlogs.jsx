@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import SEO from "../component/SEO";
@@ -18,8 +19,19 @@ import "../assets/css/allBlogs.css";
 
 const AllBlogs = () => {
 
-  const location = useLocation();
-  const blogs = location.state?.blogs || [];
+  const dispatch = useDispatch();
+  const { homeData, loading } = useSelector((state) => state.home);
+
+  useEffect(() => {
+    if (!homeData?.resources?.cards?.length) {
+      dispatch(homeScreenData());
+    }
+  }, [dispatch, homeData]);
+  
+  const blogs = homeData?.resources?.cards || [];
+
+  // const location = useLocation();
+  // let blogs = location.state?.blogs || [];
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 12;
