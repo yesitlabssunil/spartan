@@ -1,4 +1,5 @@
-const BOT_UA = /facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|TelegramBot|Googlebot|bingbot|opengraph/i;
+// const BOT_UA = /facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|TelegramBot|Googlebot|bingbot|opengraph/i;
+const BOT_UA = /facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|TelegramBot|Googlebot|bingbot|opengraph|SkypeUriPreview|MicrosoftPreview|Teams/i;
 
 const PAGE_META = {
     "/": {
@@ -100,11 +101,11 @@ export default async function middleware(request) {
       }
   
       const data = await response.json();
-      console.log("BLOG API RESPONSE:", JSON.stringify(data, null, 2));
+    //   console.log("BLOG API RESPONSE:", JSON.stringify(data, null, 2));
   
       return {
-        title: data.data.title,
-        description: data.data.sub_title,
+        title: data?.data?.title,
+        description: data?.data?.sub_title,
         image: "https://spartan-cs.com/assets/logo-DH4HSouC.png",
       };
     } catch (error) {
@@ -125,11 +126,11 @@ export default async function middleware(request) {
       }
   
       const data = await response.json();
-      console.log("RESOURCE API RESPONSE:", JSON.stringify(data, null, 2));
+    //   console.log("RESOURCE API RESPONSE:", JSON.stringify(data, null, 2));
   
       return {
-        title: data.data.heroSection.mainTitle,
-        description: data.data.heroSection.subTitle,
+        title: data?.data?.heroSection.mainTitle,
+        description: "CMMC 2.0 and NIST 800-171 compliance resources from Spartan Cyber Security.",
         image: "https://spartan-cs.com/assets/logo-DH4HSouC.png",
       };
     } catch (error) {
