@@ -1,5 +1,6 @@
 // const BOT_UA = /facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|TelegramBot|Googlebot|bingbot|opengraph/i;
-const BOT_UA = /facebookexternalhit|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|TelegramBot|Googlebot|bingbot|opengraph|SkypeUriPreview|MicrosoftPreview|Teams/i;
+const BOT_UA =
+  /facebookexternalhit|Facebot|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|TelegramBot|Googlebot|bingbot|Applebot|SkypeUriPreview|MicrosoftPreview|MicrosoftOffice|Office365|Teams|Outlook|Exchange|ms-office|opengraph/i;
 
 const PAGE_META = {
     "/": {
@@ -176,16 +177,7 @@ export default async function middleware(request) {
     .replaceAll('__IMAGE__', meta.image)
     .replaceAll('__URL__', url.href);
 
-//   return new Response(html, {
-//     headers: { 'content-type': 'text/html; charset=utf-8' },
-//   });
-
-return new Response(html, {
-    headers: {
-      'content-type': 'text/html; charset=utf-8',
-      'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
-      'CDN-Cache-Control': 'no-store',
-      'Vercel-CDN-Cache-Control': 'no-store',
-    },
+  return new Response(html, {
+    headers: { 'content-type': 'text/html; charset=utf-8' },
   });
 }
