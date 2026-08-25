@@ -85,7 +85,61 @@ export default async function middleware(request) {
   const url = new URL(request.url);
 //   const meta = PAGE_META[url.pathname] || PAGE_META['/'];
 
-const getPageMeta = async (pathname) => {
+
+
+  
+
+  const getBlogMeta = async (slug) => {
+    try {
+      const response = await fetch(
+        `https://spartanapi.yilstaging.com/api/blogs/${encodeURIComponent(slug)}`
+      );
+  
+      if (!response.ok) {
+        return PAGE_META["/"];
+      }
+  
+      const data = await response.json();
+      console.log("BLOG API RESPONSE:", JSON.stringify(data, null, 2));
+  
+      return {
+        title: data.data.title,
+        description: data.data.sub_title,
+        image: "https://spartan-cs.com/assets/logo-DH4HSouC.png",
+      };
+    } catch (error) {
+      console.error("Blog SEO fetch failed:", error);
+  
+      return PAGE_META["/"];
+    }
+  };
+
+  const getResourceMeta = async (slug) => {
+    try {
+      const response = await fetch(
+        `https://spartanapi.yilstaging.com/api/resource-details/${encodeURIComponent(slug)}`
+      );
+  
+      if (!response.ok) {
+        return PAGE_META["/"];
+      }
+  
+      const data = await response.json();
+      console.log("RESOURCE API RESPONSE:", JSON.stringify(data, null, 2));
+  
+      return {
+        title: data.data.heroSection.mainTitle,
+        description: data.data.heroSection.subTitle,
+        image: "https://spartan-cs.com/assets/logo-DH4HSouC.png",
+      };
+    } catch (error) {
+      console.error("Resource SEO fetch failed:", error);
+  
+      return PAGE_META["/"];
+    }
+  };
+
+  const getPageMeta = async (pathname) => {
     // Static pages
     if (PAGE_META[pathname]) {
       return PAGE_META[pathname];
@@ -107,56 +161,6 @@ const getPageMeta = async (pathname) => {
   
     // Fallback
     return PAGE_META["/"];
-  };
-
-  
-
-  const getBlogMeta = async (slug) => {
-    try {
-      const response = await fetch(
-        `https://spartanapi.yilstaging.com/api/blogs/${encodeURIComponent(slug)}`
-      );
-  
-      if (!response.ok) {
-        return PAGE_META["/"];
-      }
-  
-      const data = await response.json();
-  
-      return {
-        title: data.title,
-        description: data.description,
-        image: data.image,
-      };
-    } catch (error) {
-      console.error("Blog SEO fetch failed:", error);
-  
-      return PAGE_META["/"];
-    }
-  };
-
-  const getResourceMeta = async (slug) => {
-    try {
-      const response = await fetch(
-        `https://spartanapi.yilstaging.com/api/resource-details/${encodeURIComponent(slug)}`
-      );
-  
-      if (!response.ok) {
-        return PAGE_META["/"];
-      }
-  
-      const data = await response.json();
-  
-      return {
-        title: data.title,
-        description: data.description,
-        image: data.image,
-      };
-    } catch (error) {
-      console.error("Resource SEO fetch failed:", error);
-  
-      return PAGE_META["/"];
-    }
   };
 
   const meta = await getPageMeta(url.pathname);
