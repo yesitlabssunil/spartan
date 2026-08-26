@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import "../assets/css/blog.css";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 // Hero image – replace with your exported path
@@ -15,6 +15,7 @@ import relatedImg3 from "../assets/images/blogScreen/BlogThumbnail2.jpg";
 import { getBlogDetails } from "../redux/slices/secondSlice";
 import SEO from "../component/SEO";
 import BlogHorizontalScroll from "../component/BlogHorizontalScroll";
+import NotFoundRedirect from "../routes/NotFoundRedirect";
 
 const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
@@ -26,7 +27,9 @@ const BlogScreen = () => {
   // console.log("BLOG SLUG:", slug);
 
   const dispatch = useDispatch();
-  const { blogDetails, loading } = useSelector((state) => state.second);
+  const { blogDetails, loading, error } = useSelector((state) => state.second);
+
+  const navigate = useNavigate();
 
 
   useEffect(() => {

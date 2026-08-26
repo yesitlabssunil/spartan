@@ -213,6 +213,12 @@ export const homeScreenData = createAsyncThunk(
           .addCase(resourceDetailScreen.rejected, (state, action) => {
             state.loading = false;
             state.error = action.payload?.message;
+            if (action?.payload?.message == "Resource not found") {
+              toast.error("Page not found")
+              setTimeout(() => {
+                window.location.replace('/');
+              }, 1000)
+            }
           })
 
           .addCase(homeScreenData.pending, (state) => {

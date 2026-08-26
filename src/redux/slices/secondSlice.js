@@ -63,6 +63,7 @@ export const approachScreenData = createAsyncThunk(
     async (id, {rejectWithValue}) => {
       try {
         const response = await api.getBlogDetails(id);
+
         return response.data;
       } catch (error) {
         return rejectWithValue(
@@ -194,6 +195,12 @@ export const approachScreenData = createAsyncThunk(
             state.loading = false;
             // state.industryData = [];
             state.error = action.payload?.message;
+            if (action?.payload?.message == "Blog not found") {
+              toast.error("Page not found")
+              setTimeout(() => {
+                window.location.replace('/');
+              }, 1000)
+            }
           })
 
           .addCase(globalFooter.pending, (state) => {
