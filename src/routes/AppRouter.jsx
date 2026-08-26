@@ -15,73 +15,75 @@ import ScrollToTop from "./ScrollToTop";
 // import Faq from "../pages/Faq";
 import ResourceDetailScreen from "../pages/ResourceDetailScreen";
 import AllBlogs from "../pages/AllBlogs";
+import TrailingSlashRedirect from "./TrailingSlashRedirect";
 
 const AppRouter = () => (
     <Router>
 
         <ScrollToTop />
 
+        <TrailingSlashRedirect>
+            <Routes>
+                <Route path="/" element={
+                    <HomeScreen />
+                } />
 
-        <Routes>
-            <Route path="/" element={
-                <HomeScreen />
-            } />
-
-            {/* <Route path="/blog" element={
+                {/* <Route path="/blog" element={
                 <BlogScreen />
             } /> */}
-            <Route path="/blog/:slug" element={
-                <BlogScreen />
-            } />
+                <Route path="/blog/:slug" element={
+                    <BlogScreen />
+                } />
 
-            <Route path="/contact-us" element={
-                <ContactScreen />
-            } />
+                <Route path="/contact-us" element={
+                    <ContactScreen />
+                } />
 
-            <Route path="/approach" element={
-                <ApproachScreen />
-            } />
+                <Route path="/approach" element={
+                    <ApproachScreen />
+                } />
 
-            <Route path="/compliance-systems" element={
-                <ComplianceScreen />
-            } />
+                <Route path="/compliance-systems" element={
+                    <ComplianceScreen />
+                } />
 
-            <Route path="/industries" element={
-                <IndustriesScreen />
-            } />
+                <Route path="/industries" element={
+                    <IndustriesScreen />
+                } />
 
-            <Route path="/microsoft-365-security" element={
-                <SecurityScreen />
-            } />
+                <Route path="/microsoft-365-security" element={
+                    <SecurityScreen />
+                } />
 
-            <Route path="/cmmc" element={
-                <CmmcScreen />
-            } />
+                <Route path="/cmmc" element={
+                    <CmmcScreen />
+                } />
 
-            <Route path="/resources" element={
-                <ResourcesScreen />
-            } />
+                <Route path="/resources" element={
+                    <ResourcesScreen />
+                } />
 
-            <Route path="/about" element={
-                <AboutScreen/ >
-            } />
+                <Route path="/about" element={
+                    <AboutScreen />
+                } />
 
-            {/* <Route path="/faq" element={
+                {/* <Route path="/faq" element={
                 <Faq />
             } /> */}
-            <Route path="/blogs" element={
-                <AllBlogs />
-            } />
+                <Route path="/blogs" element={
+                    <AllBlogs />
+                } />
 
-            <Route path="/resource/:slug" element={
-                <ResourceDetailScreen />
-            } />
+                <Route path="/resource/:slug" element={
+                    <ResourceDetailScreen />
+                } />
 
-            <Route path="*" element={
-                <NotFoundRedirect />
-            } />
+                <Route path="*" element={
+                    <NotFoundRedirect />
+                } />
 
-        </Routes>
+            </Routes>
+        </TrailingSlashRedirect>
     </Router>
 )
 

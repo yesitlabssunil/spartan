@@ -79,7 +79,7 @@ const ResourceDetailScreen = () => {
           "Access practical CMMC 2.0 guides, cybersecurity insights, compliance updates, and resources designed to help federal contractors prepare for audits and strengthen security."}
         url={`https://spartan-cs.com/resource/${slug}`}
         schema={[
-
+          faqSchema
         ]}
       />
       <Header />
