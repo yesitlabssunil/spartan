@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 // import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
 
 export default function BlogHorizontalScroll({ items = [], getBlogUrl }) {
     // const scrollContainerRef = useRef(null);
@@ -77,7 +78,7 @@ export default function BlogHorizontalScroll({ items = [], getBlogUrl }) {
                         >
                             <div className="insight-image-wrapper">
                                 <img
-                                    src={item?.image}
+                                    src={`${IMAGE_URL}/${item?.image}`}
                                     alt={item?.title || "Blog Post"}
                                     loading="lazy"
                                 />

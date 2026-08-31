@@ -220,7 +220,7 @@ const IndustriesScreen = () => {
                   <div className="col-lg-6">
                     <div className="sector-image-block">
                       <img
-                        src={sec?.image}
+                        src={`${IMAGE_URL}/${sec?.image}`}
                         alt={sec?.title}
                         className="sector-display-img"
                       />

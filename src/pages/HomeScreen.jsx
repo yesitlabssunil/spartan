@@ -702,7 +702,8 @@ const HomeScreen = () => {
                     <div className="founder-card-container">
                         <div className="founder-main-img">
                             <img
-                                src={homeData?.whoWeAre?.founderCard?.image || "/images/leaderImg1.png"}
+                                src={`${IMAGE_URL}/${homeData?.whoWeAre?.founderCard?.image}`}
+                                // src={homeData?.whoWeAre?.founderCard?.image || "/images/leaderImg1.png"}
                                 alt={homeData?.whoWeAre?.founderCard?.name || "Raphael Warren"}
                             />
                         </div>

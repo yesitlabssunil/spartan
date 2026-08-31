@@ -5,6 +5,7 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 import SEO from "../component/SEO";
 import "../assets/css/allBlogs.css";
+import { homeScreenData } from "../redux/slices/homeSlice";
 
 // Import or pass your central blogs array here
 // const BLOG_DATA = [
@@ -22,6 +23,7 @@ const AllBlogs = () => {
   const dispatch = useDispatch();
   const { homeData, loading } = useSelector((state) => state.home);
 
+  const IMAGE_URL = import.meta.env.VITE_IMAGE_URL;
   useEffect(() => {
     if (!homeData?.resources?.cards?.length) {
       dispatch(homeScreenData());
@@ -117,7 +119,7 @@ const AllBlogs = () => {
                     >
                       <div className="insight-image-wrapper">
                         <img
-                          src={item?.image}
+                          src={`${IMAGE_URL}/${item?.image}`}
                           alt={item?.title || "Blog Post"}
                           loading="lazy"
                         />

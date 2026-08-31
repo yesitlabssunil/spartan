@@ -76,7 +76,7 @@ const BlogScreen = () => {
             <div className="article-meta">
               <div className="blog-hero-image">
                 <img
-                  src={blogDetails?.currentArticle?.image}
+                  src={`${IMAGE_URL}/${blogDetails?.currentArticle?.image}`}
                   alt={blogDetails?.currentArticle?.title}
                 />
               </div>
