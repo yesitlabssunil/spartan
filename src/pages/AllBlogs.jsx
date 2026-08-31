@@ -5,7 +5,6 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 import SEO from "../component/SEO";
 import "../assets/css/allBlogs.css";
-import { homeScreenData } from "../redux/slices/homeSlice";
 
 // Import or pass your central blogs array here
 // const BLOG_DATA = [

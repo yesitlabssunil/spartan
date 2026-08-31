@@ -5,8 +5,7 @@ const SEO = ({
   title,
   description,
   url = "https://spartan-cs.com/",
-  // image = "https://spartan-cs.com/assets/logo-DH4HSouC.png",
-  image = "https://spartanlms.tgastaging.com/spartan_cms/uploads/1781779101_hero.svg",
+  image = "https://spartan-cs.com/assets/logo-DH4HSouC.png",
   schema = null,
 }) => {
 

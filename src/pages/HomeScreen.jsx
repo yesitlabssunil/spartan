@@ -71,9 +71,9 @@ const HomeScreen = () => {
     ];
 
     const fallbackImages = [
-        "/images/built-1.svg",
-        "/images/built-2.svg",
-        "/images/built-3.svg",
+        "/images/built-1.png",
+        "/images/built-2.png",
+        "/images/built-3.png",
     ];
 
     // if (loading) {
@@ -196,23 +196,21 @@ const HomeScreen = () => {
                 className="hero"
                 style={{
                     backgroundImage: `linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)), url(${homeData?.hero?.backgroundImage
-                            ? `${IMAGE_URL}/${homeData.hero.backgroundImage}`
-                            : "/images/hero-banner-bg.svg"
+                        ? `${IMAGE_URL}/${homeData.hero.backgroundImage}`
+                        : "/images/hero-banner-bg.png"
                         })`,
                     backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center center",
+                    backgroundPosition: "center top",
                     backgroundSize: "cover",
                 }}
             >
                 <div className="hero-overlay"></div>
-                <div className="hero-content fade-in">
-                    {!loading && (
-                        <div className="badge-tag">
-                            <span className="dot-black"></span> {homeData?.hero?.badgeTag}
-                        </div>
-                    )}
-                    <h1>{homeData?.hero?.title}</h1>
-                    <p className="hero-subtext">{homeData?.hero?.subtext}</p>
+                <div className="hero-content fade-in visible">
+                    <div className="badge-tag">
+                        <span className="dot-black"></span> {homeData?.hero?.badgeTag || "Executive Advisory & Compliance"}
+                    </div>
+                    <h1>{homeData?.hero?.title || "CMMC 2.0 & NIST Compliance Consulting for Federal Contractors"}</h1>
+                    <p className="hero-subtext">{homeData?.hero?.subtext || "Helping defense contractors achieve CMMC 2.0 and NIST 800-171 certification with audit-ready, evidence-driven security programs."}</p>
 
                     <div className="hero-btns">
                         <Link to="/contact-us" className="btn-white">
@@ -280,7 +278,7 @@ const HomeScreen = () => {
                 </p>
 
                 <div className="levels-grid">
-                    <div className="level-card fade-in">
+                    <div className="level-card fade-in visible">
                         <span className="level-badge">LEVEL 1</span>
                         <h3>Foundational</h3>
                         <p>
@@ -288,7 +286,7 @@ const HomeScreen = () => {
                             Contract Information (FCI).
                         </p>
                     </div>
-                    <div className="level-card fade-in">
+                    <div className="level-card fade-in visible">
                         <span className="level-badge">LEVEL 2</span>
                         <h3>Advanced</h3>
                         <p>
@@ -296,7 +294,7 @@ const HomeScreen = () => {
                             handling Controlled Unclassified Information (CUI).
                         </p>
                     </div>
-                    <div className="level-card fade-in">
+                    <div className="level-card fade-in visible">
                         <span className="level-badge">LEVEL 3</span>
                         <h3>Expert</h3>
                         <p>
@@ -328,37 +326,37 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="problems-grid">
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src="images/document-img-h.svg" alt="Documentation without execution" />
                         </div>
                         <div className="prob-text">Documentation without execution</div>
                     </div>
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src="images/weak-cloud.svg" alt="Weak cloud security" />
                         </div>
                         <div className="prob-text">Weak cloud security</div>
                     </div>
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src="images/governance-gaps.svg" alt="Governance gaps" />
                         </div>
                         <div className="prob-text">Governance gaps</div>
                     </div>
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src="images/poor-enforcement.svg" alt="Poor policy enforcement" />
                         </div>
                         <div className="prob-text">Poor policy enforcement</div>
                     </div>
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src={icon1} alt="Missing evidence" />
                         </div>
                         <div className="prob-text">Missing evidence</div>
                     </div>
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src="images/audit-exposure.svg" alt="Audit failure exposure" />
                         </div>
@@ -373,15 +371,23 @@ const HomeScreen = () => {
                         {" "}
                         <span className="dot-red"></span> TIME-SENSITIVE
                     </span>
-                    <h2>{homeData?.timeSection?.title}</h2>
-                    <p>{homeData?.timeSection?.subtitle}</p>
+                    <h2>{homeData?.timeSection?.title || "CMMC 2.0 Enforcement is Active"}</h2>
+                    <p>{homeData?.timeSection?.subtitle || "Rulemaking is finalized. DoD contracting officers are inserting CMMC requirements into active solicitations."}</p>
                     <Link to="/compliance-systems" className="btn-red-action">
                         Get Compliance Ready Now <i className="fas fa-arrow-right"></i>
                     </Link>
                 </div>
 
                 <div className="risk-right-grid">
-                    {safeArray(homeData?.timeSection?.content).map((item, index) => (
+                    {(homeData?.timeSection?.content && homeData.timeSection.content.length > 0
+                        ? homeData.timeSection.content
+                        : [
+                            { title: "01", description: "DoD Solicitations Requiring CMMC 2.0 Clauses" },
+                            { title: "02", description: "Mandatory NIST SP 800-171 SPRS Score Submission" },
+                            { title: "03", description: "C3PAO Assessment Backlog & Lead Time Demands" },
+                            { title: "04", description: "Prime Contractor Supply Chain Flow-Down Mandates" }
+                        ]
+                    ).map((item, index) => (
                         <div className="risk-card" key={index}>
                             <span className="risk-num">{item?.title}</span>
                             <h4>{item?.description}</h4>
@@ -393,10 +399,17 @@ const HomeScreen = () => {
             <section className="stats-banner">
                 <div className="stats-banner-overlay"></div>
                 <div className="stats-banner-content">
-                    <h3>{homeData?.statsBanner?.heading}</h3>
+                    <h3>{homeData?.statsBanner?.heading || "Built for Defense Supply Chain Contractors Pursuing CMMC 2.0 Compliance"}</h3>
 
                     <div className="stats-counter-row">
-                        {safeArray(homeData?.statsBanner?.stats).map((item, index) => (
+                        {(homeData?.statsBanner?.stats && homeData.statsBanner.stats.length > 0
+                            ? homeData.statsBanner.stats
+                            : [
+                                { value: "110+", label: "NIST SP 800-171 Security Controls Managed" },
+                                { value: "100%", label: "Focus on CMMC 2.0 Audit Readiness" },
+                                { value: "20+", label: "Years of Executive Security Leadership" }
+                            ]
+                        ).map((item, index) => (
                             <div className="stat-box" key={index}>
                                 <h2>{item?.value}</h2>
                                 <p>{item?.label}</p>
@@ -412,14 +425,22 @@ const HomeScreen = () => {
                         {" "}
                         <span className="dot-white"></span> THE SOLUTION
                     </span>
-                    <h2>{homeData?.solution?.title}</h2>
+                    <h2>{homeData?.solution?.title || "Governance-First Compliance Systems Built for Audit Readiness"}</h2>
                 </div>
 
                 <div className="solution-cards-grid">
-                    {safeArray(homeData?.solution?.cards).map((item, index) => (
+                    {(homeData?.solution?.cards && homeData.solution.cards.length > 0
+                        ? homeData.solution.cards
+                        : [
+                            { title: "Gap Analysis & Readiness", description: "Comprehensive NIST SP 800-171 gap assessments and actionable roadmaps." },
+                            { title: "M365 GCC High Hardening", description: "Secure cloud configuration, access controls, and data governance." },
+                            { title: "SSP & POAM Development", description: "Audit-ready System Security Plans and Plan of Action & Milestones." },
+                            { title: "C3PAO Assessment Prep", description: "End-to-end evidence collection and assessment rehearsal." }
+                        ]
+                    ).map((item, index) => (
                         <div className="sol-card" key={index}>
                             <div className="sol-card-icon">
-                                <img src={solutionIcons[index]} alt={item.title} />
+                                <img src={solutionIcons[index] || solutionIcons[0]} alt={item.title} />
                             </div>
                             <h3>{item?.title}</h3>
                             <p>{item?.description}</p>
@@ -453,7 +474,7 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="services-cards-grid">
-                    <div className="service-image-card fade-in">
+                    <div className="service-image-card fade-in visible">
                         <span className="card-number">01</span>
                         <h3>CMMC 2.0 Readiness</h3>
                         <p>
@@ -461,7 +482,7 @@ const HomeScreen = () => {
                             aligned to CMMC 2.0 institutional requirements.
                         </p>
                     </div>
-                    <div className="service-image-card fade-in">
+                    <div className="service-image-card fade-in visible">
                         <span className="card-number">02</span>
                         <h3>NIST SP 800-171 Compliance</h3>
                         <p>
@@ -469,7 +490,7 @@ const HomeScreen = () => {
                             readiness built around NIST SP 800-171 standards.
                         </p>
                     </div>
-                    <div className="service-image-card fade-in">
+                    <div className="service-image-card fade-in visible">
                         <span className="card-number">03</span>
                         <h3>Audit Readiness & Evidence Preparation</h3>
                         <p>
@@ -498,7 +519,7 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="pillars-grid-row">
-                    <div className="pillar-column-card fade-in">
+                    <div className="pillar-column-card fade-in visible">
                         <div className="pillar-card-head">
                             <div className="pillar-icon-red">
                                 <img src={icon3} alt="" />
@@ -528,7 +549,7 @@ const HomeScreen = () => {
                         </ul>
                     </div>
 
-                    <div className="pillar-column-card fade-in">
+                    <div className="pillar-column-card fade-in visible">
                         <div className="pillar-card-head">
                             <div className="pillar-icon-red">
                                 <img src={icon2} alt="" />
@@ -557,7 +578,7 @@ const HomeScreen = () => {
                         </ul>
                     </div>
 
-                    <div className="pillar-column-card fade-in">
+                    <div className="pillar-column-card fade-in visible">
                         <div className="pillar-card-head">
                             <div className="pillar-icon-red">
                                 <img src={icon4} alt="" />
@@ -602,7 +623,7 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="trust-boxes-grid">
-                    <div className="trust-box-card fade-in">
+                    <div className="trust-box-card fade-in visible">
                         <div className="trust-box-icon">
                             <img src={icon5} alt="" />
                         </div>
@@ -612,7 +633,7 @@ const HomeScreen = () => {
                             executive security leadership.
                         </p>
                     </div>
-                    <div className="trust-box-card fade-in">
+                    <div className="trust-box-card fade-in visible">
                         <div className="trust-box-icon">
                             <img src={icon6} alt="" />
                         </div>
@@ -622,7 +643,7 @@ const HomeScreen = () => {
                             withstands federal audits.
                         </p>
                     </div>
-                    <div className="trust-box-card fade-in">
+                    <div className="trust-box-card fade-in visible">
                         <div className="trust-box-icon">
                             <img src={icon7} alt="" />
                         </div>
@@ -632,7 +653,7 @@ const HomeScreen = () => {
                             compliance systems.
                         </p>
                     </div>
-                    <div className="trust-box-card fade-in">
+                    <div className="trust-box-card fade-in visible">
                         <div className="trust-box-icon">
                             <img src={icon8} alt="" />
                         </div>
@@ -650,10 +671,17 @@ const HomeScreen = () => {
                     <span className="section-tag-red no-mar">
                         <span className="dot-red"></span> WHO WE ARE
                     </span>
-                    <h2>{homeData?.whoWeAre?.title}</h2>
+                    <h2>{homeData?.whoWeAre?.title || "Military Leadership Meets Operational Cybersecurity"}</h2>
 
                     <div className="strategic-checklist-box">
-                        {safeArray(homeData?.whoWeAre?.checklist).map((item, index) => (
+                        {(homeData?.whoWeAre?.checklist && homeData.whoWeAre.checklist.length > 0
+                            ? homeData.whoWeAre.checklist
+                            : [
+                                { title: "Executive Military Governance & Command Rigor" },
+                                { title: "Audit-Ready Documentation & Operational Evidence" },
+                                { title: "NIST 800-171 & CMMC 2.0 Deep Subject-Matter Expertise" }
+                            ]
+                        ).map((item, index) => (
                             <div className="checklist-row" key={index}>
                                 <span className="chk-icon">
                                     <img src="images/check-icon-militry.svg" alt="" />
@@ -667,28 +695,28 @@ const HomeScreen = () => {
                 <div className="who-right-col">
                     <div className="built-text">
                         <p className="who-top-intro-text">
-                            {homeData?.whoWeAre?.topIntroText}
+                            {homeData?.whoWeAre?.topIntroText || "Founded by Brigadier General (Ret.) Raphael Warren, Spartan Cyber Security brings executive military leadership and operational rigor to federal compliance."}
                         </p>
                     </div>
 
                     <div className="founder-card-container">
                         <div className="founder-main-img">
                             <img
-                                src={homeData?.whoWeAre?.founderCard?.image}
-                                alt={homeData?.whoWeAre?.founderCard?.name}
+                                src={homeData?.whoWeAre?.founderCard?.image || "/images/leaderImg1.png"}
+                                alt={homeData?.whoWeAre?.founderCard?.name || "Raphael Warren"}
                             />
                         </div>
 
                         <div className="founder-quote-content">
                             <p className="quote-paragraph">
-                                “{homeData?.whoWeAre?.founderCard?.quote}”
+                                “{homeData?.whoWeAre?.founderCard?.quote || "Compliance is not a paperwork exercise; it is an operational security posture designed to protect contracts and defend the supply chain."}”
                             </p>
                             <div className="founder-meta">
                                 <span className="meta-name">
-                                    {homeData?.whoWeAre?.founderCard?.name}
+                                    {homeData?.whoWeAre?.founderCard?.name || "Raphael Warren"}
                                 </span>
                                 <span className="meta-title">
-                                    {homeData?.whoWeAre?.founderCard?.title}
+                                    {homeData?.whoWeAre?.founderCard?.title || "Founder & CEO, Brigadier General (Ret.)"}
                                 </span>
                             </div>
                         </div>
@@ -705,7 +733,7 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="focus-grid">
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon17} alt="" />
                         </div>
@@ -717,7 +745,7 @@ const HomeScreen = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon16} alt="" />
                         </div>
@@ -729,7 +757,7 @@ const HomeScreen = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon9} alt="" />
                         </div>
@@ -743,7 +771,7 @@ const HomeScreen = () => {
 
                         </div>
                     </div>
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon10} alt="" />
                         </div>
@@ -755,7 +783,7 @@ const HomeScreen = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon15} alt="" />
                         </div>
@@ -767,7 +795,7 @@ const HomeScreen = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon11} alt="" />
                         </div>
@@ -865,20 +893,32 @@ const HomeScreen = () => {
                     <span className="section-tag-red">
                         <span className="dot-red"></span>INDUSTRIES
                     </span>
-                    <h2>{homeData?.industries?.title}</h2>
+                    <h2>{homeData?.industries?.title || "CMMC 2.0 Compliance by Industry"}</h2>
                     <p className="industries-top-desc">
-                        {homeData?.industries?.description}
+                        {homeData?.industries?.description || "Sector-specific compliance guidance tailored for defense contractors, manufacturing, aerospace, and technology vendors."}
                     </p>
                 </div>
 
                 <div className="industry-cards-row">
-                    {safeArray(homeData?.industries?.cards)?.map((item, index) => (
+                    {(homeData?.industries?.cards && homeData.industries.cards.length > 0
+                        ? homeData.industries.cards
+                        : [
+                            { title: "Defense & Aerospace", description: "Comprehensive CMMC readiness for primes and subcontractors." },
+                            { title: "Manufacturing & Engineering", description: "Securing shop-floor CUI and supply chain communications." },
+                            { title: "Technology & IT Services", description: "GCC High cloud configurations and access control frameworks." }
+                        ]
+                    ).map((item, index) => (
                         <div
                             className="industry-image-box"
                             style={{
-                                backgroundImage: `url(${item?.image
-                                        ? `${IMAGE_URL}/${item?.image}`
-                                        : fallbackImages[index]
+                                backgroundImage: `url(${item?.image && (
+                                    item.image.endsWith('.png') ||
+                                    item.image.endsWith('.jpg') ||
+                                    item.image.endsWith('.jpeg') ||
+                                    item.image.endsWith('.webp')
+                                )
+                                    ? `${IMAGE_URL}/${item?.image}`
+                                    : fallbackImages[index] || fallbackImages[0]
                                     })`,
                             }}
                             key={index}
@@ -894,21 +934,15 @@ const HomeScreen = () => {
             <section className="resources-section conpad">
                 <div className="text-center section-header-margin">
                     <span className="badge-red-pill">
-                        <span className="dot-red"></span>RESOURCES12
+                        <span className="dot-red"></span>RESOURCES
                     </span>
-                    <h2>{homeData?.resources?.title}</h2>
+                    <h2>{homeData?.resources?.title || "CMMC 2.0 Compliance Resources"}</h2>
                     <p className="resources-subtext">
-                        {homeData?.resources?.description}
+                        {homeData?.resources?.description || "Actionable policy guides, audit readiness playbooks, and governance frameworks for defense contractors."}
                     </p>
                 </div>
 
                 <BlogHorizontalScroll items={safeArray(homeData?.resources?.cards)} />
-
-                {/* <div className="text-center" style={{ marginTop: "40px" }}>
-          <Link to="/resources" className="btn-red-action">
-            Browse all Resources <i className="fas fa-arrow-right"></i>
-          </Link>
-        </div> */}
             </section>
 
             <section className="faq-section">

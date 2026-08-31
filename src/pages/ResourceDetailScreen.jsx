@@ -125,7 +125,7 @@ const ResourceDetailScreen = () => {
               <div className="section-meta-wrapper">
                 <span className="section-meta-line" />
                 <span className="section-meta-label">
-                  {articleContent?.sectionLabel}
+                  {resourceDetailScreenData?.articleContent?.sectionLabel}
                 </span>
               </div>
             )}

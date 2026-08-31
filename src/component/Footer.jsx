@@ -94,43 +94,23 @@ const Footer = () => {
 
             <ul className="contact-list">
 
-              {
-                footerData?.emails?.map((item, index) => (
-                  <li key={index}>
+              {(footerData?.emails && footerData.emails.length > 0
+                ? footerData.emails
+                : ["spartanconsults@spartan-cs.com", "rwarren@spartan-cs.com"]
+              ).map((item, index) => (
+                <li key={index}>
                   <FaEnvelope />
                   <a href={`mailto:${item}`}>
-                  {item}
+                    {item}
                   </a>
                 </li>
-                ))
-              }
-              {/* <li>
-                <FaEnvelope />
-                <a href="mailto:spartanconsults@spartan-cs.com">
-                spartanconsults@spartan-cs.com
-                </a>
-              
-              </li>
-
-              <li>
-                <FaEnvelope />
-                <a href="mailto:rwarren@spartan-cs.com">
-                rwarren@spartan-cs.com
-                </a>
-              </li>
-
-              <li>
-                <FaEnvelope />
-                <a href="mailto:tfinch@spartan-cs.com">
-                tfinch@spartan-cs.com
-                </a>
-              </li> */}
+              ))}
 
               <li>
                 <FaLocationDot />
-                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(footerData?.location || "")}`}
+                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(footerData?.location || "Albuquerque, NM 87113")}`}
                   target="_blank" rel="noopener noreferrer">
-                {footerData?.location}
+                  {footerData?.location || "Albuquerque, NM 87113"}
                 </a>
               </li>
             </ul>

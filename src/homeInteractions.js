@@ -65,17 +65,14 @@ export function initHomeScripts() {
     const fadeElements = document.querySelectorAll('.fade-in');
     const handleScrollAnimation = () => {
         fadeElements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.9) {
-                el.classList.add('visible');
-            }
+            el.classList.add('visible');
         });
     };
 
     window.addEventListener('scroll', handleScrollAnimation);
     window.addEventListener('load', handleScrollAnimation);
     
-    // Run it once immediately in case elements are already on screen
+    // Run it once immediately for all elements
     handleScrollAnimation();
 
     // Return a cleanup function to remove event listeners when leaving Home
