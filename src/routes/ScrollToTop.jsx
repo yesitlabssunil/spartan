@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     window.scrollTo({
@@ -10,7 +11,15 @@ const ScrollToTop = () => {
       left: 0,
     //   behavior: "instant" // or remove this line
     });
-  }, [pathname]);
+
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'pageview',
+        page: location.pathname + location.search,
+      });
+    }
+  }, [location]);
+  // }, [pathname]);
 
   return null;
 };

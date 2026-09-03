@@ -1,6 +1,10 @@
-User-Agent: *
+User-agent: *
 Allow: /
 
 Disallow: /*?utm_
+Disallow: /blog/2719/2719/7433
+
+Disallow: https://lms.spartan-cs.com/
+Disallow: https://admin.spartan-cs.com/login
 
 Sitemap: https://spartan-cs.com/sitemap.xml
