@@ -114,10 +114,26 @@ export const resourceTitles = createAsyncThunk(
   },
 )
 
+export const submitCustomizeForm = createAsyncThunk(
+  "/home/submitCustomizeForm",
+  async (formData, { rejectWithValue }) => {
+    try {
+      const response = await api.submitCustomizeForm(formData);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || { message: error.message },
+      );
+    }
+  },
+)
+
 const homeSlice = createSlice({
   name: "home",
   initialState: {
     loading: false,
+    resourceTitleLoading: false,
+    submitFormLoading: false,
     error: null,
     cmmcData: null,
     industryData: null,
@@ -246,16 +262,30 @@ const homeSlice = createSlice({
       })
 
       .addCase(resourceTitles.pending, (state) => {
-        state.loading = true;
+        state.resourceTitleLoading = true;
         state.error = null;
       })
       .addCase(resourceTitles.fulfilled, (state, action) => {
-        state.loading = false;
+        state.resourceTitleLoading = false;
         state.error = null;
         state.resourceTitlesData = action.payload?.titles;
       })
       .addCase(resourceTitles.rejected, (state, action) => {
-        state.loading = false;
+        state.resourceTitleLoading = false;
+        state.error = action.payload?.message;
+      })
+
+      .addCase(submitCustomizeForm.pending, (state) => {
+        state.submitFormLoading = true;
+        state.error = null;
+      })
+      .addCase(submitCustomizeForm.fulfilled, (state, action) => {
+        state.submitFormLoading = false;
+        state.error = null;
+        // state.submitCustomizeFormData = action.payload?.titles;
+      })
+      .addCase(submitCustomizeForm.rejected, (state, action) => {
+        state.submitFormLoading = false;
         state.error = action.payload?.message;
       })
 

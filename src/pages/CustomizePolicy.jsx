@@ -533,7 +533,7 @@ import Footer from '../component/Footer';
 import '../assets/css/customizePolicyScreen.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { resourceTitles } from '../redux/slices/secondSlice';
+import { resourceTitles, submitCustomizeForm } from '../redux/slices/secondSlice';
 
 const initialFormState = {
     policyDocument: '',
@@ -564,7 +564,7 @@ const initialFormState = {
 const CustomizePolicy = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {resourceTitlesData, loading} = useSelector((state) => state.second);
+    const { resourceTitlesData, resourceTitleLoading, submitFormLoading } = useSelector((state) => state.second);
 
     useEffect(() => {
         dispatch(resourceTitles());
@@ -621,8 +621,8 @@ const CustomizePolicy = () => {
             formData.desiredDeliveryFormat &&
             formData.primaryOrganizationName.trim() &&
             formData.doingBusinessAs.trim() &&
-            formData.primaryIndustry.trim() &&
-            formData.companySize &&
+            // formData.primaryIndustry.trim() &&
+            // formData.companySize &&
             formData.customizationsNeeded.length > 0 &&
             formData.fullName.trim() &&
             formData.jobTitle.trim() &&
@@ -646,13 +646,105 @@ const CustomizePolicy = () => {
             return;
         }
 
-        console.log('Submitting Form Payload Data:', formData);
+        const payload = new FormData();
 
-        // Show exact modal popup
-        setShowSuccessModal(true);
+        // Section 01 - Policy
+        payload.append("policy_to_customize", formData.policyDocument);
+        payload.append("customization_scope", formData.desiredDeliveryFormat);
 
-        // Reset form state
-        setFormData(initialFormState);
+        // Section 02 - Organization
+        payload.append("company_name", formData.primaryOrganizationName);
+        payload.append("industry", formData.doingBusinessAs);
+        payload.append("company_website", formData.primaryIndustry);
+        payload.append("company_size", formData.companySize);
+
+        // Section 03 - Compliance
+        // payload.append("requirements", JSON.stringify(formData.frameworks));
+        formData.frameworks.forEach((item) => {
+            payload.append("requirements[]", item);
+        });
+        payload.append("handles_cui", formData.primaryEnvironment);
+        payload.append("contractual_requirements", formData.specificStandards);
+
+        // Section 04 - Environment
+        payload.append("it_environment", formData.otherTools);
+        payload.append("primary_environment", formData.primaryRole);
+        payload.append("cybersecurity_managed_by", formData.otherRoles);
+
+        // Section 05 - Customization
+        // payload.append(
+        //     "customization_requirements",
+        //     JSON.stringify(formData.customizationsNeeded)
+        // );
+        formData.customizationsNeeded.forEach((item) => {
+            payload.append("customization_requirements[]", item);
+        });
+        
+        payload.append("specific_requirements", formData.otherCustomizations);
+
+        // Section 06 - Documentation
+        payload.append(
+            "existing_documentation",
+            formData.existingDocumentation
+        );
+        payload.append(
+            "existing_policy_language",
+            formData.existingPolicyLanguage
+        );
+
+        // File
+        if (formData.fileAttachment) {
+            payload.append("document", formData.fileAttachment);
+        }
+
+        // Section 07 - Customization Level
+        payload.append("customization_level", formData.customizationLevel);
+
+        // Section 08 - Additional Requirements
+        payload.append(
+            "additional_requirements",
+            formData.additionalRequirements
+        );
+
+        // Section 09 - Contact
+        payload.append("full_name", formData.fullName);
+        payload.append("job_title", formData.jobTitle);
+        payload.append("business_email", formData.businessEmail);
+        payload.append("phone", formData.phoneNumber);
+
+        // console.log('Submitting Form Payload Data:', formData);
+
+        // setShowSuccessModal(true);
+        // setFormData(initialFormState);
+
+        try {
+            // console.log("Submitting API Payload:");
+
+            // for (let [key, value] of payload.entries()) {
+            //     console.log(key, value);
+            // }
+
+            const response = await dispatch(
+                submitCustomizeForm(payload)
+            ).unwrap();
+
+            // console.log("Customize Policy API Response:", response);
+
+            // Show success modal only after API succeeds
+            setShowSuccessModal(true);
+
+            // Reset form
+            setFormData(initialFormState);
+
+        } catch (error) {
+            console.error("Customize Policy API Error:", error);
+
+            showToast(
+                error?.message ||
+                "Something went wrong while submitting your request."
+            );
+        }
+
     };
 
     const handleCloseModal = () => {
@@ -665,11 +757,11 @@ const CustomizePolicy = () => {
             <Header />
 
             {/* TOAST MESSAGE */}
-            {toastMessage && (
+            {/* {toastMessage && (
                 <div className="custom-toast-notification">
                     <span>⚠️ {toastMessage}</span>
                 </div>
-            )}
+            )} */}
 
             {/* HERO SECTION */}
             <section className="resource-hero-section">
@@ -716,23 +808,23 @@ const CustomizePolicy = () => {
                             <div className="form-grid dual-col">
                                 <div className="form-field">
                                     <label>Policy to Customize *</label>
-                                    <select name="policyDocument" value={formData.policyDocument} onChange={handleInputChange} disabled={loading}>
+                                    <select name="policyDocument" value={formData.policyDocument} onChange={handleInputChange} disabled={resourceTitleLoading}>
                                         <option value="">
-                                            {loading ? "Loading Policies" : "Select an option"}
+                                            {resourceTitleLoading ? "Loading Policies" : "Select an option"}
                                         </option>
                                         {resourceTitlesData && resourceTitlesData.length > 0 &&
-                                        (
-                                            resourceTitlesData.map((item, index) => {
-                                                const truncatedTitle = item && item.length > 50 ? `${item.substring(0, 35)}...` : item;
+                                            (
+                                                resourceTitlesData.map((item, index) => {
+                                                    const truncatedTitle = item && item.length > 50 ? `${item.substring(0, 35)}...` : item;
 
-                                                return (
-                                                    <option key={index} value={item} title={item}>
-                                                        {truncatedTitle}
-                                                    </option>
-                                                )
-                                            })
-                                        )}
-                                        
+                                                    return (
+                                                        <option key={index} value={item} title={item}>
+                                                            {truncatedTitle}
+                                                        </option>
+                                                    )
+                                                })
+                                            )}
+
                                     </select>
                                 </div>
                                 <div className="form-field">
@@ -766,16 +858,18 @@ const CustomizePolicy = () => {
                                     <input type="text" name="doingBusinessAs" placeholder="If primary organization name differs" value={formData.doingBusinessAs} onChange={handleInputChange} />
                                 </div>
                                 <div className="form-field">
-                                    <label>Company Website *</label>
+                                    <label>Company Website</label>
                                     <input type="text" name="primaryIndustry" placeholder="www.example.com" value={formData.primaryIndustry} onChange={handleInputChange} />
                                 </div>
                                 <div className="form-field">
-                                    <label>Company Size *</label>
+                                    <label>Company Size</label>
                                     <select name="companySize" value={formData.companySize} onChange={handleInputChange}>
                                         <option value="">Select company size</option>
                                         <option value="1-25">1 - 25 employees</option>
                                         <option value="26-100">26 - 100 employees</option>
                                         <option value="101-250">101 - 250 employees</option>
+                                        <option value="251-500">251 - 500 employees</option>
+                                        <option value="500+">500+ employees</option>
                                     </select>
                                 </div>
                             </div>
@@ -813,19 +907,26 @@ const CustomizePolicy = () => {
                                     <label>Does your organization handle CUI?</label>
                                     <select name="primaryEnvironment" value={formData.primaryEnvironment} onChange={handleInputChange}>
                                         <option value="">Select an option</option>
-                                        <option value="cloud">Cloud (AWS, Azure, GCP)</option>
-                                        <option value="on-prem">On-Premises</option>
-                                        <option value="hybrid">Hybrid</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                        <option value="not-sure">Not Sure</option>
                                     </select>
                                 </div>
                                 <div className="form-field">
                                     <label>Specific contractual or regulatory requirements</label>
-                                    <select name="specificStandards" value={formData.specificStandards} onChange={handleInputChange}>
+                                    {/* <select name="specificStandards" value={formData.specificStandards} onChange={handleInputChange}>
                                         <option value="">Select an option</option>
                                         <option value="hipaa">HIPAA</option>
                                         <option value="gdpr">GDPR</option>
                                         <option value="soc2">SOC 2</option>
-                                    </select>
+                                    </select> */}
+                                    <input
+                                        type="text"
+                                        name="specificStandards"
+                                        placeholder="optional"
+                                        value={formData.specificStandards}
+                                        onChange={handleInputChange}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -855,17 +956,22 @@ const CustomizePolicy = () => {
                                     <label>Primary Environment</label>
                                     <select name="primaryRole" value={formData.primaryRole} onChange={handleInputChange}>
                                         <option value="">Select an option</option>
-                                        <option value="ciso">CISO</option>
-                                        <option value="it-admin">IT Administrator</option>
-                                        <option value="security-manager">Security Manager</option>
+                                        <option value="cloud">Cloud</option>
+                                        <option value="on-premises">On-premises</option>
+                                        <option value="hybrid">Hybrid</option>
+                                        <option value="not-sure">Not Sure</option>
                                     </select>
                                 </div>
                                 <div className="form-field">
                                     <label>Who manages cybersecurity?</label>
                                     <select name="otherRoles" value={formData.otherRoles} onChange={handleInputChange}>
                                         <option value="">Select an option</option>
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
+                                        <option value="internal-it-team">Internal IT Team</option>
+                                        <option value="dedicated-security-team">Dedicated Security Team</option>
+                                        <option value="msp-mssp">MSP / MSSP</option>
+                                        <option value="external-consultant">External Consultant</option>
+                                        <option value="no-dedicated-team">No Dedicated Team</option>
+                                        <option value="other">Other</option>
                                     </select>
                                 </div>
                             </div>
@@ -1074,8 +1180,8 @@ const CustomizePolicy = () => {
                             <p className="privacy-text">
                                 By submitting this form, you agree to our privacy policy. We respect your privacy and will never share your information with third parties.
                             </p>
-                            <button type="submit" className="submit-btn">
-                                SUBMIT CUSTOMIZATION REQUEST <i className="fas fa-arrow-right"></i>
+                            <button type="submit" className="submit-btn" disabled={submitFormLoading}>
+                                {submitFormLoading ? "Submitting..." : "SUBMIT CUSTOMIZATION REQUEST"} {!submitFormLoading && <i className="fas fa-arrow-right"></i>}
                             </button>
                         </div>
 

@@ -4,10 +4,10 @@ import {toast} from 'react-toastify';
 
 export const API = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
-    headers: {
-        "Content-Type": "application/json",
-        // "Content-Type": "multipart/form-data",
-    }
+    // headers: {
+    //     "Content-Type": "application/json",
+    //     "Content-Type": "multipart/form-data",
+    // }
 });
 
 // --------------------------- REQUEST INTERCEPTOR // ---------------------------
@@ -74,3 +74,5 @@ export const getBlogDetails = (id) => API.get(`/blogs/${id}`);
 export const globalFooter = (formData) => API.get(`/global`, formData);
 
 export const resourceTitles = (formData) => API.get(`/resource-titles`, formData);
+
+export const submitCustomizeForm = (formData) => API.post(`/policy-customization`, formData);
