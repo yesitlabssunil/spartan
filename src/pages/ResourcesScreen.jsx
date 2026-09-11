@@ -303,7 +303,10 @@ export default function ResourceScreen() {
               paginatedCards.map((card) => (
                 <Link key={card.id}
                   to={`/resource/${card?.slug}`}
-                  // state={{ id: card?.id }}
+                  state={{
+                    title: card?.title,
+                    description: card?.description,
+                  }}
                   className="res-lib-card"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >

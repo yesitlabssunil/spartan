@@ -541,3 +541,138 @@
     padding: 0 24px;
   }
 }
+
+/* Container Wrapper */
+/* Container Wrapper */
+.policy-options-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 32px auto;
+  /* padding: 0 16px; */
+  box-sizing: border-box;
+}
+
+/* Light Pink Main Card */
+.policy-options-container {
+  display: flex;
+  align-items: center;
+  background-color: #AAAAAA40; /* Exact soft light pink from Figma */
+  border-radius: 8px;
+  padding: 36px 40px;
+  gap: 32px;
+  border: 1px solid #FF00000D;
+}
+
+/* Individual Card Layout */
+.policy-option-card {
+  flex: 1;
+  display: flex;
+}
+
+/* Header Wrapper (Icon + Content side by side) */
+.policy-option-header {
+  display: flex;
+  align-items: flex-start; /* Keeps icon box aligned with top heading */
+  gap: 20px;
+  width: 100%;
+}
+
+/* Icon Box */
+.policy-icon-wrapper {
+  width: 58px;
+  height: 58px;
+  background-color: #FFE6E8; /* Slightly darker pink for icon container */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.policy-icon {
+  color: #E50000;
+}
+
+/* Text & Button Column */
+.policy-card-text-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title Styling */
+.policy-option-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+}
+
+.policy-option-title .highlight-red {
+  color: #E50000;
+}
+
+/* Description Text */
+.policy-option-description {
+  font-size: 15px;
+  color: #2D2D2D;
+  line-height: 1.45;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+}
+
+/* Red Button Styling */
+.policy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #FF0000;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.policy-btn:hover {
+  background-color: #D60000;
+}
+
+/* Center Divider Line and OR Badge */
+.policy-divider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  position: relative;
+  padding: 0 8px;
+}
+
+.policy-divider-line {
+  flex: 1;
+  width: 2px;
+  background-color: #FFCCCC; /* Muted pink border stroke */
+}
+
+.policy-or-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #F8C8CC;
+  background-color: #FFFFFF;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0;
+}

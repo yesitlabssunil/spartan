@@ -100,6 +100,20 @@ export const securityScreenData = createAsyncThunk(
   },
 )
 
+export const resourceTitles = createAsyncThunk(
+  "/home/resourceTitles",
+  async (formData, { rejectWithValue }) => {
+    try {
+      const response = await api.resourceTitles(formData);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data || { message: error.message },
+      );
+    }
+  },
+)
+
 const homeSlice = createSlice({
   name: "home",
   initialState: {
@@ -113,6 +127,7 @@ const homeSlice = createSlice({
     footerData: null,
     newFaqData: null,
     securityScreenFaqData: null,
+    resourceTitlesData: []
 
   },
 
@@ -226,6 +241,20 @@ const homeSlice = createSlice({
         state.securityScreenFaqData = action.payload?.data;
       })
       .addCase(securityScreenData.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload?.message;
+      })
+
+      .addCase(resourceTitles.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(resourceTitles.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.resourceTitlesData = action.payload?.titles;
+      })
+      .addCase(resourceTitles.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload?.message;
       })

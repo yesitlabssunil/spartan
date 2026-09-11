@@ -1,0 +1,502 @@
+.hero-display1-title1{
+    font-size: 51px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 24px;
+    max-width: 900px;
+}
+
+@media (max-width: 1024px) {
+    .hero-display1-title1 {
+        font-size: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .hero-display1-title1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+}
+
+
+
+
+
+/* ==========================================================================
+   POLICY INTAKE FORM SECTION (FIGMA MATCH OVERRIDES)
+   ========================================================================== */
+
+   .policy-intake-section {
+    background-color: #f9f9fb;
+    padding: 60px 0 100px 0;
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #18181b;
+  }
+  
+  .intake-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .intake-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    color: #09090b;
+  }
+  
+  .required-notice {
+    font-size: 13px;
+    color: #71717a;
+  }
+  
+  .intake-subheader {
+    font-size: 15px;
+    color: #71717a;
+    margin: 0 0 32px 0;
+  }
+  
+  /* SECTION STEPS DIVIDED BY LINE ONLY */
+  .form-step {
+    background: transparent;
+    border-bottom: 1px solid #e4e4e7;
+    padding-top: 36px;
+    padding-bottom: 40px;
+    border-radius: 0;
+  }
+  
+  .form-step.border-none {
+    border-bottom: none;
+  }
+  
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  
+  .step-number {
+    background-color: #fee2e2;
+    color: #e30613;
+    font-size: 15px;
+    font-weight: 700;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .step-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #09090b;
+  }
+  
+  .step-header p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+  }
+  
+  /* Grid & Input Fields */
+  .form-grid.dual-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-field.full-width {
+    width: 100%;
+  }
+  
+  .form-field label, 
+  .section-sublabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: #18181b;
+  }
+  
+  .form-field input[type="text"],
+  .form-field input[type="email"],
+  .form-field input[type="tel"],
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1px solid #d4d4d8;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #18181b;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: #e30613;
+  }
+  
+  .field-note-text {
+    font-size: 12px;
+    color: #71717a;
+    margin-top: 6px;
+  }
+  
+  /* CHECKBOX RIGHT END ALIGNMENT */
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .checkbox-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border: 1px solid #e4e4e7;
+    border-radius: 6px;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-size: 13px;
+    color: #27272a;
+  }
+  
+  .checkbox-card.selected {
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+    color: #991b1b;
+  }
+  
+  .checkbox-card input[type="checkbox"] {
+    accent-color: #e30613;
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* SECTION 07 RADIO CARD RIGHT END ALIGNMENT & BANNER */
+  .radio-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .radio-card {
+    display: flex;
+    align-items: center; /* Vertically centers children in the card */
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid #e4e4e7;
+    border-radius: 6px;
+    padding: 16px;
+    cursor: pointer;
+    background-color: #ffffff;
+  }
+
+  .radio-card.selected {
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+  }
+  
+  .radio-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+.radio-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.radio-card-body strong {
+  font-size: 14px;
+  color: #18181b;
+}
+
+.radio-card-body p {
+  margin: 0;
+  font-size: 12px;
+  color: #71717a;
+  line-height: 1.4;
+}
+
+.radio-card input[type="radio"] {
+  accent-color: #e30613;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0; /* Prevents radio from squeezing */
+}
+  .alert-banner {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 12px 16px;
+    /* border-radius: 6px; */
+    font-size: 13px;
+    border-left: 3px solid red;
+  }
+  
+  /* SECTION 06 DROPZONE */
+  .dropzone-box {
+    border: 1px dashed #d4d4d8;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 32px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dropzone-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #09090b;
+    margin: 0 0 6px 0;
+  }
+  
+  .dropzone-desc {
+    font-size: 12px;
+    color: #71717a;
+    margin: 0 0 18px 0;
+  }
+  
+  .choose-file-btn {
+    background-color: #ffffff;
+    border: 1px solid #d4d4d8;
+    color: #18181b;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Utilities */
+  .mt-20 { margin-top: 20px; }
+  
+  /* Submit Footer */
+  .form-submit-footer {
+    margin-top: 40px;
+  }
+  
+  .privacy-text {
+    font-size: 12px;
+    color: #71717a;
+    margin-bottom: 16px;
+  }
+  
+  .submit-btn {
+    background-color: #e30613;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .form-grid.dual-col,
+    .checkbox-grid,
+    .radio-card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  .file-selected-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .file-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #18181b;
+    word-break: break-all;
+  }
+  
+  .remove-file-btn {
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .remove-file-btn:hover {
+    background: #fca5a5;
+    color: #991b1b;
+  }
+
+
+
+
+  /* modal */
+
+  /* Toast Notification */
+.custom-toast-notification {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background-color: #ff3b30;
+  color: #ffffff;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  animation: fadeInSlide 0.3s ease-out forwards;
+}
+
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal Backdrop */
+.modal-backdrop-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal Card */
+.spartan-success-modal {
+  width: 480px;
+  max-width: 90%;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  font-family: inherit;
+}
+
+/* Close button (top right) */
+.modal-close-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.modal-close-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Top Dark Section with Red Radial Glow */
+.modal-header-section {
+  background: radial-gradient(circle at 50% 30%, #5e0202 0%, #080304 70%);
+  padding: 36px 24px 28px 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.shield-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px auto;
+  border-radius: 50%;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(180, 0, 0, 0.15);
+}
+
+.modal-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.modal-subtitle {
+  font-size: 13px;
+  color: #d1d5db;
+  margin: 0;
+}
+
+/* Bottom White Section */
+.modal-body-section {
+  background: #ffffff;
+  padding: 28px 32px;
+  text-align: center;
+}
+
+.modal-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b5563;
+  margin: 0 0 24px 0;
+}
+
+.modal-red-close-btn {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-red-close-btn:hover {
+  background-color: #cc0000;
+}

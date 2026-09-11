@@ -72,3 +72,5 @@ export const getBlogDetails = (id) => API.get(`/blogs/${id}`);
 // export const getBlogDetails = (formData) => API.post(`/blogs`, formData);
 
 export const globalFooter = (formData) => API.get(`/global`, formData);
+
+export const resourceTitles = (formData) => API.get(`/resource-titles`, formData);

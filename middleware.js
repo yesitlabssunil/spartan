@@ -216,4 +216,4 @@ export default async function middleware(request) {
   return new Response(html, {
     headers: { 'content-type': 'text/html; charset=utf-8' },
   });
-}
+}

@@ -16,6 +16,7 @@ import ScrollToTop from "./ScrollToTop";
 import ResourceDetailScreen from "../pages/ResourceDetailScreen";
 import AllBlogs from "../pages/AllBlogs";
 import TrailingSlashRedirect from "./TrailingSlashRedirect";
+import CustomizePolicy from "../pages/CustomizePolicy";
 
 const AppRouter = () => (
     <Router>
@@ -72,6 +73,10 @@ const AppRouter = () => (
             } /> */}
                 <Route path="/blogs" element={
                     <AllBlogs />
+                } />
+
+                <Route path="/customize-policy" element={
+                    <CustomizePolicy />
                 } />
 
                 <Route path="/resource/:slug" element={

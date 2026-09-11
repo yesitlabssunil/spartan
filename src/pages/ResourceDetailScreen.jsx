@@ -15,8 +15,9 @@ import ResourceScreen from "./ResourcesScreen";
 import BlogHorizontalScroll from "../component/BlogHorizontalScroll";
 
 const ResourceDetailScreen = () => {
-  // const location = useLocation();
-  // const resource_id = location.state?.id;
+  const location = useLocation();
+  const resourceTitle = location.state?.title;
+  const resourceDescription = location.state?.description;
   const { slug } = useParams();
   const dispatch = useDispatch();
   const { resourceStatus, resourceDetailScreenData, loading } = useSelector((state) => state.home);
@@ -73,10 +74,9 @@ const ResourceDetailScreen = () => {
   return (
     <>
       <SEO
-        title={resourceDetailScreen?.heroSection?.mainTitle ||
+        title={resourceTitle ||
           "CMMC & Cybersecurity Resources for Federal Contractors"}
-        description={resourceDetailScreen?.heroSection?.subTitle ||
-          "Access practical CMMC 2.0 guides, cybersecurity insights, compliance updates, and resources designed to help federal contractors prepare for audits and strengthen security."}
+        description={resourceDescription}
         url={`https://spartan-cs.com/resource/${slug}`}
         schema={[
           faqSchema
@@ -112,6 +112,100 @@ const ResourceDetailScreen = () => {
                 </p>
               )
             }
+
+          </div>
+        </section>
+
+        {/* POLICY OPTIONS SECTION */}
+        <section className="policy-options-section">
+          <div className="policy-options-container">
+
+            {/* LEFT CARD: Download All Policies */}
+            <div className="policy-option-card">
+              <div className="policy-option-header">
+                <div className="policy-icon-wrapper">
+                  {/* <svg className="policy-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <path d="M12 12v6" />
+                    <path d="m9 15 3 3 3-3" />
+                  </svg> */}
+                  <img src="/images/nw-img1.png" alt="Get All Policies" />
+                </div>
+
+                <div className="policy-card-text-wrapper">
+                  <h2 className="policy-option-title">
+                    Get All Policies. <span className="highlight-red">100% Free.</span>
+                  </h2>
+
+                  <p className="policy-option-description">
+                    Access our complete library of cybersecurity policy templates in one click. No signup, no hassle.
+                  </p>
+
+                  {/* <button className="policy-btn"> */}
+                  <a 
+                  href="/pdf/spartan-cyberSecurity-policies.pdf"
+                  download="Spartan-CyberSecurity-Policies.pdf"
+                  className="policy-btn"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    <span>Download All Policies for Free</span>
+                    <svg className="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </a>
+                  {/* </button> */}
+                </div>
+              </div>
+            </div>
+
+            {/* CENTER DIVIDER WITH "OR" CIRCLE */}
+            <div className="policy-divider-container">
+              <div className="policy-divider-line" />
+              <div className="policy-or-badge">OR</div>
+              <div className="policy-divider-line" />
+            </div>
+
+            {/* RIGHT CARD: Customized Policy */}
+            <div className="policy-option-card">
+              <div className="policy-option-header">
+                <div className="policy-icon-wrapper">
+                  {/* <svg className="policy-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <path d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L8.5 20.5 5 21l.5-3.5 4.92-4.89z" />
+                  </svg> */}
+                  <img src="/images/nw-img2.png" alt="Need a Policy" style={{ height: "37px", width: "36px" }} />
+                </div>
+
+                <div className="policy-card-text-wrapper">
+                  <h2 className="policy-option-title">
+                    Need a Policy <span className="highlight-red">Customized?</span>
+                  </h2>
+
+                  <p className="policy-option-description">
+                    Get this policy tailored to your organization by our cybersecurity experts.
+                  </p>
+
+                  <Link to="/customize-policy" className="policy-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 20h9" />
+                      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                    </svg>
+                    <span>Customize This Policy Now</span>
+                    <svg className="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
 
           </div>
         </section>

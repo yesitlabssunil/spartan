@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../assets/css/footer.css";
 import logo from "../assets/images/logo.png";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,7 +16,7 @@ import { globalFooter } from "../redux/slices/secondSlice";
 
 const Footer = () => {
   const dispatch = useDispatch();
-  const {footerData, loading} = useSelector((state) => state.second);
+  const { footerData, loading } = useSelector((state) => state.second);
 
   useEffect(() => {
     dispatch(globalFooter())
@@ -40,9 +40,17 @@ const Footer = () => {
               {/* <p>Cybersecurity Compliance Built for the <br/> Federal Mission</p> */}
 
               <div className="social-icons">
-                  {/* <Link to="">
+                <a href="https://www.linkedin.com/in/raphael-warren-a7280a188/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+
+                >
+                  <FaLinkedinIn />
+                </a>
+
+                <a href="#">
                   <FaInstagram />
-                  </Link>
+                </a>
 
                 <a href="#">
                   <FaFacebookF />
@@ -50,15 +58,9 @@ const Footer = () => {
 
                 <a href="#">
                   <FaXTwitter />
-                </a> */}
-
-                <a href="https://www.linkedin.com/in/raphael-warren-a7280a188/" 
-                target="_blank"
-                rel="noopener noreferrer"
-
-                >
-                <FaLinkedinIn />
                 </a>
+
+
               </div>
             </div>
           </div>
@@ -71,7 +73,8 @@ const Footer = () => {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
               {/* <li><Link to="/">Services</Link></li> */}
-              <li><Link to="/resources">Resources</Link></li>
+              {/* <li><Link to="/resources">Resources</Link></li> */}
+              <li><Link to="/resources">Policies</Link></li>
               <li><Link to="/blogs">Blogs</Link></li>
               <li><Link to="/contact-us">Contact</Link></li>
             </ul>
