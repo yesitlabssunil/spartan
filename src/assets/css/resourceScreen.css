@@ -82,14 +82,17 @@
 }
 
 .hero-display-title {
-    font-size: 56px;
-    font-weight: 700;
+    /* font-size: 56px; */
+    /* font-weight: 700; */
     line-height: 1.15;
     letter-spacing: -0.02em;
     color: #FFFFFF;
     margin-top: 0;
     margin-bottom: 24px;
     max-width: 900px;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 62px;
+    font-weight: 500;
 }
 
 .hero-display-subtitle {

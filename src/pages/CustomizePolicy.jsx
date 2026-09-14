@@ -67,10 +67,37 @@ const CustomizePolicy = () => {
         });
     };
 
+    // const handleFileChange = (e) => {
+    //     if (e.target.files && e.target.files[0]) {
+    //         setFormData(prev => ({ ...prev, fileAttachment: e.target.files[0] }));
+    //     }
+    // };
+
     const handleFileChange = (e) => {
-        if (e.target.files && e.target.files[0]) {
-            setFormData(prev => ({ ...prev, fileAttachment: e.target.files[0] }));
+        const file = e.target.files?.[0];
+
+        if (!file) return;
+
+        const allowedExtensions = ["pdf", "doc", "docx"];
+
+        const fileExtension = file.name
+            .split(".")
+            .pop()
+            .toLowerCase();
+
+        if (!allowedExtensions.includes(fileExtension)) {
+            showToast("Please upload only PDF, DOC, or DOCX files.");
+
+            // Clear the selected file
+            e.target.value = "";
+
+            return;
         }
+
+        setFormData(prev => ({
+            ...prev,
+            fileAttachment: file
+        }));
     };
 
     const validateForm = () => {
@@ -92,19 +119,17 @@ const CustomizePolicy = () => {
             formData.desiredDeliveryFormat &&
             formData.primaryOrganizationName.trim() &&
             formData.doingBusinessAs.trim() &&
-            // formData.primaryIndustry.trim() &&
-            // formData.companySize &&
-            formData.customizationsNeeded.length > 0 &&
+            // formData.customizationsNeeded.length > 0 &&
             formData.fullName.trim() &&
             formData.jobTitle.trim() &&
-            formData.businessEmail.trim() &&
-            formData.phoneNumber.trim();
+            formData.businessEmail.trim()
 
         return isFormValid;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("SUBMIT BUTTON CLICKED");
 
         // const errorMessage = validateForm();
         // if (errorMessage) {
@@ -113,7 +138,7 @@ const CustomizePolicy = () => {
         // }
         const isValid = validateForm();
         if (!isValid) {
-            showToast("Please fill all required fields with <span className='star'>*</span>");
+            showToast("Please fill all required fields with *");
             return;
         }
 
@@ -150,7 +175,7 @@ const CustomizePolicy = () => {
         formData.customizationsNeeded.forEach((item) => {
             payload.append("customization_requirements[]", item);
         });
-        
+
         payload.append("specific_requirements", formData.otherCustomizations);
 
         // Section 06 - Documentation
@@ -228,11 +253,11 @@ const CustomizePolicy = () => {
             <Header />
 
             {/* TOAST MESSAGE */}
-            {/* {toastMessage && (
+            {toastMessage && (
                 <div className="custom-toast-notification">
                     <span>⚠️ {toastMessage}</span>
                 </div>
-            )} */}
+            )}
 
             {/* HERO SECTION */}
             <section className="resource-hero-section">
@@ -326,7 +351,7 @@ const CustomizePolicy = () => {
                                 </div>
                                 <div className="form-field">
                                     <label>Industry / Business Type <span className='star'>*</span></label>
-                                    <input type="text" name="doingBusinessAs" placeholder="If primary organization name differs" value={formData.doingBusinessAs} onChange={handleInputChange} />
+                                    <input type="text" name="doingBusinessAs" placeholder="Enter organization name" value={formData.doingBusinessAs} onChange={handleInputChange} />
                                 </div>
                                 <div className="form-field">
                                     <label>Company Website</label>
@@ -355,7 +380,7 @@ const CustomizePolicy = () => {
                                     <p>Identify the frameworks or contractual requirements relevant to your policy.</p>
                                 </div>
                             </div>
-                            <label className="section-sublabel">Which requirements apply to your organization?</label>
+                            <label className="section-sublabel" style={{marginBottom:"8px"}}>Which requirements apply to your organization?</label>
                             <div className="checkbox-grid">
                                 {[
                                     'CMMC 2.0', 'NIST SP 800-171',
@@ -457,7 +482,7 @@ const CustomizePolicy = () => {
                                     <p>Select the areas that should be adapted to your organization.</p>
                                 </div>
                             </div>
-                            <label className="section-sublabel">What elements need customization? <span className='star'>*</span></label>
+                            <label className="section-sublabel" style={{marginBottom: '8px'}}>What would you like us to customize?</label>
                             <div className="checkbox-grid">
                                 {[
                                     'Organization name & branding', 'Roles & responsibilities',
@@ -542,9 +567,16 @@ const CustomizePolicy = () => {
                                         <>
                                             <p className="dropzone-title">Drop files here or select a file</p>
                                             <p className="dropzone-desc">PDF, DOC, DOCX - upload only documents relevant to the requested policy.</p>
+                                            {/* <input
+                                                type="file"
+                                                id="figmaFileInput"
+                                                onChange={handleFileChange}
+                                                style={{ display: 'none' }}
+                                            /> */}
                                             <input
                                                 type="file"
                                                 id="figmaFileInput"
+                                                accept=".pdf,.doc,.docx"
                                                 onChange={handleFileChange}
                                                 style={{ display: 'none' }}
                                             />
@@ -649,10 +681,10 @@ const CustomizePolicy = () => {
                         {/* SUBMIT BUTTON */}
                         <div className="form-submit-footer">
                             <p className="privacy-text">
-                            By submitting this form, you are requesting policy customization support from Spartan Cyber Security. A team member may contact you to clarify requirements and discuss the appropriate customization approach.
+                                By submitting this form, you are requesting policy customization support from Spartan Cyber Security. A team member may contact you to clarify requirements and discuss the appropriate customization approach.
                             </p>
                             <button type="submit" className="submit-btn" disabled={submitFormLoading}>
-                                {submitFormLoading ? "Submitting..." : "SUBMIT CUSTOMIZATION REQUEST"} {!submitFormLoading && <i className="fas fa-arrow-right"></i>}
+                                {submitFormLoading ? "Submitting..." : "Submit Customization Request"} {!submitFormLoading && <i className="fas fa-arrow-right"></i>}
                             </button>
                         </div>
 

@@ -10,10 +10,13 @@
   }
   
   .blogs-hero-banner .blog-hero-title {
-    font-size: 55px;
-    font-weight: 700;
+    /* font-size: 55px;
+    font-weight: 700; */
     color: #ffffff;
     margin: 15px 0;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 62px;
+    font-weight: 500;
   }
   
   .blogs-hero-banner .blog-hero-subtitle {
