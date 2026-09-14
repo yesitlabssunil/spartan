@@ -142,6 +142,12 @@ const CustomizePolicy = () => {
             return;
         }
 
+        let companyWebsite = formData.primaryIndustry.trim();
+
+        if (companyWebsite && !/^https?:\/\//i.test(companyWebsite)) {
+            companyWebsite = `https://${companyWebsite}`;
+        }
+
         const payload = new FormData();
 
         // Section 01 - Policy
@@ -151,7 +157,8 @@ const CustomizePolicy = () => {
         // Section 02 - Organization
         payload.append("company_name", formData.primaryOrganizationName);
         payload.append("industry", formData.doingBusinessAs);
-        payload.append("company_website", formData.primaryIndustry);
+        // payload.append("company_website", formData.primaryIndustry);
+        payload.append("company_website", companyWebsite);
         payload.append("company_size", formData.companySize);
 
         // Section 03 - Compliance
@@ -235,10 +242,18 @@ const CustomizePolicy = () => {
         } catch (error) {
             console.error("Customize Policy API Error:", error);
 
-            showToast(
+            // showToast(
+            //     error?.message ||
+            //     "Something went wrong while submitting your request."
+            // );
+
+            // Get the first error from the array, or fall back to main message, or default string
+            const firstError =
+                (Array.isArray(error?.errors) && error.errors.length > 0 && error.errors[0]) ||
                 error?.message ||
-                "Something went wrong while submitting your request."
-            );
+                "Something went wrong while submitting your request.";
+
+            showToast(firstError);
         }
 
     };
@@ -380,7 +395,7 @@ const CustomizePolicy = () => {
                                     <p>Identify the frameworks or contractual requirements relevant to your policy.</p>
                                 </div>
                             </div>
-                            <label className="section-sublabel" style={{marginBottom:"8px"}}>Which requirements apply to your organization?</label>
+                            <label className="section-sublabel" style={{ marginBottom: "8px" }}>Which requirements apply to your organization?</label>
                             <div className="checkbox-grid">
                                 {[
                                     'CMMC 2.0', 'NIST SP 800-171',
@@ -482,7 +497,7 @@ const CustomizePolicy = () => {
                                     <p>Select the areas that should be adapted to your organization.</p>
                                 </div>
                             </div>
-                            <label className="section-sublabel" style={{marginBottom: '8px'}}>What would you like us to customize?</label>
+                            <label className="section-sublabel" style={{ marginBottom: '8px' }}>What would you like us to customize?</label>
                             <div className="checkbox-grid">
                                 {[
                                     'Organization name & branding', 'Roles & responsibilities',

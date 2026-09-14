@@ -30,7 +30,7 @@ API.interceptors.response.use(
         console.warn("Requested API resource not found:", error.config.url);
       } else {
         // Catch-all message for other runtime request failures
-        toast.error(serverMessage);
+        // toast.error(serverMessage);
       }
   
       return Promise.reject(error);
