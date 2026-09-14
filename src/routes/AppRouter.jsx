@@ -60,7 +60,7 @@ const AppRouter = () => (
                     <CmmcScreen />
                 } />
 
-                <Route path="/resources" element={
+                <Route path="/policies" element={
                     <ResourcesScreen />
                 } />
 
@@ -79,7 +79,7 @@ const AppRouter = () => (
                     <CustomizePolicy />
                 } />
 
-                <Route path="/resource/:slug" element={
+                <Route path="/policy/:slug" element={
                     <ResourceDetailScreen />
                 } />
 

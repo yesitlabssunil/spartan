@@ -48,7 +48,7 @@ const PAGE_META = {
     image: "https://spartan-cs.com/assets/logo-DH4HSouC.png",
   },
 
-  "/resources": {
+  "/policies": {
     title: "CMMC 2.0 Compliance Resources | Spartan Cyber Security",
     description:
       "CMMC 2.0 compliance resources, including NIST 800-171 policy guides, audit readiness playbooks, and governance frameworks for defense contractors.",
@@ -165,20 +165,20 @@ export default async function middleware(request) {
       );
 
       if (!response.ok) {
-        return PAGE_META["/resources"] || PAGE_META["/"];
+        return PAGE_META["/policies"] || PAGE_META["/"];
       }
 
       const data = await response.json();
       const resource = data?.data;
 
       return {
-        title: resource?.heroSection?.mainTitle ? `${resource.heroSection.mainTitle} | Spartan Cyber Security` : PAGE_META["/resources"].title,
-        description: resource?.heroSection?.subTitle || PAGE_META["/resources"].description,
+        title: resource?.heroSection?.mainTitle ? `${resource.heroSection.mainTitle} | Spartan Cyber Security` : PAGE_META["/policies"].title,
+        description: resource?.heroSection?.subTitle || PAGE_META["/policies"].description,
         image: resource?.heroSection?.image || PAGE_META["/"].image,
       };
     } catch (error) {
       console.error("Resource SEO fetch failed:", error);
-      return PAGE_META["/resources"] || PAGE_META["/"];
+      return PAGE_META["/policies"] || PAGE_META["/"];
     }
   };
 
@@ -195,8 +195,8 @@ export default async function middleware(request) {
     }
 
     // Resource dynamic page
-    if (pathname.startsWith("/resource/")) {
-      const slug = pathname.replace("/resource/", "");
+    if (pathname.startsWith("/policy/")) {
+      const slug = pathname.replace("/policy/", "");
       return await getResourceMeta(slug);
     }
 

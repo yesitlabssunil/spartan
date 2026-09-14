@@ -49,7 +49,7 @@ const ResourceDetailScreen = () => {
 
   const faqSchema = {
     "@type": "FAQPage",
-    "@id": `https://spartan-cs.com/resource/${slug}#faq`,
+    "@id": `https://spartan-cs.com/policy/${slug}#faq`,
     "mainEntity": resourceDetailScreenData?.faqSection?.items?.map((faq) => ({
       "@type": "Question",
       "name": faq?.question,
@@ -77,7 +77,7 @@ const ResourceDetailScreen = () => {
         title={resourceTitle ||
           "CMMC & Cybersecurity Resources for Federal Contractors"}
         description={resourceDescription}
-        url={`https://spartan-cs.com/resource/${slug}`}
+        url={`https://spartan-cs.com/policy/${slug}`}
         schema={[
           faqSchema
         ]}
@@ -98,7 +98,7 @@ const ResourceDetailScreen = () => {
             <div className="blog-breadcrumb">
               <Link to="/" style={{ textDecoration: "none" }}> <span style={{ color: "white" }}>Home</span></Link>
               <span className="separator">|</span>{" "}
-              <span>Resources & Media</span>
+              <span>Policies & Media</span>
             </div>
 
             <h1 className="detail-hero-display-title">
@@ -392,7 +392,7 @@ const ResourceDetailScreen = () => {
               <ul className="related-links-list">
                 {relatedResources.map((link) => (
                   <li key={link?.id}>
-                    <Link to={`/resource/${link?.slug}`} >{link?.hero_title}</Link>
+                    <Link to={`/policy/${link?.slug}`} >{link?.hero_title}</Link>
                   </li>
                 ))}
               </ul>
@@ -501,7 +501,7 @@ const ResourceDetailScreen = () => {
           {/* PREVIOUS LINK OR DISABLED DIV */}
           {resourceDetailScreenData?.bottomNavigation?.prev ? (
             <Link
-              to={`/resource/${resourceDetailScreenData?.bottomNavigation?.prev?.slug}`}
+              to={`/policy/${resourceDetailScreenData?.bottomNavigation?.prev?.slug}`}
               // state={{id: resourceDetailScreenData?.bottomNavigation?.prev?.id}}
               className="nav-item prev"
             >
@@ -559,7 +559,7 @@ const ResourceDetailScreen = () => {
           {/* NEXT LINK OR DISABLED DIV */}
           {resourceDetailScreenData?.bottomNavigation?.next ? (
             <Link
-              to={`/resource/${resourceDetailScreenData?.bottomNavigation?.next?.slug}`}
+              to={`/policy/${resourceDetailScreenData?.bottomNavigation?.next?.slug}`}
               // state={{id: resourceDetailScreenData?.bottomNavigation?.next?.id}}
               className="nav-item next"
             >

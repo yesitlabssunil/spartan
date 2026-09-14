@@ -176,7 +176,7 @@ export default function ResourceScreen() {
     "@type": "CollectionPage",
     "@id": "https://spartan-cs.com/resources#collectionpage",
     "name": "Resources",
-    "url": "https://spartan-cs.com/resources",
+    "url": "https://spartan-cs.com/policies",
     "isPartOf": {
       "@type": "WebSite",
       "@id": "https://spartan-cs.com/#website",
@@ -208,7 +208,7 @@ export default function ResourceScreen() {
       <SEO
         title="CMMC 2.0 Compliance Resources | Spartan Cyber Security"
         description="CMMC 2.0 compliance resources, including NIST 800-171 policy guides, audit readiness playbooks, and governance frameworks for defense contractors."
-        url="https://spartan-cs.com/resources"
+        url="https://spartan-cs.com/policies"
         schema={[
           resourcesPageSchema,
           faqSchema
@@ -231,12 +231,12 @@ export default function ResourceScreen() {
           <div className="blog-breadcrumb">
             <Link to="/" style={{textDecoration: "none"}}><span style={{color: "white"}}>Home</span></Link>
             <span className="separator">|</span>{" "}
-            <span>Resources & Media</span>
+            <span>Policies & Media</span>
           </div>
 
           <h1 className="hero-display-title">
-            Guides, checklists, case studies <br className="hide-on-mobile" />{" "}
-            and coverage.
+            Guides, Checklists, Case Studies <br className="hide-on-mobile" />{" "}
+            and Coverage.
           </h1>
 
           <p className="hero-display-subtitle">
@@ -302,7 +302,7 @@ export default function ResourceScreen() {
             {paginatedCards?.length > 0 ? (
               paginatedCards.map((card) => (
                 <Link key={card.id}
-                  to={`/resource/${card?.slug}`}
+                  to={`/policy/${card?.slug}`}
                   state={{
                     title: card?.title,
                     description: card?.description,

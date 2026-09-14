@@ -741,7 +741,7 @@ const HomeScreen = () => {
                         <div>
                             <h4>Audit Readiness</h4>
                             <p>Walk into assessment with evidence organized, current and defensible.</p>
-                            <Link to="/resource/audit-readiness-and-assessment-preparation" style={{ textDecoration: "none" }}>
+                            <Link to="/policy/audit-readiness-and-assessment-preparation" style={{ textDecoration: "none" }}>
                                 <p style={{ color: "red" }}>Read More</p>
                             </Link>
                         </div>
@@ -753,7 +753,7 @@ const HomeScreen = () => {
                         <div>
                             <h4>Contract Protection</h4>
                             <p>Protect the federal revenue you've already won.</p>
-                            <Link to="/resource/vendor-oversight-and-third-party-governance" style={{ textDecoration: "none" }}>
+                            <Link to="/policy/vendor-oversight-and-third-party-governance" style={{ textDecoration: "none" }}>
                                 <p style={{ color: "red" }}>Read More</p>
                             </Link>
                         </div>
@@ -766,7 +766,7 @@ const HomeScreen = () => {
                             <h4>Reduced Risk</h4>
                             <p>identify and reduce the security gaps that put contracts and reputation at risk.</p>
 
-                            <Link to="/resource/organizational-risk-assessment-policy" style={{ textDecoration: "none" }}>
+                            <Link to="/policy/organizational-risk-assessment-policy" style={{ textDecoration: "none" }}>
                                 <p style={{ color: "red" }}>Read More</p>
                             </Link>
 
@@ -779,7 +779,7 @@ const HomeScreen = () => {
                         <div>
                             <h4>Security Resilience</h4>
                             <p>Build and sustain defenses that perform under real-world adversarial pressure.</p>
-                            <Link to="/resource/operational-cyber-resilience-and-business-continuity" style={{ textDecoration: "none" }}>
+                            <Link to="/policy/operational-cyber-resilience-and-business-continuity" style={{ textDecoration: "none" }}>
                                 <p style={{ color: "red" }}>Read More</p>
                             </Link>
                         </div>
@@ -791,7 +791,7 @@ const HomeScreen = () => {
                         <div>
                             <h4>Leadership Confidence</h4>
                             <p>Give executive clear visibility into security posture, risk, and readiness.</p>
-                            <Link to="/resource/executive-accountability-in-cybersecurity-governance" style={{ textDecoration: "none" }}>
+                            <Link to="/policy/executive-accountability-in-cybersecurity-governance" style={{ textDecoration: "none" }}>
                                 <p style={{ color: "red" }}>Read More</p>
                             </Link>
                         </div>
@@ -803,7 +803,7 @@ const HomeScreen = () => {
                         <div>
                             <h4>Competitive Positioning</h4>
                             <p>Turn security maturity into a differentiator when competing for federal work.</p>
-                            <Link to="/resource/evidence-discipline-as-a-competitive-advantage" style={{ textDecoration: "none" }}>
+                            <Link to="/policy/evidence-discipline-as-a-competitive-advantage" style={{ textDecoration: "none" }}>
                                 <p style={{ color: "red" }}>Read More</p>
                             </Link>
                         </div>

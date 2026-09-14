@@ -472,7 +472,7 @@
 .sticky-sidebar-card {
   position: sticky;
   top: 100px; /* Offset from header top */
-  background-color: #fcf4f4; /* Blush tint background */
+  background-color: #FF00000D; /* Blush tint background */
   padding: 24px;
   border-radius: 4px;
 }

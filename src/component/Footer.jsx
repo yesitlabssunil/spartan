@@ -74,7 +74,7 @@ const Footer = () => {
               <li><Link to="/about">About Us</Link></li>
               {/* <li><Link to="/">Services</Link></li> */}
               {/* <li><Link to="/resources">Resources</Link></li> */}
-              <li><Link to="/resources">Policies</Link></li>
+              <li><Link to="/policies">Policies</Link></li>
               <li><Link to="/blogs">Blogs</Link></li>
               <li><Link to="/contact-us">Contact</Link></li>
             </ul>
